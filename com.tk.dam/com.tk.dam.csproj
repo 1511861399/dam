@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B3968DC1-A659-411F-9258-6F8D24D537E0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>com.tk.dam</RootNamespace>
+    <AssemblyName>com.tk.dam</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v14.2, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v14.2.Core, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v14.2, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v14.2.Core, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v14.2.Core, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v14.2.Core, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v14.2.Core, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Spreadsheet.v14.2.Core, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v14.2, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v14.2, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v14.2, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v14.2, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v14.2, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v14.2, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v14.2, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraSpreadsheet.v14.2, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v14.2, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Dbyxzk.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Dbyxzk.Designer.cs">
+      <DependentUpon>Dbyxzk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Qx.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Qx.Designer.cs">
+      <DependentUpon>Qx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sbzt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Sbzt.Designer.cs">
+      <DependentUpon>Sbzt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Sp.Designer.cs">
+      <DependentUpon>Sp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Wxzt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Wxzt.Designer.cs">
+      <DependentUpon>Wxzt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Xbjc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Xbjc.Designer.cs">
+      <DependentUpon>Xbjc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\XtraUserControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\XtraUserControlBase.Designer.cs">
+      <DependentUpon>XtraUserControlBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Yhgl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Yhgl.Designer.cs">
+      <DependentUpon>Yhgl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Qx.resx">
+      <DependentUpon>Qx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Sp.resx">
+      <DependentUpon>Sp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Wxzt.resx">
+      <DependentUpon>Wxzt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Yhgl.resx">
+      <DependentUpon>Yhgl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Views\Dbyxzk.resx">
+      <DependentUpon>Dbyxzk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Sbzt.resx">
+      <DependentUpon>Sbzt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Xbjc.resx">
+      <DependentUpon>Xbjc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\XtraUserControlBase.resx">
+      <DependentUpon>XtraUserControlBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tile_bg_tj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_about32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_close32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tile_bg_qx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tile_bg_wxzt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tile_bg_aqdj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tile_bg_xbjc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tile_bg_yhgl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tile_bg_sp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tile_bg_sbzt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_alarm64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_aqdj64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_wxzt64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_qx64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_xbjc64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_yhgl64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_tj64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_sp64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_sbzt64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dam_sw.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shui.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
