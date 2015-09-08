@@ -19,9 +19,10 @@ namespace com.tk.dam
         public MainForm()
         {
             InitializeComponent();
+            mainWindowsUIView.Appearance.BackColor = Color.FromArgb(0, 126, 206);
 
             int mSrceenWidth = Screen.PrimaryScreen.Bounds.Width;
-            mainWindowsUIView.TileContainerProperties.ItemSize = 180 + (int)((mSrceenWidth - 1420) * 0.05);
+            mainWindowsUIView.TileContainerProperties.ItemSize = 180 + (int)((mSrceenWidth - 1500) * 0.05);
 
             mainWindowsUIView.AppearanceActionsBar.BackColor = Color.FromArgb(0,169,254);
 
@@ -89,12 +90,13 @@ namespace com.tk.dam
             if (e.Document == null)
             {
                 mIsMianFormShow = true;
-                mainWindowsUIView.BackgroundImage = Properties.Resources.bg01;
+                //mainWindowsUIView.BackgroundImage = Properties.Resources.bg01;
+                //mainWindowsUIView.Appearance.BackColor = Color.FromArgb(0, 126, 206);
             }
             else
             {
                 mIsMianFormShow = false;
-                mainWindowsUIView.BackgroundImage = Properties.Resources.bg02;
+                //mainWindowsUIView.BackgroundImage = Properties.Resources.bg02;
             }
         }
 
@@ -121,10 +123,10 @@ namespace com.tk.dam
         }
         private void exitActionFunction()
         {
-            if (XtraMessageBox.Show("确定要退出系统吗?", "确认", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
+            //if (XtraMessageBox.Show("确定要退出系统吗?", "确认", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            //{
                 Application.Exit();
-            }
+            //}
         }
         private bool canExecuteAboutFunction()
         {

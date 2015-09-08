@@ -16,23 +16,24 @@ namespace com.tk.dam.Views
         public XtraUserControlBase()
         {
             InitializeComponent();
-            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint, true);
+            this.BackColor = Color.FromArgb(0, 126, 206);
+            //this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint, true);
         }
 
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
-            DocumentContainer parent = Parent as DocumentContainer;
-            if (parent != null)
-            {
-                int y = 0;
-                if (parent.Bounds.Y > 0)
-                {
-                    y = parent.Bounds.Y;
-                }
-                Rectangle rect = new Rectangle(this.Bounds.X, this.Bounds.Y - y, this.Bounds.Width, this.Bounds.Height + y);
-                e.Graphics.DrawImage(Properties.Resources.bg02, rect);
-            }
-        }
+        //protected override void OnPaint(PaintEventArgs e)
+        //{
+        //    base.OnPaint(e);
+        //    DocumentContainer parent = Parent as DocumentContainer;
+        //    if (parent != null)
+        //    {
+        //        int y = 0;
+        //        if (parent.Bounds.Y > 0)
+        //        {
+        //            y = parent.Bounds.Y;
+        //        }
+        //        Rectangle rect = new Rectangle(this.Bounds.X, this.Bounds.Y - y, this.Bounds.Width, this.Bounds.Height + y);
+        //        e.Graphics.DrawImage(Properties.Resources.bg02, rect);
+        //    }
+        //}
     }
 }

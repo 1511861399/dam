@@ -108,7 +108,6 @@
             // 
             this.mainWindowsUIView.AppearanceCaption.Font = new System.Drawing.Font("黑体", 36F, System.Drawing.FontStyle.Bold);
             this.mainWindowsUIView.AppearanceCaption.Options.UseFont = true;
-            this.mainWindowsUIView.BackgroundImage = global::com.tk.dam.Properties.Resources.bg01;
             this.mainWindowsUIView.BackgroundImageLayoutMode = DevExpress.Utils.Drawing.ImageLayoutMode.Stretch;
             this.mainWindowsUIView.Caption = "大坝安全检测系统";
             this.mainWindowsUIView.ContentContainers.AddRange(new DevExpress.XtraBars.Docking2010.Views.WindowsUI.IContentContainer[] {
@@ -152,7 +151,7 @@
             this.tileSP,
             this.tileZJ});
             this.mainTileContainer.Name = "mainTileContainer";
-            this.mainTileContainer.Position = 1000;
+            this.mainTileContainer.Position = 269;
             this.mainTileContainer.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.mainTileContainer_ButtonClick);
             // 
             // tileDBYXZT
@@ -242,7 +241,7 @@
             this.tileXBJC.Document = this.documentXBJC;
             tileItemElement7.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold);
             tileItemElement7.Appearance.Normal.Options.UseFont = true;
-            tileItemElement7.Text = "形变检测";
+            tileItemElement7.Text = "形变监测";
             tileItemElement7.TextLocation = new System.Drawing.Point(0, 30);
             tileItemElement8.Image = global::com.tk.dam.Properties.Resources.icon_xbjc64;
             tileItemElement8.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
@@ -267,7 +266,7 @@
             // 
             // documentXBJC
             // 
-            this.documentXBJC.Caption = "形变检测";
+            this.documentXBJC.Caption = "形变监测";
             this.documentXBJC.ControlName = "documentXBJC";
             // 
             // tileQX
