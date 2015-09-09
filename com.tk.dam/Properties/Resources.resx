@@ -130,6 +130,9 @@
   <data name="dam_sw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dam_sw.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="dam_sw1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dam_sw1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_about32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_about32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -162,6 +165,9 @@
   </data>
   <data name="shui" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shui.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shui1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shui2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tile_bg_aqdj" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tile_bg_aqdj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

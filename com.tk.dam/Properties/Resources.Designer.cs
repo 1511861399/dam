@@ -103,6 +103,16 @@ namespace com.tk.dam.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap dam_sw1 {
+            get {
+                object obj = ResourceManager.GetObject("dam_sw1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap icon_about32 {
             get {
                 object obj = ResourceManager.GetObject("icon_about32", resourceCulture);
@@ -206,6 +216,16 @@ namespace com.tk.dam.Properties {
         internal static System.Drawing.Bitmap shui {
             get {
                 object obj = ResourceManager.GetObject("shui", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap shui1 {
+            get {
+                object obj = ResourceManager.GetObject("shui1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

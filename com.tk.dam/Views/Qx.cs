@@ -20,8 +20,6 @@ namespace com.tk.dam.Views
         public Qx()
         {
             InitializeComponent();
-            pictureBox2.Parent = pictureBox1;
-            label5.Parent = pictureBox1;
         }
 
         private void Qx_Load(object sender, EventArgs e)
@@ -320,8 +318,8 @@ namespace com.tk.dam.Views
         protected override void OnDraw()
         {
             // 获取图像
-            Image imageModel = Properties.Resources.dam_sw;
-            Image imageShui = Properties.Resources.shui;
+            Image imageModel = Properties.Resources.dam_sw1;
+            //Image imageShui = Properties.Resources.shui;
 
             //int width = imageModel.Size.Width;
             //int height = imageModel.Size.Height;
@@ -329,10 +327,10 @@ namespace com.tk.dam.Views
             int width = this.Width;
             int height = this.Height;
             Rectangle recModel = new Rectangle(0, 0, width, height);
-            Rectangle recShui = new Rectangle(0, 0, width, height);
+            //Rectangle recShui = new Rectangle(0, 0, imageShui.Width, imageShui.Height);
 
             this.graphics.DrawImage(imageModel, recModel);
-            this.graphics.DrawImage(imageShui, recShui);
+            //this.graphics.DrawImage(imageShui, recShui);
         }
     }
 }

@@ -306,6 +306,12 @@
   <ItemGroup>
     <None Include="Resources\wind_direction_arrow.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dam_sw1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shui2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

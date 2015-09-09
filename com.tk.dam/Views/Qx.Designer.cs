@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.LineSeriesView lineSeriesView1 = new DevExpress.XtraCharts.LineSeriesView();
-            DevExpress.XtraCharts.LineSeriesView lineSeriesView2 = new DevExpress.XtraCharts.LineSeriesView();
+            DevExpress.XtraCharts.XYDiagram xyDiagram4 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series4 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.LineSeriesView lineSeriesView7 = new DevExpress.XtraCharts.LineSeriesView();
+            DevExpress.XtraCharts.LineSeriesView lineSeriesView8 = new DevExpress.XtraCharts.LineSeriesView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTemperature5 = new System.Windows.Forms.Label();
             this.lblTemperature4 = new System.Windows.Forms.Label();
@@ -62,7 +62,7 @@
             this.arcScaleComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent();
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxModel1 = new com.tk.dam.Views.PictureBoxModel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
@@ -86,14 +86,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleRangeBarComponent2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent2)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularGauge1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.labelComponent1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent1)).BeginInit();
@@ -298,22 +297,22 @@
             // lblDirection
             // 
             this.lblDirection.AutoSize = true;
-            this.lblDirection.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblDirection.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblDirection.ForeColor = System.Drawing.Color.White;
-            this.lblDirection.Location = new System.Drawing.Point(61, 105);
+            this.lblDirection.Location = new System.Drawing.Point(64, 107);
             this.lblDirection.Name = "lblDirection";
-            this.lblDirection.Size = new System.Drawing.Size(57, 19);
+            this.lblDirection.Size = new System.Drawing.Size(50, 17);
             this.lblDirection.TabIndex = 6;
             this.lblDirection.Text = "东北风";
             // 
             // lblPower
             // 
             this.lblPower.AutoSize = true;
-            this.lblPower.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblPower.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblPower.ForeColor = System.Drawing.Color.White;
-            this.lblPower.Location = new System.Drawing.Point(63, 132);
+            this.lblPower.Location = new System.Drawing.Point(66, 134);
             this.lblPower.Name = "lblPower";
-            this.lblPower.Size = new System.Drawing.Size(55, 19);
+            this.lblPower.Size = new System.Drawing.Size(48, 17);
             this.lblPower.TabIndex = 7;
             this.lblPower.Text = "4~6级";
             // 
@@ -436,7 +435,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tahoma", 24F);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(31, 4);
+            this.label5.Location = new System.Drawing.Point(3, 4);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 39);
             this.label5.TabIndex = 0;
@@ -448,32 +447,29 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel4.AutoSize = true;
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(169)))), ((int)(((byte)(245)))));
-            this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.pictureBoxModel1);
             this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Controls.Add(this.label5);
             this.panel4.Location = new System.Drawing.Point(444, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(278, 444);
+            this.panel4.Size = new System.Drawing.Size(278, 451);
             this.panel4.TabIndex = 21;
             // 
-            // pictureBox2
+            // pictureBoxModel1
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::com.tk.dam.Properties.Resources.shui;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 192);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(275, 244);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.pictureBoxModel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBoxModel1.Location = new System.Drawing.Point(0, 135);
+            this.pictureBoxModel1.Name = "pictureBoxModel1";
+            this.pictureBoxModel1.Size = new System.Drawing.Size(94, 312);
+            this.pictureBoxModel1.TabIndex = 25;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::com.tk.dam.Properties.Resources.dam_sw;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pictureBox1.Image = global::com.tk.dam.Properties.Resources.shui1;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 206);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(278, 444);
+            this.pictureBox1.Size = new System.Drawing.Size(278, 245);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -494,22 +490,22 @@
             // chartControl1
             // 
             this.chartControl1.BackColor = System.Drawing.Color.Transparent;
-            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-            xyDiagram1.DefaultPane.BackColor = System.Drawing.Color.Transparent;
-            xyDiagram1.DefaultPane.BorderColor = System.Drawing.Color.Transparent;
-            this.chartControl1.Diagram = xyDiagram1;
+            xyDiagram4.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram4.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram4.DefaultPane.BackColor = System.Drawing.Color.Transparent;
+            xyDiagram4.DefaultPane.BorderColor = System.Drawing.Color.Transparent;
+            this.chartControl1.Diagram = xyDiagram4;
             this.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControl1.Location = new System.Drawing.Point(0, 65);
             this.chartControl1.Name = "chartControl1";
             this.chartControl1.PaletteName = "Yellow";
-            series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series1.Name = "Series 1";
-            lineSeriesView1.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series1.View = lineSeriesView1;
+            series4.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
+            series4.Name = "Series 1";
+            lineSeriesView7.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
+            series4.View = lineSeriesView7;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
-            this.chartControl1.SeriesTemplate.View = lineSeriesView2;
+        series4};
+            this.chartControl1.SeriesTemplate.View = lineSeriesView8;
             this.chartControl1.Size = new System.Drawing.Size(441, 379);
             this.chartControl1.TabIndex = 1;
             // 
@@ -609,14 +605,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularGauge1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.labelComponent1)).EndInit();
@@ -666,9 +661,9 @@
         private DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent arcScaleComponent1;
         private DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleRangeBarComponent arcScaleRangeBarComponent1;
         private System.Windows.Forms.PictureBox pboxDirectionS;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel6;
         private DevExpress.XtraCharts.ChartControl chartControl1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private PictureBoxModel pictureBoxModel1;
     }
 }
