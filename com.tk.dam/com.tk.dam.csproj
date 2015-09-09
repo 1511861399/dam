@@ -101,7 +101,9 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\Device.cs" />
     <Compile Include="Entity\Jcd.cs" />
+    <Compile Include="Entity\OffectInfo.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +117,12 @@
     </Compile>
     <Compile Include="Views\Dbyxzk.Designer.cs">
       <DependentUpon>Dbyxzk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PoupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PoupForm.Designer.cs">
+      <DependentUpon>PoupForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Qx.cs">
       <SubType>UserControl</SubType>
@@ -160,6 +168,9 @@
     </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PoupForm.resx">
+      <DependentUpon>PoupForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Qx.resx">
       <DependentUpon>Qx.cs</DependentUpon>
@@ -311,6 +322,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\shui2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\GNSSXB.jpg" />
+    <Content Include="Resources\GNSSXB.png" />
+    <Content Include="Resources\tip.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
