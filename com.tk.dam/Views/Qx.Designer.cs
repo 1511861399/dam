@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraCharts.XYDiagram xyDiagram4 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series4 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.LineSeriesView lineSeriesView7 = new DevExpress.XtraCharts.LineSeriesView();
-            DevExpress.XtraCharts.LineSeriesView lineSeriesView8 = new DevExpress.XtraCharts.LineSeriesView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Qx));
+            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.LineSeriesView lineSeriesView1 = new DevExpress.XtraCharts.LineSeriesView();
+            DevExpress.XtraCharts.LineSeriesView lineSeriesView2 = new DevExpress.XtraCharts.LineSeriesView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTemperature5 = new System.Windows.Forms.Label();
             this.lblTemperature4 = new System.Windows.Forms.Label();
@@ -49,10 +50,17 @@
             this.lblDateTime3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pboxDirectionW = new System.Windows.Forms.PictureBox();
+            this.pboxDirectionWN = new System.Windows.Forms.PictureBox();
+            this.pboxDirectionSW = new System.Windows.Forms.PictureBox();
+            this.pboxDirectionES = new System.Windows.Forms.PictureBox();
+            this.pboxDirectionNE = new System.Windows.Forms.PictureBox();
+            this.pboxDirectionN = new System.Windows.Forms.PictureBox();
+            this.pboxDirectionE = new System.Windows.Forms.PictureBox();
+            this.pboxDirectionS = new System.Windows.Forms.PictureBox();
             this.lblDirection = new System.Windows.Forms.Label();
             this.lblPower = new System.Windows.Forms.Label();
             this.pboxDirection = new System.Windows.Forms.PictureBox();
-            this.pboxDirectionS = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.gaugeControl1 = new DevExpress.XtraGauges.Win.GaugeControl();
@@ -78,8 +86,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pboxFigure1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxFigure2)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxDirection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxDirectionW)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxDirectionWN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxDirectionSW)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxDirectionES)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxDirectionNE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxDirectionN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxDirectionE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxDirectionS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxDirection)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularGauge2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.labelComponent2)).BeginInit();
@@ -89,10 +104,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularGauge1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.labelComponent1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent1)).BeginInit();
@@ -284,15 +299,102 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.AutoSize = true;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(150)))), ((int)(((byte)(145)))));
+            this.panel2.Controls.Add(this.pboxDirectionW);
+            this.panel2.Controls.Add(this.pboxDirectionWN);
+            this.panel2.Controls.Add(this.pboxDirectionSW);
+            this.panel2.Controls.Add(this.pboxDirectionES);
+            this.panel2.Controls.Add(this.pboxDirectionNE);
+            this.panel2.Controls.Add(this.pboxDirectionN);
+            this.panel2.Controls.Add(this.pboxDirectionE);
+            this.panel2.Controls.Add(this.pboxDirectionS);
             this.panel2.Controls.Add(this.lblDirection);
             this.panel2.Controls.Add(this.lblPower);
             this.panel2.Controls.Add(this.pboxDirection);
-            this.panel2.Controls.Add(this.pboxDirectionS);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(258, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(180, 234);
+            this.panel2.Size = new System.Drawing.Size(190, 234);
             this.panel2.TabIndex = 20;
+            // 
+            // pboxDirectionW
+            // 
+            this.pboxDirectionW.Image = global::com.tk.dam.Properties.Resources.wind_direction_arrow_w;
+            this.pboxDirectionW.Location = new System.Drawing.Point(-4, 115);
+            this.pboxDirectionW.Name = "pboxDirectionW";
+            this.pboxDirectionW.Size = new System.Drawing.Size(34, 34);
+            this.pboxDirectionW.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxDirectionW.TabIndex = 8;
+            this.pboxDirectionW.TabStop = false;
+            // 
+            // pboxDirectionWN
+            // 
+            this.pboxDirectionWN.Image = global::com.tk.dam.Properties.Resources.wind_direction_arrow_wn;
+            this.pboxDirectionWN.Location = new System.Drawing.Point(15, 51);
+            this.pboxDirectionWN.Name = "pboxDirectionWN";
+            this.pboxDirectionWN.Size = new System.Drawing.Size(34, 34);
+            this.pboxDirectionWN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxDirectionWN.TabIndex = 8;
+            this.pboxDirectionWN.TabStop = false;
+            // 
+            // pboxDirectionSW
+            // 
+            this.pboxDirectionSW.Image = global::com.tk.dam.Properties.Resources.wind_direction_arrow_sw;
+            this.pboxDirectionSW.Location = new System.Drawing.Point(13, 171);
+            this.pboxDirectionSW.Name = "pboxDirectionSW";
+            this.pboxDirectionSW.Size = new System.Drawing.Size(34, 34);
+            this.pboxDirectionSW.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxDirectionSW.TabIndex = 8;
+            this.pboxDirectionSW.TabStop = false;
+            // 
+            // pboxDirectionES
+            // 
+            this.pboxDirectionES.Image = global::com.tk.dam.Properties.Resources.wind_direction_arrow_es;
+            this.pboxDirectionES.Location = new System.Drawing.Point(138, 169);
+            this.pboxDirectionES.Name = "pboxDirectionES";
+            this.pboxDirectionES.Size = new System.Drawing.Size(34, 34);
+            this.pboxDirectionES.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxDirectionES.TabIndex = 8;
+            this.pboxDirectionES.TabStop = false;
+            // 
+            // pboxDirectionNE
+            // 
+            this.pboxDirectionNE.Image = global::com.tk.dam.Properties.Resources.wind_direction_arrow_ne;
+            this.pboxDirectionNE.Location = new System.Drawing.Point(134, 49);
+            this.pboxDirectionNE.Name = "pboxDirectionNE";
+            this.pboxDirectionNE.Size = new System.Drawing.Size(34, 34);
+            this.pboxDirectionNE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxDirectionNE.TabIndex = 8;
+            this.pboxDirectionNE.TabStop = false;
+            // 
+            // pboxDirectionN
+            // 
+            this.pboxDirectionN.Image = global::com.tk.dam.Properties.Resources.wind_direction_arrow_n;
+            this.pboxDirectionN.Location = new System.Drawing.Point(75, 35);
+            this.pboxDirectionN.Name = "pboxDirectionN";
+            this.pboxDirectionN.Size = new System.Drawing.Size(34, 34);
+            this.pboxDirectionN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxDirectionN.TabIndex = 8;
+            this.pboxDirectionN.TabStop = false;
+            // 
+            // pboxDirectionE
+            // 
+            this.pboxDirectionE.Image = global::com.tk.dam.Properties.Resources.wind_direction_arrow_e;
+            this.pboxDirectionE.Location = new System.Drawing.Point(153, 115);
+            this.pboxDirectionE.Name = "pboxDirectionE";
+            this.pboxDirectionE.Size = new System.Drawing.Size(34, 34);
+            this.pboxDirectionE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxDirectionE.TabIndex = 8;
+            this.pboxDirectionE.TabStop = false;
+            // 
+            // pboxDirectionS
+            // 
+            this.pboxDirectionS.Image = ((System.Drawing.Image)(resources.GetObject("pboxDirectionS.Image")));
+            this.pboxDirectionS.Location = new System.Drawing.Point(75, 188);
+            this.pboxDirectionS.Name = "pboxDirectionS";
+            this.pboxDirectionS.Size = new System.Drawing.Size(34, 34);
+            this.pboxDirectionS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxDirectionS.TabIndex = 8;
+            this.pboxDirectionS.TabStop = false;
             // 
             // lblDirection
             // 
@@ -310,7 +412,7 @@
             this.lblPower.AutoSize = true;
             this.lblPower.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblPower.ForeColor = System.Drawing.Color.White;
-            this.lblPower.Location = new System.Drawing.Point(66, 134);
+            this.lblPower.Location = new System.Drawing.Point(69, 134);
             this.lblPower.Name = "lblPower";
             this.lblPower.Size = new System.Drawing.Size(48, 17);
             this.lblPower.TabIndex = 7;
@@ -319,22 +421,12 @@
             // pboxDirection
             // 
             this.pboxDirection.Image = global::com.tk.dam.Properties.Resources.wind_direction;
-            this.pboxDirection.Location = new System.Drawing.Point(20, 65);
+            this.pboxDirection.Location = new System.Drawing.Point(25, 65);
             this.pboxDirection.Name = "pboxDirection";
             this.pboxDirection.Size = new System.Drawing.Size(131, 128);
             this.pboxDirection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxDirection.TabIndex = 1;
             this.pboxDirection.TabStop = false;
-            // 
-            // pboxDirectionS
-            // 
-            this.pboxDirectionS.Image = global::com.tk.dam.Properties.Resources.wind_direction_arrow;
-            this.pboxDirectionS.Location = new System.Drawing.Point(70, 192);
-            this.pboxDirectionS.Name = "pboxDirectionS";
-            this.pboxDirectionS.Size = new System.Drawing.Size(34, 34);
-            this.pboxDirectionS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxDirectionS.TabIndex = 8;
-            this.pboxDirectionS.TabStop = false;
             // 
             // label3
             // 
@@ -357,7 +449,7 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(258, 240);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(183, 204);
+            this.panel3.Size = new System.Drawing.Size(190, 204);
             this.panel3.TabIndex = 21;
             // 
             // gaugeControl1
@@ -450,24 +542,24 @@
             this.panel4.Controls.Add(this.pictureBoxModel1);
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(444, 0);
+            this.panel4.Location = new System.Drawing.Point(454, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(278, 451);
+            this.panel4.Size = new System.Drawing.Size(278, 444);
             this.panel4.TabIndex = 21;
             // 
             // pictureBoxModel1
             // 
             this.pictureBoxModel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBoxModel1.Location = new System.Drawing.Point(0, 135);
+            this.pictureBoxModel1.Location = new System.Drawing.Point(0, 125);
             this.pictureBoxModel1.Name = "pictureBoxModel1";
-            this.pictureBoxModel1.Size = new System.Drawing.Size(94, 312);
+            this.pictureBoxModel1.Size = new System.Drawing.Size(94, 319);
             this.pictureBoxModel1.TabIndex = 25;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pictureBox1.Image = global::com.tk.dam.Properties.Resources.shui1;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 206);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 199);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(278, 245);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -482,7 +574,7 @@
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(250)))));
             this.panel5.Controls.Add(this.chartControl1);
             this.panel5.Controls.Add(this.label6);
-            this.panel5.Location = new System.Drawing.Point(728, 0);
+            this.panel5.Location = new System.Drawing.Point(738, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(444, 447);
             this.panel5.TabIndex = 23;
@@ -490,23 +582,23 @@
             // chartControl1
             // 
             this.chartControl1.BackColor = System.Drawing.Color.Transparent;
-            xyDiagram4.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram4.AxisY.VisibleInPanesSerializable = "-1";
-            xyDiagram4.DefaultPane.BackColor = System.Drawing.Color.Transparent;
-            xyDiagram4.DefaultPane.BorderColor = System.Drawing.Color.Transparent;
-            this.chartControl1.Diagram = xyDiagram4;
+            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram1.DefaultPane.BackColor = System.Drawing.Color.Transparent;
+            xyDiagram1.DefaultPane.BorderColor = System.Drawing.Color.Transparent;
+            this.chartControl1.Diagram = xyDiagram1;
             this.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            this.chartControl1.Location = new System.Drawing.Point(0, 65);
+            this.chartControl1.Location = new System.Drawing.Point(10, 65);
             this.chartControl1.Name = "chartControl1";
             this.chartControl1.PaletteName = "Yellow";
-            series4.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series4.Name = "Series 1";
-            lineSeriesView7.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series4.View = lineSeriesView7;
+            series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
+            series1.Name = "Series 1";
+            lineSeriesView1.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
+            series1.View = lineSeriesView1;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series4};
-            this.chartControl1.SeriesTemplate.View = lineSeriesView8;
-            this.chartControl1.Size = new System.Drawing.Size(441, 379);
+        series1};
+            this.chartControl1.SeriesTemplate.View = lineSeriesView2;
+            this.chartControl1.Size = new System.Drawing.Size(431, 379);
             this.chartControl1.TabIndex = 1;
             // 
             // label6
@@ -514,7 +606,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 24F);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(3, 4);
+            this.label6.Location = new System.Drawing.Point(3, 7);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(145, 39);
             this.label6.TabIndex = 0;
@@ -574,7 +666,7 @@
             this.panel6.Controls.Add(this.panel2);
             this.panel6.Location = new System.Drawing.Point(9, 113);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1169, 525);
+            this.panel6.Size = new System.Drawing.Size(1199, 525);
             this.panel6.TabIndex = 24;
             // 
             // Qx
@@ -595,8 +687,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pboxFigure2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxDirection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxDirectionW)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxDirectionWN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxDirectionSW)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxDirectionES)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxDirectionNE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxDirectionN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxDirectionE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxDirectionS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxDirection)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularGauge2)).EndInit();
@@ -608,10 +707,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularGauge1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.labelComponent1)).EndInit();
@@ -665,5 +764,12 @@
         private DevExpress.XtraCharts.ChartControl chartControl1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private PictureBoxModel pictureBoxModel1;
+        private System.Windows.Forms.PictureBox pboxDirectionW;
+        private System.Windows.Forms.PictureBox pboxDirectionN;
+        private System.Windows.Forms.PictureBox pboxDirectionE;
+        private System.Windows.Forms.PictureBox pboxDirectionWN;
+        private System.Windows.Forms.PictureBox pboxDirectionSW;
+        private System.Windows.Forms.PictureBox pboxDirectionES;
+        private System.Windows.Forms.PictureBox pboxDirectionNE;
     }
 }

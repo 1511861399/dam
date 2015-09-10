@@ -205,4 +205,37 @@
   <data name="tip" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bianji" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bianji.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shanchu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shanchu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wind_direction_arrow_e" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wind_direction_arrow_e.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wind_direction_arrow_es" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wind_direction_arrow_es.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wind_direction_arrow_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wind_direction_arrow_n.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wind_direction_arrow_ne" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wind_direction_arrow_ne.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wind_direction_arrow_s" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wind_direction_arrow_s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wind_direction_arrow_sw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wind_direction_arrow_sw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wind_direction_arrow_w" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wind_direction_arrow_w.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wind_direction_arrow_wn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wind_direction_arrow_wn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="xinjian" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xinjian.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
