@@ -58,9 +58,9 @@
             this.pboxDirectionN = new System.Windows.Forms.PictureBox();
             this.pboxDirectionE = new System.Windows.Forms.PictureBox();
             this.pboxDirectionS = new System.Windows.Forms.PictureBox();
+            this.pboxDirection = new System.Windows.Forms.PictureBox();
             this.lblDirection = new System.Windows.Forms.Label();
             this.lblPower = new System.Windows.Forms.Label();
-            this.pboxDirection = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.gaugeControl1 = new DevExpress.XtraGauges.Win.GaugeControl();
@@ -299,6 +299,8 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.AutoSize = true;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(150)))), ((int)(((byte)(145)))));
+            this.panel2.Controls.Add(this.lblPower);
+            this.panel2.Controls.Add(this.lblDirection);
             this.panel2.Controls.Add(this.pboxDirectionW);
             this.panel2.Controls.Add(this.pboxDirectionWN);
             this.panel2.Controls.Add(this.pboxDirectionSW);
@@ -308,8 +310,6 @@
             this.panel2.Controls.Add(this.pboxDirectionE);
             this.panel2.Controls.Add(this.pboxDirectionS);
             this.panel2.Controls.Add(this.pboxDirection);
-            this.panel2.Controls.Add(this.lblDirection);
-            this.panel2.Controls.Add(this.lblPower);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(258, 0);
             this.panel2.Name = "panel2";
@@ -404,28 +404,6 @@
             this.pboxDirectionS.TabStop = false;
             this.pboxDirectionS.Visible = false;
             // 
-            // lblDirection
-            // 
-            this.lblDirection.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.lblDirection.ForeColor = System.Drawing.Color.White;
-            this.lblDirection.Location = new System.Drawing.Point(43, 107);
-            this.lblDirection.Name = "lblDirection";
-            this.lblDirection.Size = new System.Drawing.Size(100, 17);
-            this.lblDirection.TabIndex = 6;
-            this.lblDirection.Text = "东北风";
-            this.lblDirection.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblPower
-            // 
-            this.lblPower.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.lblPower.ForeColor = System.Drawing.Color.White;
-            this.lblPower.Location = new System.Drawing.Point(43, 132);
-            this.lblPower.Name = "lblPower";
-            this.lblPower.Size = new System.Drawing.Size(100, 17);
-            this.lblPower.TabIndex = 7;
-            this.lblPower.Text = "4~6级";
-            this.lblPower.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pboxDirection
             // 
             this.pboxDirection.Image = global::com.tk.dam.Properties.Resources.wind_direction;
@@ -435,6 +413,28 @@
             this.pboxDirection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxDirection.TabIndex = 1;
             this.pboxDirection.TabStop = false;
+            // 
+            // lblDirection
+            // 
+            this.lblDirection.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.lblDirection.ForeColor = System.Drawing.Color.White;
+            this.lblDirection.Location = new System.Drawing.Point(45, 103);
+            this.lblDirection.Name = "lblDirection";
+            this.lblDirection.Size = new System.Drawing.Size(97, 21);
+            this.lblDirection.TabIndex = 6;
+            this.lblDirection.Text = "东北风";
+            this.lblDirection.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblPower
+            // 
+            this.lblPower.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.lblPower.ForeColor = System.Drawing.Color.White;
+            this.lblPower.Location = new System.Drawing.Point(57, 125);
+            this.lblPower.Name = "lblPower";
+            this.lblPower.Size = new System.Drawing.Size(70, 24);
+            this.lblPower.TabIndex = 7;
+            this.lblPower.Text = "4~6级";
+            this.lblPower.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
