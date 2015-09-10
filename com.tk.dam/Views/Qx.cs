@@ -121,18 +121,73 @@ namespace com.tk.dam.Views
             }
             else
             {
-                lblDirection.Text = root["direction1"].InnerText;
+                lblDirection.Text = root["direction1"].InnerText;                
                 lblPower.Text = root["power1"].InnerText.Replace("-", "~") + "级";
                 string figure = root["figure1"].InnerText;
                 imageFigure = getImage(figure, "180", "day");
             }
-            
+
+            InitDirection(lblDirection.Text);
             pboxFigure1.Image = imageFigure;
         }
 
-        private float getDirection(string direction)
+        private void InitDirection(string direction)
         {
-            return 45;
+            pboxDirectionN.Visible = false;
+            pboxDirectionNE.Visible = false;
+            pboxDirectionE.Visible = false;
+            pboxDirectionES.Visible = false;
+            pboxDirectionS.Visible = false;
+            pboxDirectionSW.Visible = false;
+            pboxDirectionW.Visible = false;
+            pboxDirectionWN.Visible = false;
+
+            if (direction.Contains("北"))
+            {
+                if (direction.Contains("西"))
+                {
+                    pboxDirectionWN.Visible = true;
+                    return;
+                }
+                else if (direction.Contains("东"))
+                {
+                    pboxDirectionNE.Visible = true;
+                    return;
+                }
+                else
+                {
+                    pboxDirectionN.Visible = true;
+                    return;
+                }
+            }
+            if(direction.Contains("南"))
+            {
+                if (direction.Contains("西"))
+                {
+                    pboxDirectionSW.Visible = true;
+                    return;
+                }
+                else if (direction.Contains("东"))
+                {
+                    pboxDirectionES.Visible = true;
+                    return;
+                }
+                else
+                {
+                    pboxDirectionS.Visible = true;
+                    return;
+                }
+            }
+            if (direction.Contains("西"))
+            {
+                pboxDirectionW.Visible = true;
+                return;
+            }
+            if (direction.Contains("东"))
+            {
+                pboxDirectionE.Visible = true;
+                return;
+            }
         }
 
         /// <summary>

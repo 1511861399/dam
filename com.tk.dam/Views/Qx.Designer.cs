@@ -307,9 +307,9 @@
             this.panel2.Controls.Add(this.pboxDirectionN);
             this.panel2.Controls.Add(this.pboxDirectionE);
             this.panel2.Controls.Add(this.pboxDirectionS);
+            this.panel2.Controls.Add(this.pboxDirection);
             this.panel2.Controls.Add(this.lblDirection);
             this.panel2.Controls.Add(this.lblPower);
-            this.panel2.Controls.Add(this.pboxDirection);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(258, 0);
             this.panel2.Name = "panel2";
@@ -325,6 +325,7 @@
             this.pboxDirectionW.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxDirectionW.TabIndex = 8;
             this.pboxDirectionW.TabStop = false;
+            this.pboxDirectionW.Visible = false;
             // 
             // pboxDirectionWN
             // 
@@ -335,6 +336,7 @@
             this.pboxDirectionWN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxDirectionWN.TabIndex = 8;
             this.pboxDirectionWN.TabStop = false;
+            this.pboxDirectionWN.Visible = false;
             // 
             // pboxDirectionSW
             // 
@@ -345,6 +347,7 @@
             this.pboxDirectionSW.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxDirectionSW.TabIndex = 8;
             this.pboxDirectionSW.TabStop = false;
+            this.pboxDirectionSW.Visible = false;
             // 
             // pboxDirectionES
             // 
@@ -355,6 +358,7 @@
             this.pboxDirectionES.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxDirectionES.TabIndex = 8;
             this.pboxDirectionES.TabStop = false;
+            this.pboxDirectionES.Visible = false;
             // 
             // pboxDirectionNE
             // 
@@ -365,6 +369,7 @@
             this.pboxDirectionNE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxDirectionNE.TabIndex = 8;
             this.pboxDirectionNE.TabStop = false;
+            this.pboxDirectionNE.Visible = false;
             // 
             // pboxDirectionN
             // 
@@ -375,6 +380,7 @@
             this.pboxDirectionN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxDirectionN.TabIndex = 8;
             this.pboxDirectionN.TabStop = false;
+            this.pboxDirectionN.Visible = false;
             // 
             // pboxDirectionE
             // 
@@ -385,6 +391,7 @@
             this.pboxDirectionE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxDirectionE.TabIndex = 8;
             this.pboxDirectionE.TabStop = false;
+            this.pboxDirectionE.Visible = false;
             // 
             // pboxDirectionS
             // 
@@ -395,28 +402,29 @@
             this.pboxDirectionS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxDirectionS.TabIndex = 8;
             this.pboxDirectionS.TabStop = false;
+            this.pboxDirectionS.Visible = false;
             // 
             // lblDirection
             // 
-            this.lblDirection.AutoSize = true;
             this.lblDirection.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblDirection.ForeColor = System.Drawing.Color.White;
-            this.lblDirection.Location = new System.Drawing.Point(64, 107);
+            this.lblDirection.Location = new System.Drawing.Point(43, 107);
             this.lblDirection.Name = "lblDirection";
-            this.lblDirection.Size = new System.Drawing.Size(50, 17);
+            this.lblDirection.Size = new System.Drawing.Size(100, 17);
             this.lblDirection.TabIndex = 6;
             this.lblDirection.Text = "东北风";
+            this.lblDirection.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblPower
             // 
-            this.lblPower.AutoSize = true;
             this.lblPower.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblPower.ForeColor = System.Drawing.Color.White;
-            this.lblPower.Location = new System.Drawing.Point(69, 134);
+            this.lblPower.Location = new System.Drawing.Point(43, 132);
             this.lblPower.Name = "lblPower";
-            this.lblPower.Size = new System.Drawing.Size(48, 17);
+            this.lblPower.Size = new System.Drawing.Size(100, 17);
             this.lblPower.TabIndex = 7;
             this.lblPower.Text = "4~6级";
+            this.lblPower.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pboxDirection
             // 
@@ -588,7 +596,7 @@
             xyDiagram1.DefaultPane.BorderColor = System.Drawing.Color.Transparent;
             this.chartControl1.Diagram = xyDiagram1;
             this.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            this.chartControl1.Location = new System.Drawing.Point(10, 65);
+            this.chartControl1.Location = new System.Drawing.Point(9, 65);
             this.chartControl1.Name = "chartControl1";
             this.chartControl1.PaletteName = "Yellow";
             series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
