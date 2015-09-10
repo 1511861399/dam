@@ -123,16 +123,6 @@ namespace com.tk.dam.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap GNSSXB1 {
-            get {
-                object obj = ResourceManager.GetObject("GNSSXB1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap icon_about32 {
             get {
                 object obj = ResourceManager.GetObject("icon_about32", resourceCulture);

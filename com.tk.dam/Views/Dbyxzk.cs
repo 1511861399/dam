@@ -155,10 +155,10 @@ namespace com.tk.dam.Views
                 pb.Tag = d.Id;
                 pb.BackColor = Color.Transparent;
                 pb.Image = global::com.tk.dam.Properties.Resources.GNSSXB;
-                pb.Parent = mDamPic;
                 pb.Size = new Size(24, 19);
                 pb.Location = new Point(x, y);
                 this.mDamPic.Controls.Add(pb);
+                pb.Parent = mDamPic;
                 pb.BringToFront();
             }
         }

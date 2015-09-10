@@ -324,7 +324,6 @@
     <None Include="Resources\shui2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\GNSSXB.jpg" />
     <Content Include="Resources\GNSSXB.png" />
     <Content Include="Resources\tip.png" />
   </ItemGroup>

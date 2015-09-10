@@ -38,19 +38,17 @@
             DevExpress.XtraCharts.LineSeriesView lineSeriesView1 = new DevExpress.XtraCharts.LineSeriesView();
             DevExpress.XtraCharts.LineSeriesView lineSeriesView2 = new DevExpress.XtraCharts.LineSeriesView();
             this.mPanelMain = new System.Windows.Forms.Panel();
-            this.mPanelPic = new DevExpress.XtraEditors.PanelControl();
             this.mPanelChart = new System.Windows.Forms.Panel();
             this.mainChart = new DevExpress.XtraCharts.ChartControl();
+            this.mPanelPic = new DevExpress.XtraEditors.PanelControl();
+            this.mPbCross = new System.Windows.Forms.PictureBox();
             this.mDamPic = new System.Windows.Forms.PictureBox();
             this.mPanelPopChart = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.mPopChart = new DevExpress.XtraCharts.ChartControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.mChartTitle = new System.Windows.Forms.Label();
-            this.mPbCross = new System.Windows.Forms.PictureBox();
             this.mPanelMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mPanelPic)).BeginInit();
-            this.mPanelPic.SuspendLayout();
             this.mPanelChart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
@@ -58,6 +56,9 @@
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mPanelPic)).BeginInit();
+            this.mPanelPic.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mPbCross)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mDamPic)).BeginInit();
             this.mPanelPopChart.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -67,7 +68,6 @@
             ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(lineSeriesView2)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mPbCross)).BeginInit();
             this.SuspendLayout();
             // 
             // mPanelMain
@@ -81,19 +81,6 @@
             this.mPanelMain.Name = "mPanelMain";
             this.mPanelMain.Size = new System.Drawing.Size(1012, 400);
             this.mPanelMain.TabIndex = 2;
-            // 
-            // mPanelPic
-            // 
-            this.mPanelPic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mPanelPic.AutoSize = true;
-            this.mPanelPic.Controls.Add(this.mPbCross);
-            this.mPanelPic.Controls.Add(this.mDamPic);
-            this.mPanelPic.Location = new System.Drawing.Point(0, 0);
-            this.mPanelPic.Name = "mPanelPic";
-            this.mPanelPic.Size = new System.Drawing.Size(738, 394);
-            this.mPanelPic.TabIndex = 0;
             // 
             // mPanelChart
             // 
@@ -127,23 +114,27 @@
             xyDiagram1.AxisY.Color = System.Drawing.Color.White;
             xyDiagram1.AxisY.GridLines.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             xyDiagram1.AxisY.GridLines.Visible = false;
+            xyDiagram1.AxisY.Label.TextAlignment = System.Drawing.StringAlignment.Far;
             xyDiagram1.AxisY.Label.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             xyDiagram1.AxisY.Label.TextPattern = "{V}mm";
             xyDiagram1.AxisY.MinorCount = 8;
+            xyDiagram1.AxisY.Tickmarks.CrossAxis = true;
+            xyDiagram1.AxisY.Tickmarks.Length = 16;
+            xyDiagram1.AxisY.Tickmarks.MinorLength = 8;
             xyDiagram1.AxisY.Title.Antialiasing = false;
             xyDiagram1.AxisY.Title.Text = "";
             xyDiagram1.AxisY.Title.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
             xyDiagram1.AxisY.VisualRange.Auto = false;
             xyDiagram1.AxisY.VisualRange.AutoSideMargins = false;
-            xyDiagram1.AxisY.VisualRange.MaxValueSerializable = "40";
-            xyDiagram1.AxisY.VisualRange.MinValueSerializable = "-40";
-            xyDiagram1.AxisY.VisualRange.SideMarginsValue = 0.88000000000000012D;
+            xyDiagram1.AxisY.VisualRange.MaxValueSerializable = "20";
+            xyDiagram1.AxisY.VisualRange.MinValueSerializable = "0";
+            xyDiagram1.AxisY.VisualRange.SideMarginsValue = 0D;
             xyDiagram1.AxisY.WholeRange.Auto = false;
             xyDiagram1.AxisY.WholeRange.AutoSideMargins = false;
-            xyDiagram1.AxisY.WholeRange.MaxValueSerializable = "40";
-            xyDiagram1.AxisY.WholeRange.MinValueSerializable = "-40";
-            xyDiagram1.AxisY.WholeRange.SideMarginsValue = 0.88000000000000012D;
+            xyDiagram1.AxisY.WholeRange.MaxValueSerializable = "20";
+            xyDiagram1.AxisY.WholeRange.MinValueSerializable = "0";
+            xyDiagram1.AxisY.WholeRange.SideMarginsValue = 0D;
             xyDiagram1.DefaultPane.BackColor = System.Drawing.Color.Transparent;
             xyDiagram1.DefaultPane.BorderVisible = false;
             xyDiagram1.PaneDistance = 50;
@@ -177,9 +168,32 @@
         series1,
         series2};
             this.mainChart.SideBySideBarDistanceFixed = 40;
-            this.mainChart.SideBySideBarDistanceVariable = 100D;
             this.mainChart.Size = new System.Drawing.Size(265, 395);
             this.mainChart.TabIndex = 0;
+            // 
+            // mPanelPic
+            // 
+            this.mPanelPic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mPanelPic.AutoSize = true;
+            this.mPanelPic.Controls.Add(this.mPbCross);
+            this.mPanelPic.Controls.Add(this.mDamPic);
+            this.mPanelPic.Location = new System.Drawing.Point(0, 0);
+            this.mPanelPic.Name = "mPanelPic";
+            this.mPanelPic.Size = new System.Drawing.Size(738, 394);
+            this.mPanelPic.TabIndex = 0;
+            // 
+            // mPbCross
+            // 
+            this.mPbCross.BackColor = System.Drawing.Color.Transparent;
+            this.mPbCross.BackgroundImage = global::com.tk.dam.Properties.Resources.tip;
+            this.mPbCross.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.mPbCross.Location = new System.Drawing.Point(398, 146);
+            this.mPbCross.Name = "mPbCross";
+            this.mPbCross.Size = new System.Drawing.Size(31, 16);
+            this.mPbCross.TabIndex = 1;
+            this.mPbCross.TabStop = false;
             // 
             // mDamPic
             // 
@@ -301,17 +315,6 @@
             this.mChartTitle.TabIndex = 0;
             this.mChartTitle.Text = "位移监控点2";
             // 
-            // mPbCross
-            // 
-            this.mPbCross.BackColor = System.Drawing.Color.Transparent;
-            this.mPbCross.BackgroundImage = global::com.tk.dam.Properties.Resources.tip;
-            this.mPbCross.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.mPbCross.Location = new System.Drawing.Point(398, 146);
-            this.mPbCross.Name = "mPbCross";
-            this.mPbCross.Size = new System.Drawing.Size(31, 16);
-            this.mPbCross.TabIndex = 1;
-            this.mPbCross.TabStop = false;
-            // 
             // Dbyxzk
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(206)))));
@@ -326,8 +329,6 @@
             this.Click += new System.EventHandler(this.Dbyxzk_Click);
             this.mPanelMain.ResumeLayout(false);
             this.mPanelMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mPanelPic)).EndInit();
-            this.mPanelPic.ResumeLayout(false);
             this.mPanelChart.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).EndInit();
@@ -335,6 +336,9 @@
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mPanelPic)).EndInit();
+            this.mPanelPic.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.mPbCross)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mDamPic)).EndInit();
             this.mPanelPopChart.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -345,7 +349,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.mPopChart)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mPbCross)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
