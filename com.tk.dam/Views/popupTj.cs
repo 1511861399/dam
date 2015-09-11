@@ -11,9 +11,8 @@ using DevExpress.XtraBars.Docking2010;
 
 namespace com.tk.dam.Views
 {
-    public partial class popupTj : XtraUserControl
+    public partial class popupTj : PopupUserControlBase
     {
-        MainForm mParentForm;
         IList<TjItemEnum> mSelectedTjItems = new List<TjItemEnum>();
 
         public popupTj()
@@ -24,22 +23,20 @@ namespace com.tk.dam.Views
 
         private void popupTj_Load(object sender, EventArgs e)
         {
-            mParentForm = this.ParentForm as MainForm;
-
         }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
             this.tcMain.Focus();
-            mParentForm.SelectedTjItems = mSelectedTjItems;
-            mParentForm.HidenFlyout();
+            MainForm.SelectedTjItems = mSelectedTjItems;
+            MainForm.HidenFlyout();
 
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.tcMain.Focus();
-            mParentForm.HidenFlyout();
+            MainForm.HidenFlyout();
         }
 
         private void tileItemSjdy_ItemClick(object sender, TileItemEventArgs e)
@@ -69,9 +66,9 @@ namespace com.tk.dam.Views
 
         public void Reload()
         {
-            if (mParentForm != null)
+            if (MainForm != null)
             {
-                mSelectedTjItems = mParentForm.SelectedTjItems;
+                mSelectedTjItems = MainForm.SelectedTjItems;
                 initTileItem(tileItemSjdy, mSelectedTjItems.Contains(TjItemEnum.数据打印));
                 initTileItem(tileItemNbjc, mSelectedTjItems.Contains(TjItemEnum.内部监测));
                 initTileItem(tileItemKqys, mSelectedTjItems.Contains(TjItemEnum.库区雨水));

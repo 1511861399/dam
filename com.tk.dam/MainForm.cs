@@ -10,6 +10,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using com.tk.dam.Views;
 using DevExpress.Utils;
+using com.tk.dam.Entity;
 
 namespace com.tk.dam
 {
@@ -20,6 +21,8 @@ namespace com.tk.dam
         DelegateAction mThemeAction;
         Document mCurrentDocument;
         public bool IsPicTheme = false;
+        popupTj mPopupTjControl = new popupTj();
+        popupYHEdit mPopupYHEditControl = new popupYHEdit();
 
         public MainForm()
         {
@@ -57,7 +60,8 @@ namespace com.tk.dam
             mThemeAction.Image = Properties.Resources.icon_pic32;
             mainWindowsUIView.ContentContainerActions.Add(mThemeAction);
 
-            mainWindowsUIView.AddDocument(new popupTj());
+            mainWindowsUIView.AddDocument(mPopupTjControl);
+            mainWindowsUIView.AddDocument(mPopupYHEditControl);
         }
 
 
@@ -104,7 +108,10 @@ namespace com.tk.dam
 
         private void mainWindowsUIView_NavigatedTo(object sender, NavigationEventArgs e)
         {
-            mCurrentDocument = e.Document;
+            if (e.Document != popupTjDocument && e.Document != popupYHEditDocument)
+            {
+                mCurrentDocument = e.Document;
+            }
             if (e.Document == null)
             {
                 mIsCanShowNavBar = true;
@@ -116,16 +123,16 @@ namespace com.tk.dam
             else
             {
                 mIsCanShowNavBar = true;
-                if (IsPicTheme && e.Document != popupTjDocument)
+                if (IsPicTheme && e.Document != popupTjDocument && e.Document != popupYHEditDocument)
                 {
                     mainWindowsUIView.BackgroundImage = Properties.Resources.bg02;
                 }
-                if (e.Document == popupTjDocument)
+                if (e.Document == popupTjDocument || e.Document == popupYHEditDocument)
                 {
+                    mIsCanShowNavBar = false;
                     if (e.Document.Control.GetType() == typeof(popupTj))
                     {
-                        mIsCanShowNavBar = false;
-                        ((popupTj)e.Document.Control).Reload();
+                        mPopupTjControl.Reload();
                     }
                 }
             }          
@@ -149,7 +156,7 @@ namespace com.tk.dam
         }
 
         private void tileZJ_Click(object sender, TileClickEventArgs e)
-        {
+        {  
             mainWindowsUIView.ActivateContainer(popupTjFlyout);
             e.Handled = true;
         }
@@ -233,6 +240,7 @@ namespace com.tk.dam
             }
             
         }
+
         #region 外部调用接口
       
         public IList<TjItemEnum> SelectedTjItems
@@ -275,6 +283,52 @@ namespace com.tk.dam
         public void HidenFlyout()
         {
             mainWindowsUIView.HideFlyout();
+        }
+
+        /// <summary>
+        /// 显示用户编辑界面
+        /// </summary>
+        /// <param name="yh">用户为空时表示新增用户</param>
+        public void ShowYHEditFlyout(Yh yh)
+        {
+            mPopupYHEditControl.SetCurrentYH(yh);
+            mainWindowsUIView.ActivateContainer(popupYHEditFlyout);
+        }
+
+        /// <summary>
+        /// 显示删除用户确认界面
+        /// </summary>
+        /// <param name="yh">待删除的用户</param>
+        public void ShowDeleteYHConfirm(Yh yh)
+        {
+            var deleteYHAction = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutAction()
+            {
+                Caption = "删除确认",
+                Description = "确定要删除用xxx户吗?"
+            };
+            deleteYHAction.Commands.Add(FlyoutCommand.Yes);
+            deleteYHAction.Commands.Add(FlyoutCommand.No);
+            closeAppFlyout.Action = deleteYHAction;
+            if (mainWindowsUIView.ShowFlyoutDialog(closeAppFlyout) == DialogResult.Yes)
+            {
+                ((Yhgl)mCurrentDocument.Control).DeleteYH(yh);
+            }
+        }
+
+        /// <summary>
+        ///  更新用户
+        /// </summary>
+        /// <param name="yh">用户对象</param>
+        /// <param name="isNew">是否新增</param>
+        public void UpdateYHList(Yh yh,bool isNew)
+        {
+            if (mCurrentDocument != null)
+            {
+                if (mCurrentDocument.Control.GetType() == typeof(Yhgl))
+                {
+                    ((Yhgl)mCurrentDocument.Control).UpdateYHList(yh, isNew);
+                }
+            }
         }
 
         #endregion

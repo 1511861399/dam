@@ -13,7 +13,7 @@ namespace com.tk.dam.Views
 {
     public partial class XtraUserControlBase : DevExpress.XtraEditors.XtraUserControl
     {
-        MainForm mParentForm;
+        public MainForm MainForm;
         public XtraUserControlBase()
         {
             InitializeComponent();
@@ -23,13 +23,13 @@ namespace com.tk.dam.Views
 
         private void XtraUserControlBase_Load(object sender, EventArgs e)
         {
-            mParentForm = this.ParentForm as MainForm;
+            MainForm = this.ParentForm as MainForm;
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            if (mParentForm != null && mParentForm.IsPicTheme)
+            if (MainForm != null && MainForm.IsPicTheme)
             {
                 DocumentContainer parent = Parent as DocumentContainer;
                 if (parent != null)

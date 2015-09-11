@@ -13,20 +13,49 @@ namespace com.tk.dam.Views
 {
     public partial class Yhgl : XtraUserControlBase
     {
+        IList<Yh> mYhList = new List<Yh>();
+
         public Yhgl()
         {
             InitializeComponent();
+            gridColumn_xh.Caption = "\n序号\n "; //调整ColumnHeader的高度
             BindingGrid();
         }
 
-        private void BindingGrid()
+        /// <summary>
+        ///  更新用户
+        /// </summary>
+        /// <param name="yh">用户对象</param>
+        /// <param name="isNew">是否新增</param>
+        public void UpdateYHList(Yh yh, bool isNew)
         {
-            IList<Yh> mYhList = new List<Yh>();
-            for (int i = 1; i <= 12; i++)
+            if (isNew)
+            {
+                mYhList.Add(yh);
+            }
+            else
+            {
+                //update
+            }
+            gcMain.RefreshDataSource();
+        }
+
+        /// <summary>
+        /// 删除用户
+        /// </summary>
+        /// <param name="yh">用户</param>
+        public void DeleteYH(Yh yh)
+        { 
+            //TODO:更新列表
+        }
+
+        private void BindingGrid()
+        {           
+            for (int i = 1; i <= 6; i++)
             {
                 Yh item = new Yh()
                 {
-                    Xh = "Xh" + i,
+                    Xh = i.ToString(),
                     Xm = "Xm" + i,
                     Dlm = "Dlm" + i,
                     Xb = "Xb" + i,
@@ -39,6 +68,21 @@ namespace com.tk.dam.Views
                 mYhList.Add(item);
             }
             gcMain.DataSource = mYhList;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            MainForm.ShowYHEditFlyout(null);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            MainForm.ShowDeleteYHConfirm(new Yh());
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            MainForm.ShowYHEditFlyout(null);
         }
     }
 }
