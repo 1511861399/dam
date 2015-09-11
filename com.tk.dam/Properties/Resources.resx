@@ -238,4 +238,55 @@
   <data name="xinjian" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\xinjian.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_alarm64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_alarm64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_color32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_color32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_pic32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_pic32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="transparent_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\transparent_bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="内部监测" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\内部监测.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="卫星状态" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\卫星状态.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="安全等级" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\安全等级.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="工程介绍" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\工程介绍.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="库区雨水" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\库区雨水.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="形变监测" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\形变监测.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="数据打印" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\数据打印.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="水文气象" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\水文气象.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="用户管理" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\用户管理.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="知识介绍" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\知识介绍.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="视频" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\视频.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="设备状态" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\设备状态.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="风向" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\风向.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

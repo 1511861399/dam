@@ -30,61 +30,112 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame1 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement10 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement11 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement12 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame2 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement13 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement14 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement15 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement16 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement17 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement18 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement19 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement20 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement21 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame3 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement22 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement23 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame4 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement24 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement25 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement26 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement27 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement28 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement29 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement30 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement31 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement32 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement33 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement34 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement35 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement36 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement37 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement38 = new DevExpress.XtraEditors.TileItemElement();
             this.mainDocumentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.icoImageList32 = new System.Windows.Forms.ImageList(this.components);
             this.mainWindowsUIView = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.WindowsUIView(this.components);
             this.mainTileContainer = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileContainer(this.components);
-            this.tileDBYXZT = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
-            this.documentDBYXZT = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
-            this.tileYHGL = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
-            this.documentYHGL = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.tileXBJC = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.documentXBJC = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
-            this.tileQX = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
-            this.documentQX = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
-            this.tileSBZT = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
-            this.documentSBZT = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.tileDBYXZT = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentDBYXZT = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.tileWXZT = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.documentWXZT = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.tileSBZT = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentSBZT = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.tileYHGL = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentYHGL = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.tileQX = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentSWQX = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.tileSP = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.documentSP = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.tileSJDY = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentSJDY = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.tileKQYS = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentKQYS = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.tileZHJS = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentZHJS = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.tileNBJC = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentNBJC = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.tileGCJS = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentGCJS = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.tileZJ = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.closeAppFlyout = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Flyout(this.components);
+            this.popupTjFlyout = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Flyout(this.components);
+            this.popupTjDocument = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.documentZJ = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.mainDocumentManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainWindowsUIView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainTileContainer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileDBYXZT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentDBYXZT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileYHGL)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentYHGL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileXBJC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentXBJC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileQX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentQX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileSBZT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentSBZT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileDBYXZT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentDBYXZT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileWXZT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentWXZT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileSBZT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentSBZT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileYHGL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentYHGL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileQX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentSWQX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentSP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileSJDY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentSJDY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileKQYS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentKQYS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileZHJS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentZHJS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileNBJC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentNBJC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileGCJS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentGCJS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileZJ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closeAppFlyout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupTjFlyout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupTjDocument)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentZJ)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,16 +162,29 @@
             this.mainWindowsUIView.BackgroundImageLayoutMode = DevExpress.Utils.Drawing.ImageLayoutMode.Stretch;
             this.mainWindowsUIView.Caption = "大坝安全检测系统";
             this.mainWindowsUIView.ContentContainers.AddRange(new DevExpress.XtraBars.Docking2010.Views.WindowsUI.IContentContainer[] {
-            this.mainTileContainer});
+            this.mainTileContainer,
+            this.closeAppFlyout,
+            this.popupTjFlyout});
             this.mainWindowsUIView.Documents.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseDocument[] {
             this.documentDBYXZT,
             this.documentYHGL,
             this.documentXBJC,
-            this.documentQX,
+            this.documentSWQX,
             this.documentSBZT,
             this.documentWXZT,
             this.documentSP,
-            this.documentZJ});
+            this.documentZJ,
+            this.documentSJDY,
+            this.documentKQYS,
+            this.documentZHJS,
+            this.documentNBJC,
+            this.documentGCJS,
+            this.popupTjDocument});
+            this.mainWindowsUIView.FlyoutProperties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.mainWindowsUIView.FlyoutProperties.Appearance.BackColor2 = System.Drawing.Color.Transparent;
+            this.mainWindowsUIView.FlyoutProperties.Appearance.BorderColor = System.Drawing.Color.Transparent;
+            this.mainWindowsUIView.FlyoutProperties.Appearance.Options.UseBackColor = true;
+            this.mainWindowsUIView.FlyoutProperties.Appearance.Options.UseBorderColor = true;
             this.mainWindowsUIView.TileContainerProperties.RowCount = 3;
             this.mainWindowsUIView.Tiles.AddRange(new DevExpress.XtraBars.Docking2010.Views.WindowsUI.BaseTile[] {
             this.tileDBYXZT,
@@ -130,7 +194,12 @@
             this.tileSBZT,
             this.tileWXZT,
             this.tileSP,
-            this.tileZJ});
+            this.tileZJ,
+            this.tileSJDY,
+            this.tileKQYS,
+            this.tileZHJS,
+            this.tileNBJC,
+            this.tileGCJS});
             this.mainWindowsUIView.NavigationBarsShowing += new DevExpress.XtraBars.Docking2010.Views.WindowsUI.NavigationBarsCancelEventHandler(this.mainWindowsUIView_NavigationBarsShowing);
             this.mainWindowsUIView.ContentContainerActionCustomization += new DevExpress.XtraBars.Docking2010.Views.WindowsUI.ContentContainerActionCustomizationEventHandler(this.mainWindowsUIView_ContentContainerActionCustomization);
             this.mainWindowsUIView.NavigatedTo += new DevExpress.XtraBars.Docking2010.Views.WindowsUI.NavigationEventHandler(this.mainWindowsUIView_NavigatedTo);
@@ -145,14 +214,107 @@
             this.tileDBYXZT,
             this.tileYHGL,
             this.tileXBJC,
-            this.tileQX,
-            this.tileSBZT,
             this.tileWXZT,
+            this.tileSBZT,
+            this.tileQX,
             this.tileSP,
+            this.tileSJDY,
+            this.tileKQYS,
+            this.tileZHJS,
+            this.tileNBJC,
+            this.tileGCJS,
             this.tileZJ});
             this.mainTileContainer.Name = "mainTileContainer";
-            this.mainTileContainer.Position = 269;
+            this.mainTileContainer.Position = 864;
             this.mainTileContainer.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.mainTileContainer_ButtonClick);
+            // 
+            // tileXBJC
+            // 
+            this.tileXBJC.Appearances.Normal.BackColor = System.Drawing.Color.Transparent;
+            this.tileXBJC.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
+            this.tileXBJC.Appearances.Normal.Image = global::com.tk.dam.Properties.Resources.tile_bg_xbjc;
+            this.tileXBJC.Appearances.Normal.Options.UseBackColor = true;
+            this.tileXBJC.Appearances.Normal.Options.UseBorderColor = true;
+            this.tileXBJC.Appearances.Normal.Options.UseImage = true;
+            this.tileXBJC.Document = this.documentXBJC;
+            tileItemElement7.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold);
+            tileItemElement7.Appearance.Normal.Options.UseFont = true;
+            tileItemElement7.Text = "形变监测";
+            tileItemElement7.TextLocation = new System.Drawing.Point(0, 30);
+            tileItemElement8.Image = global::com.tk.dam.Properties.Resources.形变监测;
+            tileItemElement8.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            tileItemElement8.ImageLocation = new System.Drawing.Point(-20, 23);
+            tileItemElement8.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileItemElement8.ImageSize = new System.Drawing.Size(64, 64);
+            tileItemElement8.Text = "";
+            tileItemElement8.TextLocation = new System.Drawing.Point(0, 30);
+            tileItemElement9.Appearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(110)))), ((int)(((byte)(1)))));
+            tileItemElement9.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 18F);
+            tileItemElement9.Appearance.Normal.Options.UseBackColor = true;
+            tileItemElement9.Appearance.Normal.Options.UseFont = true;
+            tileItemElement9.Height = 48;
+            tileItemElement9.StretchHorizontal = true;
+            tileItemElement9.Text = "沉降:5mm    位移:3mm";
+            tileItemElement9.TextLocation = new System.Drawing.Point(0, 6);
+            this.tileXBJC.Elements.Add(tileItemElement7);
+            this.tileXBJC.Elements.Add(tileItemElement8);
+            this.tileXBJC.Elements.Add(tileItemElement9);
+            tileItemElement10.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold);
+            tileItemElement10.Appearance.Normal.Options.UseFont = true;
+            tileItemElement10.Text = "形变监测";
+            tileItemElement10.TextLocation = new System.Drawing.Point(0, 30);
+            tileItemElement11.Image = global::com.tk.dam.Properties.Resources.形变监测;
+            tileItemElement11.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            tileItemElement11.ImageLocation = new System.Drawing.Point(-20, 23);
+            tileItemElement11.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileItemElement11.ImageSize = new System.Drawing.Size(64, 64);
+            tileItemElement11.Text = "";
+            tileItemElement11.TextLocation = new System.Drawing.Point(0, 30);
+            tileItemElement12.Appearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(110)))), ((int)(((byte)(1)))));
+            tileItemElement12.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 18F);
+            tileItemElement12.Appearance.Normal.Options.UseBackColor = true;
+            tileItemElement12.Appearance.Normal.Options.UseFont = true;
+            tileItemElement12.Height = 48;
+            tileItemElement12.StretchHorizontal = true;
+            tileItemElement12.Text = "沉降:5mm    位移:3mm";
+            tileItemElement12.TextLocation = new System.Drawing.Point(0, 6);
+            tileItemFrame1.Elements.Add(tileItemElement10);
+            tileItemFrame1.Elements.Add(tileItemElement11);
+            tileItemFrame1.Elements.Add(tileItemElement12);
+            tileItemFrame1.Interval = 15000;
+            tileItemElement13.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold);
+            tileItemElement13.Appearance.Normal.Options.UseFont = true;
+            tileItemElement13.Text = "形变监测";
+            tileItemElement13.TextLocation = new System.Drawing.Point(0, 30);
+            tileItemElement14.Image = global::com.tk.dam.Properties.Resources.形变监测;
+            tileItemElement14.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            tileItemElement14.ImageLocation = new System.Drawing.Point(-20, 23);
+            tileItemElement14.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileItemElement14.ImageSize = new System.Drawing.Size(64, 64);
+            tileItemElement14.Text = "";
+            tileItemElement14.TextLocation = new System.Drawing.Point(0, 30);
+            tileItemElement15.Appearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(110)))), ((int)(((byte)(1)))));
+            tileItemElement15.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 18F);
+            tileItemElement15.Appearance.Normal.Options.UseBackColor = true;
+            tileItemElement15.Appearance.Normal.Options.UseFont = true;
+            tileItemElement15.Height = 48;
+            tileItemElement15.StretchHorizontal = true;
+            tileItemElement15.Text = "沉降:4mm    位移:2mm";
+            tileItemElement15.TextLocation = new System.Drawing.Point(0, 6);
+            tileItemFrame2.Elements.Add(tileItemElement13);
+            tileItemFrame2.Elements.Add(tileItemElement14);
+            tileItemFrame2.Elements.Add(tileItemElement15);
+            tileItemFrame2.Interval = 25000;
+            this.tileXBJC.Frames.Add(tileItemFrame1);
+            this.tileXBJC.Frames.Add(tileItemFrame2);
+            this.mainTileContainer.SetID(this.tileXBJC, 2);
+            this.tileXBJC.Name = "tileXBJC";
+            this.tileXBJC.Properties.AllowCheck = DevExpress.Utils.DefaultBoolean.False;
+            // 
+            // documentXBJC
+            // 
+            this.documentXBJC.Caption = "形变监测";
+            this.documentXBJC.ControlName = "documentXBJC";
             // 
             // tileDBYXZT
             // 
@@ -167,7 +329,7 @@
             tileItemElement1.Appearance.Normal.Options.UseFont = true;
             tileItemElement1.Text = "安全等级";
             tileItemElement1.TextLocation = new System.Drawing.Point(0, 60);
-            tileItemElement2.Image = global::com.tk.dam.Properties.Resources.icon_aqdj64;
+            tileItemElement2.Image = global::com.tk.dam.Properties.Resources.安全等级;
             tileItemElement2.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
             tileItemElement2.ImageLocation = new System.Drawing.Point(-20, 60);
             tileItemElement2.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
@@ -183,13 +345,96 @@
             this.tileDBYXZT.Elements.Add(tileItemElement1);
             this.tileDBYXZT.Elements.Add(tileItemElement2);
             this.tileDBYXZT.Elements.Add(tileItemElement3);
+            this.mainTileContainer.SetID(this.tileDBYXZT, 1);
             this.tileDBYXZT.Name = "tileDBYXZT";
+            this.tileDBYXZT.Properties.AllowCheck = DevExpress.Utils.DefaultBoolean.False;
             this.tileDBYXZT.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Large;
             // 
             // documentDBYXZT
             // 
             this.documentDBYXZT.Caption = "大坝运行状态";
             this.documentDBYXZT.ControlName = "documentDBYXZT";
+            // 
+            // tileWXZT
+            // 
+            this.tileWXZT.Appearances.Normal.BackColor = System.Drawing.Color.Transparent;
+            this.tileWXZT.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
+            this.tileWXZT.Appearances.Normal.Image = global::com.tk.dam.Properties.Resources.tile_bg_wxzt;
+            this.tileWXZT.Appearances.Normal.Options.UseBackColor = true;
+            this.tileWXZT.Appearances.Normal.Options.UseBorderColor = true;
+            this.tileWXZT.Appearances.Normal.Options.UseImage = true;
+            this.tileWXZT.Document = this.documentWXZT;
+            tileItemElement16.Appearance.Normal.BackColor = System.Drawing.Color.Transparent;
+            tileItemElement16.Appearance.Normal.BackColor2 = System.Drawing.Color.Transparent;
+            tileItemElement16.Appearance.Normal.BorderColor = System.Drawing.Color.Transparent;
+            tileItemElement16.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold);
+            tileItemElement16.Appearance.Normal.Options.UseBackColor = true;
+            tileItemElement16.Appearance.Normal.Options.UseBorderColor = true;
+            tileItemElement16.Appearance.Normal.Options.UseFont = true;
+            tileItemElement16.Image = global::com.tk.dam.Properties.Resources.卫星状态;
+            tileItemElement16.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            tileItemElement16.ImageLocation = new System.Drawing.Point(-20, 25);
+            tileItemElement16.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileItemElement16.ImageSize = new System.Drawing.Size(64, 64);
+            tileItemElement16.Text = "卫星状态";
+            tileItemElement16.TextLocation = new System.Drawing.Point(0, 30);
+            tileItemElement17.Appearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(158)))));
+            tileItemElement17.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 18F);
+            tileItemElement17.Appearance.Normal.Options.UseBackColor = true;
+            tileItemElement17.Appearance.Normal.Options.UseFont = true;
+            tileItemElement17.Height = 48;
+            tileItemElement17.StretchHorizontal = true;
+            tileItemElement17.Text = "BDS:8  GPS:5   GLO:4   SBAS:4";
+            tileItemElement17.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            tileItemElement17.TextLocation = new System.Drawing.Point(0, 6);
+            this.tileWXZT.Elements.Add(tileItemElement16);
+            this.tileWXZT.Elements.Add(tileItemElement17);
+            this.mainTileContainer.SetID(this.tileWXZT, 5);
+            this.tileWXZT.Name = "tileWXZT";
+            this.tileWXZT.Properties.AllowCheck = DevExpress.Utils.DefaultBoolean.False;
+            // 
+            // documentWXZT
+            // 
+            this.documentWXZT.Caption = "卫星状态";
+            this.documentWXZT.ControlName = "documentWXZT";
+            // 
+            // tileSBZT
+            // 
+            this.tileSBZT.Appearances.Normal.BackColor = System.Drawing.Color.Transparent;
+            this.tileSBZT.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
+            this.tileSBZT.Appearances.Normal.Image = global::com.tk.dam.Properties.Resources.tile_bg_sbzt;
+            this.tileSBZT.Appearances.Normal.Options.UseBackColor = true;
+            this.tileSBZT.Appearances.Normal.Options.UseBorderColor = true;
+            this.tileSBZT.Appearances.Normal.Options.UseImage = true;
+            this.tileSBZT.Document = this.documentSBZT;
+            tileItemElement18.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold);
+            tileItemElement18.Appearance.Normal.Options.UseFont = true;
+            tileItemElement18.Image = global::com.tk.dam.Properties.Resources.设备状态;
+            tileItemElement18.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            tileItemElement18.ImageLocation = new System.Drawing.Point(-20, 26);
+            tileItemElement18.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileItemElement18.ImageSize = new System.Drawing.Size(60, 60);
+            tileItemElement18.Text = "设备状态";
+            tileItemElement18.TextLocation = new System.Drawing.Point(0, 30);
+            tileItemElement19.Appearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(94)))));
+            tileItemElement19.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 18F);
+            tileItemElement19.Appearance.Normal.Options.UseBackColor = true;
+            tileItemElement19.Appearance.Normal.Options.UseFont = true;
+            tileItemElement19.Height = 48;
+            tileItemElement19.StretchHorizontal = true;
+            tileItemElement19.Text = "接收机连接数量:5   掉线数:0";
+            tileItemElement19.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            tileItemElement19.TextLocation = new System.Drawing.Point(0, 6);
+            this.tileSBZT.Elements.Add(tileItemElement18);
+            this.tileSBZT.Elements.Add(tileItemElement19);
+            this.mainTileContainer.SetID(this.tileSBZT, 4);
+            this.tileSBZT.Name = "tileSBZT";
+            this.tileSBZT.Properties.AllowCheck = DevExpress.Utils.DefaultBoolean.False;
+            // 
+            // documentSBZT
+            // 
+            this.documentSBZT.Caption = "设备状态";
+            this.documentSBZT.ControlName = "documentSBZT";
             // 
             // tileYHGL
             // 
@@ -204,7 +449,7 @@
             tileItemElement4.Appearance.Normal.Options.UseFont = true;
             tileItemElement4.Text = "用户管理";
             tileItemElement4.TextLocation = new System.Drawing.Point(0, 30);
-            tileItemElement5.Image = global::com.tk.dam.Properties.Resources.icon_yhgl64;
+            tileItemElement5.Image = global::com.tk.dam.Properties.Resources.用户管理;
             tileItemElement5.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
             tileItemElement5.ImageLocation = new System.Drawing.Point(-20, 25);
             tileItemElement5.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
@@ -224,50 +469,12 @@
             this.tileYHGL.Elements.Add(tileItemElement6);
             this.mainTileContainer.SetID(this.tileYHGL, 1);
             this.tileYHGL.Name = "tileYHGL";
+            this.tileYHGL.Properties.AllowCheck = DevExpress.Utils.DefaultBoolean.False;
             // 
             // documentYHGL
             // 
             this.documentYHGL.Caption = "用户管理";
             this.documentYHGL.ControlName = "documentYHGL";
-            // 
-            // tileXBJC
-            // 
-            this.tileXBJC.Appearances.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileXBJC.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
-            this.tileXBJC.Appearances.Normal.Image = global::com.tk.dam.Properties.Resources.tile_bg_xbjc;
-            this.tileXBJC.Appearances.Normal.Options.UseBackColor = true;
-            this.tileXBJC.Appearances.Normal.Options.UseBorderColor = true;
-            this.tileXBJC.Appearances.Normal.Options.UseImage = true;
-            this.tileXBJC.Document = this.documentXBJC;
-            tileItemElement7.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold);
-            tileItemElement7.Appearance.Normal.Options.UseFont = true;
-            tileItemElement7.Text = "形变监测";
-            tileItemElement7.TextLocation = new System.Drawing.Point(0, 30);
-            tileItemElement8.Image = global::com.tk.dam.Properties.Resources.icon_xbjc64;
-            tileItemElement8.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
-            tileItemElement8.ImageLocation = new System.Drawing.Point(-20, 23);
-            tileItemElement8.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileItemElement8.ImageSize = new System.Drawing.Size(64, 64);
-            tileItemElement8.Text = "";
-            tileItemElement8.TextLocation = new System.Drawing.Point(0, 30);
-            tileItemElement9.Appearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(110)))), ((int)(((byte)(1)))));
-            tileItemElement9.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 18F);
-            tileItemElement9.Appearance.Normal.Options.UseBackColor = true;
-            tileItemElement9.Appearance.Normal.Options.UseFont = true;
-            tileItemElement9.Height = 48;
-            tileItemElement9.StretchHorizontal = true;
-            tileItemElement9.Text = "沉降:5mm    位移:3mm";
-            tileItemElement9.TextLocation = new System.Drawing.Point(0, 6);
-            this.tileXBJC.Elements.Add(tileItemElement7);
-            this.tileXBJC.Elements.Add(tileItemElement8);
-            this.tileXBJC.Elements.Add(tileItemElement9);
-            this.mainTileContainer.SetID(this.tileXBJC, 2);
-            this.tileXBJC.Name = "tileXBJC";
-            // 
-            // documentXBJC
-            // 
-            this.documentXBJC.Caption = "形变监测";
-            this.documentXBJC.ControlName = "documentXBJC";
             // 
             // tileQX
             // 
@@ -277,108 +484,81 @@
             this.tileQX.Appearances.Normal.Options.UseBackColor = true;
             this.tileQX.Appearances.Normal.Options.UseBorderColor = true;
             this.tileQX.Appearances.Normal.Options.UseImage = true;
-            this.tileQX.Document = this.documentQX;
-            tileItemElement10.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold);
-            tileItemElement10.Appearance.Normal.Options.UseFont = true;
-            tileItemElement10.Image = global::com.tk.dam.Properties.Resources.icon_qx64;
-            tileItemElement10.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
-            tileItemElement10.ImageLocation = new System.Drawing.Point(-20, 25);
-            tileItemElement10.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileItemElement10.ImageSize = new System.Drawing.Size(64, 64);
-            tileItemElement10.Text = "气象";
-            tileItemElement10.TextLocation = new System.Drawing.Point(0, 30);
-            tileItemElement11.Appearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(83)))));
-            tileItemElement11.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 18F);
-            tileItemElement11.Appearance.Normal.Options.UseBackColor = true;
-            tileItemElement11.Appearance.Normal.Options.UseFont = true;
-            tileItemElement11.Height = 48;
-            tileItemElement11.StretchHorizontal = true;
-            tileItemElement11.Text = "水位:20m   温度:30°C";
-            tileItemElement11.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            tileItemElement11.TextLocation = new System.Drawing.Point(0, 6);
-            this.tileQX.Elements.Add(tileItemElement10);
-            this.tileQX.Elements.Add(tileItemElement11);
+            this.tileQX.Document = this.documentSWQX;
+            tileItemElement20.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold);
+            tileItemElement20.Appearance.Normal.Options.UseFont = true;
+            tileItemElement20.Image = global::com.tk.dam.Properties.Resources.水文气象;
+            tileItemElement20.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            tileItemElement20.ImageLocation = new System.Drawing.Point(-20, 25);
+            tileItemElement20.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileItemElement20.ImageSize = new System.Drawing.Size(64, 64);
+            tileItemElement20.Text = "水文气象";
+            tileItemElement20.TextLocation = new System.Drawing.Point(0, 30);
+            tileItemElement21.Appearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(83)))));
+            tileItemElement21.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 18F);
+            tileItemElement21.Appearance.Normal.Options.UseBackColor = true;
+            tileItemElement21.Appearance.Normal.Options.UseFont = true;
+            tileItemElement21.Height = 48;
+            tileItemElement21.StretchHorizontal = true;
+            tileItemElement21.Text = "水位:20m   温度:30°C";
+            tileItemElement21.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            tileItemElement21.TextLocation = new System.Drawing.Point(0, 6);
+            this.tileQX.Elements.Add(tileItemElement20);
+            this.tileQX.Elements.Add(tileItemElement21);
+            tileItemElement22.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold);
+            tileItemElement22.Appearance.Normal.Options.UseFont = true;
+            tileItemElement22.Image = global::com.tk.dam.Properties.Resources.水文气象;
+            tileItemElement22.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            tileItemElement22.ImageLocation = new System.Drawing.Point(-20, 25);
+            tileItemElement22.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileItemElement22.ImageSize = new System.Drawing.Size(64, 64);
+            tileItemElement22.Text = "水文气象";
+            tileItemElement22.TextLocation = new System.Drawing.Point(0, 30);
+            tileItemElement23.Appearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(83)))));
+            tileItemElement23.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 18F);
+            tileItemElement23.Appearance.Normal.Options.UseBackColor = true;
+            tileItemElement23.Appearance.Normal.Options.UseFont = true;
+            tileItemElement23.Height = 48;
+            tileItemElement23.StretchHorizontal = true;
+            tileItemElement23.Text = "水位:20m   温度:30°C";
+            tileItemElement23.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            tileItemElement23.TextLocation = new System.Drawing.Point(0, 6);
+            tileItemFrame3.Elements.Add(tileItemElement22);
+            tileItemFrame3.Elements.Add(tileItemElement23);
+            tileItemFrame3.Image = global::com.tk.dam.Properties.Resources.水文气象;
+            tileItemFrame3.Interval = 20000;
+            tileItemElement24.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold);
+            tileItemElement24.Appearance.Normal.Options.UseFont = true;
+            tileItemElement24.Image = global::com.tk.dam.Properties.Resources.水文气象;
+            tileItemElement24.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            tileItemElement24.ImageLocation = new System.Drawing.Point(-20, 25);
+            tileItemElement24.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileItemElement24.ImageSize = new System.Drawing.Size(64, 64);
+            tileItemElement24.Text = "水文气象";
+            tileItemElement24.TextLocation = new System.Drawing.Point(0, 30);
+            tileItemElement25.Appearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(83)))));
+            tileItemElement25.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 18F);
+            tileItemElement25.Appearance.Normal.Options.UseBackColor = true;
+            tileItemElement25.Appearance.Normal.Options.UseFont = true;
+            tileItemElement25.Height = 48;
+            tileItemElement25.StretchHorizontal = true;
+            tileItemElement25.Text = "水位:20m   温度:30°C";
+            tileItemElement25.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            tileItemElement25.TextLocation = new System.Drawing.Point(0, 6);
+            tileItemFrame4.Elements.Add(tileItemElement24);
+            tileItemFrame4.Elements.Add(tileItemElement25);
+            tileItemFrame4.Image = global::com.tk.dam.Properties.Resources.水文气象;
+            tileItemFrame4.Interval = 25000;
+            this.tileQX.Frames.Add(tileItemFrame3);
+            this.tileQX.Frames.Add(tileItemFrame4);
             this.mainTileContainer.SetID(this.tileQX, 3);
             this.tileQX.Name = "tileQX";
+            this.tileQX.Properties.AllowCheck = DevExpress.Utils.DefaultBoolean.False;
             // 
-            // documentQX
+            // documentSWQX
             // 
-            this.documentQX.Caption = "水文气象";
-            this.documentQX.ControlName = "documentQX";
-            // 
-            // tileSBZT
-            // 
-            this.tileSBZT.Appearances.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileSBZT.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
-            this.tileSBZT.Appearances.Normal.Image = global::com.tk.dam.Properties.Resources.tile_bg_sbzt;
-            this.tileSBZT.Appearances.Normal.Options.UseBackColor = true;
-            this.tileSBZT.Appearances.Normal.Options.UseBorderColor = true;
-            this.tileSBZT.Appearances.Normal.Options.UseImage = true;
-            this.tileSBZT.Document = this.documentSBZT;
-            tileItemElement12.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold);
-            tileItemElement12.Appearance.Normal.Options.UseFont = true;
-            tileItemElement12.Image = global::com.tk.dam.Properties.Resources.icon_sbzt64;
-            tileItemElement12.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
-            tileItemElement12.ImageLocation = new System.Drawing.Point(-20, 25);
-            tileItemElement12.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileItemElement12.ImageSize = new System.Drawing.Size(64, 64);
-            tileItemElement12.Text = "设备状态";
-            tileItemElement12.TextLocation = new System.Drawing.Point(0, 30);
-            tileItemElement13.Appearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(94)))));
-            tileItemElement13.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 18F);
-            tileItemElement13.Appearance.Normal.Options.UseBackColor = true;
-            tileItemElement13.Appearance.Normal.Options.UseFont = true;
-            tileItemElement13.Height = 48;
-            tileItemElement13.StretchHorizontal = true;
-            tileItemElement13.Text = "接收机连接数量:5   掉线数:0";
-            tileItemElement13.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            tileItemElement13.TextLocation = new System.Drawing.Point(0, 6);
-            this.tileSBZT.Elements.Add(tileItemElement12);
-            this.tileSBZT.Elements.Add(tileItemElement13);
-            this.mainTileContainer.SetID(this.tileSBZT, 4);
-            this.tileSBZT.Name = "tileSBZT";
-            // 
-            // documentSBZT
-            // 
-            this.documentSBZT.Caption = "设备状态";
-            this.documentSBZT.ControlName = "documentSBZT";
-            // 
-            // tileWXZT
-            // 
-            this.tileWXZT.Appearances.Normal.BackColor = System.Drawing.Color.Transparent;
-            this.tileWXZT.Appearances.Normal.BorderColor = System.Drawing.Color.Transparent;
-            this.tileWXZT.Appearances.Normal.Image = global::com.tk.dam.Properties.Resources.tile_bg_wxzt;
-            this.tileWXZT.Appearances.Normal.Options.UseBackColor = true;
-            this.tileWXZT.Appearances.Normal.Options.UseBorderColor = true;
-            this.tileWXZT.Appearances.Normal.Options.UseImage = true;
-            this.tileWXZT.Document = this.documentWXZT;
-            tileItemElement14.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold);
-            tileItemElement14.Appearance.Normal.Options.UseFont = true;
-            tileItemElement14.Image = global::com.tk.dam.Properties.Resources.icon_wxzt64;
-            tileItemElement14.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
-            tileItemElement14.ImageLocation = new System.Drawing.Point(-20, 25);
-            tileItemElement14.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileItemElement14.ImageSize = new System.Drawing.Size(64, 64);
-            tileItemElement14.Text = "卫星状态";
-            tileItemElement14.TextLocation = new System.Drawing.Point(0, 30);
-            tileItemElement15.Appearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(158)))));
-            tileItemElement15.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 18F);
-            tileItemElement15.Appearance.Normal.Options.UseBackColor = true;
-            tileItemElement15.Appearance.Normal.Options.UseFont = true;
-            tileItemElement15.Height = 48;
-            tileItemElement15.StretchHorizontal = true;
-            tileItemElement15.Text = "BDS:8  GPS:5   GLO:4   SBAS:4";
-            tileItemElement15.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            tileItemElement15.TextLocation = new System.Drawing.Point(0, 6);
-            this.tileWXZT.Elements.Add(tileItemElement14);
-            this.tileWXZT.Elements.Add(tileItemElement15);
-            this.mainTileContainer.SetID(this.tileWXZT, 5);
-            this.tileWXZT.Name = "tileWXZT";
-            // 
-            // documentWXZT
-            // 
-            this.documentWXZT.Caption = "卫星状态";
-            this.documentWXZT.ControlName = "documentWXZT";
+            this.documentSWQX.Caption = "水文气象";
+            this.documentSWQX.ControlName = "documentQX";
             // 
             // tileSP
             // 
@@ -389,23 +569,248 @@
             this.tileSP.Appearances.Normal.Options.UseBorderColor = true;
             this.tileSP.Appearances.Normal.Options.UseImage = true;
             this.tileSP.Document = this.documentSP;
-            tileItemElement16.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold);
-            tileItemElement16.Appearance.Normal.Options.UseFont = true;
-            tileItemElement16.Image = global::com.tk.dam.Properties.Resources.icon_sp64;
-            tileItemElement16.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
-            tileItemElement16.ImageLocation = new System.Drawing.Point(-20, -5);
-            tileItemElement16.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileItemElement16.ImageSize = new System.Drawing.Size(64, 64);
-            tileItemElement16.Text = "视频";
-            tileItemElement16.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            this.tileSP.Elements.Add(tileItemElement16);
+            tileItemElement26.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold);
+            tileItemElement26.Appearance.Normal.Options.UseFont = true;
+            tileItemElement26.Image = global::com.tk.dam.Properties.Resources.视频;
+            tileItemElement26.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            tileItemElement26.ImageLocation = new System.Drawing.Point(-25, 20);
+            tileItemElement26.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileItemElement26.ImageSize = new System.Drawing.Size(64, 64);
+            tileItemElement26.Text = "视频";
+            tileItemElement26.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement26.TextLocation = new System.Drawing.Point(0, 30);
+            tileItemElement27.Appearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(41)))), ((int)(((byte)(92)))));
+            tileItemElement27.Appearance.Normal.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(41)))), ((int)(((byte)(92)))));
+            tileItemElement27.Appearance.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(41)))), ((int)(((byte)(92)))));
+            tileItemElement27.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 18F);
+            tileItemElement27.Appearance.Normal.Options.UseBackColor = true;
+            tileItemElement27.Appearance.Normal.Options.UseBorderColor = true;
+            tileItemElement27.Appearance.Normal.Options.UseFont = true;
+            tileItemElement27.Height = 44;
+            tileItemElement27.StretchHorizontal = true;
+            tileItemElement27.Text = "在线";
+            tileItemElement27.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            tileItemElement27.TextLocation = new System.Drawing.Point(0, 6);
+            this.tileSP.Elements.Add(tileItemElement26);
+            this.tileSP.Elements.Add(tileItemElement27);
             this.mainTileContainer.SetID(this.tileSP, 6);
             this.tileSP.Name = "tileSP";
+            this.tileSP.Properties.AllowCheck = DevExpress.Utils.DefaultBoolean.False;
             // 
             // documentSP
             // 
             this.documentSP.Caption = "视频";
             this.documentSP.ControlName = "documentSP";
+            // 
+            // tileSJDY
+            // 
+            this.tileSJDY.Appearances.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(168)))), ((int)(((byte)(1)))));
+            this.tileSJDY.Appearances.Normal.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(168)))), ((int)(((byte)(1)))));
+            this.tileSJDY.Appearances.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(168)))), ((int)(((byte)(1)))));
+            this.tileSJDY.Appearances.Normal.Options.UseBackColor = true;
+            this.tileSJDY.Appearances.Normal.Options.UseBorderColor = true;
+            this.tileSJDY.Document = this.documentSJDY;
+            tileItemElement28.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold);
+            tileItemElement28.Appearance.Normal.Options.UseFont = true;
+            tileItemElement28.Image = global::com.tk.dam.Properties.Resources.数据打印;
+            tileItemElement28.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            tileItemElement28.ImageLocation = new System.Drawing.Point(-20, 25);
+            tileItemElement28.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileItemElement28.ImageSize = new System.Drawing.Size(64, 64);
+            tileItemElement28.Text = "数据打印";
+            tileItemElement28.TextLocation = new System.Drawing.Point(0, 30);
+            tileItemElement29.Appearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(129)))), ((int)(((byte)(8)))));
+            tileItemElement29.Appearance.Normal.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(129)))), ((int)(((byte)(8)))));
+            tileItemElement29.Appearance.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(129)))), ((int)(((byte)(8)))));
+            tileItemElement29.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 18F);
+            tileItemElement29.Appearance.Normal.Options.UseBackColor = true;
+            tileItemElement29.Appearance.Normal.Options.UseBorderColor = true;
+            tileItemElement29.Appearance.Normal.Options.UseFont = true;
+            tileItemElement29.Height = 44;
+            tileItemElement29.StretchHorizontal = true;
+            tileItemElement29.Text = "正在研发中....";
+            tileItemElement29.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            tileItemElement29.TextLocation = new System.Drawing.Point(0, 6);
+            this.tileSJDY.Elements.Add(tileItemElement28);
+            this.tileSJDY.Elements.Add(tileItemElement29);
+            this.mainTileContainer.SetID(this.tileSJDY, 8);
+            this.tileSJDY.Name = "tileSJDY";
+            this.tileSJDY.Properties.AllowCheck = DevExpress.Utils.DefaultBoolean.False;
+            this.tileSJDY.Visible = false;
+            this.tileSJDY.Click += new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileClickEventHandler(this.tileNotImplement_Click);
+            // 
+            // documentSJDY
+            // 
+            this.documentSJDY.Caption = "数据打印";
+            this.documentSJDY.ControlName = "documentSJDY";
+            // 
+            // tileKQYS
+            // 
+            this.tileKQYS.Appearances.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(161)))), ((int)(((byte)(235)))));
+            this.tileKQYS.Appearances.Normal.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(161)))), ((int)(((byte)(235)))));
+            this.tileKQYS.Appearances.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(161)))), ((int)(((byte)(235)))));
+            this.tileKQYS.Appearances.Normal.Options.UseBackColor = true;
+            this.tileKQYS.Appearances.Normal.Options.UseBorderColor = true;
+            this.tileKQYS.Document = this.documentKQYS;
+            tileItemElement30.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold);
+            tileItemElement30.Appearance.Normal.Options.UseFont = true;
+            tileItemElement30.Image = global::com.tk.dam.Properties.Resources.库区雨水;
+            tileItemElement30.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            tileItemElement30.ImageLocation = new System.Drawing.Point(-25, 20);
+            tileItemElement30.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileItemElement30.ImageSize = new System.Drawing.Size(64, 64);
+            tileItemElement30.Text = "库区雨水";
+            tileItemElement30.TextLocation = new System.Drawing.Point(0, 30);
+            tileItemElement31.Appearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(123)))), ((int)(((byte)(177)))));
+            tileItemElement31.Appearance.Normal.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(123)))), ((int)(((byte)(177)))));
+            tileItemElement31.Appearance.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(123)))), ((int)(((byte)(177)))));
+            tileItemElement31.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 18F);
+            tileItemElement31.Appearance.Normal.Options.UseBackColor = true;
+            tileItemElement31.Appearance.Normal.Options.UseBorderColor = true;
+            tileItemElement31.Appearance.Normal.Options.UseFont = true;
+            tileItemElement31.Height = 44;
+            tileItemElement31.StretchHorizontal = true;
+            tileItemElement31.Text = "正在研发中....";
+            tileItemElement31.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            tileItemElement31.TextLocation = new System.Drawing.Point(0, 6);
+            this.tileKQYS.Elements.Add(tileItemElement30);
+            this.tileKQYS.Elements.Add(tileItemElement31);
+            this.mainTileContainer.SetID(this.tileKQYS, 9);
+            this.tileKQYS.Name = "tileKQYS";
+            this.tileKQYS.Properties.AllowCheck = DevExpress.Utils.DefaultBoolean.False;
+            this.tileKQYS.Visible = false;
+            this.tileKQYS.Click += new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileClickEventHandler(this.tileNotImplement_Click);
+            // 
+            // documentKQYS
+            // 
+            this.documentKQYS.Caption = "库区雨水";
+            this.documentKQYS.ControlName = "documentKQYS";
+            // 
+            // tileZHJS
+            // 
+            this.tileZHJS.Appearances.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(184)))), ((int)(((byte)(108)))));
+            this.tileZHJS.Appearances.Normal.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(184)))), ((int)(((byte)(108)))));
+            this.tileZHJS.Appearances.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(184)))), ((int)(((byte)(108)))));
+            this.tileZHJS.Appearances.Normal.Options.UseBackColor = true;
+            this.tileZHJS.Appearances.Normal.Options.UseBorderColor = true;
+            this.tileZHJS.Document = this.documentZHJS;
+            tileItemElement32.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold);
+            tileItemElement32.Appearance.Normal.Options.UseFont = true;
+            tileItemElement32.Image = global::com.tk.dam.Properties.Resources.知识介绍;
+            tileItemElement32.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            tileItemElement32.ImageLocation = new System.Drawing.Point(-25, 20);
+            tileItemElement32.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileItemElement32.ImageSize = new System.Drawing.Size(64, 64);
+            tileItemElement32.Text = "知识介绍";
+            tileItemElement32.TextLocation = new System.Drawing.Point(0, 30);
+            tileItemElement33.Appearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(110)))), ((int)(((byte)(66)))));
+            tileItemElement33.Appearance.Normal.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(110)))), ((int)(((byte)(66)))));
+            tileItemElement33.Appearance.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(110)))), ((int)(((byte)(66)))));
+            tileItemElement33.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 18F);
+            tileItemElement33.Appearance.Normal.Options.UseBackColor = true;
+            tileItemElement33.Appearance.Normal.Options.UseBorderColor = true;
+            tileItemElement33.Appearance.Normal.Options.UseFont = true;
+            tileItemElement33.Height = 44;
+            tileItemElement33.StretchHorizontal = true;
+            tileItemElement33.Text = "正在研发中....";
+            tileItemElement33.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            tileItemElement33.TextLocation = new System.Drawing.Point(0, 6);
+            this.tileZHJS.Elements.Add(tileItemElement32);
+            this.tileZHJS.Elements.Add(tileItemElement33);
+            this.mainTileContainer.SetID(this.tileZHJS, 10);
+            this.tileZHJS.Name = "tileZHJS";
+            this.tileZHJS.Properties.AllowCheck = DevExpress.Utils.DefaultBoolean.False;
+            this.tileZHJS.Visible = false;
+            this.tileZHJS.Click += new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileClickEventHandler(this.tileNotImplement_Click);
+            // 
+            // documentZHJS
+            // 
+            this.documentZHJS.Caption = "知识介绍";
+            this.documentZHJS.ControlName = "documentZHJS";
+            // 
+            // tileNBJC
+            // 
+            this.tileNBJC.Appearances.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(53)))), ((int)(((byte)(244)))));
+            this.tileNBJC.Appearances.Normal.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(53)))), ((int)(((byte)(244)))));
+            this.tileNBJC.Appearances.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(53)))), ((int)(((byte)(244)))));
+            this.tileNBJC.Appearances.Normal.Options.UseBackColor = true;
+            this.tileNBJC.Appearances.Normal.Options.UseBorderColor = true;
+            this.tileNBJC.Document = this.documentNBJC;
+            tileItemElement34.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold);
+            tileItemElement34.Appearance.Normal.Options.UseFont = true;
+            tileItemElement34.Image = global::com.tk.dam.Properties.Resources.内部监测;
+            tileItemElement34.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            tileItemElement34.ImageLocation = new System.Drawing.Point(-25, 20);
+            tileItemElement34.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileItemElement34.ImageSize = new System.Drawing.Size(64, 64);
+            tileItemElement34.Text = "内部监测";
+            tileItemElement34.TextLocation = new System.Drawing.Point(0, 30);
+            tileItemElement35.Appearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(6)))), ((int)(((byte)(213)))));
+            tileItemElement35.Appearance.Normal.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(6)))), ((int)(((byte)(213)))));
+            tileItemElement35.Appearance.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(6)))), ((int)(((byte)(213)))));
+            tileItemElement35.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 18F);
+            tileItemElement35.Appearance.Normal.Options.UseBackColor = true;
+            tileItemElement35.Appearance.Normal.Options.UseBorderColor = true;
+            tileItemElement35.Appearance.Normal.Options.UseFont = true;
+            tileItemElement35.Height = 44;
+            tileItemElement35.StretchHorizontal = true;
+            tileItemElement35.Text = "正在研发中....";
+            tileItemElement35.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            tileItemElement35.TextLocation = new System.Drawing.Point(0, 6);
+            this.tileNBJC.Elements.Add(tileItemElement34);
+            this.tileNBJC.Elements.Add(tileItemElement35);
+            this.mainTileContainer.SetID(this.tileNBJC, 11);
+            this.tileNBJC.Name = "tileNBJC";
+            this.tileNBJC.Properties.AllowCheck = DevExpress.Utils.DefaultBoolean.False;
+            this.tileNBJC.Visible = false;
+            this.tileNBJC.Click += new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileClickEventHandler(this.tileNotImplement_Click);
+            // 
+            // documentNBJC
+            // 
+            this.documentNBJC.Caption = "内部监测";
+            this.documentNBJC.ControlName = "documentNBJC";
+            // 
+            // tileGCJS
+            // 
+            this.tileGCJS.Appearances.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(54)))), ((int)(((byte)(61)))));
+            this.tileGCJS.Appearances.Normal.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(54)))), ((int)(((byte)(61)))));
+            this.tileGCJS.Appearances.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(54)))), ((int)(((byte)(61)))));
+            this.tileGCJS.Appearances.Normal.Options.UseBackColor = true;
+            this.tileGCJS.Appearances.Normal.Options.UseBorderColor = true;
+            this.tileGCJS.Document = this.documentGCJS;
+            tileItemElement36.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold);
+            tileItemElement36.Appearance.Normal.Options.UseFont = true;
+            tileItemElement36.Image = global::com.tk.dam.Properties.Resources.工程介绍;
+            tileItemElement36.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            tileItemElement36.ImageLocation = new System.Drawing.Point(-25, 20);
+            tileItemElement36.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileItemElement36.ImageSize = new System.Drawing.Size(64, 64);
+            tileItemElement36.Text = "工程介绍";
+            tileItemElement36.TextLocation = new System.Drawing.Point(0, 30);
+            tileItemElement37.Appearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(5)))), ((int)(((byte)(10)))));
+            tileItemElement37.Appearance.Normal.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(5)))), ((int)(((byte)(10)))));
+            tileItemElement37.Appearance.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(5)))), ((int)(((byte)(10)))));
+            tileItemElement37.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 18F);
+            tileItemElement37.Appearance.Normal.Options.UseBackColor = true;
+            tileItemElement37.Appearance.Normal.Options.UseBorderColor = true;
+            tileItemElement37.Appearance.Normal.Options.UseFont = true;
+            tileItemElement37.Height = 44;
+            tileItemElement37.StretchHorizontal = true;
+            tileItemElement37.Text = "正在研发中....";
+            tileItemElement37.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            tileItemElement37.TextLocation = new System.Drawing.Point(0, 6);
+            this.tileGCJS.Elements.Add(tileItemElement36);
+            this.tileGCJS.Elements.Add(tileItemElement37);
+            this.mainTileContainer.SetID(this.tileGCJS, 12);
+            this.tileGCJS.Name = "tileGCJS";
+            this.tileGCJS.Properties.AllowCheck = DevExpress.Utils.DefaultBoolean.False;
+            this.tileGCJS.Visible = false;
+            this.tileGCJS.Click += new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileClickEventHandler(this.tileNotImplement_Click);
+            // 
+            // documentGCJS
+            // 
+            this.documentGCJS.Caption = "工程介绍";
+            this.documentGCJS.ControlName = "documentGCJS";
             // 
             // tileZJ
             // 
@@ -415,32 +820,63 @@
             this.tileZJ.Appearances.Normal.Options.UseBackColor = true;
             this.tileZJ.Appearances.Normal.Options.UseBorderColor = true;
             this.tileZJ.Appearances.Normal.Options.UseImage = true;
-            this.tileZJ.Document = this.documentZJ;
-            tileItemElement17.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 28F);
-            tileItemElement17.Appearance.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            tileItemElement17.Appearance.Normal.Options.UseFont = true;
-            tileItemElement17.Appearance.Normal.Options.UseForeColor = true;
-            tileItemElement17.Image = global::com.tk.dam.Properties.Resources.icon_tj64;
-            tileItemElement17.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement17.ImageLocation = new System.Drawing.Point(-6, -20);
-            tileItemElement17.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileItemElement17.ImageSize = new System.Drawing.Size(80, 80);
-            tileItemElement17.Text = "增加";
-            tileItemElement17.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement17.TextLocation = new System.Drawing.Point(0, 50);
-            this.tileZJ.Elements.Add(tileItemElement17);
+            tileItemElement38.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 28F);
+            tileItemElement38.Appearance.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            tileItemElement38.Appearance.Normal.Options.UseFont = true;
+            tileItemElement38.Appearance.Normal.Options.UseForeColor = true;
+            tileItemElement38.Image = global::com.tk.dam.Properties.Resources.icon_tj64;
+            tileItemElement38.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement38.ImageLocation = new System.Drawing.Point(-6, -20);
+            tileItemElement38.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileItemElement38.ImageSize = new System.Drawing.Size(80, 80);
+            tileItemElement38.Text = "更多....";
+            tileItemElement38.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement38.TextLocation = new System.Drawing.Point(0, 50);
+            this.tileZJ.Elements.Add(tileItemElement38);
             this.mainTileContainer.SetID(this.tileZJ, 7);
             this.tileZJ.Name = "tileZJ";
+            this.tileZJ.Properties.AllowCheck = DevExpress.Utils.DefaultBoolean.False;
+            this.tileZJ.Click += new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileClickEventHandler(this.tileZJ_Click);
+            // 
+            // closeAppFlyout
+            // 
+            this.closeAppFlyout.Caption = "";
+            this.closeAppFlyout.Name = "closeAppFlyou";
+            this.closeAppFlyout.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(161)))), ((int)(((byte)(235)))));
+            this.closeAppFlyout.Properties.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(161)))), ((int)(((byte)(235)))));
+            this.closeAppFlyout.Properties.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(161)))), ((int)(((byte)(235)))));
+            this.closeAppFlyout.Properties.Appearance.Options.UseBackColor = true;
+            this.closeAppFlyout.Properties.Appearance.Options.UseBorderColor = true;
+            this.closeAppFlyout.Subtitle = "";
+            // 
+            // popupTjFlyout
+            // 
+            this.popupTjFlyout.Caption = "";
+            this.popupTjFlyout.Document = this.popupTjDocument;
+            this.popupTjFlyout.Name = "popupAddFlyout";
+            this.popupTjFlyout.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(161)))), ((int)(((byte)(235)))));
+            this.popupTjFlyout.Properties.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(161)))), ((int)(((byte)(235)))));
+            this.popupTjFlyout.Properties.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(161)))), ((int)(((byte)(235)))));
+            this.popupTjFlyout.Properties.Appearance.Options.UseBackColor = true;
+            this.popupTjFlyout.Properties.Appearance.Options.UseBorderColor = true;
+            this.popupTjFlyout.Properties.AppearanceButtons.Options.UseTextOptions = true;
+            this.popupTjFlyout.Properties.AppearanceButtons.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            // 
+            // popupTjDocument
+            // 
+            this.popupTjDocument.Caption = "popupTj";
+            this.popupTjDocument.ControlName = "popupTj";
+            this.popupTjDocument.ControlTypeName = "com.tk.dam.Views.popupTj";
             // 
             // documentZJ
             // 
             this.documentZJ.Caption = "增加";
             this.documentZJ.ControlName = "documentZJ";
+            this.documentZJ.ControlTypeName = "com.tk.dam.Views.popupTj";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(908, 600);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
@@ -449,21 +885,34 @@
             ((System.ComponentModel.ISupportInitialize)(this.mainDocumentManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainWindowsUIView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainTileContainer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileDBYXZT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentDBYXZT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileYHGL)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentYHGL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileXBJC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentXBJC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileQX)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentQX)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileSBZT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentSBZT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileDBYXZT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentDBYXZT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileWXZT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentWXZT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileSBZT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentSBZT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileYHGL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentYHGL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileQX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentSWQX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentSP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileSJDY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentSJDY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileKQYS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentKQYS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileZHJS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentZHJS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileNBJC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentNBJC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileGCJS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentGCJS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileZJ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closeAppFlyout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupTjFlyout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupTjDocument)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentZJ)).EndInit();
             this.ResumeLayout(false);
 
@@ -482,7 +931,7 @@
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile tileXBJC;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document documentXBJC;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile tileQX;
-        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document documentQX;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document documentSWQX;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile tileSBZT;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document documentSBZT;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile tileWXZT;
@@ -491,5 +940,18 @@
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document documentSP;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile tileZJ;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document documentZJ;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile tileSJDY;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document documentSJDY;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile tileKQYS;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document documentKQYS;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile tileZHJS;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document documentZHJS;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile tileNBJC;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document documentNBJC;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile tileGCJS;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document documentGCJS;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Flyout closeAppFlyout;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Flyout popupTjFlyout;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document popupTjDocument;
     }
 }

@@ -36,6 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "XtraUserControlBase";
             this.Size = new System.Drawing.Size(670, 452);
+            this.Load += new System.EventHandler(this.XtraUserControlBase_Load);
             this.ResumeLayout(false);
 
         }

@@ -9,22 +9,29 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using com.tk.dam.Views;
+using DevExpress.Utils;
 
 namespace com.tk.dam
 {
     public partial class MainForm : DevExpress.XtraEditors.XtraForm
     {
-        bool mIsMianFormShow = true;
+        bool mIsCanShowNavBar = true;
+        int mSrceenWidth;
+        DelegateAction mThemeAction;
+        Document mCurrentDocument;
+        public bool IsPicTheme = false;
 
         public MainForm()
         {
             InitializeComponent();
             mainWindowsUIView.Appearance.BackColor = Color.FromArgb(0, 126, 206);
+            //mainWindowsUIView.AppearanceActionsBar.BackColor = Color.FromArgb(0, 169, 254);
+            mainWindowsUIView.AppearanceActionsBar.BackColor = Color.FromArgb(0, 90, 144);
 
-            int mSrceenWidth = Screen.PrimaryScreen.Bounds.Width;
+            mSrceenWidth = Screen.PrimaryScreen.Bounds.Width;
             mainWindowsUIView.TileContainerProperties.ItemSize = 180 + (int)((mSrceenWidth - 1500) * 0.05);
 
-            mainWindowsUIView.AppearanceActionsBar.BackColor = Color.FromArgb(0,169,254);
+            
 
             DelegateAction mExitAction = new DelegateAction(canExecuteExitFunction, exitActionFunction);
             mExitAction.Caption = "Exit";
@@ -41,6 +48,16 @@ namespace com.tk.dam
             mAboutAction.Behavior = ActionBehavior.HideBarOnClick;
             mAboutAction.Image = Properties.Resources.icon_about32;
             mainWindowsUIView.ContentContainerActions.Add(mAboutAction);
+
+            mThemeAction = new DelegateAction(canExecuteThemeFunction, themeActionFunction);
+            mThemeAction.Caption = "Picture Theme";
+            mThemeAction.Type = ActionType.Context;
+            mThemeAction.Edge = ActionEdge.Left;
+            mThemeAction.Behavior = ActionBehavior.HideBarOnClick;
+            mThemeAction.Image = Properties.Resources.icon_pic32;
+            mainWindowsUIView.ContentContainerActions.Add(mThemeAction);
+
+            mainWindowsUIView.AddDocument(new popupTj());
         }
 
 
@@ -58,7 +75,7 @@ namespace com.tk.dam
             {
                 e.Control = new Xbjc();
             }
-            else if (e.Document.Equals(documentQX))
+            else if (e.Document.Equals(documentSWQX))
             {
                 e.Control = new Qx();
             }
@@ -87,22 +104,36 @@ namespace com.tk.dam
 
         private void mainWindowsUIView_NavigatedTo(object sender, NavigationEventArgs e)
         {
+            mCurrentDocument = e.Document;
             if (e.Document == null)
             {
-                mIsMianFormShow = true;
-                //mainWindowsUIView.BackgroundImage = Properties.Resources.bg01;
-                //mainWindowsUIView.Appearance.BackColor = Color.FromArgb(0, 126, 206);
+                mIsCanShowNavBar = true;
+                if (IsPicTheme)
+                {
+                    mainWindowsUIView.BackgroundImage = Properties.Resources.bg01;                   
+                }
             }
             else
             {
-                mIsMianFormShow = false;
-                //mainWindowsUIView.BackgroundImage = Properties.Resources.bg02;
-            }
+                mIsCanShowNavBar = true;
+                if (IsPicTheme && e.Document != popupTjDocument)
+                {
+                    mainWindowsUIView.BackgroundImage = Properties.Resources.bg02;
+                }
+                if (e.Document == popupTjDocument)
+                {
+                    if (e.Document.Control.GetType() == typeof(popupTj))
+                    {
+                        mIsCanShowNavBar = false;
+                        ((popupTj)e.Document.Control).Reload();
+                    }
+                }
+            }          
         }
 
         private void mainWindowsUIView_NavigationBarsShowing(object sender, NavigationBarsCancelEventArgs e)
         {
-            e.Cancel = mIsMianFormShow;
+            e.Cancel = !mIsCanShowNavBar;
         }
 
         private void mainTileContainer_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
@@ -117,16 +148,43 @@ namespace com.tk.dam
             }
         }
 
+        private void tileZJ_Click(object sender, TileClickEventArgs e)
+        {
+            mainWindowsUIView.ActivateContainer(popupTjFlyout);
+            e.Handled = true;
+        }
+
+        private void tileNotImplement_Click(object sender, TileClickEventArgs e)
+        {
+            var notImplmentAction = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutAction()
+            {
+                Caption = "提示",
+                Description = "该功能正在研发中，敬请期待....."
+            };
+            notImplmentAction.Commands.Add(FlyoutCommand.OK);
+            closeAppFlyout.Action = notImplmentAction;
+            mainWindowsUIView.ShowFlyoutDialog(closeAppFlyout);
+            e.Handled = true;
+        }
+
         private bool canExecuteExitFunction()
         {
             return true;
         }
         private void exitActionFunction()
         {
-            //if (XtraMessageBox.Show("确定要退出系统吗?", "确认", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            //{
+            var closeAppAction = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutAction()
+            {
+                Caption = "退出",
+                Description = "确定要退出系统吗?"
+            };
+            closeAppAction.Commands.Add(FlyoutCommand.Yes);
+            closeAppAction.Commands.Add(FlyoutCommand.No);
+            closeAppFlyout.Action = closeAppAction;
+            if (mainWindowsUIView.ShowFlyoutDialog(closeAppFlyout) == System.Windows.Forms.DialogResult.Yes)
+            {
                 Application.Exit();
-            //}
+            }
         }
         private bool canExecuteAboutFunction()
         {
@@ -134,7 +192,102 @@ namespace com.tk.dam
         }
         private void aboutActionFunction()
         {
-            XtraMessageBox.Show("大坝安全检查系统V1.0版本", "关于");
+            var aboutAppAction = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutAction()
+            {
+                Caption = "关于",
+                Description = "大坝安全检查系统 V1.0\nCopyright@2012 福建泉州泰克通信设备有限公司"
+            };
+            aboutAppAction.Commands.Add(FlyoutCommand.OK);
+            closeAppFlyout.Action = aboutAppAction;
+            mainWindowsUIView.ShowFlyoutDialog(closeAppFlyout);
         }
+        private bool canExecuteThemeFunction()
+        {
+            return true;
+        }
+        private void themeActionFunction()
+        {
+            IsPicTheme = !IsPicTheme;
+            if (IsPicTheme)
+            {
+                mThemeAction.Caption = "Color Theme";
+                mThemeAction.Image = Properties.Resources.icon_color32;
+                if (mCurrentDocument == null)
+                {
+                    mainWindowsUIView.BackgroundImage = Properties.Resources.bg01;
+                }
+                else
+                {
+                    mainWindowsUIView.BackgroundImage = Properties.Resources.bg02;
+                }
+            }
+            else
+            {
+                mThemeAction.Caption = "Picture Theme";
+                mThemeAction.Image = Properties.Resources.icon_pic32;
+                mainWindowsUIView.BackgroundImage = null;
+            }
+            if (mCurrentDocument != null)
+            {
+                mCurrentDocument.Control.Refresh();
+            }
+            
+        }
+        #region 外部调用接口
+      
+        public IList<TjItemEnum> SelectedTjItems
+        {
+            get
+            {
+                var mItems = new List<TjItemEnum>();
+                if (tileSJDY.Visible.Value)
+                {
+                    mItems.Add(TjItemEnum.数据打印);
+                }
+                if (tileNBJC.Visible.Value)
+                {
+                    mItems.Add(TjItemEnum.内部监测);
+                }
+                if (tileKQYS.Visible.Value)
+                {
+                    mItems.Add(TjItemEnum.库区雨水);
+                }
+                if (tileGCJS.Visible.Value)
+                {
+                    mItems.Add(TjItemEnum.工程介绍);
+                }
+                if (tileZHJS.Visible.Value)
+                {
+                    mItems.Add(TjItemEnum.知识介绍);
+                }
+                return mItems;
+            }
+            set
+            {
+                tileSJDY.Visible = value.Contains(TjItemEnum.数据打印);
+                tileNBJC.Visible = value.Contains(TjItemEnum.内部监测);
+                tileKQYS.Visible = value.Contains(TjItemEnum.库区雨水);
+                tileGCJS.Visible = value.Contains(TjItemEnum.工程介绍);
+                tileZHJS.Visible = value.Contains(TjItemEnum.知识介绍);
+            }
+        }
+
+        public void HidenFlyout()
+        {
+            mainWindowsUIView.HideFlyout();
+        }
+
+        #endregion
+
     }
+
+    public enum TjItemEnum
+    {
+        数据打印,
+        内部监测,
+        库区雨水,
+        工程介绍,
+        知识介绍
+    }
+
 }
