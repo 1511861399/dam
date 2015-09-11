@@ -70,7 +70,7 @@ namespace com.tk.dam.Views
                 List<SeriesPoint> mPointsWy = new List<SeriesPoint>();
                 List<SeriesPoint> mPointsCj = new List<SeriesPoint>();
                 int mMaxWy = 0, mMinWy = 0, mMaxCj = 0, mMinCj = 0;
-                for (int i = -8; i <= 0; i++)
+                for (int i = -6; i <= 0; i++)
                 {
                     int mWy = mRandom.Next(50) - 10;
                     int mCj = mRandom.Next(50) - 10;

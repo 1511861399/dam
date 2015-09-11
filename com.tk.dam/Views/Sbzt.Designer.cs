@@ -28,27 +28,789 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.mPanel = new System.Windows.Forms.Panel();
+            this.mPanelLeft = new System.Windows.Forms.Panel();
+            this.mPanelDeviceInfo = new System.Windows.Forms.Panel();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.mMenuPanel = new System.Windows.Forms.Panel();
+            this.mMenuHfccsz = new System.Windows.Forms.Panel();
+            this.mLblHfccsz = new System.Windows.Forms.Label();
+            this.mMenuXtcq = new System.Windows.Forms.Panel();
+            this.mLblXtcq = new System.Windows.Forms.Label();
+            this.mMenuXtsz = new System.Windows.Forms.Panel();
+            this.mLblXtsz = new System.Windows.Forms.Label();
+            this.mMenuBjsz = new System.Windows.Forms.Panel();
+            this.mLblBjsz = new System.Windows.Forms.Label();
+            this.mPanelRight = new System.Windows.Forms.Panel();
+            this.lblDevices = new System.Windows.Forms.Label();
+            this.lblMonitor12 = new System.Windows.Forms.Label();
+            this.lblMonitor10 = new System.Windows.Forms.Label();
+            this.lblMonitor8 = new System.Windows.Forms.Label();
+            this.lblMonitor6 = new System.Windows.Forms.Label();
+            this.lblMonitor4 = new System.Windows.Forms.Label();
+            this.lblMonitor2 = new System.Windows.Forms.Label();
+            this.lblMonitor11 = new System.Windows.Forms.Label();
+            this.lblMonitor9 = new System.Windows.Forms.Label();
+            this.lblMonitor7 = new System.Windows.Forms.Label();
+            this.lblMonitor5 = new System.Windows.Forms.Label();
+            this.lblMonitor3 = new System.Windows.Forms.Label();
+            this.lblMonitor1 = new System.Windows.Forms.Label();
+            this.mPanelCenter = new System.Windows.Forms.Panel();
+            this.mPanel.SuspendLayout();
+            this.mPanelLeft.SuspendLayout();
+            this.mPanelDeviceInfo.SuspendLayout();
+            this.mMenuPanel.SuspendLayout();
+            this.mMenuHfccsz.SuspendLayout();
+            this.mMenuXtcq.SuspendLayout();
+            this.mMenuXtsz.SuspendLayout();
+            this.mMenuBjsz.SuspendLayout();
+            this.mPanelRight.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // mPanel
+            // 
+            this.mPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mPanel.AutoSize = true;
+            this.mPanel.BackColor = System.Drawing.Color.Transparent;
+            this.mPanel.Controls.Add(this.mPanelLeft);
+            this.mPanel.Controls.Add(this.mPanelRight);
+            this.mPanel.Controls.Add(this.mPanelCenter);
+            this.mPanel.Location = new System.Drawing.Point(7, 113);
+            this.mPanel.Name = "mPanel";
+            this.mPanel.Size = new System.Drawing.Size(1012, 450);
+            this.mPanel.TabIndex = 5;
+            // 
+            // mPanelLeft
+            // 
+            this.mPanelLeft.BackColor = System.Drawing.Color.Transparent;
+            this.mPanelLeft.Controls.Add(this.mPanelDeviceInfo);
+            this.mPanelLeft.Controls.Add(this.mMenuPanel);
+            this.mPanelLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.mPanelLeft.Location = new System.Drawing.Point(0, 0);
+            this.mPanelLeft.Name = "mPanelLeft";
+            this.mPanelLeft.Size = new System.Drawing.Size(229, 450);
+            this.mPanelLeft.TabIndex = 6;
+            // 
+            // mPanelDeviceInfo
+            // 
+            this.mPanelDeviceInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mPanelDeviceInfo.BackColor = System.Drawing.Color.White;
+            this.mPanelDeviceInfo.Controls.Add(this.label45);
+            this.mPanelDeviceInfo.Controls.Add(this.label44);
+            this.mPanelDeviceInfo.Controls.Add(this.label43);
+            this.mPanelDeviceInfo.Controls.Add(this.label42);
+            this.mPanelDeviceInfo.Controls.Add(this.label41);
+            this.mPanelDeviceInfo.Controls.Add(this.label40);
+            this.mPanelDeviceInfo.Controls.Add(this.label39);
+            this.mPanelDeviceInfo.Controls.Add(this.label38);
+            this.mPanelDeviceInfo.Controls.Add(this.label37);
+            this.mPanelDeviceInfo.Controls.Add(this.label36);
+            this.mPanelDeviceInfo.Controls.Add(this.label35);
+            this.mPanelDeviceInfo.Controls.Add(this.label34);
+            this.mPanelDeviceInfo.Controls.Add(this.label33);
+            this.mPanelDeviceInfo.Controls.Add(this.label15);
+            this.mPanelDeviceInfo.Controls.Add(this.label14);
+            this.mPanelDeviceInfo.Controls.Add(this.label13);
+            this.mPanelDeviceInfo.Controls.Add(this.label12);
+            this.mPanelDeviceInfo.Controls.Add(this.label11);
+            this.mPanelDeviceInfo.Controls.Add(this.label10);
+            this.mPanelDeviceInfo.Controls.Add(this.label9);
+            this.mPanelDeviceInfo.Controls.Add(this.label8);
+            this.mPanelDeviceInfo.Controls.Add(this.label7);
+            this.mPanelDeviceInfo.Controls.Add(this.label6);
+            this.mPanelDeviceInfo.Controls.Add(this.label5);
+            this.mPanelDeviceInfo.Controls.Add(this.label4);
+            this.mPanelDeviceInfo.Controls.Add(this.label3);
+            this.mPanelDeviceInfo.Controls.Add(this.label2);
+            this.mPanelDeviceInfo.Controls.Add(this.label1);
+            this.mPanelDeviceInfo.Location = new System.Drawing.Point(0, 172);
+            this.mPanelDeviceInfo.Name = "mPanelDeviceInfo";
+            this.mPanelDeviceInfo.Size = new System.Drawing.Size(229, 278);
+            this.mPanelDeviceInfo.TabIndex = 1;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label45.ForeColor = System.Drawing.Color.Black;
+            this.label45.Location = new System.Drawing.Point(88, 232);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(51, 20);
+            this.label45.TabIndex = 27;
+            this.label45.Text = "未插入";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label44.ForeColor = System.Drawing.Color.Black;
+            this.label44.Location = new System.Drawing.Point(58, 208);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(28, 20);
+            this.label44.TabIndex = 26;
+            this.label44.Text = "8.6";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label43.ForeColor = System.Drawing.Color.Black;
+            this.label43.Location = new System.Drawing.Point(58, 184);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(17, 20);
+            this.label43.TabIndex = 25;
+            this.label43.Text = "0";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label42.ForeColor = System.Drawing.Color.Black;
+            this.label42.Location = new System.Drawing.Point(59, 160);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(28, 20);
+            this.label42.TabIndex = 24;
+            this.label42.Text = "off";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label41.ForeColor = System.Drawing.Color.Black;
+            this.label41.Location = new System.Drawing.Point(60, 136);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(27, 20);
+            this.label41.TabIndex = 23;
+            this.label41.Text = "on";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label40.ForeColor = System.Drawing.Color.Black;
+            this.label40.Location = new System.Drawing.Point(133, 156);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(17, 20);
+            this.label40.TabIndex = 22;
+            this.label40.Text = "0";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label39.ForeColor = System.Drawing.Color.Black;
+            this.label39.Location = new System.Drawing.Point(133, 184);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(17, 20);
+            this.label39.TabIndex = 21;
+            this.label39.Text = "1";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label38.ForeColor = System.Drawing.Color.Black;
+            this.label38.Location = new System.Drawing.Point(133, 136);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(17, 20);
+            this.label38.TabIndex = 19;
+            this.label38.Text = "1";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label37.ForeColor = System.Drawing.Color.Black;
+            this.label37.Location = new System.Drawing.Point(133, 88);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(25, 20);
+            this.label37.TabIndex = 20;
+            this.label37.Text = "12";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label36.ForeColor = System.Drawing.Color.Black;
+            this.label36.Location = new System.Drawing.Point(58, 112);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(17, 20);
+            this.label36.TabIndex = 19;
+            this.label36.Text = "7";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label35.ForeColor = System.Drawing.Color.Black;
+            this.label35.Location = new System.Drawing.Point(59, 88);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(17, 20);
+            this.label35.TabIndex = 18;
+            this.label35.Text = "7";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label34.ForeColor = System.Drawing.Color.Black;
+            this.label34.Location = new System.Drawing.Point(87, 64);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(73, 20);
+            this.label34.TabIndex = 17;
+            this.label34.Text = "11350025";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label33.ForeColor = System.Drawing.Color.Black;
+            this.label33.Location = new System.Drawing.Point(87, 40);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(48, 20);
+            this.label33.TabIndex = 16;
+            this.label33.Text = "SMSK";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.Location = new System.Drawing.Point(87, 208);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(18, 20);
+            this.label15.TabIndex = 15;
+            this.label15.Text = "V";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(87, 184);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(40, 20);
+            this.label14.TabIndex = 14;
+            this.label14.Text = "数目:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(87, 160);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(40, 20);
+            this.label13.TabIndex = 13;
+            this.label13.Text = "通道:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(87, 136);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(40, 20);
+            this.label12.TabIndex = 12;
+            this.label12.Text = "连接:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(87, 88);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(40, 20);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "BDS:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(14, 232);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(61, 20);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "U盘状态";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(14, 208);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(40, 20);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "电压:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(14, 184);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 20);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "记录:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(14, 160);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 20);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "串口:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(14, 136);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 20);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "网络:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(14, 112);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 20);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "GLO:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(14, 88);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 20);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "GPS:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(14, 64);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 20);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "设备编号:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(14, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "站点名称:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 24F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(45, 46);
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 16F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(255)))));
+            this.label1.Location = new System.Drawing.Point(9, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 39);
+            this.label1.Size = new System.Drawing.Size(101, 30);
             this.label1.TabIndex = 1;
-            this.label1.Text = "设备状态";
+            this.label1.Text = "状态摘要";
+            // 
+            // mMenuPanel
+            // 
+            this.mMenuPanel.BackColor = System.Drawing.Color.White;
+            this.mMenuPanel.Controls.Add(this.mMenuHfccsz);
+            this.mMenuPanel.Controls.Add(this.mMenuXtcq);
+            this.mMenuPanel.Controls.Add(this.mMenuXtsz);
+            this.mMenuPanel.Controls.Add(this.mMenuBjsz);
+            this.mMenuPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.mMenuPanel.Location = new System.Drawing.Point(0, 0);
+            this.mMenuPanel.Name = "mMenuPanel";
+            this.mMenuPanel.Size = new System.Drawing.Size(229, 163);
+            this.mMenuPanel.TabIndex = 0;
+            // 
+            // mMenuHfccsz
+            // 
+            this.mMenuHfccsz.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mMenuHfccsz.Controls.Add(this.mLblHfccsz);
+            this.mMenuHfccsz.Location = new System.Drawing.Point(0, 121);
+            this.mMenuHfccsz.Name = "mMenuHfccsz";
+            this.mMenuHfccsz.Size = new System.Drawing.Size(229, 36);
+            this.mMenuHfccsz.TabIndex = 5;
+            this.mMenuHfccsz.Click += new System.EventHandler(this.menu_panel_click);
+            // 
+            // mLblHfccsz
+            // 
+            this.mLblHfccsz.AutoSize = true;
+            this.mLblHfccsz.Font = new System.Drawing.Font("微软雅黑", 16F);
+            this.mLblHfccsz.ForeColor = System.Drawing.Color.Black;
+            this.mLblHfccsz.Location = new System.Drawing.Point(36, 1);
+            this.mLblHfccsz.Name = "mLblHfccsz";
+            this.mLblHfccsz.Size = new System.Drawing.Size(145, 30);
+            this.mLblHfccsz.TabIndex = 0;
+            this.mLblHfccsz.Text = "恢复出厂设置";
+            this.mLblHfccsz.Click += new System.EventHandler(this.menulabel_click);
+            // 
+            // mMenuXtcq
+            // 
+            this.mMenuXtcq.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mMenuXtcq.Controls.Add(this.mLblXtcq);
+            this.mMenuXtcq.Location = new System.Drawing.Point(0, 84);
+            this.mMenuXtcq.Name = "mMenuXtcq";
+            this.mMenuXtcq.Size = new System.Drawing.Size(229, 36);
+            this.mMenuXtcq.TabIndex = 4;
+            this.mMenuXtcq.Click += new System.EventHandler(this.menu_panel_click);
+            // 
+            // mLblXtcq
+            // 
+            this.mLblXtcq.AutoSize = true;
+            this.mLblXtcq.Font = new System.Drawing.Font("微软雅黑", 16F);
+            this.mLblXtcq.ForeColor = System.Drawing.Color.Black;
+            this.mLblXtcq.Location = new System.Drawing.Point(36, 1);
+            this.mLblXtcq.Name = "mLblXtcq";
+            this.mLblXtcq.Size = new System.Drawing.Size(101, 30);
+            this.mLblXtcq.TabIndex = 0;
+            this.mLblXtcq.Text = "系统重启";
+            this.mLblXtcq.Click += new System.EventHandler(this.menulabel_click);
+            // 
+            // mMenuXtsz
+            // 
+            this.mMenuXtsz.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mMenuXtsz.Controls.Add(this.mLblXtsz);
+            this.mMenuXtsz.Location = new System.Drawing.Point(0, 47);
+            this.mMenuXtsz.Name = "mMenuXtsz";
+            this.mMenuXtsz.Size = new System.Drawing.Size(229, 36);
+            this.mMenuXtsz.TabIndex = 3;
+            this.mMenuXtsz.Click += new System.EventHandler(this.menu_panel_click);
+            // 
+            // mLblXtsz
+            // 
+            this.mLblXtsz.AutoSize = true;
+            this.mLblXtsz.Font = new System.Drawing.Font("微软雅黑", 16F);
+            this.mLblXtsz.ForeColor = System.Drawing.Color.Black;
+            this.mLblXtsz.Location = new System.Drawing.Point(36, 1);
+            this.mLblXtsz.Name = "mLblXtsz";
+            this.mLblXtsz.Size = new System.Drawing.Size(101, 30);
+            this.mLblXtsz.TabIndex = 0;
+            this.mLblXtsz.Text = "系统设置";
+            this.mLblXtsz.Click += new System.EventHandler(this.menulabel_click);
+            // 
+            // mMenuBjsz
+            // 
+            this.mMenuBjsz.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mMenuBjsz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.mMenuBjsz.Controls.Add(this.mLblBjsz);
+            this.mMenuBjsz.Location = new System.Drawing.Point(0, 11);
+            this.mMenuBjsz.Name = "mMenuBjsz";
+            this.mMenuBjsz.Size = new System.Drawing.Size(229, 36);
+            this.mMenuBjsz.TabIndex = 2;
+            this.mMenuBjsz.Click += new System.EventHandler(this.menu_panel_click);
+            // 
+            // mLblBjsz
+            // 
+            this.mLblBjsz.AutoSize = true;
+            this.mLblBjsz.Font = new System.Drawing.Font("微软雅黑", 16F);
+            this.mLblBjsz.ForeColor = System.Drawing.Color.White;
+            this.mLblBjsz.Location = new System.Drawing.Point(36, 1);
+            this.mLblBjsz.Name = "mLblBjsz";
+            this.mLblBjsz.Size = new System.Drawing.Size(101, 30);
+            this.mLblBjsz.TabIndex = 0;
+            this.mLblBjsz.Text = "本机设置";
+            this.mLblBjsz.Click += new System.EventHandler(this.menulabel_click);
+            // 
+            // mPanelRight
+            // 
+            this.mPanelRight.AutoSize = true;
+            this.mPanelRight.BackColor = System.Drawing.Color.White;
+            this.mPanelRight.Controls.Add(this.lblDevices);
+            this.mPanelRight.Controls.Add(this.lblMonitor12);
+            this.mPanelRight.Controls.Add(this.lblMonitor10);
+            this.mPanelRight.Controls.Add(this.lblMonitor8);
+            this.mPanelRight.Controls.Add(this.lblMonitor6);
+            this.mPanelRight.Controls.Add(this.lblMonitor4);
+            this.mPanelRight.Controls.Add(this.lblMonitor2);
+            this.mPanelRight.Controls.Add(this.lblMonitor11);
+            this.mPanelRight.Controls.Add(this.lblMonitor9);
+            this.mPanelRight.Controls.Add(this.lblMonitor7);
+            this.mPanelRight.Controls.Add(this.lblMonitor5);
+            this.mPanelRight.Controls.Add(this.lblMonitor3);
+            this.mPanelRight.Controls.Add(this.lblMonitor1);
+            this.mPanelRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.mPanelRight.Location = new System.Drawing.Point(886, 0);
+            this.mPanelRight.Name = "mPanelRight";
+            this.mPanelRight.Size = new System.Drawing.Size(126, 450);
+            this.mPanelRight.TabIndex = 2;
+            // 
+            // lblDevices
+            // 
+            this.lblDevices.AutoSize = true;
+            this.lblDevices.Font = new System.Drawing.Font("微软雅黑", 18F);
+            this.lblDevices.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(255)))));
+            this.lblDevices.Location = new System.Drawing.Point(13, 13);
+            this.lblDevices.Name = "lblDevices";
+            this.lblDevices.Size = new System.Drawing.Size(110, 31);
+            this.lblDevices.TabIndex = 2;
+            this.lblDevices.Text = "设备选择";
+            // 
+            // lblMonitor12
+            // 
+            this.lblMonitor12.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblMonitor12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
+            this.lblMonitor12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMonitor12.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.lblMonitor12.ForeColor = System.Drawing.Color.White;
+            this.lblMonitor12.Location = new System.Drawing.Point(70, 341);
+            this.lblMonitor12.Name = "lblMonitor12";
+            this.lblMonitor12.Size = new System.Drawing.Size(48, 48);
+            this.lblMonitor12.TabIndex = 1;
+            this.lblMonitor12.Text = "+";
+            this.lblMonitor12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMonitor10
+            // 
+            this.lblMonitor10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblMonitor10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
+            this.lblMonitor10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMonitor10.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.lblMonitor10.ForeColor = System.Drawing.Color.White;
+            this.lblMonitor10.Location = new System.Drawing.Point(70, 285);
+            this.lblMonitor10.Name = "lblMonitor10";
+            this.lblMonitor10.Size = new System.Drawing.Size(48, 48);
+            this.lblMonitor10.TabIndex = 1;
+            this.lblMonitor10.Text = "10";
+            this.lblMonitor10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMonitor8
+            // 
+            this.lblMonitor8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblMonitor8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
+            this.lblMonitor8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMonitor8.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.lblMonitor8.ForeColor = System.Drawing.Color.White;
+            this.lblMonitor8.Location = new System.Drawing.Point(70, 228);
+            this.lblMonitor8.Name = "lblMonitor8";
+            this.lblMonitor8.Size = new System.Drawing.Size(48, 48);
+            this.lblMonitor8.TabIndex = 1;
+            this.lblMonitor8.Text = "8";
+            this.lblMonitor8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMonitor6
+            // 
+            this.lblMonitor6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblMonitor6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
+            this.lblMonitor6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMonitor6.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.lblMonitor6.ForeColor = System.Drawing.Color.White;
+            this.lblMonitor6.Location = new System.Drawing.Point(70, 172);
+            this.lblMonitor6.Name = "lblMonitor6";
+            this.lblMonitor6.Size = new System.Drawing.Size(48, 48);
+            this.lblMonitor6.TabIndex = 1;
+            this.lblMonitor6.Text = "6";
+            this.lblMonitor6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMonitor4
+            // 
+            this.lblMonitor4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblMonitor4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
+            this.lblMonitor4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMonitor4.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.lblMonitor4.ForeColor = System.Drawing.Color.White;
+            this.lblMonitor4.Location = new System.Drawing.Point(70, 115);
+            this.lblMonitor4.Name = "lblMonitor4";
+            this.lblMonitor4.Size = new System.Drawing.Size(48, 48);
+            this.lblMonitor4.TabIndex = 1;
+            this.lblMonitor4.Text = "4";
+            this.lblMonitor4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMonitor2
+            // 
+            this.lblMonitor2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblMonitor2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
+            this.lblMonitor2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMonitor2.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.lblMonitor2.ForeColor = System.Drawing.Color.White;
+            this.lblMonitor2.Location = new System.Drawing.Point(70, 59);
+            this.lblMonitor2.Name = "lblMonitor2";
+            this.lblMonitor2.Size = new System.Drawing.Size(48, 48);
+            this.lblMonitor2.TabIndex = 1;
+            this.lblMonitor2.Text = "2";
+            this.lblMonitor2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMonitor11
+            // 
+            this.lblMonitor11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblMonitor11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
+            this.lblMonitor11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMonitor11.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.lblMonitor11.ForeColor = System.Drawing.Color.White;
+            this.lblMonitor11.Location = new System.Drawing.Point(9, 341);
+            this.lblMonitor11.Name = "lblMonitor11";
+            this.lblMonitor11.Size = new System.Drawing.Size(48, 48);
+            this.lblMonitor11.TabIndex = 1;
+            this.lblMonitor11.Text = "11";
+            this.lblMonitor11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMonitor9
+            // 
+            this.lblMonitor9.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblMonitor9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
+            this.lblMonitor9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMonitor9.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.lblMonitor9.ForeColor = System.Drawing.Color.White;
+            this.lblMonitor9.Location = new System.Drawing.Point(9, 285);
+            this.lblMonitor9.Name = "lblMonitor9";
+            this.lblMonitor9.Size = new System.Drawing.Size(48, 48);
+            this.lblMonitor9.TabIndex = 1;
+            this.lblMonitor9.Text = "9";
+            this.lblMonitor9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMonitor7
+            // 
+            this.lblMonitor7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblMonitor7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
+            this.lblMonitor7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMonitor7.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.lblMonitor7.ForeColor = System.Drawing.Color.White;
+            this.lblMonitor7.Location = new System.Drawing.Point(9, 228);
+            this.lblMonitor7.Name = "lblMonitor7";
+            this.lblMonitor7.Size = new System.Drawing.Size(48, 48);
+            this.lblMonitor7.TabIndex = 1;
+            this.lblMonitor7.Text = "7";
+            this.lblMonitor7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMonitor5
+            // 
+            this.lblMonitor5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblMonitor5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
+            this.lblMonitor5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMonitor5.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.lblMonitor5.ForeColor = System.Drawing.Color.White;
+            this.lblMonitor5.Location = new System.Drawing.Point(9, 172);
+            this.lblMonitor5.Name = "lblMonitor5";
+            this.lblMonitor5.Size = new System.Drawing.Size(48, 48);
+            this.lblMonitor5.TabIndex = 1;
+            this.lblMonitor5.Text = "5";
+            this.lblMonitor5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMonitor3
+            // 
+            this.lblMonitor3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblMonitor3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
+            this.lblMonitor3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMonitor3.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.lblMonitor3.ForeColor = System.Drawing.Color.White;
+            this.lblMonitor3.Location = new System.Drawing.Point(9, 115);
+            this.lblMonitor3.Name = "lblMonitor3";
+            this.lblMonitor3.Size = new System.Drawing.Size(48, 48);
+            this.lblMonitor3.TabIndex = 1;
+            this.lblMonitor3.Text = "3";
+            this.lblMonitor3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMonitor1
+            // 
+            this.lblMonitor1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblMonitor1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.lblMonitor1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMonitor1.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.lblMonitor1.ForeColor = System.Drawing.Color.White;
+            this.lblMonitor1.Location = new System.Drawing.Point(9, 59);
+            this.lblMonitor1.Name = "lblMonitor1";
+            this.lblMonitor1.Size = new System.Drawing.Size(48, 48);
+            this.lblMonitor1.TabIndex = 1;
+            this.lblMonitor1.Text = "1";
+            this.lblMonitor1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // mPanelCenter
+            // 
+            this.mPanelCenter.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mPanelCenter.BackColor = System.Drawing.Color.White;
+            this.mPanelCenter.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.mPanelCenter.Location = new System.Drawing.Point(238, 0);
+            this.mPanelCenter.Name = "mPanelCenter";
+            this.mPanelCenter.Size = new System.Drawing.Size(638, 450);
+            this.mPanelCenter.TabIndex = 4;
             // 
             // Sbzt
             // 
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(206)))));
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.mPanel);
             this.Name = "Sbzt";
-            this.Size = new System.Drawing.Size(882, 521);
+            this.Size = new System.Drawing.Size(1024, 670);
+            this.Load += new System.EventHandler(this.Sbzt_Load);
+            this.mPanel.ResumeLayout(false);
+            this.mPanel.PerformLayout();
+            this.mPanelLeft.ResumeLayout(false);
+            this.mPanelDeviceInfo.ResumeLayout(false);
+            this.mPanelDeviceInfo.PerformLayout();
+            this.mMenuPanel.ResumeLayout(false);
+            this.mMenuHfccsz.ResumeLayout(false);
+            this.mMenuHfccsz.PerformLayout();
+            this.mMenuXtcq.ResumeLayout(false);
+            this.mMenuXtcq.PerformLayout();
+            this.mMenuXtsz.ResumeLayout(false);
+            this.mMenuXtsz.PerformLayout();
+            this.mMenuBjsz.ResumeLayout(false);
+            this.mMenuBjsz.PerformLayout();
+            this.mPanelRight.ResumeLayout(false);
+            this.mPanelRight.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -56,6 +818,60 @@
 
         #endregion
 
+        private System.Windows.Forms.Panel mPanel;
+        private System.Windows.Forms.Panel mPanelCenter;
+        private System.Windows.Forms.Panel mPanelRight;
+        private System.Windows.Forms.Label lblMonitor12;
+        private System.Windows.Forms.Label lblMonitor10;
+        private System.Windows.Forms.Label lblMonitor8;
+        private System.Windows.Forms.Label lblMonitor6;
+        private System.Windows.Forms.Label lblMonitor4;
+        private System.Windows.Forms.Label lblMonitor2;
+        private System.Windows.Forms.Label lblMonitor11;
+        private System.Windows.Forms.Label lblMonitor9;
+        private System.Windows.Forms.Label lblMonitor7;
+        private System.Windows.Forms.Label lblMonitor5;
+        private System.Windows.Forms.Label lblMonitor3;
+        private System.Windows.Forms.Label lblMonitor1;
+        private System.Windows.Forms.Panel mPanelLeft;
+        private System.Windows.Forms.Label lblDevices;
+        private System.Windows.Forms.Panel mPanelDeviceInfo;
+        private System.Windows.Forms.Panel mMenuPanel;
+        private System.Windows.Forms.Panel mMenuHfccsz;
+        private System.Windows.Forms.Label mLblHfccsz;
+        private System.Windows.Forms.Panel mMenuXtcq;
+        private System.Windows.Forms.Label mLblXtcq;
+        private System.Windows.Forms.Panel mMenuXtsz;
+        private System.Windows.Forms.Label mLblXtsz;
+        private System.Windows.Forms.Panel mMenuBjsz;
+        private System.Windows.Forms.Label mLblBjsz;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
     }
 }
