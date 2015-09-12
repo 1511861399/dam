@@ -161,6 +161,18 @@
     <Compile Include="Views\Wxzt.Designer.cs">
       <DependentUpon>Wxzt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Wxzt_xkt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Wxzt_xkt.Designer.cs">
+      <DependentUpon>Wxzt_xkt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Wxzt_xzb.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Wxzt_xzb.Designer.cs">
+      <DependentUpon>Wxzt_xzb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Xbjc.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -188,6 +200,7 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Views\popupTj.resx">
       <DependentUpon>popupTj.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,13 +219,18 @@
     <EmbeddedResource Include="Views\Wxzt.resx">
       <DependentUpon>Wxzt.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Wxzt_xkt.resx">
+      <DependentUpon>Wxzt_xkt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Wxzt_xzb.resx">
+      <DependentUpon>Wxzt_xzb.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Yhgl.resx">
       <DependentUpon>Yhgl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\popupYHEdit.resx">
       <DependentUpon>popupYHEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -292,9 +310,6 @@
     <None Include="Resources\tile_bg_aqdj.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\tile_bg_xbjc.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\tile_bg_yhgl.png" />
   </ItemGroup>
   <ItemGroup>
@@ -353,10 +368,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\bianji.png" />
+    <None Include="Resources\btn_bg.png" />
     <Content Include="Resources\GNSSXB.png" />
     <Content Include="Resources\icon_color32.png" />
     <Content Include="Resources\icon_pic32.png" />
     <Content Include="Resources\shanchu.png" />
+    <None Include="Resources\tile_bg_xbjc.png" />
     <Content Include="Resources\tip.png" />
     <Content Include="Resources\transparent_bg.png" />
     <Content Include="Resources\wind_direction_arrow_e.png" />

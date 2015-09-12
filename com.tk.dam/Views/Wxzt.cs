@@ -7,6 +7,8 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.Skins;
+using DevExpress.LookAndFeel;
 
 namespace com.tk.dam.Views
 {
@@ -15,6 +17,31 @@ namespace com.tk.dam.Views
         public Wxzt()
         {
             InitializeComponent();
+            //var mCurrentSkin = MetroUISkins.GetSkin(UserLookAndFeel.Default.ActiveLookAndFeel);
+            //SkinElement skin = mCurrentSkin[MetroUISkins.SkinPageGroupItemHeaderButton];
+            ////skin.Color.BackColor = Color.Green;           
+            //skin.SetActualImage(Properties.Resources.btn_bg, true);
+            //LookAndFeelHelper.ForceDefaultLookAndFeelChanged();
+            
+            mainWindowsUIView.AddDocument(new Wxzt_xkt());
+            mainWindowsUIView.AddDocument(new Wxzt_xzb());
         }
+
+        private void btnXKT_Click(object sender, EventArgs e)
+        {
+            mainWindowsUIView.ActivateDocument(this.document_xkt);
+        }
+
+        private void btnXZB_Click(object sender, EventArgs e)
+        {
+            mainWindowsUIView.ActivateDocument(this.document_xzb);
+        }
+
+        private void Wxzt_Load(object sender, EventArgs e)
+        {
+            this.xtraUserControl1.Width = (int)((this.Width - 900) * 0.5) + 900;
+            this.xtraUserControl1.Height = (int)((this.Height - 600) * 0.1) + 600;
+        }
+
     }
 }
