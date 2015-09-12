@@ -55,9 +55,9 @@ namespace com.tk.dam.Views
                 int mNewY = this.panel5.Location.Y - (int)(mDeltaH * 0.6);
                 this.panel5.Location = new Point(mNewX, mNewY);
 
-                this.panel2.Width = (int)(this.panel2.Height * 1.08);
-                this.panel1.Width = this.panel6.Width - this.panel2.Width - 10;
-                this.panel2.Location = new Point(this.panel1.Width + 10, this.panel2.Location.Y);
+                //this.panel2.Width = (int)(this.panel2.Height * 1.08);
+                //this.panel1.Width = this.panel6.Width - this.panel2.Width - 10;
+                //this.panel2.Location = new Point(this.panel1.Width + 10, this.panel2.Location.Y);
             }
 
 

@@ -143,6 +143,30 @@
     <Compile Include="Views\Qx.Designer.cs">
       <DependentUpon>Qx.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Sbsz_Bjsz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Sbsz_Bjsz.Designer.cs">
+      <DependentUpon>Sbsz_Bjsz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sbsz_Hfccsz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Sbsz_Hfccsz.Designer.cs">
+      <DependentUpon>Sbsz_Hfccsz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sbsz_Xtcq.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Sbsz_Xtcq.Designer.cs">
+      <DependentUpon>Sbsz_Xtcq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sbsz_Xtsz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Sbsz_Xtsz.Designer.cs">
+      <DependentUpon>Sbsz_Xtsz.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Sbzt.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -212,6 +236,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Qx.resx">
       <DependentUpon>Qx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Sbsz_Bjsz.resx">
+      <DependentUpon>Sbsz_Bjsz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Sbsz_Hfccsz.resx">
+      <DependentUpon>Sbsz_Hfccsz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Sbsz_Xtcq.resx">
+      <DependentUpon>Sbsz_Xtcq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Sbsz_Xtsz.resx">
+      <DependentUpon>Sbsz_Xtsz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Sp.resx">
       <DependentUpon>Sp.cs</DependentUpon>
