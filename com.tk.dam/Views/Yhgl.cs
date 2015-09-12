@@ -22,6 +22,12 @@ namespace com.tk.dam.Views
             BindingGrid();
         }
 
+        private void Yhgl_Load(object sender, EventArgs e)
+        {
+            this.panelContainer.Width = (int)((this.Width - 900) * 0.5) + 900;
+            this.panelContainer.Height = (int)((this.Height - 600) * 0.1) + 560;
+        }
+
         /// <summary>
         ///  更新用户
         /// </summary>
@@ -74,5 +80,6 @@ namespace com.tk.dam.Views
         {
             MainForm.ShowYHEditFlyout(mYhList[gridView1.FocusedRowHandle]);
         }
+       
     }
 }

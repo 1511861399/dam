@@ -53,7 +53,7 @@
             this.xtraUserControl1.Appearance.Options.UseBackColor = true;
             this.xtraUserControl1.Location = new System.Drawing.Point(74, 36);
             this.xtraUserControl1.Name = "xtraUserControl1";
-            this.xtraUserControl1.Size = new System.Drawing.Size(880, 600);
+            this.xtraUserControl1.Size = new System.Drawing.Size(880, 560);
             this.xtraUserControl1.TabIndex = 0;
             // 
             // mainDocumentManager

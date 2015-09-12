@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Qx));
             DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
             DevExpress.XtraCharts.ConstantLine constantLine1 = new DevExpress.XtraCharts.ConstantLine();
             DevExpress.XtraCharts.ConstantLine constantLine2 = new DevExpress.XtraCharts.ConstantLine();
@@ -50,6 +49,15 @@
             ((object)(80D))});
             DevExpress.XtraCharts.LineSeriesView lineSeriesView1 = new DevExpress.XtraCharts.LineSeriesView();
             DevExpress.XtraCharts.LineSeriesView lineSeriesView2 = new DevExpress.XtraCharts.LineSeriesView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Qx));
+            this.circularGauge1 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
+            this.labelComponent1 = new DevExpress.XtraGauges.Win.Base.LabelComponent();
+            this.arcScaleComponent1 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent();
+            this.arcScaleRangeBarComponent1 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleRangeBarComponent();
+            this.panelContainer = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTemperature5 = new System.Windows.Forms.Label();
             this.lblTemperature4 = new System.Windows.Forms.Label();
@@ -65,7 +73,17 @@
             this.lblDateTime4 = new System.Windows.Forms.Label();
             this.lblDateTime2 = new System.Windows.Forms.Label();
             this.lblDateTime3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBoxModel1 = new com.tk.dam.Views.PictureBoxModel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.gaugeControl1 = new DevExpress.XtraGauges.Win.GaugeControl();
+            this.circularGauge2 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
+            this.labelComponent2 = new DevExpress.XtraGauges.Win.Base.LabelComponent();
+            this.arcScaleRangeBarComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleRangeBarComponent();
+            this.arcScaleComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblPower = new System.Windows.Forms.Label();
             this.lblDirection = new System.Windows.Forms.Label();
@@ -78,30 +96,30 @@
             this.pboxDirectionE = new System.Windows.Forms.PictureBox();
             this.pboxDirectionS = new System.Windows.Forms.PictureBox();
             this.pboxDirection = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.gaugeControl1 = new DevExpress.XtraGauges.Win.GaugeControl();
-            this.circularGauge2 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
-            this.labelComponent2 = new DevExpress.XtraGauges.Win.Base.LabelComponent();
-            this.arcScaleRangeBarComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleRangeBarComponent();
-            this.arcScaleComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBoxModel1 = new com.tk.dam.Views.PictureBoxModel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
-            this.label6 = new System.Windows.Forms.Label();
-            this.circularGauge1 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
-            this.labelComponent1 = new DevExpress.XtraGauges.Win.Base.LabelComponent();
-            this.arcScaleComponent1 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent();
-            this.arcScaleRangeBarComponent1 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleRangeBarComponent();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.circularGauge1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.labelComponent1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleRangeBarComponent1)).BeginInit();
+            this.panelContainer.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxFigure4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxFigure3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxFigure1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxFigure2)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularGauge2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.labelComponent2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleRangeBarComponent2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent2)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxDirectionW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxDirectionWN)).BeginInit();
@@ -112,30 +130,181 @@
             ((System.ComponentModel.ISupportInitialize)(this.pboxDirectionE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxDirectionS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxDirection)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularGauge2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.labelComponent2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleRangeBarComponent2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent2)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularGauge1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.labelComponent1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleRangeBarComponent1)).BeginInit();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // circularGauge1
+            // 
+            this.circularGauge1.Bounds = new System.Drawing.Rectangle(6, 6, 248, 248);
+            this.circularGauge1.Name = "circularGauge1";
+            // 
+            // labelComponent1
+            // 
+            this.labelComponent1.AppearanceText.Font = new System.Drawing.Font("Segoe UI", 27.75F);
+            this.labelComponent1.Name = "circularGauge1_Label1";
+            this.labelComponent1.Size = new System.Drawing.SizeF(140F, 60F);
+            this.labelComponent1.Text = "910";
+            this.labelComponent1.UseColorScheme = false;
+            this.labelComponent1.ZOrder = -1001;
+            // 
+            // arcScaleComponent1
+            // 
+            this.arcScaleComponent1.AppearanceMajorTickmark.BorderBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
+            this.arcScaleComponent1.AppearanceMajorTickmark.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
+            this.arcScaleComponent1.AppearanceMinorTickmark.BorderBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
+            this.arcScaleComponent1.AppearanceMinorTickmark.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
+            this.arcScaleComponent1.AppearanceTickmarkText.Font = new System.Drawing.Font("Tahoma", 8.5F);
+            this.arcScaleComponent1.AppearanceTickmarkText.TextBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#484E5A");
+            this.arcScaleComponent1.Center = new DevExpress.XtraGauges.Core.Base.PointF2D(125F, 125F);
+            this.arcScaleComponent1.EndAngle = 90F;
+            this.arcScaleComponent1.MajorTickCount = 0;
+            this.arcScaleComponent1.MajorTickmark.FormatString = "{0:F0}";
+            this.arcScaleComponent1.MajorTickmark.ShapeOffset = -14F;
+            this.arcScaleComponent1.MajorTickmark.ShapeType = DevExpress.XtraGauges.Core.Model.TickmarkShapeType.Circular_Style16_1;
+            this.arcScaleComponent1.MajorTickmark.TextOrientation = DevExpress.XtraGauges.Core.Model.LabelOrientation.LeftToRight;
+            this.arcScaleComponent1.MaxValue = 100F;
+            this.arcScaleComponent1.MinorTickCount = 0;
+            this.arcScaleComponent1.MinorTickmark.ShapeOffset = -7F;
+            this.arcScaleComponent1.MinorTickmark.ShapeType = DevExpress.XtraGauges.Core.Model.TickmarkShapeType.Circular_Style16_2;
+            this.arcScaleComponent1.Name = "scale1";
+            this.arcScaleComponent1.StartAngle = -270F;
+            this.arcScaleComponent1.Value = 20F;
+            // 
+            // arcScaleRangeBarComponent1
+            // 
+            this.arcScaleRangeBarComponent1.Name = "circularGauge1_RangeBar2";
+            this.arcScaleRangeBarComponent1.RoundedCaps = true;
+            this.arcScaleRangeBarComponent1.ShowBackground = true;
+            this.arcScaleRangeBarComponent1.StartOffset = 80F;
+            this.arcScaleRangeBarComponent1.ZOrder = -10;
+            // 
+            // panelContainer
+            // 
+            this.panelContainer.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panelContainer.BackColor = System.Drawing.Color.Transparent;
+            this.panelContainer.Controls.Add(this.panel5);
+            this.panelContainer.Controls.Add(this.panel1);
+            this.panelContainer.Controls.Add(this.panel4);
+            this.panelContainer.Controls.Add(this.panel3);
+            this.panelContainer.Controls.Add(this.panel2);
+            this.panelContainer.Location = new System.Drawing.Point(70, 35);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(1220, 530);
+            this.panelContainer.TabIndex = 24;
+            // 
+            // panel5
+            // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.AutoSize = true;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(250)))));
+            this.panel5.Controls.Add(this.chartControl1);
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Location = new System.Drawing.Point(738, 17);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(486, 500);
+            this.panel5.TabIndex = 23;
+            // 
+            // chartControl1
+            // 
+            this.chartControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chartControl1.BackColor = System.Drawing.Color.Transparent;
+            this.chartControl1.BorderOptions.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(250)))));
+            xyDiagram1.AxisX.DateTimeScaleOptions.AggregateFunction = DevExpress.XtraCharts.AggregateFunction.None;
+            xyDiagram1.AxisX.DateTimeScaleOptions.AutoGrid = false;
+            xyDiagram1.AxisX.DateTimeScaleOptions.GridSpacing = 3D;
+            xyDiagram1.AxisX.DateTimeScaleOptions.ScaleMode = DevExpress.XtraCharts.ScaleMode.Automatic;
+            xyDiagram1.AxisX.GridLines.Visible = true;
+            xyDiagram1.AxisX.Label.TextPattern = "{A:MMMd日}";
+            xyDiagram1.AxisX.Title.Alignment = System.Drawing.StringAlignment.Far;
+            xyDiagram1.AxisX.Title.Antialiasing = false;
+            xyDiagram1.AxisX.Title.Text = "时间";
+            xyDiagram1.AxisX.Title.TextColor = System.Drawing.Color.White;
+            xyDiagram1.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            xyDiagram1.AxisX.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            constantLine1.AxisValueSerializable = "98.78";
+            constantLine1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            constantLine1.LineStyle.Thickness = 3;
+            constantLine1.Name = "设计水位";
+            constantLine1.Title.Alignment = DevExpress.XtraCharts.ConstantLineTitleAlignment.Far;
+            constantLine1.Title.Visible = false;
+            constantLine2.AxisValueSerializable = "94";
+            constantLine2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(228)))), ((int)(((byte)(0)))));
+            constantLine2.LineStyle.Thickness = 3;
+            constantLine2.Name = "正常水位";
+            constantLine2.Title.Text = "正常水位";
+            constantLine2.Title.Visible = false;
+            constantLine3.AxisValueSerializable = "90";
+            constantLine3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(96)))), ((int)(((byte)(245)))));
+            constantLine3.LineStyle.Thickness = 3;
+            constantLine3.Name = "汛限水位";
+            constantLine3.Title.Text = "汛限水位";
+            constantLine3.Title.Visible = false;
+            xyDiagram1.AxisY.ConstantLines.AddRange(new DevExpress.XtraCharts.ConstantLine[] {
+            constantLine1,
+            constantLine2,
+            constantLine3});
+            xyDiagram1.AxisY.GridLines.MinorColor = System.Drawing.Color.Transparent;
+            xyDiagram1.AxisY.Label.TextPattern = "{V}m";
+            xyDiagram1.AxisY.Tickmarks.Visible = false;
+            xyDiagram1.AxisY.Title.Alignment = System.Drawing.StringAlignment.Far;
+            xyDiagram1.AxisY.Title.Antialiasing = false;
+            xyDiagram1.AxisY.Title.Text = "水位";
+            xyDiagram1.AxisY.Title.TextColor = System.Drawing.Color.White;
+            xyDiagram1.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram1.AxisY.VisualRange.Auto = false;
+            xyDiagram1.AxisY.VisualRange.MaxValueSerializable = "100";
+            xyDiagram1.AxisY.VisualRange.MinValueSerializable = "80";
+            xyDiagram1.AxisY.WholeRange.AlwaysShowZeroLevel = false;
+            xyDiagram1.AxisY.WholeRange.Auto = false;
+            xyDiagram1.AxisY.WholeRange.MaxValueSerializable = "100";
+            xyDiagram1.AxisY.WholeRange.MinValueSerializable = "70";
+            xyDiagram1.DefaultPane.BackColor = System.Drawing.Color.Transparent;
+            xyDiagram1.DefaultPane.BorderColor = System.Drawing.Color.Transparent;
+            this.chartControl1.Diagram = xyDiagram1;
+            this.chartControl1.Legend.BackColor = System.Drawing.Color.Transparent;
+            this.chartControl1.Legend.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(250)))));
+            this.chartControl1.Legend.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            this.chartControl1.Location = new System.Drawing.Point(12, 95);
+            this.chartControl1.Name = "chartControl1";
+            this.chartControl1.PaletteName = "Yellow";
+            series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
+            series1.Name = "水位";
+            series1.Points.AddRange(new DevExpress.XtraCharts.SeriesPoint[] {
+            seriesPoint1,
+            seriesPoint2,
+            seriesPoint3,
+            seriesPoint4,
+            seriesPoint5,
+            seriesPoint6,
+            seriesPoint7});
+            lineSeriesView1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(228)))), ((int)(((byte)(0)))));
+            lineSeriesView1.LineStyle.Thickness = 1;
+            lineSeriesView1.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
+            series1.View = lineSeriesView1;
+            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series1};
+            this.chartControl1.SeriesTemplate.View = lineSeriesView2;
+            this.chartControl1.Size = new System.Drawing.Size(468, 375);
+            this.chartControl1.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 24F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(3, 4);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(145, 39);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "水位曲线";
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(167)))), ((int)(((byte)(108)))));
             this.panel1.Controls.Add(this.lblTemperature5);
@@ -152,9 +321,9 @@
             this.panel1.Controls.Add(this.lblDateTime4);
             this.panel1.Controls.Add(this.lblDateTime2);
             this.panel1.Controls.Add(this.lblDateTime3);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 17);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(252, 444);
+            this.panel1.Size = new System.Drawing.Size(252, 500);
             this.panel1.TabIndex = 0;
             // 
             // lblTemperature5
@@ -299,182 +468,58 @@
             this.lblDateTime3.TabIndex = 11;
             this.lblDateTime3.Text = "星期二";
             // 
-            // label2
+            // panel4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 24F);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 39);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "风向";
+            this.panel4.AutoSize = true;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(169)))), ((int)(((byte)(245)))));
+            this.panel4.Controls.Add(this.pictureBoxModel1);
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Location = new System.Drawing.Point(454, 17);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(278, 500);
+            this.panel4.TabIndex = 21;
             // 
-            // panel2
+            // pictureBoxModel1
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel2.AutoSize = true;
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(150)))), ((int)(((byte)(145)))));
-            this.panel2.Controls.Add(this.lblPower);
-            this.panel2.Controls.Add(this.lblDirection);
-            this.panel2.Controls.Add(this.pboxDirectionW);
-            this.panel2.Controls.Add(this.pboxDirectionWN);
-            this.panel2.Controls.Add(this.pboxDirectionSW);
-            this.panel2.Controls.Add(this.pboxDirectionES);
-            this.panel2.Controls.Add(this.pboxDirectionNE);
-            this.panel2.Controls.Add(this.pboxDirectionN);
-            this.panel2.Controls.Add(this.pboxDirectionE);
-            this.panel2.Controls.Add(this.pboxDirectionS);
-            this.panel2.Controls.Add(this.pboxDirection);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(258, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(190, 234);
-            this.panel2.TabIndex = 20;
+            this.pictureBoxModel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBoxModel1.Location = new System.Drawing.Point(0, 181);
+            this.pictureBoxModel1.Name = "pictureBoxModel1";
+            this.pictureBoxModel1.Size = new System.Drawing.Size(94, 319);
+            this.pictureBoxModel1.TabIndex = 25;
             // 
-            // lblPower
+            // pictureBox1
             // 
-            this.lblPower.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.lblPower.ForeColor = System.Drawing.Color.White;
-            this.lblPower.Location = new System.Drawing.Point(57, 125);
-            this.lblPower.Name = "lblPower";
-            this.lblPower.Size = new System.Drawing.Size(70, 24);
-            this.lblPower.TabIndex = 7;
-            this.lblPower.Text = "4~6级";
-            this.lblPower.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pictureBox1.Image = global::com.tk.dam.Properties.Resources.shui1;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 255);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(278, 245);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
-            // lblDirection
+            // label5
             // 
-            this.lblDirection.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.lblDirection.ForeColor = System.Drawing.Color.White;
-            this.lblDirection.Location = new System.Drawing.Point(45, 103);
-            this.lblDirection.Name = "lblDirection";
-            this.lblDirection.Size = new System.Drawing.Size(97, 21);
-            this.lblDirection.TabIndex = 6;
-            this.lblDirection.Text = "东北风";
-            this.lblDirection.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pboxDirectionW
-            // 
-            this.pboxDirectionW.Image = global::com.tk.dam.Properties.Resources.wind_direction_arrow_w;
-            this.pboxDirectionW.Location = new System.Drawing.Point(-4, 115);
-            this.pboxDirectionW.Name = "pboxDirectionW";
-            this.pboxDirectionW.Size = new System.Drawing.Size(34, 34);
-            this.pboxDirectionW.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxDirectionW.TabIndex = 8;
-            this.pboxDirectionW.TabStop = false;
-            this.pboxDirectionW.Visible = false;
-            // 
-            // pboxDirectionWN
-            // 
-            this.pboxDirectionWN.Image = global::com.tk.dam.Properties.Resources.wind_direction_arrow_wn;
-            this.pboxDirectionWN.Location = new System.Drawing.Point(15, 51);
-            this.pboxDirectionWN.Name = "pboxDirectionWN";
-            this.pboxDirectionWN.Size = new System.Drawing.Size(34, 34);
-            this.pboxDirectionWN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxDirectionWN.TabIndex = 8;
-            this.pboxDirectionWN.TabStop = false;
-            this.pboxDirectionWN.Visible = false;
-            // 
-            // pboxDirectionSW
-            // 
-            this.pboxDirectionSW.Image = global::com.tk.dam.Properties.Resources.wind_direction_arrow_sw;
-            this.pboxDirectionSW.Location = new System.Drawing.Point(13, 171);
-            this.pboxDirectionSW.Name = "pboxDirectionSW";
-            this.pboxDirectionSW.Size = new System.Drawing.Size(34, 34);
-            this.pboxDirectionSW.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxDirectionSW.TabIndex = 8;
-            this.pboxDirectionSW.TabStop = false;
-            this.pboxDirectionSW.Visible = false;
-            // 
-            // pboxDirectionES
-            // 
-            this.pboxDirectionES.Image = global::com.tk.dam.Properties.Resources.wind_direction_arrow_es;
-            this.pboxDirectionES.Location = new System.Drawing.Point(138, 169);
-            this.pboxDirectionES.Name = "pboxDirectionES";
-            this.pboxDirectionES.Size = new System.Drawing.Size(34, 34);
-            this.pboxDirectionES.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxDirectionES.TabIndex = 8;
-            this.pboxDirectionES.TabStop = false;
-            this.pboxDirectionES.Visible = false;
-            // 
-            // pboxDirectionNE
-            // 
-            this.pboxDirectionNE.Image = global::com.tk.dam.Properties.Resources.wind_direction_arrow_ne;
-            this.pboxDirectionNE.Location = new System.Drawing.Point(134, 49);
-            this.pboxDirectionNE.Name = "pboxDirectionNE";
-            this.pboxDirectionNE.Size = new System.Drawing.Size(34, 34);
-            this.pboxDirectionNE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxDirectionNE.TabIndex = 8;
-            this.pboxDirectionNE.TabStop = false;
-            this.pboxDirectionNE.Visible = false;
-            // 
-            // pboxDirectionN
-            // 
-            this.pboxDirectionN.Image = global::com.tk.dam.Properties.Resources.wind_direction_arrow_n;
-            this.pboxDirectionN.Location = new System.Drawing.Point(75, 35);
-            this.pboxDirectionN.Name = "pboxDirectionN";
-            this.pboxDirectionN.Size = new System.Drawing.Size(34, 34);
-            this.pboxDirectionN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxDirectionN.TabIndex = 8;
-            this.pboxDirectionN.TabStop = false;
-            this.pboxDirectionN.Visible = false;
-            // 
-            // pboxDirectionE
-            // 
-            this.pboxDirectionE.Image = global::com.tk.dam.Properties.Resources.wind_direction_arrow_e;
-            this.pboxDirectionE.Location = new System.Drawing.Point(153, 115);
-            this.pboxDirectionE.Name = "pboxDirectionE";
-            this.pboxDirectionE.Size = new System.Drawing.Size(34, 34);
-            this.pboxDirectionE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxDirectionE.TabIndex = 8;
-            this.pboxDirectionE.TabStop = false;
-            this.pboxDirectionE.Visible = false;
-            // 
-            // pboxDirectionS
-            // 
-            this.pboxDirectionS.Image = ((System.Drawing.Image)(resources.GetObject("pboxDirectionS.Image")));
-            this.pboxDirectionS.Location = new System.Drawing.Point(75, 188);
-            this.pboxDirectionS.Name = "pboxDirectionS";
-            this.pboxDirectionS.Size = new System.Drawing.Size(34, 34);
-            this.pboxDirectionS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxDirectionS.TabIndex = 8;
-            this.pboxDirectionS.TabStop = false;
-            this.pboxDirectionS.Visible = false;
-            // 
-            // pboxDirection
-            // 
-            this.pboxDirection.Image = global::com.tk.dam.Properties.Resources.wind_direction;
-            this.pboxDirection.Location = new System.Drawing.Point(25, 65);
-            this.pboxDirection.Name = "pboxDirection";
-            this.pboxDirection.Size = new System.Drawing.Size(131, 128);
-            this.pboxDirection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxDirection.TabIndex = 1;
-            this.pboxDirection.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 24F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 4);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 39);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "湿度";
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 24F);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(3, 4);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 39);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "水位";
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel3.AutoSize = true;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(170)))), ((int)(((byte)(21)))));
             this.panel3.Controls.Add(this.gaugeControl1);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(258, 240);
+            this.panel3.Location = new System.Drawing.Point(258, 282);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(190, 204);
+            this.panel3.Size = new System.Drawing.Size(190, 235);
             this.panel3.TabIndex = 21;
             // 
             // gaugeControl1
@@ -484,15 +529,15 @@
             this.gaugeControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.gaugeControl1.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] {
             this.circularGauge2});
-            this.gaugeControl1.Location = new System.Drawing.Point(10, 40);
+            this.gaugeControl1.Location = new System.Drawing.Point(15, 60);
             this.gaugeControl1.Name = "gaugeControl1";
-            this.gaugeControl1.Size = new System.Drawing.Size(156, 147);
+            this.gaugeControl1.Size = new System.Drawing.Size(160, 160);
             this.gaugeControl1.TabIndex = 1;
             // 
             // circularGauge2
             // 
             this.circularGauge2.AutoSize = DevExpress.Utils.DefaultBoolean.True;
-            this.circularGauge2.Bounds = new System.Drawing.Rectangle(6, 6, 140, 140);
+            this.circularGauge2.Bounds = new System.Drawing.Rectangle(6, 6, 148, 148);
             this.circularGauge2.Labels.AddRange(new DevExpress.XtraGauges.Win.Base.LabelComponent[] {
             this.labelComponent2});
             this.circularGauge2.Name = "circularGauge2";
@@ -546,207 +591,168 @@
             this.arcScaleComponent2.StartAngle = -270F;
             this.arcScaleComponent2.Value = 30F;
             // 
-            // label5
+            // label3
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 24F);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(3, 4);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 39);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "水位";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 24F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(3, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(81, 39);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "湿度";
             // 
-            // panel4
+            // panel2
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel4.AutoSize = true;
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(169)))), ((int)(((byte)(245)))));
-            this.panel4.Controls.Add(this.pictureBoxModel1);
-            this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(454, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(278, 444);
-            this.panel4.TabIndex = 21;
+            this.panel2.AutoSize = true;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(150)))), ((int)(((byte)(145)))));
+            this.panel2.Controls.Add(this.lblPower);
+            this.panel2.Controls.Add(this.lblDirection);
+            this.panel2.Controls.Add(this.pboxDirectionW);
+            this.panel2.Controls.Add(this.pboxDirectionWN);
+            this.panel2.Controls.Add(this.pboxDirectionSW);
+            this.panel2.Controls.Add(this.pboxDirectionES);
+            this.panel2.Controls.Add(this.pboxDirectionNE);
+            this.panel2.Controls.Add(this.pboxDirectionN);
+            this.panel2.Controls.Add(this.pboxDirectionE);
+            this.panel2.Controls.Add(this.pboxDirectionS);
+            this.panel2.Controls.Add(this.pboxDirection);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Location = new System.Drawing.Point(258, 17);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(190, 255);
+            this.panel2.TabIndex = 20;
             // 
-            // pictureBoxModel1
+            // lblPower
             // 
-            this.pictureBoxModel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBoxModel1.Location = new System.Drawing.Point(0, 125);
-            this.pictureBoxModel1.Name = "pictureBoxModel1";
-            this.pictureBoxModel1.Size = new System.Drawing.Size(94, 319);
-            this.pictureBoxModel1.TabIndex = 25;
+            this.lblPower.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.lblPower.ForeColor = System.Drawing.Color.White;
+            this.lblPower.Location = new System.Drawing.Point(57, 139);
+            this.lblPower.Name = "lblPower";
+            this.lblPower.Size = new System.Drawing.Size(70, 24);
+            this.lblPower.TabIndex = 7;
+            this.lblPower.Text = "4~6级";
+            this.lblPower.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
+            // lblDirection
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pictureBox1.Image = global::com.tk.dam.Properties.Resources.shui1;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 199);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(278, 245);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.lblDirection.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.lblDirection.ForeColor = System.Drawing.Color.White;
+            this.lblDirection.Location = new System.Drawing.Point(45, 117);
+            this.lblDirection.Name = "lblDirection";
+            this.lblDirection.Size = new System.Drawing.Size(97, 21);
+            this.lblDirection.TabIndex = 6;
+            this.lblDirection.Text = "东北风";
+            this.lblDirection.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel5
+            // pboxDirectionW
             // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel5.AutoSize = true;
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(250)))));
-            this.panel5.Controls.Add(this.chartControl1);
-            this.panel5.Controls.Add(this.label6);
-            this.panel5.Location = new System.Drawing.Point(738, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(449, 503);
-            this.panel5.TabIndex = 23;
+            this.pboxDirectionW.Image = global::com.tk.dam.Properties.Resources.wind_direction_arrow_w;
+            this.pboxDirectionW.Location = new System.Drawing.Point(-4, 129);
+            this.pboxDirectionW.Name = "pboxDirectionW";
+            this.pboxDirectionW.Size = new System.Drawing.Size(34, 34);
+            this.pboxDirectionW.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxDirectionW.TabIndex = 8;
+            this.pboxDirectionW.TabStop = false;
+            this.pboxDirectionW.Visible = false;
             // 
-            // chartControl1
+            // pboxDirectionWN
             // 
-            this.chartControl1.BackColor = System.Drawing.Color.Transparent;
-            this.chartControl1.BorderOptions.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(250)))));
-            xyDiagram1.AxisX.DateTimeScaleOptions.AggregateFunction = DevExpress.XtraCharts.AggregateFunction.None;
-            xyDiagram1.AxisX.DateTimeScaleOptions.AutoGrid = false;
-            xyDiagram1.AxisX.DateTimeScaleOptions.ScaleMode = DevExpress.XtraCharts.ScaleMode.Automatic;
-            xyDiagram1.AxisX.GridLines.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            xyDiagram1.AxisX.Title.Alignment = System.Drawing.StringAlignment.Far;
-            xyDiagram1.AxisX.Title.Antialiasing = false;
-            xyDiagram1.AxisX.Title.Text = "时间";
-            xyDiagram1.AxisX.Title.TextColor = System.Drawing.Color.White;
-            xyDiagram1.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            xyDiagram1.AxisX.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            constantLine1.AxisValueSerializable = "98.78";
-            constantLine1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            constantLine1.LineStyle.Thickness = 3;
-            constantLine1.Name = "设计水位";
-            constantLine1.Title.Alignment = DevExpress.XtraCharts.ConstantLineTitleAlignment.Far;
-            constantLine1.Title.Visible = false;
-            constantLine2.AxisValueSerializable = "96.46";
-            constantLine2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(228)))), ((int)(((byte)(0)))));
-            constantLine2.LineStyle.Thickness = 3;
-            constantLine2.Name = "正常水位";
-            constantLine2.Title.Text = "正常水位";
-            constantLine2.Title.Visible = false;
-            constantLine3.AxisValueSerializable = "94.48";
-            constantLine3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(96)))), ((int)(((byte)(245)))));
-            constantLine3.LineStyle.Thickness = 3;
-            constantLine3.Name = "汛限水位";
-            constantLine3.Title.Text = "汛限水位";
-            constantLine3.Title.Visible = false;
-            xyDiagram1.AxisY.ConstantLines.AddRange(new DevExpress.XtraCharts.ConstantLine[] {
-            constantLine1,
-            constantLine2,
-            constantLine3});
-            xyDiagram1.AxisY.GridLines.MinorColor = System.Drawing.Color.Transparent;
-            xyDiagram1.AxisY.Label.TextPattern = "{V}m";
-            xyDiagram1.AxisY.Tickmarks.Visible = false;
-            xyDiagram1.AxisY.Title.Alignment = System.Drawing.StringAlignment.Far;
-            xyDiagram1.AxisY.Title.Antialiasing = false;
-            xyDiagram1.AxisY.Title.Text = "水位";
-            xyDiagram1.AxisY.Title.TextColor = System.Drawing.Color.White;
-            xyDiagram1.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-            xyDiagram1.DefaultPane.BackColor = System.Drawing.Color.Transparent;
-            xyDiagram1.DefaultPane.BorderColor = System.Drawing.Color.Transparent;
-            this.chartControl1.Diagram = xyDiagram1;
-            this.chartControl1.Legend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(250)))));
-            this.chartControl1.Legend.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(250)))));
-            this.chartControl1.Legend.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            this.chartControl1.Location = new System.Drawing.Point(15, 121);
-            this.chartControl1.Name = "chartControl1";
-            this.chartControl1.PaletteName = "Yellow";
-            series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series1.Name = "水位";
-            series1.Points.AddRange(new DevExpress.XtraCharts.SeriesPoint[] {
-            seriesPoint1,
-            seriesPoint2,
-            seriesPoint3,
-            seriesPoint4,
-            seriesPoint5,
-            seriesPoint6,
-            seriesPoint7});
-            lineSeriesView1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(228)))), ((int)(((byte)(0)))));
-            lineSeriesView1.LineStyle.Thickness = 1;
-            lineSeriesView1.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series1.View = lineSeriesView1;
-            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
-            this.chartControl1.SeriesTemplate.View = lineSeriesView2;
-            this.chartControl1.Size = new System.Drawing.Size(431, 379);
-            this.chartControl1.TabIndex = 1;
+            this.pboxDirectionWN.Image = global::com.tk.dam.Properties.Resources.wind_direction_arrow_wn;
+            this.pboxDirectionWN.Location = new System.Drawing.Point(15, 65);
+            this.pboxDirectionWN.Name = "pboxDirectionWN";
+            this.pboxDirectionWN.Size = new System.Drawing.Size(34, 34);
+            this.pboxDirectionWN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxDirectionWN.TabIndex = 8;
+            this.pboxDirectionWN.TabStop = false;
+            this.pboxDirectionWN.Visible = false;
             // 
-            // label6
+            // pboxDirectionSW
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 24F);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(3, 7);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(145, 39);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "水位曲线";
+            this.pboxDirectionSW.Image = global::com.tk.dam.Properties.Resources.wind_direction_arrow_sw;
+            this.pboxDirectionSW.Location = new System.Drawing.Point(13, 185);
+            this.pboxDirectionSW.Name = "pboxDirectionSW";
+            this.pboxDirectionSW.Size = new System.Drawing.Size(34, 34);
+            this.pboxDirectionSW.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxDirectionSW.TabIndex = 8;
+            this.pboxDirectionSW.TabStop = false;
+            this.pboxDirectionSW.Visible = false;
             // 
-            // circularGauge1
+            // pboxDirectionES
             // 
-            this.circularGauge1.Bounds = new System.Drawing.Rectangle(6, 6, 248, 248);
-            this.circularGauge1.Name = "circularGauge1";
+            this.pboxDirectionES.Image = global::com.tk.dam.Properties.Resources.wind_direction_arrow_es;
+            this.pboxDirectionES.Location = new System.Drawing.Point(138, 183);
+            this.pboxDirectionES.Name = "pboxDirectionES";
+            this.pboxDirectionES.Size = new System.Drawing.Size(34, 34);
+            this.pboxDirectionES.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxDirectionES.TabIndex = 8;
+            this.pboxDirectionES.TabStop = false;
+            this.pboxDirectionES.Visible = false;
             // 
-            // labelComponent1
+            // pboxDirectionNE
             // 
-            this.labelComponent1.AppearanceText.Font = new System.Drawing.Font("Segoe UI", 27.75F);
-            this.labelComponent1.Name = "circularGauge1_Label1";
-            this.labelComponent1.Size = new System.Drawing.SizeF(140F, 60F);
-            this.labelComponent1.Text = "910";
-            this.labelComponent1.UseColorScheme = false;
-            this.labelComponent1.ZOrder = -1001;
+            this.pboxDirectionNE.Image = global::com.tk.dam.Properties.Resources.wind_direction_arrow_ne;
+            this.pboxDirectionNE.Location = new System.Drawing.Point(134, 63);
+            this.pboxDirectionNE.Name = "pboxDirectionNE";
+            this.pboxDirectionNE.Size = new System.Drawing.Size(34, 34);
+            this.pboxDirectionNE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxDirectionNE.TabIndex = 8;
+            this.pboxDirectionNE.TabStop = false;
+            this.pboxDirectionNE.Visible = false;
             // 
-            // arcScaleComponent1
+            // pboxDirectionN
             // 
-            this.arcScaleComponent1.AppearanceMajorTickmark.BorderBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
-            this.arcScaleComponent1.AppearanceMajorTickmark.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
-            this.arcScaleComponent1.AppearanceMinorTickmark.BorderBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
-            this.arcScaleComponent1.AppearanceMinorTickmark.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:White");
-            this.arcScaleComponent1.AppearanceTickmarkText.Font = new System.Drawing.Font("Tahoma", 8.5F);
-            this.arcScaleComponent1.AppearanceTickmarkText.TextBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#484E5A");
-            this.arcScaleComponent1.Center = new DevExpress.XtraGauges.Core.Base.PointF2D(125F, 125F);
-            this.arcScaleComponent1.EndAngle = 90F;
-            this.arcScaleComponent1.MajorTickCount = 0;
-            this.arcScaleComponent1.MajorTickmark.FormatString = "{0:F0}";
-            this.arcScaleComponent1.MajorTickmark.ShapeOffset = -14F;
-            this.arcScaleComponent1.MajorTickmark.ShapeType = DevExpress.XtraGauges.Core.Model.TickmarkShapeType.Circular_Style16_1;
-            this.arcScaleComponent1.MajorTickmark.TextOrientation = DevExpress.XtraGauges.Core.Model.LabelOrientation.LeftToRight;
-            this.arcScaleComponent1.MaxValue = 100F;
-            this.arcScaleComponent1.MinorTickCount = 0;
-            this.arcScaleComponent1.MinorTickmark.ShapeOffset = -7F;
-            this.arcScaleComponent1.MinorTickmark.ShapeType = DevExpress.XtraGauges.Core.Model.TickmarkShapeType.Circular_Style16_2;
-            this.arcScaleComponent1.Name = "scale1";
-            this.arcScaleComponent1.StartAngle = -270F;
-            this.arcScaleComponent1.Value = 20F;
+            this.pboxDirectionN.Image = global::com.tk.dam.Properties.Resources.wind_direction_arrow_n;
+            this.pboxDirectionN.Location = new System.Drawing.Point(75, 49);
+            this.pboxDirectionN.Name = "pboxDirectionN";
+            this.pboxDirectionN.Size = new System.Drawing.Size(34, 34);
+            this.pboxDirectionN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxDirectionN.TabIndex = 8;
+            this.pboxDirectionN.TabStop = false;
+            this.pboxDirectionN.Visible = false;
             // 
-            // arcScaleRangeBarComponent1
+            // pboxDirectionE
             // 
-            this.arcScaleRangeBarComponent1.Name = "circularGauge1_RangeBar2";
-            this.arcScaleRangeBarComponent1.RoundedCaps = true;
-            this.arcScaleRangeBarComponent1.ShowBackground = true;
-            this.arcScaleRangeBarComponent1.StartOffset = 80F;
-            this.arcScaleRangeBarComponent1.ZOrder = -10;
+            this.pboxDirectionE.Image = global::com.tk.dam.Properties.Resources.wind_direction_arrow_e;
+            this.pboxDirectionE.Location = new System.Drawing.Point(153, 129);
+            this.pboxDirectionE.Name = "pboxDirectionE";
+            this.pboxDirectionE.Size = new System.Drawing.Size(34, 34);
+            this.pboxDirectionE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxDirectionE.TabIndex = 8;
+            this.pboxDirectionE.TabStop = false;
+            this.pboxDirectionE.Visible = false;
             // 
-            // panel6
+            // pboxDirectionS
             // 
-            this.panel6.Controls.Add(this.panel5);
-            this.panel6.Controls.Add(this.panel1);
-            this.panel6.Controls.Add(this.panel4);
-            this.panel6.Controls.Add(this.panel3);
-            this.panel6.Controls.Add(this.panel2);
-            this.panel6.Location = new System.Drawing.Point(9, 113);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1199, 525);
-            this.panel6.TabIndex = 24;
+            this.pboxDirectionS.Image = ((System.Drawing.Image)(resources.GetObject("pboxDirectionS.Image")));
+            this.pboxDirectionS.Location = new System.Drawing.Point(75, 202);
+            this.pboxDirectionS.Name = "pboxDirectionS";
+            this.pboxDirectionS.Size = new System.Drawing.Size(34, 34);
+            this.pboxDirectionS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxDirectionS.TabIndex = 8;
+            this.pboxDirectionS.TabStop = false;
+            this.pboxDirectionS.Visible = false;
+            // 
+            // pboxDirection
+            // 
+            this.pboxDirection.Image = global::com.tk.dam.Properties.Resources.wind_direction;
+            this.pboxDirection.Location = new System.Drawing.Point(25, 79);
+            this.pboxDirection.Name = "pboxDirection";
+            this.pboxDirection.Size = new System.Drawing.Size(131, 128);
+            this.pboxDirection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxDirection.TabIndex = 1;
+            this.pboxDirection.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 24F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 39);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "风向";
             // 
             // Qx
             // 
@@ -754,16 +760,38 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panelContainer);
             this.Name = "Qx";
-            this.Size = new System.Drawing.Size(1306, 670);
+            this.Size = new System.Drawing.Size(1300, 670);
             this.Load += new System.EventHandler(this.Qx_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.circularGauge1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.labelComponent1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleRangeBarComponent1)).EndInit();
+            this.panelContainer.ResumeLayout(false);
+            this.panelContainer.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxFigure4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxFigure3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxFigure1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxFigure2)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularGauge2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.labelComponent2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleRangeBarComponent2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxDirectionW)).EndInit();
@@ -775,28 +803,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pboxDirectionE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxDirectionS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxDirection)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularGauge2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.labelComponent2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleRangeBarComponent2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent2)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularGauge1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.labelComponent1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arcScaleRangeBarComponent1)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -839,7 +845,7 @@
         private DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent arcScaleComponent1;
         private DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleRangeBarComponent arcScaleRangeBarComponent1;
         private System.Windows.Forms.PictureBox pboxDirectionS;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panelContainer;
         private DevExpress.XtraCharts.ChartControl chartControl1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private PictureBoxModel pictureBoxModel1;

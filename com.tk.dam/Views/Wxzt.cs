@@ -27,6 +27,12 @@ namespace com.tk.dam.Views
             mainWindowsUIView.AddDocument(new Wxzt_xzb());
         }
 
+        private void Wxzt_Load(object sender, EventArgs e)
+        {
+            this.xtraUserControl1.Width = (int)((this.Width - 880) * 0.5) + 880;
+            this.xtraUserControl1.Height = (int)((this.Height - 600) * 0.1) + 560;
+        }
+
         private void btnXKT_Click(object sender, EventArgs e)
         {
             mainWindowsUIView.ActivateDocument(this.document_xkt);
@@ -35,12 +41,6 @@ namespace com.tk.dam.Views
         private void btnXZB_Click(object sender, EventArgs e)
         {
             mainWindowsUIView.ActivateDocument(this.document_xzb);
-        }
-
-        private void Wxzt_Load(object sender, EventArgs e)
-        {
-            this.xtraUserControl1.Width = (int)((this.Width - 880) * 0.5) + 880;
-            this.xtraUserControl1.Height = (int)((this.Height - 600) * 0.1) + 580;
         }
 
     }

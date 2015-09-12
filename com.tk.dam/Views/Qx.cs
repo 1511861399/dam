@@ -26,10 +26,16 @@ namespace com.tk.dam.Views
 
         private void Qx_Load(object sender, EventArgs e)
         {
-            LoadWeather();
-           // AddConstLine();
-            //chartControl1.Series.Clear();
-            //CreateChart(CreateData());
+            try
+            {
+                LoadWeather();
+            }
+            catch (Exception es)
+            {
+                MainForm.ShowMessage("提示：", "获取气象数据失败，请检查网络是否连接正常!");
+            }
+
+            CreateChart(CreateData());
         }
 
         private void AddConstLine()
@@ -68,25 +74,26 @@ namespace com.tk.dam.Views
         }
         private void CreateChart(DataTable dt)
         {
-            #region Series
+            //#region Series
 
-            Series series1 = CreateSeries("水位", ViewType.Line, dt, 0);
-            Series series2 = CreateSeries("设计水位", ViewType.Line, dt, 1);
-            Series series3 = CreateSeries("正常水位", ViewType.Line, dt, 2);
-            Series series4 = CreateSeries("汛限水位", ViewType.Line, dt, 3);
-            #endregion
+            //Series series1 = CreateSeries("水位", ViewType.Line, dt, 0);
+            //Series series2 = CreateSeries("设计水位", ViewType.Line, dt, 1);
+            //Series series3 = CreateSeries("正常水位", ViewType.Line, dt, 2);
+            //Series series4 = CreateSeries("汛限水位", ViewType.Line, dt, 3);
+            //#endregion
 
-            List<Series> list = new List<Series>() { series1, series2, series3, series4 };
-            chartControl1.Series.AddRange(list.ToArray());
-            chartControl1.Legend.Visible = false;
-            chartControl1.SeriesTemplate.LabelsVisibility = DefaultBoolean.True;
+            //List<Series> list = new List<Series>() { series1, series2, series3, series4 };
+            //chartControl1.Series.AddRange(list.ToArray());
+            //chartControl1.Legend.Visible = false;
+            //chartControl1.SeriesTemplate.LabelsVisibility = DefaultBoolean.True;
 
-            //for (int i = 0; i < list.Count; i++)
-            //{
-            //    list[i].View.Color = colorList[i];
-
-            //    CreateAxisY(list[i]);
-            //}
+            this.chartControl1.Series[0].Points.Clear();
+            DateTime mNow = DateTime.Now;
+            Random mRandom = new Random();
+            for (int i = -7; i < 0; i++)
+            {
+                this.chartControl1.Series[0].Points.Add(new SeriesPoint(mNow.AddDays(i), mRandom.Next(15) + 85));
+            }
         }
 
         /// <summary>

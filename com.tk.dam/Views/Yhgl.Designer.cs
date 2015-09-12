@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelContainer = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.gcMain = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn_xh = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -40,31 +41,43 @@
             this.gridColumn_yhdj = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_qx = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_bz = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.panelContainer.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelContainer
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.gcMain);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(50, 80);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1120, 525);
-            this.panel1.TabIndex = 2;
+            this.panelContainer.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panelContainer.BackColor = System.Drawing.Color.Transparent;
+            this.panelContainer.Controls.Add(this.panel4);
+            this.panelContainer.Controls.Add(this.panel2);
+            this.panelContainer.Location = new System.Drawing.Point(68, 15);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(900, 560);
+            this.panelContainer.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.gcMain);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 71);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(900, 489);
+            this.panel4.TabIndex = 4;
             // 
             // gcMain
             // 
+            this.gcMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcMain.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(143)))), ((int)(((byte)(145)))));
             this.gcMain.EmbeddedNavigator.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.gcMain.EmbeddedNavigator.Appearance.ForeColor = System.Drawing.Color.White;
@@ -72,13 +85,13 @@
             this.gcMain.EmbeddedNavigator.Appearance.Options.UseFont = true;
             this.gcMain.EmbeddedNavigator.Appearance.Options.UseForeColor = true;
             this.gcMain.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
-            this.gcMain.Location = new System.Drawing.Point(3, 57);
+            this.gcMain.Location = new System.Drawing.Point(0, 0);
             this.gcMain.LookAndFeel.SkinMaskColor = System.Drawing.Color.White;
             this.gcMain.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.gcMain.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gcMain.MainView = this.gridView1;
             this.gcMain.Name = "gcMain";
-            this.gcMain.Size = new System.Drawing.Size(1114, 465);
+            this.gcMain.Size = new System.Drawing.Size(900, 489);
             this.gcMain.TabIndex = 1;
             this.gcMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -424,10 +437,32 @@
             this.gridColumn_bz.VisibleIndex = 8;
             this.gridColumn_bz.Width = 120;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(900, 71);
+            this.panel2.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::com.tk.dam.Properties.Resources.xinjian;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(120, 44);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::com.tk.dam.Properties.Resources.bianji;
-            this.pictureBox3.Location = new System.Drawing.Point(252, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(257, 8);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(120, 44);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -438,24 +473,13 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::com.tk.dam.Properties.Resources.shanchu;
-            this.pictureBox2.Location = new System.Drawing.Point(128, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(128, 9);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(120, 44);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::com.tk.dam.Properties.Resources.xinjian;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 44);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Yhgl
             // 
@@ -464,22 +488,25 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelContainer);
             this.Name = "Yhgl";
-            this.Size = new System.Drawing.Size(1306, 670);
-            this.panel1.ResumeLayout(false);
+            this.Size = new System.Drawing.Size(1000, 720);
+            this.Load += new System.EventHandler(this.Yhgl_Load);
+            this.panelContainer.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -494,5 +521,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_yhdj;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_qx;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_bz;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel2;
     }
 }

@@ -334,6 +334,23 @@ namespace com.tk.dam
             }
         }
 
+        /// <summary>
+        /// 显示消息
+        /// </summary>
+        /// <param name="caption">消息标题</param>
+        /// <param name="message">消息内容</param>
+        public void ShowMessage(string caption, string message)
+        {
+            var messageAction = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutAction()
+            {
+                Caption = caption,
+                Description = message
+            };
+            messageAction.Commands.Add(FlyoutCommand.OK);
+            closeAppFlyout.Action = messageAction;
+            mainWindowsUIView.ShowFlyoutDialog(closeAppFlyout);
+        }
+
         #endregion
 
 
