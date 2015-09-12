@@ -227,6 +227,15 @@
     <EmbeddedResource Include="Views\Sbsz_Bjsz.resx">
       <DependentUpon>Sbsz_Bjsz.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Sbsz_Hfccsz.resx">
+      <DependentUpon>Sbsz_Hfccsz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Sbsz_Xtcq.resx">
+      <DependentUpon>Sbsz_Xtcq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Sbsz_Xtsz.resx">
+      <DependentUpon>Sbsz_Xtsz.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Sp.resx">
       <DependentUpon>Sp.cs</DependentUpon>
     </EmbeddedResource>
