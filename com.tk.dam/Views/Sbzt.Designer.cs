@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.mPanel = new System.Windows.Forms.Panel();
             this.mPanelLeft = new System.Windows.Forms.Panel();
             this.mPanelDeviceInfo = new System.Windows.Forms.Panel();
@@ -83,6 +84,16 @@
             this.lblMonitor3 = new System.Windows.Forms.Label();
             this.lblMonitor1 = new System.Windows.Forms.Label();
             this.mPanelCenter = new System.Windows.Forms.Panel();
+            this.xtraUserControl1 = new DevExpress.XtraEditors.XtraUserControl();
+            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.windowsUIView1 = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.WindowsUIView(this.components);
+            this.pageGroup1 = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.PageGroup(this.components);
+            this.document1 = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.document2 = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.document3 = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.document4 = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.noDocumentsView1 = new DevExpress.XtraBars.Docking2010.Views.NoDocuments.NoDocumentsView(this.components);
+            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.mPanel.SuspendLayout();
             this.mPanelLeft.SuspendLayout();
             this.mPanelDeviceInfo.SuspendLayout();
@@ -92,6 +103,16 @@
             this.mMenuXtsz.SuspendLayout();
             this.mMenuBjsz.SuspendLayout();
             this.mPanelRight.SuspendLayout();
+            this.mPanelCenter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.windowsUIView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.document1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.document2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.document3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.document4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.noDocumentsView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
             this.SuspendLayout();
             // 
             // mPanel
@@ -487,6 +508,7 @@
             this.mMenuHfccsz.Name = "mMenuHfccsz";
             this.mMenuHfccsz.Size = new System.Drawing.Size(229, 36);
             this.mMenuHfccsz.TabIndex = 5;
+            this.mMenuHfccsz.Tag = "hfccsz";
             this.mMenuHfccsz.Click += new System.EventHandler(this.menu_panel_click);
             // 
             // mLblHfccsz
@@ -510,6 +532,7 @@
             this.mMenuXtcq.Name = "mMenuXtcq";
             this.mMenuXtcq.Size = new System.Drawing.Size(229, 36);
             this.mMenuXtcq.TabIndex = 4;
+            this.mMenuXtcq.Tag = "xtcq";
             this.mMenuXtcq.Click += new System.EventHandler(this.menu_panel_click);
             // 
             // mLblXtcq
@@ -533,6 +556,7 @@
             this.mMenuXtsz.Name = "mMenuXtsz";
             this.mMenuXtsz.Size = new System.Drawing.Size(229, 36);
             this.mMenuXtsz.TabIndex = 3;
+            this.mMenuXtsz.Tag = "xtsz";
             this.mMenuXtsz.Click += new System.EventHandler(this.menu_panel_click);
             // 
             // mLblXtsz
@@ -557,6 +581,7 @@
             this.mMenuBjsz.Name = "mMenuBjsz";
             this.mMenuBjsz.Size = new System.Drawing.Size(229, 36);
             this.mMenuBjsz.TabIndex = 2;
+            this.mMenuBjsz.Tag = "bjsz";
             this.mMenuBjsz.Click += new System.EventHandler(this.menu_panel_click);
             // 
             // mLblBjsz
@@ -779,11 +804,73 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mPanelCenter.BackColor = System.Drawing.Color.White;
+            this.mPanelCenter.Controls.Add(this.xtraUserControl1);
             this.mPanelCenter.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.mPanelCenter.Location = new System.Drawing.Point(238, 0);
+            this.mPanelCenter.Location = new System.Drawing.Point(238, -51);
             this.mPanelCenter.Name = "mPanelCenter";
-            this.mPanelCenter.Size = new System.Drawing.Size(638, 450);
+            this.mPanelCenter.Size = new System.Drawing.Size(638, 501);
             this.mPanelCenter.TabIndex = 4;
+            // 
+            // xtraUserControl1
+            // 
+            this.xtraUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraUserControl1.Location = new System.Drawing.Point(0, 0);
+            this.xtraUserControl1.Name = "xtraUserControl1";
+            this.xtraUserControl1.Size = new System.Drawing.Size(638, 501);
+            this.xtraUserControl1.TabIndex = 0;
+            // 
+            // documentManager1
+            // 
+            this.documentManager1.ContainerControl = this.xtraUserControl1;
+            this.documentManager1.ShowThumbnailsInTaskBar = DevExpress.Utils.DefaultBoolean.False;
+            this.documentManager1.View = this.windowsUIView1;
+            this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
+            this.windowsUIView1,
+            this.noDocumentsView1});
+            // 
+            // windowsUIView1
+            // 
+            this.windowsUIView1.ContentContainers.AddRange(new DevExpress.XtraBars.Docking2010.Views.WindowsUI.IContentContainer[] {
+            this.pageGroup1});
+            this.windowsUIView1.Documents.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseDocument[] {
+            this.document1,
+            this.document2,
+            this.document3,
+            this.document4});
+            this.windowsUIView1.UseSplashScreen = DevExpress.Utils.DefaultBoolean.False;
+            // 
+            // pageGroup1
+            // 
+            this.pageGroup1.Items.AddRange(new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document[] {
+            this.document1,
+            this.document2,
+            this.document3,
+            this.document4});
+            this.pageGroup1.Name = "pageGroup1";
+            // 
+            // document1
+            // 
+            this.document1.Caption = "";
+            this.document1.ControlName = "mSbszBjsz";
+            this.document1.ControlTypeName = "com.tk.dam.Views.Sbsz_Bjsz";
+            // 
+            // document2
+            // 
+            this.document2.Caption = "";
+            this.document2.ControlName = "mSbszXtsz";
+            this.document2.ControlTypeName = "com.tk.dam.Views.Sbsz_Xtsz";
+            // 
+            // document3
+            // 
+            this.document3.Caption = "";
+            this.document3.ControlName = "mSbszXtcq";
+            this.document3.ControlTypeName = "com.tk.dam.Views.Sbsz_Xtcq";
+            // 
+            // document4
+            // 
+            this.document4.Caption = "";
+            this.document4.ControlName = "mSbszHfccsz";
+            this.document4.ControlTypeName = "com.tk.dam.Views.Sbsz_Hfccsz";
             // 
             // Sbzt
             // 
@@ -811,6 +898,16 @@
             this.mMenuBjsz.PerformLayout();
             this.mPanelRight.ResumeLayout(false);
             this.mPanelRight.PerformLayout();
+            this.mPanelCenter.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.windowsUIView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.document1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.document2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.document3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.document4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.noDocumentsView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -873,5 +970,15 @@
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label33;
+        private DevExpress.XtraEditors.XtraUserControl xtraUserControl1;
+        private DevExpress.XtraBars.Docking2010.DocumentManager documentManager1;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.WindowsUIView windowsUIView1;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.PageGroup pageGroup1;
+        private DevExpress.XtraBars.Docking2010.Views.NoDocuments.NoDocumentsView noDocumentsView1;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document document1;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document document2;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document document3;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document document4;
+        private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
     }
 }

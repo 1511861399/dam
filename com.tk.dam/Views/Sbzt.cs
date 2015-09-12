@@ -7,6 +7,8 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
+using DevExpress.XtraBars.Docking2010.Customization;
 
 namespace com.tk.dam.Views
 {
@@ -15,12 +17,22 @@ namespace com.tk.dam.Views
         private Color mSelectedColor = Color.FromArgb(235,163,17);
         private Color mUnSelectedColor = Color.FromArgb(182, 182, 182);
         private Panel mCurrentMenu;
+        protected WindowsUIView View { get; set; }
         public Sbzt()
         {
             InitializeComponent();
-            mPanelEditWlsz.Visible = false;
-        }
-
+            Sbsz_Bjsz bjsz = new Sbsz_Bjsz();
+            Sbsz_Xtsz xtsz = new Sbsz_Xtsz();
+            Sbsz_Xtcq xtcs = new Sbsz_Xtcq();
+            Sbsz_Hfccsz hfccsz = new Sbsz_Hfccsz();
+            windowsUIView1.AddDocument(bjsz);
+            windowsUIView1.AddDocument(xtsz);
+            windowsUIView1.AddDocument(xtcs);
+            windowsUIView1.AddDocument(hfccsz);
+            pageGroup1.Properties.ShowPageHeaders = DevExpress.Utils.DefaultBoolean.False;
+            windowsUIView1.NavigationBarsShowing += new NavigationBarsCancelEventHandler(onShowingNavigationBars);
+            windowsUIView1.PageGroupProperties.SwitchDocumentAnimationMode = TransitionAnimation.VerticalSlide;
+         }
         private void Sbzt_Load(object sender, EventArgs e)
         {
             
@@ -58,6 +70,28 @@ namespace com.tk.dam.Views
             label = (Label)panel.Controls[0];
             label.ForeColor = Color.White;
             mCurrentMenu = panel;
+            if (View != null)
+                View.PageGroupProperties.SwitchDocumentAnimationMode = TransitionAnimation.RandomSegmentedFade;
+            if (panel.Tag.ToString() == "bjsz") 
+            {
+                windowsUIView1.PageGroupProperties.SwitchDocumentAnimationMode = TransitionAnimation.RandomSegmentedFade;
+                windowsUIView1.Controller.Activate(document1);
+            }
+            if (panel.Tag.ToString() == "xtsz")
+            {
+                windowsUIView1.PageGroupProperties.SwitchDocumentAnimationMode = TransitionAnimation.RandomSegmentedFade;
+                windowsUIView1.Controller.Activate(document2);
+            }
+            if (panel.Tag.ToString() == "xtcq")
+            {
+                windowsUIView1.PageGroupProperties.SwitchDocumentAnimationMode = TransitionAnimation.RandomSegmentedFade;
+                windowsUIView1.Controller.Activate(document3);
+            }
+            if (panel.Tag.ToString() == "hfccsz")
+            {
+                windowsUIView1.PageGroupProperties.SwitchDocumentAnimationMode = TransitionAnimation.RandomSegmentedFade;
+                windowsUIView1.Controller.Activate(document4);
+            }
         }
 
         private void menulabel_click(object sender, EventArgs e)
@@ -82,31 +116,9 @@ namespace com.tk.dam.Views
             }
             menu_panel_click(parent, null);
         }
-
-        private void btnBj_Wl_Click(object sender, EventArgs e)
+        void onShowingNavigationBars(object sender, NavigationBarsCancelEventArgs e)
         {
-            btnGb_CS_Click(null, null);
-            mPanelEditWlsz.Visible = true;
-            btnBj_Wl.BackColor = mSelectedColor;
-        }
-
-        private void btnWl_Gb_Click(object sender, EventArgs e)
-        {
-            mPanelEditWlsz.Visible = false;
-            btnBj_Wl.BackColor = mUnSelectedColor;
-        }
-
-        private void btnGb_CS_Click(object sender, EventArgs e)
-        {
-            btnBj_Cs.BackColor = mUnSelectedColor;
-            mPanelEditWlcs.Visible = false ;
-        }
-
-        private void btnBj_Cs_Click(object sender, EventArgs e)
-        { 
-            btnWl_Gb_Click(null, null);
-            mPanelEditWlcs.Visible = true;
-            btnBj_Cs.BackColor = mSelectedColor;
+            e.Cancel = true;
         }
     }
 }
