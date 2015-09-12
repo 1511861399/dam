@@ -11,6 +11,9 @@ using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using com.tk.dam.Views;
 using DevExpress.Utils;
 using com.tk.dam.Entity;
+using DevExpress.Skins;
+using DevExpress.LookAndFeel;
+using DevExpress.XtraSplashScreen;
 
 namespace com.tk.dam
 {
@@ -26,15 +29,15 @@ namespace com.tk.dam
 
         public MainForm()
         {
+ 
             InitializeComponent();
+
             mainWindowsUIView.Appearance.BackColor = Color.FromArgb(0, 126, 206);
             //mainWindowsUIView.AppearanceActionsBar.BackColor = Color.FromArgb(0, 169, 254);
             mainWindowsUIView.AppearanceActionsBar.BackColor = Color.FromArgb(0, 90, 144);
 
             mSrceenWidth = Screen.PrimaryScreen.Bounds.Width;
-            mainWindowsUIView.TileContainerProperties.ItemSize = 180 + (int)((mSrceenWidth - 1500) * 0.05);
-
-            
+            mainWindowsUIView.TileContainerProperties.ItemSize = 180 + (int)((mSrceenWidth - 1500) * 0.05);                   
 
             DelegateAction mExitAction = new DelegateAction(canExecuteExitFunction, exitActionFunction);
             mExitAction.Caption = "Exit";
@@ -332,6 +335,7 @@ namespace com.tk.dam
         }
 
         #endregion
+
 
     }
 

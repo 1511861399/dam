@@ -39,8 +39,8 @@ namespace com.tk.dam.Views
 
         private void Wxzt_Load(object sender, EventArgs e)
         {
-            this.xtraUserControl1.Width = (int)((this.Width - 900) * 0.5) + 900;
-            this.xtraUserControl1.Height = (int)((this.Height - 600) * 0.1) + 600;
+            this.xtraUserControl1.Width = (int)((this.Width - 880) * 0.5) + 880;
+            this.xtraUserControl1.Height = (int)((this.Height - 600) * 0.1) + 580;
         }
 
     }

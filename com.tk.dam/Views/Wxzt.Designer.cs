@@ -48,11 +48,12 @@
             // 
             // xtraUserControl1
             // 
+            this.xtraUserControl1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.xtraUserControl1.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.xtraUserControl1.Appearance.Options.UseBackColor = true;
-            this.xtraUserControl1.Location = new System.Drawing.Point(41, 60);
+            this.xtraUserControl1.Location = new System.Drawing.Point(74, 36);
             this.xtraUserControl1.Name = "xtraUserControl1";
-            this.xtraUserControl1.Size = new System.Drawing.Size(900, 600);
+            this.xtraUserControl1.Size = new System.Drawing.Size(880, 600);
             this.xtraUserControl1.TabIndex = 0;
             // 
             // mainDocumentManager
@@ -71,6 +72,7 @@
             this.document_xkt,
             this.document_xzb});
             this.mainWindowsUIView.PageGroupProperties.ShowPageHeaders = false;
+            this.mainWindowsUIView.UseSplashScreen = DevExpress.Utils.DefaultBoolean.False;
             // 
             // mainPageGroup
             // 
@@ -94,10 +96,11 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.btnXZB);
             this.panel1.Controls.Add(this.btnXKT);
-            this.panel1.Location = new System.Drawing.Point(41, 20);
+            this.panel1.Location = new System.Drawing.Point(68, 15);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(886, 73);
             this.panel1.TabIndex = 1;
@@ -153,7 +156,7 @@
             this.Controls.Add(this.xtraUserControl1);
             this.Name = "Wxzt";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.Size = new System.Drawing.Size(1000, 680);
+            this.Size = new System.Drawing.Size(1000, 720);
             this.Load += new System.EventHandler(this.Wxzt_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainDocumentManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainWindowsUIView)).EndInit();

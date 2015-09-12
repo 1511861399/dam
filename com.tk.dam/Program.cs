@@ -13,7 +13,8 @@ namespace com.tk.dam
         [STAThread]
         static void Main()
         {
-            UserLookAndFeel.Default.SkinName = "DevExpress Dark Style";
+            DevExpress.UserSkins.BonusSkins.Register();
+            UserLookAndFeel.Default.SkinName = "Sharp Plus";
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
