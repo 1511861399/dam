@@ -29,16 +29,73 @@ namespace com.tk.dam.Views
             if (yh == null)
             {
                 lblTitle.Text = "新增用户";
+                lblXh.Text = "0";
+                txtXm.Text = "";
+                txtDlm.Text = "";
+
+                rdbMale.Checked = true;
+                rdbFemale.Checked = false;
+
+                txtBm.Text = "";
+                txtZw.Text = "";
+                txtYhdj.Text = "";
+                txtQx.Text = "员工";
+                rtxBz.Text = "";
             }
             else
             {
                 lblTitle.Text = "编辑用户";
+                lblXh.Text = yh.Xh.ToString();
+                txtXm.Text = yh.Xm;
+                txtDlm.Text = yh.Dlm;
+                if (yh.Xb == "男")
+                {
+                    rdbMale.Checked = true;
+                    rdbFemale.Checked = false;
+                }
+                else if (yh.Xb == "女")
+                {
+                    rdbMale.Checked = false;
+                    rdbFemale.Checked = true;
+                }
+                txtBm.Text = yh.Bm;
+                txtZw.Text = yh.Zw;
+                txtYhdj.Text = yh.Yhdj;
+                txtQx.Text = yh.Qx;
+                rtxBz.Text = yh.Bz;
             }
         }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            MainForm.UpdateYHList(new Yh() { Xh = "NEW", Xm = "Demo" }, true);
+            Yh yh = new Yh();
+            yh.Xh = int.Parse(lblXh.Text);
+            yh.Xm = txtXm.Text;
+            yh.Dlm = txtDlm.Text;
+            if (rdbMale.Checked == true)
+            {
+                yh.Xb = "男";
+            }
+            else
+            {
+                yh.Xb = "女";
+            }
+
+            yh.Bm = txtBm.Text;
+            yh.Zw = txtZw.Text;
+            yh.Yhdj = txtYhdj.Text;
+            yh.Qx = txtQx.Text;
+            yh.Bz = rtxBz.Text;
+
+            if (lblTitle.Text == "新增用户")
+            {
+                MainForm.UpdateYHList(yh, true);
+            }
+            else
+            {
+                MainForm.UpdateYHList(yh, false);
+            }
+
             MainForm.HidenFlyout();
         }
 

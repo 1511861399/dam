@@ -31,11 +31,13 @@ namespace com.tk.dam.Views
         {
             if (isNew)
             {
+                yh.Xh = mYhList.Max(temp => temp.Xh) + 1;
                 mYhList.Add(yh);
             }
             else
             {
-                //update
+                mYhList.Remove(mYhList.Single(temp => temp.Xh == yh.Xh));
+                mYhList.Add(yh);
             }
             gcMain.RefreshDataSource();
         }
@@ -45,28 +47,16 @@ namespace com.tk.dam.Views
         /// </summary>
         /// <param name="yh">用户</param>
         public void DeleteYH(Yh yh)
-        { 
-            //TODO:更新列表
+        {
+            mYhList.Remove(yh);
+            gcMain.RefreshDataSource();
         }
 
         private void BindingGrid()
-        {           
-            for (int i = 1; i <= 6; i++)
-            {
-                Yh item = new Yh()
-                {
-                    Xh = i.ToString(),
-                    Xm = "Xm" + i,
-                    Dlm = "Dlm" + i,
-                    Xb = "Xb" + i,
-                    Bm = "Bm" + i,
-                    Zw = "Zw" + i,
-                    Yhdj = "Yhdj" + i,
-                    Qz = "Qz" + i,
-                    Bz = "Bz" + i
-                };
-                mYhList.Add(item);
-            }
+        {
+            mYhList.Add(new Yh { Xh = 1, Xm = "张三", Dlm = "zhangsan", Xb = "男", Qx = "超级管理员" });
+            mYhList.Add(new Yh { Xh = 2, Xm = "李四", Dlm = "lisi", Xb = "男", Qx = "员工" });
+            mYhList.Add(new Yh { Xh = 3, Xm = "赵五", Dlm = "zhaowu", Xb = "男", Qx = "员工" });
             gcMain.DataSource = mYhList;
         }
 
@@ -77,12 +67,12 @@ namespace com.tk.dam.Views
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            MainForm.ShowDeleteYHConfirm(new Yh());
+            MainForm.ShowDeleteYHConfirm(mYhList[gridView1.FocusedRowHandle]);
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            MainForm.ShowYHEditFlyout(null);
+            MainForm.ShowYHEditFlyout(mYhList[gridView1.FocusedRowHandle]);
         }
     }
 }

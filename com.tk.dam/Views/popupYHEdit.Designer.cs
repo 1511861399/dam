@@ -29,9 +29,27 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.rtxBz = new System.Windows.Forms.RichTextBox();
+            this.txtQx = new System.Windows.Forms.TextBox();
+            this.txtYhdj = new System.Windows.Forms.TextBox();
+            this.txtZw = new System.Windows.Forms.TextBox();
+            this.txtBm = new System.Windows.Forms.TextBox();
+            this.rdbFemale = new System.Windows.Forms.RadioButton();
+            this.rdbMale = new System.Windows.Forms.RadioButton();
+            this.txtDlm = new System.Windows.Forms.TextBox();
+            this.txtXm = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.lblXh = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,6 +57,24 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.lblXh);
+            this.panel1.Controls.Add(this.rtxBz);
+            this.panel1.Controls.Add(this.txtQx);
+            this.panel1.Controls.Add(this.txtYhdj);
+            this.panel1.Controls.Add(this.txtZw);
+            this.panel1.Controls.Add(this.txtBm);
+            this.panel1.Controls.Add(this.rdbFemale);
+            this.panel1.Controls.Add(this.rdbMale);
+            this.panel1.Controls.Add(this.txtDlm);
+            this.panel1.Controls.Add(this.txtXm);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnOk);
             this.panel1.Controls.Add(this.lblTitle);
@@ -46,6 +82,166 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(639, 422);
             this.panel1.TabIndex = 0;
+            // 
+            // rtxBz
+            // 
+            this.rtxBz.Location = new System.Drawing.Point(111, 292);
+            this.rtxBz.Name = "rtxBz";
+            this.rtxBz.Size = new System.Drawing.Size(201, 41);
+            this.rtxBz.TabIndex = 9;
+            this.rtxBz.Text = "";
+            // 
+            // cmbQx
+            // 
+            this.txtQx.Location = new System.Drawing.Point(111, 259);
+            this.txtQx.Name = "txtQx";
+            this.txtQx.Size = new System.Drawing.Size(201, 22);
+            this.txtQx.TabIndex = 8;
+            // 
+            // cmbYhdj
+            // 
+            this.txtYhdj.Location = new System.Drawing.Point(111, 223);
+            this.txtYhdj.Name = "txtYhdj";
+            this.txtYhdj.Size = new System.Drawing.Size(201, 22);
+            this.txtYhdj.TabIndex = 8;
+            // 
+            // cmbZw
+            // 
+            this.txtZw.Location = new System.Drawing.Point(111, 189);
+            this.txtZw.Name = "txtZw";
+            this.txtZw.Size = new System.Drawing.Size(201, 22);
+            this.txtZw.TabIndex = 8;
+            // 
+            // cmbBm
+            // 
+            this.txtBm.Location = new System.Drawing.Point(111, 157);
+            this.txtBm.Name = "txtBm";
+            this.txtBm.Size = new System.Drawing.Size(201, 22);
+            this.txtBm.TabIndex = 8;
+            // 
+            // rdbFemale
+            // 
+            this.rdbFemale.AutoSize = true;
+            this.rdbFemale.Location = new System.Drawing.Point(219, 124);
+            this.rdbFemale.Name = "rdbFemale";
+            this.rdbFemale.Size = new System.Drawing.Size(37, 18);
+            this.rdbFemale.TabIndex = 7;
+            this.rdbFemale.Text = "女";
+            this.rdbFemale.UseVisualStyleBackColor = true;
+            // 
+            // rdbMale
+            // 
+            this.rdbMale.AutoSize = true;
+            this.rdbMale.Checked = true;
+            this.rdbMale.Location = new System.Drawing.Point(138, 125);
+            this.rdbMale.Name = "rdbMale";
+            this.rdbMale.Size = new System.Drawing.Size(37, 18);
+            this.rdbMale.TabIndex = 7;
+            this.rdbMale.TabStop = true;
+            this.rdbMale.Text = "男";
+            this.rdbMale.UseVisualStyleBackColor = true;
+            // 
+            // txtDlm
+            // 
+            this.txtDlm.Location = new System.Drawing.Point(111, 90);
+            this.txtDlm.Name = "txtDlm";
+            this.txtDlm.Size = new System.Drawing.Size(201, 22);
+            this.txtDlm.TabIndex = 6;
+            // 
+            // txtXm
+            // 
+            this.txtXm.Location = new System.Drawing.Point(111, 58);
+            this.txtXm.Name = "txtXm";
+            this.txtXm.Size = new System.Drawing.Size(201, 22);
+            this.txtXm.TabIndex = 6;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(22, 288);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(103, 23);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "备      注：";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(22, 255);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(103, 23);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "权      限：";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(22, 219);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(105, 23);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "用户等级：";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(22, 185);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 23);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "职      位：";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(22, 153);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(103, 23);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "部      门：";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(22, 119);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(103, 23);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "性      别：";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(22, 86);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 23);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "登 录  名：";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(22, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 23);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "姓      名：";
             // 
             // btnCancel
             // 
@@ -90,6 +286,16 @@
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "新增用户";
             // 
+            // lblXh
+            // 
+            this.lblXh.AutoSize = true;
+            this.lblXh.Location = new System.Drawing.Point(380, 67);
+            this.lblXh.Name = "lblXh";
+            this.lblXh.Size = new System.Drawing.Size(14, 14);
+            this.lblXh.TabIndex = 10;
+            this.lblXh.Text = "0";
+            this.lblXh.Visible = false;
+            // 
             // popupYHEdit
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(161)))), ((int)(((byte)(235)))));
@@ -114,5 +320,23 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOk;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtXm;
+        private System.Windows.Forms.RadioButton rdbFemale;
+        private System.Windows.Forms.RadioButton rdbMale;
+        private System.Windows.Forms.TextBox txtDlm;
+        private System.Windows.Forms.RichTextBox rtxBz;
+        private System.Windows.Forms.TextBox txtQx;
+        private System.Windows.Forms.TextBox txtYhdj;
+        private System.Windows.Forms.TextBox txtZw;
+        private System.Windows.Forms.TextBox txtBm;
+        private System.Windows.Forms.Label lblXh;
     }
 }
