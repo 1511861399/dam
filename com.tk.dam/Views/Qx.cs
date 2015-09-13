@@ -24,152 +24,53 @@ namespace com.tk.dam.Views
             InitializeComponent();
         }
 
+        Random mRandom = new Random();
+
         private void Qx_Load(object sender, EventArgs e)
         {
             try
             {
                 LoadWeather();
+                LoadSD();
             }
             catch (Exception es)
             {
                 MainForm.ShowMessage("提示：", "获取气象数据失败，请检查网络是否连接正常!");
             }
 
-            CreateChart(CreateData());
+            CreateSWQXChart();
+
+            SetSWHeight();
         }
 
-        private void AddConstLine()
+        private void LoadSD()
         {
-            // Cast the chart's diagram to the XYDiagram type, to access its axes.
-            XYDiagram diagram = (XYDiagram)chartControl1.Diagram;
-
-            // Create a constant line.
-            ConstantLine constantLine1 = new ConstantLine("设计水位");
-            diagram.AxisY.ConstantLines.Add(constantLine1);
-
-            // Define its axis value.
-            constantLine1.AxisValue = 98.78;
-
-            // Customize the behavior of the constant line.
-            constantLine1.Visible = true;
-            constantLine1.ShowInLegend = false;// true;
-            constantLine1.LegendText = "设计水位";
-            constantLine1.ShowBehind = false;
-
-            // Customize the constant line's title.
-            constantLine1.Title.Visible = true;
-            constantLine1.Title.Text = "设计水位";
-            constantLine1.Title.TextColor = Color.White;
-            constantLine1.Title.Antialiasing = false;
-            constantLine1.Title.Font = new Font("Tahoma", 14, FontStyle.Bold);
-            constantLine1.Title.ShowBelowLine = true;
-            constantLine1.Title.Alignment = ConstantLineTitleAlignment.Far;
-
-            // Customize the appearance of the constant line.
-            constantLine1.Color = Color.Red;
-            constantLine1.LineStyle.DashStyle = DashStyle.Solid;
-            constantLine1.LineStyle.Thickness = 2;
-
-
+            int sd = mRandom.Next(100);
+            arcScaleComponent2.Value = sd;
+            labelComponent2.Text = string.Format("{0}%", sd);
         }
-        private void CreateChart(DataTable dt)
+
+        private void SetSWHeight()
         {
-            //#region Series
+            int index = this.chartControl1.Series[0].Points.Count - 1;
+            SeriesPoint point = this.chartControl1.Series[0].Points[index];
+            double height = point.Values[0];
 
-            //Series series1 = CreateSeries("水位", ViewType.Line, dt, 0);
-            //Series series2 = CreateSeries("设计水位", ViewType.Line, dt, 1);
-            //Series series3 = CreateSeries("正常水位", ViewType.Line, dt, 2);
-            //Series series4 = CreateSeries("汛限水位", ViewType.Line, dt, 3);
-            //#endregion
+            double eachMH = 55 * pboxSW.Height / 320;
+            double displayH = (height - 92) * eachMH + 16;
+            pboxS.Height = (int)displayH;
+        }
 
-            //List<Series> list = new List<Series>() { series1, series2, series3, series4 };
-            //chartControl1.Series.AddRange(list.ToArray());
-            //chartControl1.Legend.Visible = false;
-            //chartControl1.SeriesTemplate.LabelsVisibility = DefaultBoolean.True;
-
+        private void CreateSWQXChart()
+        {
             this.chartControl1.Series[0].Points.Clear();
             DateTime mNow = DateTime.Now;
-            Random mRandom = new Random();
-            for (int i = -7; i < 0; i++)
+
+            for (int i = -7; i < -1; i++)
             {
                 this.chartControl1.Series[0].Points.Add(new SeriesPoint(mNow.AddDays(i), mRandom.Next(15) + 85));
             }
-        }
-
-        /// <summary>
-        /// 根据数据创建一个图形展现
-        /// </summary>
-        /// <param name="caption">图形标题</param>
-        /// <param name="viewType">图形类型</param>
-        /// <param name="dt">数据DataTable</param>
-        /// <param name="rowIndex">图形数据的行序号</param>
-        /// <returns></returns>
-        private Series CreateSeries(string caption, ViewType viewType, DataTable dt, int rowIndex)
-        {
-            Series series = new Series(caption, viewType);
-            for (int i = 1; i < dt.Columns.Count; i++)
-            {
-                string argument = dt.Columns[i].ColumnName;//参数名称
-                decimal value = (decimal)dt.Rows[rowIndex][i];//参数值
-                series.Points.Add(new SeriesPoint(argument, value));
-            }
-
-            //必须设置ArgumentScaleType的类型，否则显示会转换为日期格式，导致不是希望的格式显示
-            //也就是说，显示字符串的参数，必须设置类型为ScaleType.Qualitative
-            series.ArgumentScaleType = ScaleType.Qualitative;
-            series.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;//显示标注标签
-
-            return series;
-        }
-
-        /// <summary>
-        /// 创建图表的第二坐标系
-        /// </summary>
-        /// <param name="series">Series对象</param>
-        /// <returns></returns>
-        private SecondaryAxisY CreateAxisY(Series series)
-        {
-            SecondaryAxisY myAxis = new SecondaryAxisY(series.Name);
-            ((XYDiagram)chartControl1.Diagram).SecondaryAxesY.Add(myAxis);
-            ((LineSeriesView)series.View).AxisY = myAxis;
-            myAxis.Title.Text = series.Name;
-            myAxis.Title.Alignment = StringAlignment.Far; //顶部对齐
-            myAxis.Title.Visible = true; //显示标题
-            myAxis.Title.Font = new Font("宋体", 9.0f);
-
-            Color color = series.View.Color;//设置坐标的颜色和图表线条颜色一致
-
-            myAxis.Title.TextColor = color;
-            myAxis.Label.TextColor = color;
-            myAxis.Color = color;
-
-            return myAxis;
-        }
-
-        /// <summary>
-        /// 准备数据内容
-        /// </summary>
-        /// <returns></returns>
-        private DataTable CreateData()
-        {
-            DataTable dt = new DataTable();
-            DateTime dtime = DateTime.Now;
-            dt.Columns.Add(new DataColumn("类型"));
-            dt.Columns.Add(new DataColumn(dtime.AddDays(-6).ToString("M月d日"), typeof(decimal)));
-            dt.Columns.Add(new DataColumn(dtime.AddDays(-5).ToString("M月d日"), typeof(decimal)));           
-            dt.Columns.Add(new DataColumn(dtime.AddDays(-4).ToString("M月d日"), typeof(decimal)));          
-            dt.Columns.Add(new DataColumn(dtime.AddDays(-3).ToString("M月d日"), typeof(decimal)));           
-            dt.Columns.Add(new DataColumn(dtime.AddDays(-2).ToString("M月d日"), typeof(decimal)));           
-            dt.Columns.Add(new DataColumn(dtime.AddDays(-1).ToString("M月d日"), typeof(decimal)));           
-            dt.Columns.Add(new DataColumn(dtime.ToString("M月d日"), typeof(decimal)));
-           
-
-            dt.Rows.Add(new object[] { "水位", 90,80,90,96.46,94.48,98.78,80 });
-            dt.Rows.Add(new object[] { "设计水位", 98.78, 98.78, 98.78, 98.78, 98.78, 98.78, 98.78 });
-            dt.Rows.Add(new object[] { "正常水位", 96.46, 96.46, 96.46, 96.46, 96.46, 96.46, 96.46 });
-            dt.Rows.Add(new object[] { "汛限水位", 94.48, 94.48, 94.48, 94.48, 94.48, 94.48, 94.48 });
-
-            return dt;
+            this.chartControl1.Series[0].Points.Add(new SeriesPoint(mNow.AddDays(-1), mRandom.Next(4) + 93.5));
         }
 
         private void LoadWeather()
@@ -266,7 +167,7 @@ namespace com.tk.dam.Views
             }
             else
             {
-                lblDirection.Text = root["direction1"].InnerText;                
+                lblDirection.Text = root["direction1"].InnerText;
                 lblPower.Text = root["power1"].InnerText.Replace("-", "~") + "级";
                 string figure = root["figure1"].InnerText;
                 imageFigure = getImage(figure, "180", "day");
@@ -305,7 +206,7 @@ namespace com.tk.dam.Views
                     return;
                 }
             }
-            if(direction.Contains("南"))
+            if (direction.Contains("南"))
             {
                 if (direction.Contains("西"))
                 {
