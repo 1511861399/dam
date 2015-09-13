@@ -7,6 +7,7 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Runtime.InteropServices;
 
 namespace com.tk.dam.Views
 {
@@ -21,7 +22,7 @@ namespace com.tk.dam.Views
         {
             var panel = sender as Panel;
             panel.Cursor = Cursors.Hand;
-            panel.BackColor = Color.FromArgb(227,166,41);
+            panel.BackColor = Color.FromArgb(227, 166, 41);
         }
 
         private void panelMenu_MouseLeave(object sender, EventArgs e)
@@ -44,5 +45,38 @@ namespace com.tk.dam.Views
             panel.BorderStyle = BorderStyle.None;
             //panel.BackColor = Color.FromArgb(0, 89, 145);
         }
+
+        private void panel_DoubleClick(object sender, EventArgs e)
+        {
+            string mciCommand;
+            string alias = "MyAVI";
+            if (label18.Tag == null || label18.Tag.ToString() != "正在播放")
+            {
+                label18.Hide();
+
+                PictureBox PlayScreen = pictureBox6;
+                mciCommand = string.Format("open {0}\\video\\Bear.wmv alias {1} ", Environment.CurrentDirectory, alias);
+                mciCommand = mciCommand + " parent " + PlayScreen.Handle.ToInt32() + " style child ";
+                LibWrap.mciSendString(mciCommand, null, 0, 0);
+                Rectangle r = PlayScreen.ClientRectangle;
+                mciCommand = string.Format(" put {0} window at 0 0 {1} {2}", alias, r.Width, r.Height);
+                LibWrap.mciSendString(mciCommand, null, 0, 0);
+                LibWrap.mciSendString(string.Format(" play {0} repeat", alias), null, 0, 0);
+
+                label18.Tag = "正在播放";
+            }
+            else
+            {
+                LibWrap.mciSendString(string.Format("close {0}", alias), null, 0, 0);
+                label18.Show();
+                label18.Tag = "停止播放";
+            }
+        }
+    }
+    public class LibWrap
+    {
+        [DllImport(("winmm.dll "), EntryPoint = "mciSendString", CharSet = CharSet.Auto)]
+        public static extern int mciSendString(string lpszCommand, string lpszReturnString,
+                    uint cchReturn, int hwndCallback);
     }
 }

@@ -55,21 +55,29 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel18 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel19 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.panel20 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -82,13 +90,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel21.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel22.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel18.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel23.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel19.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel24.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel20.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -130,6 +146,7 @@
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(230, 60);
             this.panel14.TabIndex = 4;
+            this.panel14.DoubleClick += new System.EventHandler(this.panel_DoubleClick);
             this.panel14.MouseEnter += new System.EventHandler(this.panelMenu_MouseEnter);
             this.panel14.MouseLeave += new System.EventHandler(this.panelMenu_MouseLeave);
             // 
@@ -188,6 +205,7 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(230, 60);
             this.panel12.TabIndex = 3;
+            this.panel12.DoubleClick += new System.EventHandler(this.panel_DoubleClick);
             this.panel12.MouseEnter += new System.EventHandler(this.panelMenu_MouseEnter);
             this.panel12.MouseLeave += new System.EventHandler(this.panelMenu_MouseLeave);
             // 
@@ -246,6 +264,7 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(230, 60);
             this.panel10.TabIndex = 2;
+            this.panel10.DoubleClick += new System.EventHandler(this.panel_DoubleClick);
             this.panel10.MouseEnter += new System.EventHandler(this.panelMenu_MouseEnter);
             this.panel10.MouseLeave += new System.EventHandler(this.panelMenu_MouseLeave);
             // 
@@ -305,6 +324,7 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(230, 60);
             this.panel8.TabIndex = 1;
+            this.panel8.DoubleClick += new System.EventHandler(this.panel_DoubleClick);
             this.panel8.MouseEnter += new System.EventHandler(this.panelMenu_MouseEnter);
             this.panel8.MouseLeave += new System.EventHandler(this.panelMenu_MouseLeave);
             // 
@@ -387,7 +407,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(145)))));
-            this.panel4.Controls.Add(this.label14);
+            this.panel4.Controls.Add(this.panel21);
             this.panel4.Controls.Add(this.panel17);
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
@@ -396,13 +416,22 @@
             this.panel4.MouseEnter += new System.EventHandler(this.panelViedo_MouseEnter);
             this.panel4.MouseLeave += new System.EventHandler(this.panelVideo_MouseLeave);
             // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.label14);
+            this.panel21.Controls.Add(this.pictureBox5);
+            this.panel21.Location = new System.Drawing.Point(0, 42);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(329, 237);
+            this.panel21.TabIndex = 4;
+            // 
             // label14
             // 
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Tahoma", 16F);
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(103, 143);
+            this.label14.Location = new System.Drawing.Point(110, 103);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(122, 27);
             this.label14.TabIndex = 3;
@@ -432,7 +461,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(145)))));
-            this.panel5.Controls.Add(this.label15);
+            this.panel5.Controls.Add(this.panel22);
             this.panel5.Controls.Add(this.panel18);
             this.panel5.Location = new System.Drawing.Point(331, 0);
             this.panel5.Name = "panel5";
@@ -441,17 +470,35 @@
             this.panel5.MouseEnter += new System.EventHandler(this.panelViedo_MouseEnter);
             this.panel5.MouseLeave += new System.EventHandler(this.panelVideo_MouseLeave);
             // 
-            // label15
+            // panel22
             // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(103, 143);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(122, 27);
-            this.label15.TabIndex = 2;
-            this.label15.Text = "无视频信号";
+            this.panel22.Controls.Add(this.label18);
+            this.panel22.Controls.Add(this.pictureBox6);
+            this.panel22.Location = new System.Drawing.Point(0, 42);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(329, 237);
+            this.panel22.TabIndex = 4;
+            // 
+            // label18
+            // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(110, 103);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(122, 27);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "无视频信号";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox6.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(329, 237);
+            this.pictureBox6.TabIndex = 4;
+            this.pictureBox6.TabStop = false;
             // 
             // panel18
             // 
@@ -477,7 +524,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(145)))));
-            this.panel6.Controls.Add(this.label16);
+            this.panel6.Controls.Add(this.panel23);
             this.panel6.Controls.Add(this.panel19);
             this.panel6.Location = new System.Drawing.Point(0, 281);
             this.panel6.Name = "panel6";
@@ -486,17 +533,35 @@
             this.panel6.MouseEnter += new System.EventHandler(this.panelViedo_MouseEnter);
             this.panel6.MouseLeave += new System.EventHandler(this.panelVideo_MouseLeave);
             // 
-            // label16
+            // panel23
             // 
-            this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(103, 143);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(122, 27);
-            this.label16.TabIndex = 3;
-            this.label16.Text = "无视频信号";
+            this.panel23.Controls.Add(this.label15);
+            this.panel23.Controls.Add(this.pictureBox7);
+            this.panel23.Location = new System.Drawing.Point(0, 41);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(329, 237);
+            this.panel23.TabIndex = 4;
+            // 
+            // label15
+            // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(110, 103);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(122, 27);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "无视频信号";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox7.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(329, 237);
+            this.pictureBox7.TabIndex = 4;
+            this.pictureBox7.TabStop = false;
             // 
             // panel19
             // 
@@ -522,7 +587,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(89)))), ((int)(((byte)(145)))));
-            this.panel7.Controls.Add(this.label17);
+            this.panel7.Controls.Add(this.panel24);
             this.panel7.Controls.Add(this.panel20);
             this.panel7.Location = new System.Drawing.Point(331, 281);
             this.panel7.Name = "panel7";
@@ -531,17 +596,35 @@
             this.panel7.MouseEnter += new System.EventHandler(this.panelViedo_MouseEnter);
             this.panel7.MouseLeave += new System.EventHandler(this.panelVideo_MouseLeave);
             // 
-            // label17
+            // panel24
             // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(103, 143);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(122, 27);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "无视频信号";
+            this.panel24.Controls.Add(this.label16);
+            this.panel24.Controls.Add(this.pictureBox8);
+            this.panel24.Location = new System.Drawing.Point(0, 42);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(329, 237);
+            this.panel24.TabIndex = 4;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(110, 103);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(122, 27);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "无视频信号";
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox8.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(329, 237);
+            this.pictureBox8.TabIndex = 4;
+            this.pictureBox8.TabStop = false;
             // 
             // panel20
             // 
@@ -563,6 +646,15 @@
             this.label13.Size = new System.Drawing.Size(55, 14);
             this.label13.TabIndex = 0;
             this.label13.Text = "前门入口";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(329, 237);
+            this.pictureBox5.TabIndex = 4;
+            this.pictureBox5.TabStop = false;
             // 
             // Sp
             // 
@@ -590,21 +682,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
             this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel19.ResumeLayout(false);
             this.panel19.PerformLayout();
             this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.panel24.ResumeLayout(false);
+            this.panel24.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -649,9 +749,16 @@
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel panel24;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
