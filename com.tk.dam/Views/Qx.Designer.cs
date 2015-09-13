@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraCharts.XYDiagram xyDiagram2 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.ConstantLine constantLine4 = new DevExpress.XtraCharts.ConstantLine();
-            DevExpress.XtraCharts.ConstantLine constantLine5 = new DevExpress.XtraCharts.ConstantLine();
-            DevExpress.XtraCharts.ConstantLine constantLine6 = new DevExpress.XtraCharts.ConstantLine();
-            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SeriesPoint seriesPoint8 = new DevExpress.XtraCharts.SeriesPoint(new System.DateTime(2015, 9, 5, 0, 0, 0, 0), new object[] {
+            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.ConstantLine constantLine1 = new DevExpress.XtraCharts.ConstantLine();
+            DevExpress.XtraCharts.ConstantLine constantLine2 = new DevExpress.XtraCharts.ConstantLine();
+            DevExpress.XtraCharts.ConstantLine constantLine3 = new DevExpress.XtraCharts.ConstantLine();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SeriesPoint seriesPoint1 = new DevExpress.XtraCharts.SeriesPoint(new System.DateTime(2015, 9, 5, 0, 0, 0, 0), new object[] {
             ((object)(90D))});
-            DevExpress.XtraCharts.SeriesPoint seriesPoint9 = new DevExpress.XtraCharts.SeriesPoint(new System.DateTime(2015, 9, 6, 0, 0, 0, 0), new object[] {
+            DevExpress.XtraCharts.SeriesPoint seriesPoint2 = new DevExpress.XtraCharts.SeriesPoint(new System.DateTime(2015, 9, 6, 0, 0, 0, 0), new object[] {
             ((object)(80D))});
-            DevExpress.XtraCharts.SeriesPoint seriesPoint10 = new DevExpress.XtraCharts.SeriesPoint(new System.DateTime(2015, 9, 8, 0, 0, 0, 0), new object[] {
+            DevExpress.XtraCharts.SeriesPoint seriesPoint3 = new DevExpress.XtraCharts.SeriesPoint(new System.DateTime(2015, 9, 8, 0, 0, 0, 0), new object[] {
             ((object)(96.46D))});
-            DevExpress.XtraCharts.SeriesPoint seriesPoint11 = new DevExpress.XtraCharts.SeriesPoint(new System.DateTime(2015, 9, 7, 0, 0, 0, 0), new object[] {
+            DevExpress.XtraCharts.SeriesPoint seriesPoint4 = new DevExpress.XtraCharts.SeriesPoint(new System.DateTime(2015, 9, 7, 0, 0, 0, 0), new object[] {
             ((object)(90D))});
-            DevExpress.XtraCharts.SeriesPoint seriesPoint12 = new DevExpress.XtraCharts.SeriesPoint(new System.DateTime(2015, 9, 9, 0, 0, 0, 0), new object[] {
+            DevExpress.XtraCharts.SeriesPoint seriesPoint5 = new DevExpress.XtraCharts.SeriesPoint(new System.DateTime(2015, 9, 9, 0, 0, 0, 0), new object[] {
             ((object)(94.48D))});
-            DevExpress.XtraCharts.SeriesPoint seriesPoint13 = new DevExpress.XtraCharts.SeriesPoint(new System.DateTime(2015, 9, 10, 0, 0, 0, 0), new object[] {
+            DevExpress.XtraCharts.SeriesPoint seriesPoint6 = new DevExpress.XtraCharts.SeriesPoint(new System.DateTime(2015, 9, 10, 0, 0, 0, 0), new object[] {
             ((object)(98.78D))});
-            DevExpress.XtraCharts.SeriesPoint seriesPoint14 = new DevExpress.XtraCharts.SeriesPoint(new System.DateTime(2015, 9, 11, 0, 0, 0, 0), new object[] {
+            DevExpress.XtraCharts.SeriesPoint seriesPoint7 = new DevExpress.XtraCharts.SeriesPoint(new System.DateTime(2015, 9, 11, 0, 0, 0, 0), new object[] {
             ((object)(80D))});
-            DevExpress.XtraCharts.LineSeriesView lineSeriesView3 = new DevExpress.XtraCharts.LineSeriesView();
-            DevExpress.XtraCharts.LineSeriesView lineSeriesView4 = new DevExpress.XtraCharts.LineSeriesView();
+            DevExpress.XtraCharts.LineSeriesView lineSeriesView1 = new DevExpress.XtraCharts.LineSeriesView();
+            DevExpress.XtraCharts.LineSeriesView lineSeriesView2 = new DevExpress.XtraCharts.LineSeriesView();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Qx));
             this.circularGauge1 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
             this.labelComponent1 = new DevExpress.XtraGauges.Win.Base.LabelComponent();
@@ -104,10 +104,10 @@
             this.panelContainer.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxFigure4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxFigure3)).BeginInit();
@@ -211,60 +211,60 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chartControl1.BackColor = System.Drawing.Color.Transparent;
             this.chartControl1.BorderOptions.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(250)))));
-            xyDiagram2.AxisX.DateTimeScaleOptions.AggregateFunction = DevExpress.XtraCharts.AggregateFunction.None;
-            xyDiagram2.AxisX.DateTimeScaleOptions.AutoGrid = false;
-            xyDiagram2.AxisX.DateTimeScaleOptions.GridSpacing = 3D;
-            xyDiagram2.AxisX.DateTimeScaleOptions.ScaleMode = DevExpress.XtraCharts.ScaleMode.Automatic;
-            xyDiagram2.AxisX.GridLines.Visible = true;
-            xyDiagram2.AxisX.Label.TextPattern = "{A:MMMd日}";
-            xyDiagram2.AxisX.Title.Alignment = System.Drawing.StringAlignment.Far;
-            xyDiagram2.AxisX.Title.Antialiasing = false;
-            xyDiagram2.AxisX.Title.Text = "时间";
-            xyDiagram2.AxisX.Title.TextColor = System.Drawing.Color.White;
-            xyDiagram2.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            xyDiagram2.AxisX.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            xyDiagram2.AxisX.VisibleInPanesSerializable = "-1";
-            constantLine4.AxisValueSerializable = "98.78";
-            constantLine4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            constantLine4.LineStyle.Thickness = 3;
-            constantLine4.Name = "设计水位";
-            constantLine4.Title.Alignment = DevExpress.XtraCharts.ConstantLineTitleAlignment.Far;
-            constantLine4.Title.Visible = false;
-            constantLine5.AxisValueSerializable = "94";
-            constantLine5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(228)))), ((int)(((byte)(0)))));
-            constantLine5.LineStyle.Thickness = 3;
-            constantLine5.Name = "正常水位";
-            constantLine5.Title.Text = "正常水位";
-            constantLine5.Title.Visible = false;
-            constantLine6.AxisValueSerializable = "90";
-            constantLine6.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(96)))), ((int)(((byte)(245)))));
-            constantLine6.LineStyle.Thickness = 3;
-            constantLine6.Name = "汛限水位";
-            constantLine6.Title.Text = "汛限水位";
-            constantLine6.Title.Visible = false;
-            xyDiagram2.AxisY.ConstantLines.AddRange(new DevExpress.XtraCharts.ConstantLine[] {
-            constantLine4,
-            constantLine5,
-            constantLine6});
-            xyDiagram2.AxisY.GridLines.MinorColor = System.Drawing.Color.Transparent;
-            xyDiagram2.AxisY.Label.TextPattern = "{V}m";
-            xyDiagram2.AxisY.Tickmarks.Visible = false;
-            xyDiagram2.AxisY.Title.Alignment = System.Drawing.StringAlignment.Far;
-            xyDiagram2.AxisY.Title.Antialiasing = false;
-            xyDiagram2.AxisY.Title.Text = "水位";
-            xyDiagram2.AxisY.Title.TextColor = System.Drawing.Color.White;
-            xyDiagram2.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            xyDiagram2.AxisY.VisibleInPanesSerializable = "-1";
-            xyDiagram2.AxisY.VisualRange.Auto = false;
-            xyDiagram2.AxisY.VisualRange.MaxValueSerializable = "100";
-            xyDiagram2.AxisY.VisualRange.MinValueSerializable = "80";
-            xyDiagram2.AxisY.WholeRange.AlwaysShowZeroLevel = false;
-            xyDiagram2.AxisY.WholeRange.Auto = false;
-            xyDiagram2.AxisY.WholeRange.MaxValueSerializable = "100";
-            xyDiagram2.AxisY.WholeRange.MinValueSerializable = "70";
-            xyDiagram2.DefaultPane.BackColor = System.Drawing.Color.Transparent;
-            xyDiagram2.DefaultPane.BorderColor = System.Drawing.Color.Transparent;
-            this.chartControl1.Diagram = xyDiagram2;
+            xyDiagram1.AxisX.DateTimeScaleOptions.AggregateFunction = DevExpress.XtraCharts.AggregateFunction.None;
+            xyDiagram1.AxisX.DateTimeScaleOptions.AutoGrid = false;
+            xyDiagram1.AxisX.DateTimeScaleOptions.GridSpacing = 3D;
+            xyDiagram1.AxisX.DateTimeScaleOptions.ScaleMode = DevExpress.XtraCharts.ScaleMode.Automatic;
+            xyDiagram1.AxisX.GridLines.Visible = true;
+            xyDiagram1.AxisX.Label.TextPattern = "{A:MMMd日}";
+            xyDiagram1.AxisX.Title.Alignment = System.Drawing.StringAlignment.Far;
+            xyDiagram1.AxisX.Title.Antialiasing = false;
+            xyDiagram1.AxisX.Title.Text = "时间";
+            xyDiagram1.AxisX.Title.TextColor = System.Drawing.Color.White;
+            xyDiagram1.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            xyDiagram1.AxisX.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            constantLine1.AxisValueSerializable = "98.78";
+            constantLine1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            constantLine1.LineStyle.Thickness = 3;
+            constantLine1.Name = "设计水位";
+            constantLine1.Title.Alignment = DevExpress.XtraCharts.ConstantLineTitleAlignment.Far;
+            constantLine1.Title.Visible = false;
+            constantLine2.AxisValueSerializable = "94";
+            constantLine2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(228)))), ((int)(((byte)(0)))));
+            constantLine2.LineStyle.Thickness = 3;
+            constantLine2.Name = "正常水位";
+            constantLine2.Title.Text = "正常水位";
+            constantLine2.Title.Visible = false;
+            constantLine3.AxisValueSerializable = "90";
+            constantLine3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(96)))), ((int)(((byte)(245)))));
+            constantLine3.LineStyle.Thickness = 3;
+            constantLine3.Name = "汛限水位";
+            constantLine3.Title.Text = "汛限水位";
+            constantLine3.Title.Visible = false;
+            xyDiagram1.AxisY.ConstantLines.AddRange(new DevExpress.XtraCharts.ConstantLine[] {
+            constantLine1,
+            constantLine2,
+            constantLine3});
+            xyDiagram1.AxisY.GridLines.MinorColor = System.Drawing.Color.Transparent;
+            xyDiagram1.AxisY.Label.TextPattern = "{V}m";
+            xyDiagram1.AxisY.Tickmarks.Visible = false;
+            xyDiagram1.AxisY.Title.Alignment = System.Drawing.StringAlignment.Far;
+            xyDiagram1.AxisY.Title.Antialiasing = false;
+            xyDiagram1.AxisY.Title.Text = "水位";
+            xyDiagram1.AxisY.Title.TextColor = System.Drawing.Color.White;
+            xyDiagram1.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram1.AxisY.VisualRange.Auto = false;
+            xyDiagram1.AxisY.VisualRange.MaxValueSerializable = "100";
+            xyDiagram1.AxisY.VisualRange.MinValueSerializable = "80";
+            xyDiagram1.AxisY.WholeRange.AlwaysShowZeroLevel = false;
+            xyDiagram1.AxisY.WholeRange.Auto = false;
+            xyDiagram1.AxisY.WholeRange.MaxValueSerializable = "100";
+            xyDiagram1.AxisY.WholeRange.MinValueSerializable = "70";
+            xyDiagram1.DefaultPane.BackColor = System.Drawing.Color.Transparent;
+            xyDiagram1.DefaultPane.BorderColor = System.Drawing.Color.Transparent;
+            this.chartControl1.Diagram = xyDiagram1;
             this.chartControl1.Legend.BackColor = System.Drawing.Color.Transparent;
             this.chartControl1.Legend.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(250)))));
             this.chartControl1.Legend.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -272,23 +272,23 @@
             this.chartControl1.Location = new System.Drawing.Point(12, 95);
             this.chartControl1.Name = "chartControl1";
             this.chartControl1.PaletteName = "Yellow";
-            series2.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series2.Name = "水位";
-            series2.Points.AddRange(new DevExpress.XtraCharts.SeriesPoint[] {
-            seriesPoint8,
-            seriesPoint9,
-            seriesPoint10,
-            seriesPoint11,
-            seriesPoint12,
-            seriesPoint13,
-            seriesPoint14});
-            lineSeriesView3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(228)))), ((int)(((byte)(0)))));
-            lineSeriesView3.LineStyle.Thickness = 1;
-            lineSeriesView3.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series2.View = lineSeriesView3;
+            series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
+            series1.Name = "水位";
+            series1.Points.AddRange(new DevExpress.XtraCharts.SeriesPoint[] {
+            seriesPoint1,
+            seriesPoint2,
+            seriesPoint3,
+            seriesPoint4,
+            seriesPoint5,
+            seriesPoint6,
+            seriesPoint7});
+            lineSeriesView1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(228)))), ((int)(((byte)(0)))));
+            lineSeriesView1.LineStyle.Thickness = 1;
+            lineSeriesView1.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
+            series1.View = lineSeriesView1;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series2};
-            this.chartControl1.SeriesTemplate.View = lineSeriesView4;
+        series1};
+            this.chartControl1.SeriesTemplate.View = lineSeriesView2;
             this.chartControl1.Size = new System.Drawing.Size(468, 375);
             this.chartControl1.TabIndex = 1;
             // 
@@ -772,10 +772,10 @@
             this.panelContainer.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
