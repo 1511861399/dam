@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbBm = new System.Windows.Forms.ComboBox();
+            this.cmbZw = new System.Windows.Forms.ComboBox();
+            this.cmbYhdj = new System.Windows.Forms.ComboBox();
+            this.cmbQx = new System.Windows.Forms.ComboBox();
+            this.lblXh = new System.Windows.Forms.Label();
             this.rtxBz = new System.Windows.Forms.RichTextBox();
-            this.txtQx = new System.Windows.Forms.TextBox();
-            this.txtYhdj = new System.Windows.Forms.TextBox();
-            this.txtZw = new System.Windows.Forms.TextBox();
-            this.txtBm = new System.Windows.Forms.TextBox();
             this.rdbFemale = new System.Windows.Forms.RadioButton();
             this.rdbMale = new System.Windows.Forms.RadioButton();
             this.txtDlm = new System.Windows.Forms.TextBox();
@@ -49,7 +50,6 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.lblXh = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,12 +57,12 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.cmbBm);
+            this.panel1.Controls.Add(this.cmbZw);
+            this.panel1.Controls.Add(this.cmbYhdj);
+            this.panel1.Controls.Add(this.cmbQx);
             this.panel1.Controls.Add(this.lblXh);
             this.panel1.Controls.Add(this.rtxBz);
-            this.panel1.Controls.Add(this.txtQx);
-            this.panel1.Controls.Add(this.txtYhdj);
-            this.panel1.Controls.Add(this.txtZw);
-            this.panel1.Controls.Add(this.txtBm);
             this.panel1.Controls.Add(this.rdbFemale);
             this.panel1.Controls.Add(this.rdbMale);
             this.panel1.Controls.Add(this.txtDlm);
@@ -83,41 +83,72 @@
             this.panel1.Size = new System.Drawing.Size(639, 422);
             this.panel1.TabIndex = 0;
             // 
+            // cmbBm
+            // 
+            this.cmbBm.FormattingEnabled = true;
+            this.cmbBm.Items.AddRange(new object[] {
+            "办公室",
+            "综合部",
+            "研发部",
+            "市场部"});
+            this.cmbBm.Location = new System.Drawing.Point(112, 157);
+            this.cmbBm.Name = "cmbBm";
+            this.cmbBm.Size = new System.Drawing.Size(200, 22);
+            this.cmbBm.TabIndex = 10;
+            // 
+            // cmbZw
+            // 
+            this.cmbZw.FormattingEnabled = true;
+            this.cmbZw.Items.AddRange(new object[] {
+            "员工",
+            "经理",
+            "副总",
+            "总经理"});
+            this.cmbZw.Location = new System.Drawing.Point(111, 189);
+            this.cmbZw.Name = "cmbZw";
+            this.cmbZw.Size = new System.Drawing.Size(201, 22);
+            this.cmbZw.TabIndex = 11;
+            // 
+            // cmbYhdj
+            // 
+            this.cmbYhdj.FormattingEnabled = true;
+            this.cmbYhdj.Items.AddRange(new object[] {
+            "一级",
+            "二级",
+            "三级"});
+            this.cmbYhdj.Location = new System.Drawing.Point(112, 223);
+            this.cmbYhdj.Name = "cmbYhdj";
+            this.cmbYhdj.Size = new System.Drawing.Size(200, 22);
+            this.cmbYhdj.TabIndex = 12;
+            // 
+            // cmbQx
+            // 
+            this.cmbQx.FormattingEnabled = true;
+            this.cmbQx.Items.AddRange(new object[] {
+            "普通用户",
+            "超级管理员"});
+            this.cmbQx.Location = new System.Drawing.Point(112, 259);
+            this.cmbQx.Name = "cmbQx";
+            this.cmbQx.Size = new System.Drawing.Size(200, 22);
+            this.cmbQx.TabIndex = 13;
+            // 
+            // lblXh
+            // 
+            this.lblXh.AutoSize = true;
+            this.lblXh.Location = new System.Drawing.Point(380, 67);
+            this.lblXh.Name = "lblXh";
+            this.lblXh.Size = new System.Drawing.Size(14, 14);
+            this.lblXh.TabIndex = 10;
+            this.lblXh.Text = "0";
+            this.lblXh.Visible = false;
+            // 
             // rtxBz
             // 
             this.rtxBz.Location = new System.Drawing.Point(111, 292);
             this.rtxBz.Name = "rtxBz";
             this.rtxBz.Size = new System.Drawing.Size(201, 41);
-            this.rtxBz.TabIndex = 9;
+            this.rtxBz.TabIndex = 14;
             this.rtxBz.Text = "";
-            // 
-            // cmbQx
-            // 
-            this.txtQx.Location = new System.Drawing.Point(111, 259);
-            this.txtQx.Name = "txtQx";
-            this.txtQx.Size = new System.Drawing.Size(201, 22);
-            this.txtQx.TabIndex = 8;
-            // 
-            // cmbYhdj
-            // 
-            this.txtYhdj.Location = new System.Drawing.Point(111, 223);
-            this.txtYhdj.Name = "txtYhdj";
-            this.txtYhdj.Size = new System.Drawing.Size(201, 22);
-            this.txtYhdj.TabIndex = 8;
-            // 
-            // cmbZw
-            // 
-            this.txtZw.Location = new System.Drawing.Point(111, 189);
-            this.txtZw.Name = "txtZw";
-            this.txtZw.Size = new System.Drawing.Size(201, 22);
-            this.txtZw.TabIndex = 8;
-            // 
-            // cmbBm
-            // 
-            this.txtBm.Location = new System.Drawing.Point(111, 157);
-            this.txtBm.Name = "txtBm";
-            this.txtBm.Size = new System.Drawing.Size(201, 22);
-            this.txtBm.TabIndex = 8;
             // 
             // rdbFemale
             // 
@@ -125,7 +156,7 @@
             this.rdbFemale.Location = new System.Drawing.Point(219, 124);
             this.rdbFemale.Name = "rdbFemale";
             this.rdbFemale.Size = new System.Drawing.Size(37, 18);
-            this.rdbFemale.TabIndex = 7;
+            this.rdbFemale.TabIndex = 9;
             this.rdbFemale.Text = "女";
             this.rdbFemale.UseVisualStyleBackColor = true;
             // 
@@ -136,7 +167,7 @@
             this.rdbMale.Location = new System.Drawing.Point(138, 125);
             this.rdbMale.Name = "rdbMale";
             this.rdbMale.Size = new System.Drawing.Size(37, 18);
-            this.rdbMale.TabIndex = 7;
+            this.rdbMale.TabIndex = 8;
             this.rdbMale.TabStop = true;
             this.rdbMale.Text = "男";
             this.rdbMale.UseVisualStyleBackColor = true;
@@ -146,7 +177,7 @@
             this.txtDlm.Location = new System.Drawing.Point(111, 90);
             this.txtDlm.Name = "txtDlm";
             this.txtDlm.Size = new System.Drawing.Size(201, 22);
-            this.txtDlm.TabIndex = 6;
+            this.txtDlm.TabIndex = 7;
             // 
             // txtXm
             // 
@@ -286,16 +317,6 @@
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "新增用户";
             // 
-            // lblXh
-            // 
-            this.lblXh.AutoSize = true;
-            this.lblXh.Location = new System.Drawing.Point(380, 67);
-            this.lblXh.Name = "lblXh";
-            this.lblXh.Size = new System.Drawing.Size(14, 14);
-            this.lblXh.TabIndex = 10;
-            this.lblXh.Text = "0";
-            this.lblXh.Visible = false;
-            // 
             // popupYHEdit
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(161)))), ((int)(((byte)(235)))));
@@ -333,10 +354,10 @@
         private System.Windows.Forms.RadioButton rdbMale;
         private System.Windows.Forms.TextBox txtDlm;
         private System.Windows.Forms.RichTextBox rtxBz;
-        private System.Windows.Forms.TextBox txtQx;
-        private System.Windows.Forms.TextBox txtYhdj;
-        private System.Windows.Forms.TextBox txtZw;
-        private System.Windows.Forms.TextBox txtBm;
         private System.Windows.Forms.Label lblXh;
+        private System.Windows.Forms.ComboBox cmbQx;
+        private System.Windows.Forms.ComboBox cmbBm;
+        private System.Windows.Forms.ComboBox cmbZw;
+        private System.Windows.Forms.ComboBox cmbYhdj;
     }
 }

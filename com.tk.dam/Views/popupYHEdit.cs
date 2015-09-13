@@ -36,10 +36,10 @@ namespace com.tk.dam.Views
                 rdbMale.Checked = true;
                 rdbFemale.Checked = false;
 
-                txtBm.Text = "";
-                txtZw.Text = "";
-                txtYhdj.Text = "";
-                txtQx.Text = "员工";
+                cmbBm.SelectedIndex = 0;
+                cmbZw.SelectedIndex = 0;
+                cmbYhdj.SelectedIndex = 0;
+                cmbQx.SelectedIndex = 0;
                 rtxBz.Text = "";
             }
             else
@@ -58,10 +58,11 @@ namespace com.tk.dam.Views
                     rdbMale.Checked = false;
                     rdbFemale.Checked = true;
                 }
-                txtBm.Text = yh.Bm;
-                txtZw.Text = yh.Zw;
-                txtYhdj.Text = yh.Yhdj;
-                txtQx.Text = yh.Qx;
+                cmbBm.Text = yh.Bm;
+                cmbZw.Text = yh.Zw;
+                cmbYhdj.Text = yh.Yhdj;
+                cmbQx.Text = yh.Qx;
+                cmbQx.Text = yh.Qx;
                 rtxBz.Text = yh.Bz;
             }
         }
@@ -81,10 +82,10 @@ namespace com.tk.dam.Views
                 yh.Xb = "女";
             }
 
-            yh.Bm = txtBm.Text;
-            yh.Zw = txtZw.Text;
-            yh.Yhdj = txtYhdj.Text;
-            yh.Qx = txtQx.Text;
+            yh.Bm = cmbBm.Text;
+            yh.Zw = cmbZw.Text;
+            yh.Yhdj = cmbYhdj.Text;
+            yh.Qx = cmbQx.Text;//txtQx.Text;
             yh.Bz = rtxBz.Text;
 
             if (lblTitle.Text == "新增用户")

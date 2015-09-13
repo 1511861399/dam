@@ -29,7 +29,7 @@ namespace com.tk.dam
 
         public MainForm()
         {
- 
+
             InitializeComponent();
 
             mainWindowsUIView.Appearance.BackColor = Color.FromArgb(0, 126, 206);
@@ -37,7 +37,7 @@ namespace com.tk.dam
             mainWindowsUIView.AppearanceActionsBar.BackColor = Color.FromArgb(0, 90, 144);
 
             mSrceenWidth = Screen.PrimaryScreen.Bounds.Width;
-            mainWindowsUIView.TileContainerProperties.ItemSize = 180 + (int)((mSrceenWidth - 1500) * 0.05);                   
+            mainWindowsUIView.TileContainerProperties.ItemSize = 180 + (int)((mSrceenWidth - 1500) * 0.05);
 
             DelegateAction mExitAction = new DelegateAction(canExecuteExitFunction, exitActionFunction);
             mExitAction.Caption = "Exit";
@@ -120,7 +120,7 @@ namespace com.tk.dam
                 mIsCanShowNavBar = true;
                 if (IsPicTheme)
                 {
-                    mainWindowsUIView.BackgroundImage = Properties.Resources.bg01;                   
+                    mainWindowsUIView.BackgroundImage = Properties.Resources.bg01;
                 }
             }
             else
@@ -138,7 +138,7 @@ namespace com.tk.dam
                         mPopupTjControl.Reload();
                     }
                 }
-            }          
+            }
         }
 
         private void mainWindowsUIView_NavigationBarsShowing(object sender, NavigationBarsCancelEventArgs e)
@@ -159,7 +159,7 @@ namespace com.tk.dam
         }
 
         private void tileZJ_Click(object sender, TileClickEventArgs e)
-        {  
+        {
             mainWindowsUIView.ActivateContainer(popupTjFlyout);
             e.Handled = true;
         }
@@ -241,11 +241,11 @@ namespace com.tk.dam
             {
                 mCurrentDocument.Control.Refresh();
             }
-            
+
         }
 
         #region 外部调用接口
-      
+
         public IList<TjItemEnum> SelectedTjItems
         {
             get
@@ -307,7 +307,7 @@ namespace com.tk.dam
             var deleteYHAction = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutAction()
             {
                 Caption = "删除确认",
-                Description = "确定要删除用xxx户吗?"
+                Description = string.Format("确定要删除【{0}】用户吗?", yh.Xm)
             };
             deleteYHAction.Commands.Add(FlyoutCommand.Yes);
             deleteYHAction.Commands.Add(FlyoutCommand.No);
@@ -323,7 +323,7 @@ namespace com.tk.dam
         /// </summary>
         /// <param name="yh">用户对象</param>
         /// <param name="isNew">是否新增</param>
-        public void UpdateYHList(Yh yh,bool isNew)
+        public void UpdateYHList(Yh yh, bool isNew)
         {
             if (mCurrentDocument != null)
             {

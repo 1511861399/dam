@@ -13,7 +13,8 @@ namespace com.tk.dam.Views
 {
     public partial class Yhgl : XtraUserControlBase
     {
-        IList<Yh> mYhList = new List<Yh>();
+        List<Yh> mYhList = new List<Yh>();
+        private IComparer<Yh> yhComparer = new YhComparer();
 
         public Yhgl()
         {
@@ -45,7 +46,8 @@ namespace com.tk.dam.Views
                 mYhList.Remove(mYhList.Single(temp => temp.Xh == yh.Xh));
                 mYhList.Add(yh);
             }
-            gcMain.RefreshDataSource();
+            mYhList.Sort(yhComparer);
+            gcMain.RefreshDataSource();            
         }
 
         /// <summary>
@@ -55,14 +57,16 @@ namespace com.tk.dam.Views
         public void DeleteYH(Yh yh)
         {
             mYhList.Remove(yh);
+            mYhList.Sort(yhComparer);
             gcMain.RefreshDataSource();
         }
 
         private void BindingGrid()
         {
             mYhList.Add(new Yh { Xh = 1, Xm = "张三", Dlm = "zhangsan", Xb = "男", Qx = "超级管理员" });
-            mYhList.Add(new Yh { Xh = 2, Xm = "李四", Dlm = "lisi", Xb = "男", Qx = "员工" });
-            mYhList.Add(new Yh { Xh = 3, Xm = "赵五", Dlm = "zhaowu", Xb = "男", Qx = "员工" });
+            mYhList.Add(new Yh { Xh = 2, Xm = "李四", Dlm = "lisi", Xb = "男", Qx = "普通用户" });
+            mYhList.Add(new Yh { Xh = 3, Xm = "赵五", Dlm = "zhaowu", Xb = "男", Qx = "普通用户" });
+            mYhList.Sort(yhComparer);
             gcMain.DataSource = mYhList;
         }
 
@@ -81,5 +85,13 @@ namespace com.tk.dam.Views
             MainForm.ShowYHEditFlyout(mYhList[gridView1.FocusedRowHandle]);
         }
        
+    }
+
+    internal class YhComparer : IComparer<Yh>
+    {
+        public int Compare(Yh yh1, Yh yh2)
+        {
+            return yh1.Xh - yh2.Xh;
+        }
     }
 }
