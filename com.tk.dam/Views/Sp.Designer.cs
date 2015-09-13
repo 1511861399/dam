@@ -56,28 +56,28 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblVideo1 = new System.Windows.Forms.Label();
+            this.pboxVideo1 = new System.Windows.Forms.PictureBox();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
-            this.label18 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.lblVideo2 = new System.Windows.Forms.Label();
+            this.pboxVideo2 = new System.Windows.Forms.PictureBox();
             this.panel18 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel23 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.lblVideo3 = new System.Windows.Forms.Label();
+            this.pboxVideo3 = new System.Windows.Forms.PictureBox();
             this.panel19 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel24 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.lblVideo4 = new System.Windows.Forms.Label();
+            this.pboxVideo4 = new System.Windows.Forms.PictureBox();
             this.panel20 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -91,20 +91,20 @@
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel21.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxVideo1)).BeginInit();
             this.panel17.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel22.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxVideo2)).BeginInit();
             this.panel18.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel23.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxVideo3)).BeginInit();
             this.panel19.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel24.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxVideo4)).BeginInit();
             this.panel20.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -146,7 +146,6 @@
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(230, 60);
             this.panel14.TabIndex = 4;
-            this.panel14.DoubleClick += new System.EventHandler(this.panel_DoubleClick);
             this.panel14.MouseEnter += new System.EventHandler(this.panelMenu_MouseEnter);
             this.panel14.MouseLeave += new System.EventHandler(this.panelMenu_MouseLeave);
             // 
@@ -205,7 +204,6 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(230, 60);
             this.panel12.TabIndex = 3;
-            this.panel12.DoubleClick += new System.EventHandler(this.panel_DoubleClick);
             this.panel12.MouseEnter += new System.EventHandler(this.panelMenu_MouseEnter);
             this.panel12.MouseLeave += new System.EventHandler(this.panelMenu_MouseLeave);
             // 
@@ -324,7 +322,6 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(230, 60);
             this.panel8.TabIndex = 1;
-            this.panel8.DoubleClick += new System.EventHandler(this.panel_DoubleClick);
             this.panel8.MouseEnter += new System.EventHandler(this.panelMenu_MouseEnter);
             this.panel8.MouseLeave += new System.EventHandler(this.panelMenu_MouseLeave);
             // 
@@ -418,24 +415,33 @@
             // 
             // panel21
             // 
-            this.panel21.Controls.Add(this.label14);
-            this.panel21.Controls.Add(this.pictureBox5);
+            this.panel21.Controls.Add(this.lblVideo1);
+            this.panel21.Controls.Add(this.pboxVideo1);
             this.panel21.Location = new System.Drawing.Point(0, 42);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(329, 237);
             this.panel21.TabIndex = 4;
             // 
-            // label14
+            // lblVideo1
             // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(110, 103);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(122, 27);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "无视频信号";
+            this.lblVideo1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblVideo1.AutoSize = true;
+            this.lblVideo1.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.lblVideo1.ForeColor = System.Drawing.Color.White;
+            this.lblVideo1.Location = new System.Drawing.Point(110, 103);
+            this.lblVideo1.Name = "lblVideo1";
+            this.lblVideo1.Size = new System.Drawing.Size(122, 27);
+            this.lblVideo1.TabIndex = 3;
+            this.lblVideo1.Text = "无视频信号";
+            // 
+            // pboxVideo1
+            // 
+            this.pboxVideo1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pboxVideo1.Location = new System.Drawing.Point(0, 0);
+            this.pboxVideo1.Name = "pboxVideo1";
+            this.pboxVideo1.Size = new System.Drawing.Size(329, 237);
+            this.pboxVideo1.TabIndex = 4;
+            this.pboxVideo1.TabStop = false;
             // 
             // panel17
             // 
@@ -472,33 +478,33 @@
             // 
             // panel22
             // 
-            this.panel22.Controls.Add(this.label18);
-            this.panel22.Controls.Add(this.pictureBox6);
+            this.panel22.Controls.Add(this.lblVideo2);
+            this.panel22.Controls.Add(this.pboxVideo2);
             this.panel22.Location = new System.Drawing.Point(0, 42);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(329, 237);
             this.panel22.TabIndex = 4;
             // 
-            // label18
+            // lblVideo2
             // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(110, 103);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(122, 27);
-            this.label18.TabIndex = 3;
-            this.label18.Text = "无视频信号";
+            this.lblVideo2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblVideo2.AutoSize = true;
+            this.lblVideo2.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.lblVideo2.ForeColor = System.Drawing.Color.White;
+            this.lblVideo2.Location = new System.Drawing.Point(110, 103);
+            this.lblVideo2.Name = "lblVideo2";
+            this.lblVideo2.Size = new System.Drawing.Size(122, 27);
+            this.lblVideo2.TabIndex = 3;
+            this.lblVideo2.Text = "无视频信号";
             // 
-            // pictureBox6
+            // pboxVideo2
             // 
-            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox6.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(329, 237);
-            this.pictureBox6.TabIndex = 4;
-            this.pictureBox6.TabStop = false;
+            this.pboxVideo2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pboxVideo2.Location = new System.Drawing.Point(0, 0);
+            this.pboxVideo2.Name = "pboxVideo2";
+            this.pboxVideo2.Size = new System.Drawing.Size(329, 237);
+            this.pboxVideo2.TabIndex = 4;
+            this.pboxVideo2.TabStop = false;
             // 
             // panel18
             // 
@@ -535,33 +541,33 @@
             // 
             // panel23
             // 
-            this.panel23.Controls.Add(this.label15);
-            this.panel23.Controls.Add(this.pictureBox7);
+            this.panel23.Controls.Add(this.lblVideo3);
+            this.panel23.Controls.Add(this.pboxVideo3);
             this.panel23.Location = new System.Drawing.Point(0, 41);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(329, 237);
             this.panel23.TabIndex = 4;
             // 
-            // label15
+            // lblVideo3
             // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(110, 103);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(122, 27);
-            this.label15.TabIndex = 3;
-            this.label15.Text = "无视频信号";
+            this.lblVideo3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblVideo3.AutoSize = true;
+            this.lblVideo3.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.lblVideo3.ForeColor = System.Drawing.Color.White;
+            this.lblVideo3.Location = new System.Drawing.Point(110, 103);
+            this.lblVideo3.Name = "lblVideo3";
+            this.lblVideo3.Size = new System.Drawing.Size(122, 27);
+            this.lblVideo3.TabIndex = 3;
+            this.lblVideo3.Text = "无视频信号";
             // 
-            // pictureBox7
+            // pboxVideo3
             // 
-            this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox7.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(329, 237);
-            this.pictureBox7.TabIndex = 4;
-            this.pictureBox7.TabStop = false;
+            this.pboxVideo3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pboxVideo3.Location = new System.Drawing.Point(0, 0);
+            this.pboxVideo3.Name = "pboxVideo3";
+            this.pboxVideo3.Size = new System.Drawing.Size(329, 237);
+            this.pboxVideo3.TabIndex = 4;
+            this.pboxVideo3.TabStop = false;
             // 
             // panel19
             // 
@@ -598,33 +604,33 @@
             // 
             // panel24
             // 
-            this.panel24.Controls.Add(this.label16);
-            this.panel24.Controls.Add(this.pictureBox8);
+            this.panel24.Controls.Add(this.lblVideo4);
+            this.panel24.Controls.Add(this.pboxVideo4);
             this.panel24.Location = new System.Drawing.Point(0, 42);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(329, 237);
             this.panel24.TabIndex = 4;
             // 
-            // label16
+            // lblVideo4
             // 
-            this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(110, 103);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(122, 27);
-            this.label16.TabIndex = 3;
-            this.label16.Text = "无视频信号";
+            this.lblVideo4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblVideo4.AutoSize = true;
+            this.lblVideo4.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.lblVideo4.ForeColor = System.Drawing.Color.White;
+            this.lblVideo4.Location = new System.Drawing.Point(110, 103);
+            this.lblVideo4.Name = "lblVideo4";
+            this.lblVideo4.Size = new System.Drawing.Size(122, 27);
+            this.lblVideo4.TabIndex = 3;
+            this.lblVideo4.Text = "无视频信号";
             // 
-            // pictureBox8
+            // pboxVideo4
             // 
-            this.pictureBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox8.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(329, 237);
-            this.pictureBox8.TabIndex = 4;
-            this.pictureBox8.TabStop = false;
+            this.pboxVideo4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pboxVideo4.Location = new System.Drawing.Point(0, 0);
+            this.pboxVideo4.Name = "pboxVideo4";
+            this.pboxVideo4.Size = new System.Drawing.Size(329, 237);
+            this.pboxVideo4.TabIndex = 4;
+            this.pboxVideo4.TabStop = false;
             // 
             // panel20
             // 
@@ -646,15 +652,6 @@
             this.label13.Size = new System.Drawing.Size(55, 14);
             this.label13.TabIndex = 0;
             this.label13.Text = "前门入口";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(329, 237);
-            this.pictureBox5.TabIndex = 4;
-            this.pictureBox5.TabStop = false;
             // 
             // Sp
             // 
@@ -684,27 +681,27 @@
             this.panel4.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
             this.panel21.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxVideo1)).EndInit();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
             this.panel22.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxVideo2)).EndInit();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxVideo3)).EndInit();
             this.panel19.ResumeLayout(false);
             this.panel19.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel24.ResumeLayout(false);
             this.panel24.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxVideo4)).EndInit();
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -748,17 +745,17 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblVideo1;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Panel panel22;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblVideo2;
         private System.Windows.Forms.Panel panel23;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblVideo3;
         private System.Windows.Forms.Panel panel24;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label lblVideo4;
+        private System.Windows.Forms.PictureBox pboxVideo2;
+        private System.Windows.Forms.PictureBox pboxVideo3;
+        private System.Windows.Forms.PictureBox pboxVideo4;
+        private System.Windows.Forms.PictureBox pboxVideo1;
     }
 }
