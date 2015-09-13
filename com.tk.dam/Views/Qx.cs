@@ -25,13 +25,19 @@ namespace com.tk.dam.Views
         }
 
         Random mRandom = new Random();
+        WebClient webClient = new WebClient() { Encoding = Encoding.UTF8 };
+
 
         private void Qx_Load(object sender, EventArgs e)
         {
             try
             {
-                LoadWeather();
-                LoadSD();
+                var location = webClient.DownloadString("http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json");
+                var json = new JavaScriptSerializer().Deserialize<dynamic>(location);
+                string city = HttpUtility.UrlDecode(json["city"]);
+
+                LoadWeather(city);
+                LoadSD(city);
             }
             catch (Exception es)
             {
@@ -43,11 +49,31 @@ namespace com.tk.dam.Views
             SetSWHeight();
         }
 
-        private void LoadSD()
+        private void LoadSD(string city)
         {
-            int sd = mRandom.Next(100);
-            arcScaleComponent2.Value = sd;
-            labelComponent2.Text = string.Format("{0}%", sd);
+            string weatherString = webClient.DownloadString(string.Format(
+                "http://api.k780.com:88/?app=weather.today&weaid={0}&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json",
+                HttpUtility.UrlEncode(city)));
+            var jsonW = new JavaScriptSerializer().Deserialize<dynamic>(weatherString);
+            int sd = -1;
+            if (jsonW["success"] == "1")
+            {
+                try
+                {
+                    sd = int.Parse(((string)jsonW["result"]["humidity"]).TrimEnd('%'));
+                }
+                catch { }
+            }
+            if (sd > -1)
+            {
+                arcScaleComponent2.Value = sd;
+                labelComponent2.Text = string.Format("{0}%", sd);
+            }
+            else
+            {
+                arcScaleComponent2.Value = 0;
+                labelComponent2.Text = "无法获取";
+            }
         }
 
         private void SetSWHeight()
@@ -73,13 +99,13 @@ namespace com.tk.dam.Views
             this.chartControl1.Series[0].Points.Add(new SeriesPoint(mNow.AddDays(-1), mRandom.Next(4) + 93.5));
         }
 
-        private void LoadWeather()
+        private void LoadWeather(string city)
         {
             InitDateTime();
-            InitCurrentWeather();
-            InitNextdayWeather();
-            InitThirddayWeather();
-            InitFourthdayWeather();
+            InitCurrentWeather(city);
+            InitNextdayWeather(city);
+            InitThirddayWeather(city);
+            InitFourthdayWeather(city);
         }
 
         private void InitDateTime()
@@ -91,9 +117,9 @@ namespace com.tk.dam.Views
             lblDateTime4.Text = Enum.GetName(typeof(DayOfWeek), DateTime.Now.AddDays(3).DayOfWeek).Substring(0, 3);
         }
 
-        private void InitFourthdayWeather()
+        private void InitFourthdayWeather(string city)
         {
-            XmlNode root = weatherSina(3);
+            XmlNode root = weatherSina(city, 3);
             lblTemperature5.Text = root["temperature1"].InnerText + "℃";
             Image image;
             if (DateTime.Now.Hour > 18 || DateTime.Now.Hour < 7)//夜间
@@ -111,9 +137,9 @@ namespace com.tk.dam.Views
 
         }
 
-        private void InitThirddayWeather()
+        private void InitThirddayWeather(string city)
         {
-            XmlNode root = weatherSina(2);
+            XmlNode root = weatherSina(city, 2);
             lblTemperature4.Text = root["temperature1"].InnerText + "℃";
             Image image;
             if (DateTime.Now.Hour > 18 || DateTime.Now.Hour < 7)//夜间
@@ -130,9 +156,9 @@ namespace com.tk.dam.Views
             pboxFigure3.Image = image;
         }
 
-        private void InitNextdayWeather()
+        private void InitNextdayWeather(string city)
         {
-            XmlNode root = weatherSina(1);
+            XmlNode root = weatherSina(city, 1);
             lblTemperature3.Text = root["temperature1"].InnerText + "℃";
             Image image;
             if (DateTime.Now.Hour > 18 || DateTime.Now.Hour < 7)//夜间
@@ -149,10 +175,10 @@ namespace com.tk.dam.Views
             pboxFigure2.Image = image;
         }
 
-        private void InitCurrentWeather()
+        private void InitCurrentWeather(string city)
         {
 
-            XmlNode root = weatherSina(0);
+            XmlNode root = weatherSina(city, 0);
             lblTemperature1.Text = root["temperature1"].InnerText + "℃";
             lblTemperature2.Text = "\\" + root["temperature2"].InnerText + "℃";
 
@@ -192,30 +218,12 @@ namespace com.tk.dam.Views
             {
                 if (direction.Contains("西"))
                 {
-                    pboxDirectionWN.Visible = true;
+                    pboxDirectionES.Visible = true;
                     return;
                 }
                 else if (direction.Contains("东"))
-                {
-                    pboxDirectionNE.Visible = true;
-                    return;
-                }
-                else
-                {
-                    pboxDirectionN.Visible = true;
-                    return;
-                }
-            }
-            if (direction.Contains("南"))
-            {
-                if (direction.Contains("西"))
                 {
                     pboxDirectionSW.Visible = true;
-                    return;
-                }
-                else if (direction.Contains("东"))
-                {
-                    pboxDirectionES.Visible = true;
                     return;
                 }
                 else
@@ -224,14 +232,32 @@ namespace com.tk.dam.Views
                     return;
                 }
             }
+            if (direction.Contains("南"))
+            {
+                if (direction.Contains("西"))
+                {
+                    pboxDirectionNE.Visible = true;
+                    return;
+                }
+                else if (direction.Contains("东"))
+                {
+                    pboxDirectionWN.Visible = true;
+                    return;
+                }
+                else
+                {
+                    pboxDirectionN.Visible = true;
+                    return;
+                }
+            }
             if (direction.Contains("西"))
             {
-                pboxDirectionW.Visible = true;
+                pboxDirectionE.Visible = true;
                 return;
             }
             if (direction.Contains("东"))
             {
-                pboxDirectionE.Visible = true;
+                pboxDirectionW.Visible = true;
                 return;
             }
         }
@@ -296,18 +322,12 @@ namespace com.tk.dam.Views
         /// 从sina获取天气预报信息
         /// </summary>
         /// <param name="day">day为0表示当天天气，1表示第二天的天气，2表示第三天的天气，以此类推，最大为4</param>
-        public static XmlNode weatherSina(int day)
+        public XmlNode weatherSina(string city, int day)
         {
-            var webClient = new WebClient() { Encoding = Encoding.UTF8 };
-
-            var location = webClient.DownloadString("http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json");
-            var json = new JavaScriptSerializer().Deserialize<dynamic>(location);
-            //Read city from utf-8 format
-            var city = HttpUtility.UrlDecode(json["city"]);
             //Get weather data(xml format)其中，city是城市名称,password固定，day为0表示当天天气，1表示第二天的天气，2表示第三天的天气，以此类推，最大为4
             string weather = webClient.DownloadString(string.Format(
                 "http://php.weather.sina.com.cn/xml.php?city={0}&password=DJOYnieT8234jlsK&day={1}",
-                HttpUtility.UrlEncode(json["city"], Encoding.GetEncoding("GB2312")), day));
+                HttpUtility.UrlEncode(city, Encoding.GetEncoding("GB2312")), day));
 
             // 图片格式：
             //figure1和figure2标签分别代表天气的白天和夜间标志，根据下面的规则转换为具体的路径：
