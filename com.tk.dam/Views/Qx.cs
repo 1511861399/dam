@@ -41,7 +41,7 @@ namespace com.tk.dam.Views
             }
             catch (Exception es)
             {
-                MainForm.ShowMessage("提示：", "获取气象数据失败，请检查网络是否连接正常!");
+                MainForm.ShowMessage("提示：", "获取气象数据失败，请检查互联网连接是否接正常!");
             }
 
             CreateSWQXChart();
@@ -72,7 +72,7 @@ namespace com.tk.dam.Views
             else
             {
                 arcScaleComponent2.Value = 0;
-                labelComponent2.Text = "无法获取";
+                labelComponent2.Text = "";
             }
         }
 
