@@ -46,15 +46,34 @@ namespace com.tk.dam.Views
             //panel.BackColor = Color.FromArgb(0, 89, 145);
         }
 
-        private void panel_DoubleClick(object sender, EventArgs e)
+        private void panel8_DoubleClick(object sender, EventArgs e)
+        {
+            videoCtrl(pboxVideo1, lblVideo1);
+        }
+
+        private void panel10_DoubleClick(object sender, EventArgs e)
+        {
+            videoCtrl(pboxVideo2, lblVideo2);
+        }
+
+        private void panel12_DoubleClick(object sender, EventArgs e)
+        {
+            videoCtrl(pboxVideo3, lblVideo3);
+        }
+
+        private void panel14_DoubleClick(object sender, EventArgs e)
+        {
+            videoCtrl(pboxVideo4, lblVideo4);
+        }
+
+        private void videoCtrl(PictureBox PlayScreen, Label lblVideo)
         {
             string mciCommand;
-            string alias = "MyAVI";
-            if (lblVideo2.Tag == null || lblVideo2.Tag.ToString() != "正在播放")
+            string alias = "MyAVI" + PlayScreen.Name;
+            if (lblVideo.Tag == null || lblVideo.Tag.ToString() != "正在播放")
             {
-                lblVideo2.Hide();
+                lblVideo.Hide();
 
-                PictureBox PlayScreen = pboxVideo2;
                 mciCommand = string.Format("open {0}\\video\\Bear.wmv alias {1} ", Environment.CurrentDirectory, alias);
                 mciCommand = mciCommand + " parent " + PlayScreen.Handle.ToInt32() + " style child ";
                 LibWrap.mciSendString(mciCommand, null, 0, 0);
@@ -63,13 +82,13 @@ namespace com.tk.dam.Views
                 LibWrap.mciSendString(mciCommand, null, 0, 0);
                 LibWrap.mciSendString(string.Format(" play {0} repeat", alias), null, 0, 0);
 
-                lblVideo2.Tag = "正在播放";
+                lblVideo.Tag = "正在播放";
             }
             else
             {
                 LibWrap.mciSendString(string.Format("close {0}", alias), null, 0, 0);
-                lblVideo2.Show();
-                lblVideo2.Tag = "停止播放";
+                lblVideo.Show();
+                lblVideo.Tag = "停止播放";
             }
         }
 

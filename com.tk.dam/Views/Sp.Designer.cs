@@ -146,6 +146,7 @@
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(230, 60);
             this.panel14.TabIndex = 4;
+            this.panel14.DoubleClick += new System.EventHandler(this.panel14_DoubleClick);
             this.panel14.MouseEnter += new System.EventHandler(this.panelMenu_MouseEnter);
             this.panel14.MouseLeave += new System.EventHandler(this.panelMenu_MouseLeave);
             // 
@@ -204,6 +205,7 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(230, 60);
             this.panel12.TabIndex = 3;
+            this.panel12.DoubleClick += new System.EventHandler(this.panel12_DoubleClick);
             this.panel12.MouseEnter += new System.EventHandler(this.panelMenu_MouseEnter);
             this.panel12.MouseLeave += new System.EventHandler(this.panelMenu_MouseLeave);
             // 
@@ -262,7 +264,7 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(230, 60);
             this.panel10.TabIndex = 2;
-            this.panel10.DoubleClick += new System.EventHandler(this.panel_DoubleClick);
+            this.panel10.DoubleClick += new System.EventHandler(this.panel10_DoubleClick);
             this.panel10.MouseEnter += new System.EventHandler(this.panelMenu_MouseEnter);
             this.panel10.MouseLeave += new System.EventHandler(this.panelMenu_MouseLeave);
             // 

@@ -18,4 +18,12 @@ namespace com.tk.dam.Entity
         public string Qx { get; set; }
         public string Bz { get; set; }
     }
+
+    class YhComparer : IComparer<Yh>
+    {
+        public int Compare(Yh yh1, Yh yh2)
+        {
+            return yh1.Xh - yh2.Xh;
+        }
+    }
 }
