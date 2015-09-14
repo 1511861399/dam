@@ -232,7 +232,6 @@
             this.mPopChart.BackColor = System.Drawing.Color.Transparent;
             this.mPopChart.BorderOptions.Color = System.Drawing.Color.Transparent;
             xyDiagram2.AxisX.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            xyDiagram2.AxisX.DateTimeScaleOptions.ScaleMode = DevExpress.XtraCharts.ScaleMode.Automatic;
             xyDiagram2.AxisX.GridLines.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             xyDiagram2.AxisX.GridLines.Visible = true;
             xyDiagram2.AxisX.Label.TextColor = System.Drawing.Color.Black;

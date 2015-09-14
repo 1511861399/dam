@@ -77,8 +77,11 @@ namespace com.tk.dam.Views
                     mMaxWy = mMaxWy > mWy ? mMaxWy : mWy;
                     mMinWy = mMinWy < mWy ? mMinWy : mWy;
                     mMaxCj = mMaxCj > mCj ? mMaxCj : mCj;
-                    mMinCj = mMinCj < mCj ? mMinCj : mCj;
-                    mPointsWy.Add(new SeriesPoint(mNow.AddDays(i), mWy));
+                    mMinCj = mMinCj < mCj ? mMinCj : mCj; 
+                    mPointsWy.Add(new SeriesPoint(DateTime.Now.AddDays(i), mWy));
+                    mPointsWy.Add(new SeriesPoint(DateTime.Now.AddDays(i).AddHours(1), mWy));
+                    mPointsWy.Add(new SeriesPoint(DateTime.Now.AddDays(i).AddHours(2), mWy)); 
+
                     mPointsCj.Add(new SeriesPoint(mNow.AddDays(i), mCj));
 
                 }
@@ -121,6 +124,7 @@ namespace com.tk.dam.Views
             {
                 PictureBox panel = new PictureBox();
                 panel.Click += panel_Click;
+                panel.MouseEnter += pb_MouseEnter;
                 panel.Tag = d.Id;
                 panel.Size = new Size(24, 19);
                 panel.BackColor = Color.Red;
@@ -152,6 +156,7 @@ namespace com.tk.dam.Views
                 y = y + point.Y;
                 PictureBox pb = new PictureBox();
                 pb.Click += panel_Click;
+                pb.MouseEnter += pb_MouseEnter;
                 pb.Tag = d.Id;
                 pb.BackColor = Color.Transparent;
                 pb.Image = global::com.tk.dam.Properties.Resources.GNSSXB;
@@ -161,6 +166,13 @@ namespace com.tk.dam.Views
                 pb.Parent = mDamPic;
                 pb.BringToFront();
             }
+        }
+
+        void pb_MouseEnter(object sender, EventArgs e)
+        {
+            PictureBox pb = (PictureBox)sender;
+            getCurrentDevice(pb, mDeviceList1);
+            getCurrentDevice(pb, mDeviceList2);
         }
 
         void panel_Click(object sender, EventArgs e)

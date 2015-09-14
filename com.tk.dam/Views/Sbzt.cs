@@ -74,22 +74,22 @@ namespace com.tk.dam.Views
                 View.PageGroupProperties.SwitchDocumentAnimationMode = TransitionAnimation.RandomSegmentedFade;
             if (panel.Tag.ToString() == "bjsz") 
             {
-                windowsUIView1.PageGroupProperties.SwitchDocumentAnimationMode = TransitionAnimation.RandomSegmentedFade;
+                windowsUIView1.PageGroupProperties.SwitchDocumentAnimationMode = TransitionAnimation.HorizontalSlide;
                 windowsUIView1.Controller.Activate(document1);
             }
             if (panel.Tag.ToString() == "xtsz")
             {
-                windowsUIView1.PageGroupProperties.SwitchDocumentAnimationMode = TransitionAnimation.RandomSegmentedFade;
+                windowsUIView1.PageGroupProperties.SwitchDocumentAnimationMode = TransitionAnimation.HorizontalSlide;
                 windowsUIView1.Controller.Activate(document2);
             }
             if (panel.Tag.ToString() == "xtcq")
             {
-                windowsUIView1.PageGroupProperties.SwitchDocumentAnimationMode = TransitionAnimation.RandomSegmentedFade;
+                windowsUIView1.PageGroupProperties.SwitchDocumentAnimationMode = TransitionAnimation.HorizontalSlide;
                 windowsUIView1.Controller.Activate(document3);
             }
             if (panel.Tag.ToString() == "hfccsz")
             {
-                windowsUIView1.PageGroupProperties.SwitchDocumentAnimationMode = TransitionAnimation.RandomSegmentedFade;
+                windowsUIView1.PageGroupProperties.SwitchDocumentAnimationMode = TransitionAnimation.HorizontalSlide;
                 windowsUIView1.Controller.Activate(document4);
             }
         }
