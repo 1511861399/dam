@@ -176,9 +176,9 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(52, 20);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 22);
+            this.label9.Size = new System.Drawing.Size(56, 22);
             this.label9.TabIndex = 1;
-            this.label9.Text = "前门入口";
+            this.label9.Text = "设备4";
             // 
             // pictureBox4
             // 
@@ -234,9 +234,9 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(52, 20);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 22);
+            this.label7.Size = new System.Drawing.Size(56, 22);
             this.label7.TabIndex = 1;
-            this.label7.Text = "停车场";
+            this.label7.Text = "设备3";
             // 
             // pictureBox3
             // 
@@ -293,9 +293,9 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(52, 20);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 22);
+            this.label5.Size = new System.Drawing.Size(56, 22);
             this.label5.TabIndex = 1;
-            this.label5.Text = "接待室";
+            this.label5.Text = "设备2";
             // 
             // pictureBox2
             // 
@@ -322,6 +322,7 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(230, 60);
             this.panel8.TabIndex = 1;
+            this.panel8.DoubleClick += new System.EventHandler(this.panel8_DoubleClick);
             this.panel8.MouseEnter += new System.EventHandler(this.panelMenu_MouseEnter);
             this.panel8.MouseLeave += new System.EventHandler(this.panelMenu_MouseLeave);
             // 
@@ -360,9 +361,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(52, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 22);
+            this.label2.Size = new System.Drawing.Size(56, 22);
             this.label2.TabIndex = 1;
-            this.label2.Text = "办公室";
+            this.label2.Text = "设备1";
             // 
             // pictureBox1
             // 
@@ -460,9 +461,9 @@
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(5, 12);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(43, 14);
+            this.label10.Size = new System.Drawing.Size(38, 14);
             this.label10.TabIndex = 0;
-            this.label10.Text = "办公室";
+            this.label10.Text = "设备1";
             // 
             // panel5
             // 
@@ -523,9 +524,9 @@
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(5, 12);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(43, 14);
+            this.label11.Size = new System.Drawing.Size(38, 14);
             this.label11.TabIndex = 0;
-            this.label11.Text = "接待室";
+            this.label11.Text = "设备2";
             // 
             // panel6
             // 
@@ -586,9 +587,9 @@
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(5, 12);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(43, 14);
+            this.label12.Size = new System.Drawing.Size(38, 14);
             this.label12.TabIndex = 0;
-            this.label12.Text = "停车场";
+            this.label12.Text = "设备3";
             // 
             // panel7
             // 
@@ -649,9 +650,9 @@
             this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(5, 12);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(55, 14);
+            this.label13.Size = new System.Drawing.Size(38, 14);
             this.label13.TabIndex = 0;
-            this.label13.Text = "前门入口";
+            this.label13.Text = "设备4";
             // 
             // Sp
             // 
@@ -662,6 +663,8 @@
             this.Controls.Add(this.panel1);
             this.Name = "Sp";
             this.Size = new System.Drawing.Size(1000, 620);
+            this.Load += new System.EventHandler(this.Sp_Load);
+            this.VisibleChanged += new System.EventHandler(this.Sp_VisibleChanged);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

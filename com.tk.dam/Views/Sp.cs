@@ -72,6 +72,40 @@ namespace com.tk.dam.Views
                 lblVideo2.Tag = "停止播放";
             }
         }
+
+        private void Sp_VisibleChanged(object sender, EventArgs e)
+        {
+           
+        }
+        private void panel8_DoubleClick(object sender, EventArgs e)
+        {
+            
+        }
+
+        public void resume()
+        {
+            string alias = "MyAVI";
+            LibWrap.mciSendString(string.Format(" resume {0} ", alias), null, 0, 0);
+        }
+        public void pause()
+        {
+            string alias = "MyAVI";
+            LibWrap.mciSendString(string.Format(" pause {0} ", alias), null, 0, 0);
+        }
+        public void setAudioOff()
+        {
+            string alias = "MyAVI";
+            LibWrap.mciSendString(string.Format(" setaudio   {0} off", alias), null, 0, 0);
+        }
+        public void setAudioOn()
+        {
+            string alias = "MyAVI";
+            LibWrap.mciSendString(string.Format(" setaudio   {0} on ", alias), null, 0, 0);
+        }
+        private void Sp_Load(object sender, EventArgs e)
+        {
+            panel_DoubleClick(null, null);
+        }
     }
     public class LibWrap
     {
