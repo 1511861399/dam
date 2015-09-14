@@ -10,5 +10,6 @@ namespace com.tk.dam.Entity
         public int Id;
         public int X;
         public int Y;
+        public int Type;
     }
 }
