@@ -48,28 +48,28 @@ namespace com.tk.dam.Views
 
         private void panel8_DoubleClick(object sender, EventArgs e)
         {
-            videoCtrl(pboxVideo1, lblVideo1);
+            videoCtrl(pboxVideo1, lblVideo1, pboxVideo1.Name);
         }
 
         private void panel10_DoubleClick(object sender, EventArgs e)
         {
-            videoCtrl(pboxVideo2, lblVideo2);
+            videoCtrl(pboxVideo2, lblVideo2, pboxVideo2.Name);
         }
 
         private void panel12_DoubleClick(object sender, EventArgs e)
         {
-            videoCtrl(pboxVideo3, lblVideo3);
+            videoCtrl(pboxVideo3, lblVideo3, pboxVideo3.Name);
         }
 
         private void panel14_DoubleClick(object sender, EventArgs e)
         {
-            videoCtrl(pboxVideo4, lblVideo4);
+            videoCtrl(pboxVideo4, lblVideo4, pboxVideo4.Name);
         }
 
-        private void videoCtrl(PictureBox PlayScreen, Label lblVideo)
+        private void videoCtrl(PictureBox PlayScreen, Label lblVideo,string screan)
         {
             string mciCommand;
-            string alias = "MyAVI" + PlayScreen.Name;
+            string alias = "MyAVI" + screan;
             if (lblVideo.Tag == null || lblVideo.Tag.ToString() != "正在播放")
             {
                 lblVideo.Hide();
@@ -96,10 +96,6 @@ namespace com.tk.dam.Views
         {
            
         }
-        private void panel8_DoubleClick(object sender, EventArgs e)
-        {
-            
-        }
 
         public void resume()
         {
@@ -123,8 +119,36 @@ namespace com.tk.dam.Views
         }
         private void Sp_Load(object sender, EventArgs e)
         {
-            panel_DoubleClick(null, null);
+            videoCtrl(pboxVideo2, lblVideo2, pboxVideo2.Name);
+            panel25.Parent = pboxVideo2;
+            panel25.DoubleClick += panel25_DoubleClick;
+            pictureBox5.Visible = false;
         }
+        private bool mFull = false;
+        void panel25_DoubleClick(object sender, EventArgs e)
+        {
+            if (!mFull)
+            {
+                this.panel22.Controls.Remove(this.pboxVideo2);
+                pictureBox5.BringToFront();
+                pictureBox5.Controls.Add(pboxVideo2);
+                pictureBox5.Visible = true;
+                string mciCommand = string.Format(" put {0} window at 0 0 {1} {2}", "MyAVI" + pboxVideo2.Name, pictureBox5.Width, pictureBox5.Height);
+                LibWrap.mciSendString(mciCommand, null, 0, 0);
+            }
+            else
+            {
+                this.pictureBox5.Controls.Remove(this.pboxVideo2);
+                pictureBox5.Visible = false;
+                panel22.Controls.Add(pboxVideo2);
+
+                string mciCommand = string.Format(" put {0} window at 0 0 {1} {2}", "MyAVI" + pboxVideo2.Name, pboxVideo2.Width, pboxVideo2.Height);
+                LibWrap.mciSendString(mciCommand, null, 0, 0);
+            }
+            mFull = !mFull;
+        }
+
+
     }
     public class LibWrap
     {

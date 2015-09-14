@@ -78,6 +78,8 @@
             this.pboxVideo4 = new System.Windows.Forms.PictureBox();
             this.panel20 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.panel25 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -105,6 +107,7 @@
             this.panel24.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxVideo4)).BeginInit();
             this.panel20.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -113,6 +116,7 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Location = new System.Drawing.Point(50, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(900, 560);
@@ -481,6 +485,7 @@
             // 
             // panel22
             // 
+            this.panel22.Controls.Add(this.panel25);
             this.panel22.Controls.Add(this.lblVideo2);
             this.panel22.Controls.Add(this.pboxVideo2);
             this.panel22.Location = new System.Drawing.Point(0, 42);
@@ -656,6 +661,24 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "设备4";
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(900, 560);
+            this.pictureBox5.TabIndex = 1;
+            this.pictureBox5.TabStop = false;
+            // 
+            // panel25
+            // 
+            this.panel25.BackColor = System.Drawing.Color.Transparent;
+            this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel25.Location = new System.Drawing.Point(0, 0);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(329, 237);
+            this.panel25.TabIndex = 5;
+            // 
             // Sp
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(206)))));
@@ -707,6 +730,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pboxVideo4)).EndInit();
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -762,5 +786,7 @@
         private System.Windows.Forms.PictureBox pboxVideo3;
         private System.Windows.Forms.PictureBox pboxVideo4;
         private System.Windows.Forms.PictureBox pboxVideo1;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Panel panel25;
     }
 }
