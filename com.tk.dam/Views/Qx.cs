@@ -24,7 +24,7 @@ namespace com.tk.dam.Views
             InitializeComponent();
         }
 
-        Random mRandom = new Random();
+        
         WebClient webClient = new WebClient() { Encoding = Encoding.UTF8 };
 
 
@@ -90,6 +90,7 @@ namespace com.tk.dam.Views
         private void CreateSWQXChart()
         {
             this.chartControl1.Series[0].Points.Clear();
+            Random mRandom = new Random();
             DateTime mNow = DateTime.Now;
 
             for (int i = -7; i < -1; i++)
