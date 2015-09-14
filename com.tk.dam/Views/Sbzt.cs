@@ -33,6 +33,7 @@ namespace com.tk.dam.Views
             mBjsz = new Sbsz_Bjsz();
             mBjsz.SaveEvent += mBjsz_SaveEvent;
             mXtsz = new Sbsz_Xtsz();
+            mXtsz.SaveEvent += mXtsz_SaveEvent;
             mXtcs = new Sbsz_Xtcq();
             mHfccsz = new Sbsz_Hfccsz();
             windowsUIView1.AddDocument(mBjsz);
@@ -44,15 +45,41 @@ namespace com.tk.dam.Views
             windowsUIView1.PageGroupProperties.SwitchDocumentAnimationMode = TransitionAnimation.VerticalSlide;
         }
 
-        void mBjsz_SaveEvent(object sender, Sbsz_Bjsz.SaveEventArgs e)
+        void mXtsz_SaveEvent(object sender, Sbsz_Xtsz.SaveEventArgs e)
         {
+            bool isExit = false;
             for (int i = 0; i < mDeviceList.Count; i++)
             {
                 if (mDeviceList[i].mId == e.mSbztEntity.mId)
                 {
                     mDeviceList[i] = e.mSbztEntity;
                     save(mDeviceList);
+                    isExit = true;
+ 
                 }
+            }
+            if (!isExit)
+            {
+                mDeviceList.Add(e.mSbztEntity);
+            }
+        }
+
+        void mBjsz_SaveEvent(object sender, Sbsz_Bjsz.SaveEventArgs e)
+        {
+            bool isExit = false;
+            for (int i = 0; i < mDeviceList.Count; i++)
+            {
+                if (mDeviceList[i].mId == e.mSbztEntity.mId)
+                {
+                    mDeviceList[i] = e.mSbztEntity;
+                    save(mDeviceList);
+                    isExit = true;
+
+                }
+            }
+            if (!isExit)
+            {
+                mDeviceList.Add(e.mSbztEntity);
             }
         }
         private void Sbzt_Load(object sender, EventArgs e)

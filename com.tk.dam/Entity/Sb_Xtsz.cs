@@ -13,5 +13,6 @@ namespace com.tk.dam.Entity
         public string mFgwj="";
         public string mJljg="";
         public string mBsm="";
+        public string mWjdx = "10.2MB";
     }
 }

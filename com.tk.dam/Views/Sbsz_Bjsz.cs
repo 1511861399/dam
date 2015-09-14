@@ -142,12 +142,40 @@ namespace com.tk.dam.Views
 
         private Entity.Sbzt getViewValue()
         {
-            //throw new NotImplementedException();
+            //编辑界面
+            mSbztObj.mBjsz.mQy= mCkCszt.Checked?1:0;
+            mSbztObj.mBjsz.mJm = mCkJm.Checked ? 1 : 0;
+            int csjg =0;
+            Int32.TryParse(mCmbCsjg.Text.ToString(), out csjg);
+            mSbztObj.mBjsz.mCsjg = csjg;
+            mSbztObj.mBjsz.mIP = mTxtIP.Text;
+            mSbztObj.mBjsz.mWlxz = mCmbWlxz.Text;
+            mSbztObj.mBjsz.mCsxy = mCmbCsxy.Text;
+            mSbztObj.mBjsz.mDk = mTxtPort.Text;
+            mSbztObj.mBjsz.mSjgs = mCmbSjgs.Text;
+            mSbztObj.mBjsz.mBddkh = mTxtLocalPort.Text;
+
+            mSbztObj.mCssz.mIP = mTxtIPCS.Text;
+            mSbztObj.mCssz.mZdmc = mTxtZdmc.Text ;
+            mSbztObj.mCssz.mWgdz = mTxtWgdz.Text ;
+            mSbztObj.mCssz.mUTC = mCmbUTC.Text ;
+            setValue(mSbztObj);
+
+            return mSbztObj;
         }
 
         private void mLblResetWlsz_Click(object sender, EventArgs e)
         {
-
+            mCkCszt.Checked = mSbztObj.mBjsz.mQy == 1;
+            mCkJm.Checked = mSbztObj.mBjsz.mJm == 1;
+            mCmbCsjg.Text = mSbztObj.mBjsz.mCsjg.ToString();
+            mTxtIP.Text = mSbztObj.mBjsz.mIP;
+            mCmbWlxz.Text = mSbztObj.mBjsz.mWlxz;
+            mCmbCsxy.Text = mSbztObj.mBjsz.mCsxy;
+            mTxtPort.Text = mSbztObj.mBjsz.mDk;
+            mCmbSjgs.Text = mSbztObj.mBjsz.mSjgs;
+            mTxtLocalPort.Text = mSbztObj.mBjsz.mBddkh;
+            setValue(mSbztObj);
         }
 
         private void mLblBcCs_Click(object sender, EventArgs e)
@@ -157,7 +185,11 @@ namespace com.tk.dam.Views
 
         private void mLblCzcs_Click(object sender, EventArgs e)
         {
-
+            mTxtIPCS.Text = mSbztObj.mCssz.mIP;
+            mTxtZdmc.Text = mSbztObj.mCssz.mZdmc;
+            mTxtWgdz.Text = mSbztObj.mCssz.mWgdz;
+            mCmbUTC.Text = mSbztObj.mCssz.mUTC;
+            setValue(mSbztObj);
         }
     }
 }
