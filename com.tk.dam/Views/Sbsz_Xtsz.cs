@@ -47,5 +47,10 @@ namespace com.tk.dam.Views
             mPanelEditXtbj.Visible = true;
             btnBj_Xtbj.BackColor = mSelectedColor;
         }
+
+        internal void setValue(Entity.Sbzt mCurrentEntity)
+        {
+            //throw new NotImplementedException();
+        }
     }
 }

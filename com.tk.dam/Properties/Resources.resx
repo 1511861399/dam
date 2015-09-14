@@ -118,8 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="icon_color32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_color32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="tile_bg_qx" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tile_bg_qx.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="形变监测" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\形变监测.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bg02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,11 +145,38 @@
   <data name="icon_close32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_close32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="安全等级" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\安全等级.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="tile_bg_yhgl" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tile_bg_yhgl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="内部监测" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\内部监测.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="设备状态" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\设备状态.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wind_direction_arrow_sw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wind_direction_arrow_sw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_alarm64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_alarm64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="卫星状态" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\卫星状态.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="tile_bg_tj" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tile_bg_tj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="视频" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\视频.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wind_direction_arrow_e" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wind_direction_arrow_e.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GNSSXB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GNSSXB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_wxzt64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_wxzt64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,8 +184,17 @@
   <data name="bg01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_camera" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_camera.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_tj64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_tj64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wind_direction_arrow_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wind_direction_arrow_n.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wind_direction_arrow_es" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wind_direction_arrow_es.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dam_sw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dam_sw.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,11 +205,29 @@
   <data name="icon_qx64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_qx64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btn_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_about32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_about32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="wind_direction_arrow_ne" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wind_direction_arrow_ne.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="用户管理" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\用户管理.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="数据打印" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\数据打印.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="shui1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shui2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wind_direction_arrow_w" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wind_direction_arrow_w.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tile_bg_sbzt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tile_bg_sbzt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,11 +241,26 @@
   <data name="icon_yhgl64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_yhgl64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="风向" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\风向.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="库区雨水" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\库区雨水.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="工程介绍" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\工程介绍.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="tile_bg_wxzt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tile_bg_wxzt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="transparent_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\transparent_bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="dam_sw1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dam_sw1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_pic32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_pic32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_sbzt64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_sbzt64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,106 +268,43 @@
   <data name="icon_sp64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_sp64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shui" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\shui.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dam" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dam.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GNSSXB" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GNSSXB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tip" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="bianji" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bianji.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="shanchu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\shanchu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="wind_direction_arrow_e" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wind_direction_arrow_e.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="wind_direction_arrow_es" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wind_direction_arrow_es.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="wind_direction_arrow_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wind_direction_arrow_n.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="wind_direction_arrow_ne" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wind_direction_arrow_ne.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="wind_direction_arrow_s" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wind_direction_arrow_s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="wind_direction_arrow_sw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wind_direction_arrow_sw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="wind_direction_arrow_w" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wind_direction_arrow_w.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="wind_direction_arrow_wn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wind_direction_arrow_wn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="xinjian" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\xinjian.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_alarm64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_alarm64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_color32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_color32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_pic32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_pic32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="transparent_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\transparent_bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="内部监测" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\内部监测.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="卫星状态" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\卫星状态.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="安全等级" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\安全等级.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="工程介绍" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\工程介绍.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="库区雨水" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\库区雨水.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="形变监测" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\形变监测.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="数据打印" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\数据打印.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="水文气象" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\水文气象.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="用户管理" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\用户管理.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="shui" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shui.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="知识介绍" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\知识介绍.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="视频" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\视频.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="水文气象" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\水文气象.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="设备状态" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\设备状态.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="wind_direction_arrow_s" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wind_direction_arrow_s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="风向" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\风向.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dam" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dam.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btn_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btn_bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="shanchu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shanchu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_camera" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_camera.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="wind_direction_arrow_wn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wind_direction_arrow_wn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wl0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wl0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wl1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wl1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wl2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wl2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wl3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wl3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

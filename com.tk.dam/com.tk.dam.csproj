@@ -176,9 +176,16 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\Sbzt.cs" />
+    <Compile Include="Entity\Sb_Bjsz.cs" />
+    <Compile Include="Entity\Sb_Cssz.cs" />
     <Compile Include="Entity\Device.cs" />
     <Compile Include="Entity\Jcd.cs" />
     <Compile Include="Entity\OffectInfo.cs" />
+    <Compile Include="Entity\Sb_Ztzy.cs" />
+    <Compile Include="Entity\Wlxz.cs" />
+    <Compile Include="Entity\Sb_Xtbj.cs" />
+    <Compile Include="Entity\Sb_Xtsz.cs" />
     <Compile Include="Entity\Yh.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -480,6 +487,10 @@
     <None Include="Resources\shui2.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\wl0.png" />
+    <None Include="Resources\wl1.png" />
+    <None Include="Resources\wl2.png" />
+    <None Include="Resources\wl3.png" />
     <Content Include="video\Bear.wmv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
