@@ -48,22 +48,22 @@ namespace com.tk.dam.Views
 
         private void panel8_DoubleClick(object sender, EventArgs e)
         {
-            videoCtrl(pboxVideo1, lblVideo1, pboxVideo1.Name);
+            //videoCtrl(pboxVideo1, lblVideo1, pboxVideo1.Name);
         }
 
         private void panel10_DoubleClick(object sender, EventArgs e)
         {
-            videoCtrl(pboxVideo2, lblVideo2, pboxVideo2.Name);
+            //videoCtrl(pboxVideo2, lblVideo2, pboxVideo2.Name);
         }
 
         private void panel12_DoubleClick(object sender, EventArgs e)
         {
-            videoCtrl(pboxVideo3, lblVideo3, pboxVideo3.Name);
+            //videoCtrl(pboxVideo3, lblVideo3, pboxVideo3.Name);
         }
 
         private void panel14_DoubleClick(object sender, EventArgs e)
         {
-            videoCtrl(pboxVideo4, lblVideo4, pboxVideo4.Name);
+            //videoCtrl(pboxVideo4, lblVideo4, pboxVideo4.Name);
         }
 
         private void videoCtrl(PictureBox PlayScreen, Label lblVideo,string screan)
@@ -74,7 +74,7 @@ namespace com.tk.dam.Views
             {
                 lblVideo.Hide();
 
-                mciCommand = string.Format("open {0}\\video\\Bear.wmv alias {1} ", Environment.CurrentDirectory, alias);
+                mciCommand = string.Format("open {0}\\video\\video.mp4 alias {1} ", Environment.CurrentDirectory, alias);
                 mciCommand = mciCommand + " parent " + PlayScreen.Handle.ToInt32() + " style child ";
                 LibWrap.mciSendString(mciCommand, null, 0, 0);
                 Rectangle r = PlayScreen.ClientRectangle;

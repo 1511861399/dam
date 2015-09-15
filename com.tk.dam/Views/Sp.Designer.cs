@@ -62,6 +62,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
+            this.panel25 = new System.Windows.Forms.Panel();
             this.lblVideo2 = new System.Windows.Forms.Label();
             this.pboxVideo2 = new System.Windows.Forms.PictureBox();
             this.panel18 = new System.Windows.Forms.Panel();
@@ -79,7 +80,6 @@
             this.panel20 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.panel25 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -115,7 +115,7 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2); 
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(50, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(900, 560);
@@ -182,7 +182,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(56, 22);
             this.label9.TabIndex = 1;
-            this.label9.Text = "设备4";
+            this.label9.Text = "视频4";
             // 
             // pictureBox4
             // 
@@ -241,7 +241,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 22);
             this.label7.TabIndex = 1;
-            this.label7.Text = "设备3";
+            this.label7.Text = "视频3";
             // 
             // pictureBox3
             // 
@@ -300,7 +300,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 22);
             this.label5.TabIndex = 1;
-            this.label5.Text = "设备2";
+            this.label5.Text = "视频2";
             // 
             // pictureBox2
             // 
@@ -368,7 +368,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 22);
             this.label2.TabIndex = 1;
-            this.label2.Text = "设备1";
+            this.label2.Text = "视频1";
             // 
             // pictureBox1
             // 
@@ -468,7 +468,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(38, 14);
             this.label10.TabIndex = 0;
-            this.label10.Text = "设备1";
+            this.label10.Text = "视频1";
             // 
             // panel5
             // 
@@ -491,6 +491,15 @@
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(329, 237);
             this.panel22.TabIndex = 4;
+            // 
+            // panel25
+            // 
+            this.panel25.BackColor = System.Drawing.Color.Transparent;
+            this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel25.Location = new System.Drawing.Point(0, 0);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(329, 237);
+            this.panel25.TabIndex = 5;
             // 
             // lblVideo2
             // 
@@ -532,7 +541,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(38, 14);
             this.label11.TabIndex = 0;
-            this.label11.Text = "设备2";
+            this.label11.Text = "视频2";
             // 
             // panel6
             // 
@@ -595,7 +604,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(38, 14);
             this.label12.TabIndex = 0;
-            this.label12.Text = "设备3";
+            this.label12.Text = "视频3";
             // 
             // panel7
             // 
@@ -658,25 +667,16 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(38, 14);
             this.label13.TabIndex = 0;
-            this.label13.Text = "设备4";
+            this.label13.Text = "视频4";
             // 
             // pictureBox5
             // 
             this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox5.Location = new System.Drawing.Point(0, 0);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(900, 560);
+            this.pictureBox5.Size = new System.Drawing.Size(1000, 620);
             this.pictureBox5.TabIndex = 1;
             this.pictureBox5.TabStop = false;
-            // 
-            // panel25
-            // 
-            this.panel25.BackColor = System.Drawing.Color.Transparent;
-            this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel25.Location = new System.Drawing.Point(0, 0);
-            this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(329, 237);
-            this.panel25.TabIndex = 5;
             // 
             // Sp
             // 

@@ -63,9 +63,9 @@ namespace com.tk.dam.Views
 
         private void BindingGrid()
         {
-            mYhList.Add(new Yh { Xh = 1, Xm = "张三", Dlm = "zhangsan", Xb = "男", Qx = "超级管理员" });
-            mYhList.Add(new Yh { Xh = 2, Xm = "李四", Dlm = "lisi", Xb = "男", Qx = "普通用户" });
-            mYhList.Add(new Yh { Xh = 3, Xm = "赵五", Dlm = "zhaowu", Xb = "男", Qx = "普通用户" });
+            mYhList.Add(new Yh { Xh = 1, Xm = "Admin", Dlm = "Admin", Xb = "男", Qx = "超级管理员" });
+            mYhList.Add(new Yh { Xh = 2, Xm = "陈文水", Dlm = "cws", Xb = "男", Qx = "普通用户" });
+            mYhList.Add(new Yh { Xh = 3, Xm = "李芸", Dlm = "liyun", Xb = "女", Qx = "普通用户" });
             mYhList.Sort(yhComparer);
             gcMain.DataSource = mYhList;
         }

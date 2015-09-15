@@ -26,12 +26,14 @@ namespace com.tk.dam.Views
 
         
         WebClient webClient = new WebClient() { Encoding = Encoding.UTF8 };
+        Dictionary<string, double> mQxDic;
 
 
         private void Qx_Load(object sender, EventArgs e)
         {
             try
             {
+                mQxDic = MainForm.QxDic;
                 var location = webClient.DownloadString("http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json");
                 var json = new JavaScriptSerializer().Deserialize<dynamic>(location);
                 string city = HttpUtility.UrlDecode(json["city"]);
@@ -45,7 +47,6 @@ namespace com.tk.dam.Views
             }
 
             CreateSWQXChart();
-
             SetSWHeight();
         }
 
@@ -93,11 +94,24 @@ namespace com.tk.dam.Views
             Random mRandom = new Random();
             DateTime mNow = DateTime.Now;
 
-            for (int i = -7; i < -1; i++)
+            for (int i = -4; i < 0; i++)
             {
-                this.chartControl1.Series[0].Points.Add(new SeriesPoint(mNow.AddDays(i), mRandom.Next(15) + 85));
+                double mSW=mRandom.Next(4) + 92.2;
+                for (int j = -4; j < 0; j++)
+                {
+                    this.chartControl1.Series[0].Points.Add(new SeriesPoint(mNow.AddDays(i*4+j), mRandom.Next(10)/10.0 + mSW));
+                }
             }
-            this.chartControl1.Series[0].Points.Add(new SeriesPoint(mNow.AddDays(-1), mRandom.Next(4) + 93.5));
+            if (mQxDic != null && mQxDic.ContainsKey("SW"))
+            {
+                double mSW = mQxDic["SW"];
+                for (int j = -4; j < 0; j++)
+                {
+                    this.chartControl1.Series[0].Points.Add(new SeriesPoint(mNow.AddDays(j), mRandom.Next(10) / 10.0 + mSW));
+                }
+                this.chartControl1.Series[0].Points.Add(new SeriesPoint(mNow,mSW));
+            }
+
         }
 
         private void LoadWeather(string city)
@@ -141,7 +155,7 @@ namespace com.tk.dam.Views
         private void InitThirddayWeather(string city)
         {
             XmlNode root = weatherSina(city, 2);
-            lblTemperature4.Text = root["temperature1"].InnerText + "℃";
+            lblTemperature4.Text = root["temperature1"].InnerText + "℃";           
             Image image;
             if (DateTime.Now.Hour > 18 || DateTime.Now.Hour < 7)//夜间
             {
@@ -183,6 +197,14 @@ namespace com.tk.dam.Views
             lblTemperature1.Text = root["temperature1"].InnerText + "℃";
             lblTemperature2.Text = "\\" + root["temperature2"].InnerText + "℃";
 
+            try
+            {
+                mQxDic["WD"] = double.Parse(lblTemperature1.Text.Replace("℃", ""));
+                MainForm.QxDic = mQxDic;
+            }
+            catch
+            {
+            }
 
             Image imageFigure;
             if (DateTime.Now.Hour > 18 || DateTime.Now.Hour < 7)//夜间

@@ -224,19 +224,19 @@
             xyDiagram1.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
             xyDiagram1.AxisX.Visibility = DevExpress.Utils.DefaultBoolean.True;
             xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            constantLine1.AxisValueSerializable = "98.78";
+            constantLine1.AxisValueSerializable = "100";
             constantLine1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             constantLine1.LineStyle.Thickness = 3;
             constantLine1.Name = "设计水位";
             constantLine1.Title.Alignment = DevExpress.XtraCharts.ConstantLineTitleAlignment.Far;
             constantLine1.Title.Visible = false;
-            constantLine2.AxisValueSerializable = "94";
+            constantLine2.AxisValueSerializable = "96.5";
             constantLine2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(228)))), ((int)(((byte)(0)))));
             constantLine2.LineStyle.Thickness = 3;
             constantLine2.Name = "正常水位";
             constantLine2.Title.Text = "正常水位";
             constantLine2.Title.Visible = false;
-            constantLine3.AxisValueSerializable = "90";
+            constantLine3.AxisValueSerializable = "93";
             constantLine3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(96)))), ((int)(((byte)(245)))));
             constantLine3.LineStyle.Thickness = 3;
             constantLine3.Name = "汛限水位";
@@ -365,7 +365,7 @@
             this.lblTemperature1.Name = "lblTemperature1";
             this.lblTemperature1.Size = new System.Drawing.Size(78, 39);
             this.lblTemperature1.TabIndex = 9;
-            this.lblTemperature1.Text = "24℃";
+            this.lblTemperature1.Text = "28℃";
             // 
             // lblTemperature2
             // 
@@ -376,7 +376,7 @@
             this.lblTemperature2.Name = "lblTemperature2";
             this.lblTemperature2.Size = new System.Drawing.Size(63, 27);
             this.lblTemperature2.TabIndex = 8;
-            this.lblTemperature2.Text = "/16℃";
+            this.lblTemperature2.Text = "/27℃";
             // 
             // lblDateTime1
             // 
@@ -384,9 +384,9 @@
             this.lblDateTime1.ForeColor = System.Drawing.Color.White;
             this.lblDateTime1.Location = new System.Drawing.Point(53, 245);
             this.lblDateTime1.Name = "lblDateTime1";
-            this.lblDateTime1.Size = new System.Drawing.Size(125, 14);
+            this.lblDateTime1.Size = new System.Drawing.Size(132, 14);
             this.lblDateTime1.TabIndex = 10;
-            this.lblDateTime1.Text = "  9月6日         星期日";
+            this.lblDateTime1.Text = "  9月16日         星期三";
             // 
             // pboxFigure4
             // 
@@ -444,7 +444,7 @@
             this.lblDateTime4.Name = "lblDateTime4";
             this.lblDateTime4.Size = new System.Drawing.Size(43, 14);
             this.lblDateTime4.TabIndex = 15;
-            this.lblDateTime4.Text = "星期三";
+            this.lblDateTime4.Text = "星期五";
             // 
             // lblDateTime2
             // 
@@ -455,7 +455,7 @@
             this.lblDateTime2.Name = "lblDateTime2";
             this.lblDateTime2.Size = new System.Drawing.Size(43, 14);
             this.lblDateTime2.TabIndex = 12;
-            this.lblDateTime2.Text = "星期一";
+            this.lblDateTime2.Text = "星期三";
             // 
             // lblDateTime3
             // 
@@ -466,7 +466,7 @@
             this.lblDateTime3.Name = "lblDateTime3";
             this.lblDateTime3.Size = new System.Drawing.Size(43, 14);
             this.lblDateTime3.TabIndex = 11;
-            this.lblDateTime3.Text = "星期二";
+            this.lblDateTime3.Text = "星期四";
             // 
             // panel4
             // 
@@ -492,9 +492,9 @@
             // 
             this.pboxS.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pboxS.Image = global::com.tk.dam.Properties.Resources.shui1;
-            this.pboxS.Location = new System.Drawing.Point(0, 324);
+            this.pboxS.Location = new System.Drawing.Point(0, 301);
             this.pboxS.Name = "pboxS";
-            this.pboxS.Size = new System.Drawing.Size(278, 176);
+            this.pboxS.Size = new System.Drawing.Size(278, 199);
             this.pboxS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxS.TabIndex = 1;
             this.pboxS.TabStop = false;

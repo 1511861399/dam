@@ -487,6 +487,9 @@
     <None Include="Resources\shui2.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="video\video.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\bg_color.png" />
     <None Include="Resources\scrollthumbbutton.png" />
     <None Include="Resources\scrollbutton_glyph.png" />

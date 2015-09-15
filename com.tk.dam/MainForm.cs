@@ -29,7 +29,7 @@ namespace com.tk.dam
         private Random mRandom = new Random(360);
         Dictionary<string, List<double>> mXbjcDic = new Dictionary<string, List<double>>();
         Dictionary<string, List<int>> mWxztDic = new Dictionary<string, List<int>>();
-        Dictionary<string, int> mQxDic = new Dictionary<string, int>();
+        Dictionary<string, double> mQxDic = new Dictionary<string, double>();
 
         //Xbjc mXbjc;
         //Wxzt mWxzt;
@@ -438,7 +438,7 @@ namespace com.tk.dam
             get { return mWxztDic; }
         }
 
-        public Dictionary<string,int> QxDic
+        public Dictionary<string,double> QxDic
         {
             get { return mQxDic; }
             set 
