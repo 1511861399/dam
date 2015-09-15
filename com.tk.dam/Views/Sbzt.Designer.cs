@@ -641,8 +641,9 @@
             this.lblMonitor12.Name = "lblMonitor12";
             this.lblMonitor12.Size = new System.Drawing.Size(48, 48);
             this.lblMonitor12.TabIndex = 1;
-            this.lblMonitor12.Text = "+";
+            this.lblMonitor12.Text = "12";
             this.lblMonitor12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMonitor12.Click += new System.EventHandler(this.device_Click);
             // 
             // lblMonitor10
             // 
@@ -657,6 +658,7 @@
             this.lblMonitor10.TabIndex = 1;
             this.lblMonitor10.Text = "10";
             this.lblMonitor10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMonitor10.Click += new System.EventHandler(this.device_Click);
             // 
             // lblMonitor8
             // 
@@ -671,6 +673,7 @@
             this.lblMonitor8.TabIndex = 1;
             this.lblMonitor8.Text = "8";
             this.lblMonitor8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMonitor8.Click += new System.EventHandler(this.device_Click);
             // 
             // lblMonitor6
             // 
@@ -685,6 +688,7 @@
             this.lblMonitor6.TabIndex = 1;
             this.lblMonitor6.Text = "6";
             this.lblMonitor6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMonitor6.Click += new System.EventHandler(this.device_Click);
             // 
             // lblMonitor4
             // 
@@ -699,6 +703,7 @@
             this.lblMonitor4.TabIndex = 1;
             this.lblMonitor4.Text = "4";
             this.lblMonitor4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMonitor4.Click += new System.EventHandler(this.device_Click);
             // 
             // lblMonitor2
             // 
@@ -713,6 +718,7 @@
             this.lblMonitor2.TabIndex = 1;
             this.lblMonitor2.Text = "2";
             this.lblMonitor2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMonitor2.Click += new System.EventHandler(this.device_Click);
             // 
             // lblMonitor11
             // 
@@ -727,6 +733,7 @@
             this.lblMonitor11.TabIndex = 1;
             this.lblMonitor11.Text = "11";
             this.lblMonitor11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMonitor11.Click += new System.EventHandler(this.device_Click);
             // 
             // lblMonitor9
             // 
@@ -741,6 +748,7 @@
             this.lblMonitor9.TabIndex = 1;
             this.lblMonitor9.Text = "9";
             this.lblMonitor9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMonitor9.Click += new System.EventHandler(this.device_Click);
             // 
             // lblMonitor7
             // 
@@ -755,6 +763,7 @@
             this.lblMonitor7.TabIndex = 1;
             this.lblMonitor7.Text = "7";
             this.lblMonitor7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMonitor7.Click += new System.EventHandler(this.device_Click);
             // 
             // lblMonitor5
             // 
@@ -769,6 +778,7 @@
             this.lblMonitor5.TabIndex = 1;
             this.lblMonitor5.Text = "5";
             this.lblMonitor5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMonitor5.Click += new System.EventHandler(this.device_Click);
             // 
             // lblMonitor3
             // 
@@ -783,6 +793,7 @@
             this.lblMonitor3.TabIndex = 1;
             this.lblMonitor3.Text = "3";
             this.lblMonitor3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMonitor3.Click += new System.EventHandler(this.device_Click);
             // 
             // lblMonitor1
             // 
@@ -795,8 +806,10 @@
             this.lblMonitor1.Name = "lblMonitor1";
             this.lblMonitor1.Size = new System.Drawing.Size(48, 48);
             this.lblMonitor1.TabIndex = 1;
+            this.lblMonitor1.Tag = "q";
             this.lblMonitor1.Text = "1";
             this.lblMonitor1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMonitor1.Click += new System.EventHandler(this.device_Click);
             // 
             // mPanelCenter
             // 

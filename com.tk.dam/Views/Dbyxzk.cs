@@ -16,7 +16,7 @@ namespace com.tk.dam.Views
     {
         private List<Device> mDeviceList1 = new List<Device>();
         private List<Device> mDeviceList2 = new List<Device>();
-        private Random mRandom = new Random(300);
+        private Random mRandom = new Random(1000);
         private Dictionary<string, List<SeriesPoint>> mSeriesPointXbDic = new Dictionary<string, List<SeriesPoint>>();
         private DateTime mNow = DateTime.Now;
         private int mOriginW = 662;
@@ -51,19 +51,35 @@ namespace com.tk.dam.Views
                 this.mPanelMain.Location = new Point(mNewX, mNewY);
 
                 this.mPanelChart.Width = (int)(this.mPanelChart.Height * 0.67);
+
+                panel1.Location = new Point(this.mPanelPic.Width-100, this.mPanelPic.Height-100);
+                panel1.BackColor = Color.FromArgb(50, Color.White);
+                panel1.Parent = mDamPic;
             }
             LoadDevice();
-            initDataChart(mDeviceList1);
-            initDataChart(mDeviceList2);
-            this.mainChart.Series[0].Points.Clear();
-            SeriesPoint[] point1 = new SeriesPoint[] { new SeriesPoint("当前偏移", 4)};
-            this.mainChart.Series[0].Points.AddRange(point1);
-            this.mainChart.Series[1].Points.Clear();
-            SeriesPoint[] point2 = new SeriesPoint[] { new SeriesPoint("累积偏移", 15.1) };
-            this.mainChart.Series[1].Points.AddRange(point2);
+            initDataChart(mDeviceList1,1);
+            initDataChart(mDeviceList2,2);
+            showLeftChart("1");
         }
+        public void showLeftChart(string id)
+        {
+            this.mainChart.Series[0].Points.Clear();
+            var data = mSeriesPointXbDic[id + "_tj"].ToArray();
+            this.mainChart.Series[0].Points.AddRange(data);
+            if (type==1)
+            {
 
-        private void initDataChart(List<Device> deviceList1)
+                this.mainChart.Series[0].LegendText = "当前偏移值：" + data[0].Values[0]+"mm";
+                this.mainChart.Series[1].LegendText = "累积偏移值：" + data[1].Values[0] + "mm";
+            }
+            if (type ==2)
+            {
+                this.mainChart.Series[0].LegendText = "最大值：" + data[0].Values[0];
+                this.mainChart.Series[1].LegendText = "平均值：" + data[1].Values[0];
+            }
+            
+        }
+        private void initDataChart(List<Device> deviceList1,int type)
         {
             foreach (Device d in deviceList1)
             {
@@ -72,17 +88,36 @@ namespace com.tk.dam.Views
                 int mMaxWy = 0, mMinWy = 0, mMaxCj = 0, mMinCj = 0;
                 for (int i = -6; i <= 0; i++)
                 {
-                    int mWy = mRandom.Next(50) - 10;
-                    int mCj = mRandom.Next(50) - 10;
+                    int mWy = (int)(mRandom.Next(1000)*0.01) - 5;
+                    int mCj = (int)(mRandom.Next(1000) * 0.01) - 5;
                     mMaxWy = mMaxWy > mWy ? mMaxWy : mWy;
                     mMinWy = mMinWy < mWy ? mMinWy : mWy;
                     mMaxCj = mMaxCj > mCj ? mMaxCj : mCj;
-                    mMinCj = mMinCj < mCj ? mMinCj : mCj;
-                    mPointsWy.Add(new SeriesPoint(mNow.AddDays(i), mWy));
-                    mPointsCj.Add(new SeriesPoint(mNow.AddDays(i), mCj));
+                    mMinCj = mMinCj < mCj ? mMinCj : mCj; 
+                    mPointsWy.Add(new SeriesPoint(DateTime.Now.AddDays(i), mWy));
+                    mPointsWy.Add(new SeriesPoint(DateTime.Now.AddDays(i).AddHours(1), mWy));
+                    mPointsWy.Add(new SeriesPoint(DateTime.Now.AddDays(i).AddHours(2), mWy)); 
+
 
                 }
+                if (type == 1)
+                {
+                    int a = 3 - (int)(mRandom.Next(1000) * 0.003);
+                    int b = 5 - (int)(mRandom.Next(1000) * 0.002);
+                    mPointsCj.Add(new SeriesPoint("当前偏移", a));
+                    mPointsCj.Add(new SeriesPoint("累积偏移", b));
+                    mSeriesPointXbDic.Add(d.Id.ToString() + "_tj", mPointsCj);
+                }
+                else
+                {
+                    int a = 3-(int)(mRandom.Next(1000) * 0.003) ;
+                    int b = 5 - (int)(mRandom.Next(1000) * 0.005);
+                    mPointsCj.Add(new SeriesPoint("最大值", b));
+                    mPointsCj.Add(new SeriesPoint("平均值", a));
+                    mSeriesPointXbDic.Add(d.Id.ToString() + "_tj", mPointsCj);
+                }
                 mSeriesPointXbDic.Add(d.Id.ToString(), mPointsWy);
+
             }
         }
 
@@ -99,21 +134,25 @@ namespace com.tk.dam.Views
             device.Id = 1;
             device.X = 139;
             device.Y = 250;
+            device.Type = 1;
             mDeviceList1.Add(device);
             device = new Device();
             device.Id = 2;
             device.X = 217;
             device.Y = 247;
+            device.Type = 1;
             mDeviceList1.Add(device);
             device = new Device();
             device.Id = 3;
             device.X = 323;
             device.Y = 240;
+            device.Type = 1;
             mDeviceList1.Add(device);
             device = new Device();
             device.Id = 4;
             device.X = 423;
             device.Y = 232;
+            device.Type = 1;
             mDeviceList1.Add(device);
             Point point = mDamPic.Location;
             Size size = mDamPic.Size;
@@ -121,6 +160,8 @@ namespace com.tk.dam.Views
             {
                 PictureBox panel = new PictureBox();
                 panel.Click += panel_Click;
+                panel.MouseEnter += pb_MouseEnter;
+                panel.MouseLeave += pb_MouseLeave;
                 panel.Tag = d.Id;
                 panel.Size = new Size(24, 19);
                 panel.BackColor = Color.Red;
@@ -138,11 +179,13 @@ namespace com.tk.dam.Views
             device.Id = 5;
             device.X = 222;
             device.Y = 378;
+            device.Type = 2;
             mDeviceList2.Add(device);
             device = new Device();
             device.Id = 6;
             device.X = 432;
             device.Y = 356;
+            device.Type = 2;
             mDeviceList2.Add(device);
             foreach (Device d in mDeviceList2)
             {
@@ -152,6 +195,8 @@ namespace com.tk.dam.Views
                 y = y + point.Y;
                 PictureBox pb = new PictureBox();
                 pb.Click += panel_Click;
+                pb.MouseEnter += pb_MouseEnter;
+                pb.MouseLeave += pb_MouseLeave;
                 pb.Tag = d.Id;
                 pb.BackColor = Color.Transparent;
                 pb.Image = global::com.tk.dam.Properties.Resources.GNSSXB;
@@ -163,6 +208,20 @@ namespace com.tk.dam.Views
             }
         }
 
+        void pb_MouseLeave(object sender, EventArgs e)
+        {
+            hindeChart();
+        }
+
+        void pb_MouseEnter(object sender, EventArgs e)
+        {
+            PictureBox pb = (PictureBox)sender;
+            getCurrentDevice(pb, mDeviceList1);
+           
+            getCurrentDevice(pb, mDeviceList2);
+           
+        }
+        int type = 0;
         void panel_Click(object sender, EventArgs e)
         {
             PictureBox pb = (PictureBox)sender;
@@ -170,7 +229,7 @@ namespace com.tk.dam.Views
             getCurrentDevice(pb, mDeviceList2);
         }
 
-        private void getCurrentDevice(PictureBox pb, List<Device> deviceList)
+        private bool getCurrentDevice(PictureBox pb, List<Device> deviceList)
         {
             int deviceId = (int)pb.Tag;
             foreach (Device d in deviceList)
@@ -178,8 +237,12 @@ namespace com.tk.dam.Views
                 if (d.Id == deviceId)
                 {
                     showChart(d, pb.Location);
+                    type = d.Type;
+                    showLeftChart(deviceId.ToString());
+                    return true;
                 }
             }
+            return false;
         }
 
         private void showChart(Device d,Point locatioin)

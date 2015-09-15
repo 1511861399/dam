@@ -41,6 +41,11 @@
             this.mPanelChart = new System.Windows.Forms.Panel();
             this.mainChart = new DevExpress.XtraCharts.ChartControl();
             this.mPanelPic = new DevExpress.XtraEditors.PanelControl();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mPbCross = new System.Windows.Forms.PictureBox();
             this.mDamPic = new System.Windows.Forms.PictureBox();
             this.mPanelPopChart = new System.Windows.Forms.Panel();
@@ -58,6 +63,9 @@
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mPanelPic)).BeginInit();
             this.mPanelPic.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mPbCross)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mDamPic)).BeginInit();
             this.mPanelPopChart.SuspendLayout();
@@ -79,7 +87,7 @@
             this.mPanelMain.Controls.Add(this.mPanelPic);
             this.mPanelMain.Location = new System.Drawing.Point(7, 113);
             this.mPanelMain.Name = "mPanelMain";
-            this.mPanelMain.Size = new System.Drawing.Size(1012, 400);
+            this.mPanelMain.Size = new System.Drawing.Size(1042, 432);
             this.mPanelMain.TabIndex = 2;
             // 
             // mPanelChart
@@ -88,9 +96,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mPanelChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(162)))), ((int)(((byte)(29)))));
             this.mPanelChart.Controls.Add(this.mainChart);
-            this.mPanelChart.Location = new System.Drawing.Point(744, 0);
+            this.mPanelChart.Location = new System.Drawing.Point(774, 0);
             this.mPanelChart.Name = "mPanelChart";
-            this.mPanelChart.Size = new System.Drawing.Size(265, 395);
+            this.mPanelChart.Size = new System.Drawing.Size(240, 427);
             this.mPanelChart.TabIndex = 3;
             // 
             // mainChart
@@ -125,15 +133,7 @@
             xyDiagram1.AxisY.Title.Text = "";
             xyDiagram1.AxisY.Title.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-            xyDiagram1.AxisY.VisualRange.Auto = false;
-            xyDiagram1.AxisY.VisualRange.AutoSideMargins = false;
-            xyDiagram1.AxisY.VisualRange.MaxValueSerializable = "20";
-            xyDiagram1.AxisY.VisualRange.MinValueSerializable = "0";
-            xyDiagram1.AxisY.VisualRange.SideMarginsValue = 0D;
-            xyDiagram1.AxisY.WholeRange.Auto = false;
             xyDiagram1.AxisY.WholeRange.AutoSideMargins = false;
-            xyDiagram1.AxisY.WholeRange.MaxValueSerializable = "20";
-            xyDiagram1.AxisY.WholeRange.MinValueSerializable = "0";
             xyDiagram1.AxisY.WholeRange.SideMarginsValue = 0D;
             xyDiagram1.DefaultPane.BackColor = System.Drawing.Color.Transparent;
             xyDiagram1.DefaultPane.BorderVisible = false;
@@ -168,7 +168,7 @@
         series1,
         series2};
             this.mainChart.SideBySideBarDistanceFixed = 40;
-            this.mainChart.Size = new System.Drawing.Size(265, 395);
+            this.mainChart.Size = new System.Drawing.Size(240, 427);
             this.mainChart.TabIndex = 0;
             // 
             // mPanelPic
@@ -177,12 +177,61 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mPanelPic.AutoSize = true;
+            this.mPanelPic.Controls.Add(this.panel1);
             this.mPanelPic.Controls.Add(this.mPbCross);
             this.mPanelPic.Controls.Add(this.mDamPic);
             this.mPanelPic.Location = new System.Drawing.Point(0, 0);
             this.mPanelPic.Name = "mPanelPic";
-            this.mPanelPic.Size = new System.Drawing.Size(738, 394);
+            this.mPanelPic.Size = new System.Drawing.Size(768, 426);
             this.mPanelPic.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(630, 350);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(131, 69);
+            this.panel1.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(35, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 18);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "渗流计";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 14);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "GNSS位移";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::com.tk.dam.Properties.Resources.GNSSXB;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 40);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(24, 19);
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Red;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 19);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // mPbCross
             // 
@@ -202,7 +251,7 @@
             this.mDamPic.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mDamPic.Location = new System.Drawing.Point(2, 2);
             this.mDamPic.Name = "mDamPic";
-            this.mDamPic.Size = new System.Drawing.Size(734, 390);
+            this.mDamPic.Size = new System.Drawing.Size(764, 422);
             this.mDamPic.TabIndex = 0;
             this.mDamPic.TabStop = false;
             this.mDamPic.Click += new System.EventHandler(this.mDamPic_Click);
@@ -232,7 +281,6 @@
             this.mPopChart.BackColor = System.Drawing.Color.Transparent;
             this.mPopChart.BorderOptions.Color = System.Drawing.Color.Transparent;
             xyDiagram2.AxisX.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            xyDiagram2.AxisX.DateTimeScaleOptions.ScaleMode = DevExpress.XtraCharts.ScaleMode.Automatic;
             xyDiagram2.AxisX.GridLines.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             xyDiagram2.AxisX.GridLines.Visible = true;
             xyDiagram2.AxisX.Label.TextColor = System.Drawing.Color.Black;
@@ -256,8 +304,8 @@
             xyDiagram2.AxisY.VisibleInPanesSerializable = "-1";
             xyDiagram2.AxisY.VisualRange.Auto = false;
             xyDiagram2.AxisY.VisualRange.AutoSideMargins = false;
-            xyDiagram2.AxisY.VisualRange.MaxValueSerializable = "40";
-            xyDiagram2.AxisY.VisualRange.MinValueSerializable = "-40";
+            xyDiagram2.AxisY.VisualRange.MaxValueSerializable = "10";
+            xyDiagram2.AxisY.VisualRange.MinValueSerializable = "-10";
             xyDiagram2.AxisY.VisualRange.SideMarginsValue = 0.88000000000000012D;
             xyDiagram2.AxisY.WholeRange.Auto = false;
             xyDiagram2.AxisY.WholeRange.AutoSideMargins = false;
@@ -338,6 +386,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.mainChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mPanelPic)).EndInit();
             this.mPanelPic.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mPbCross)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mDamPic)).EndInit();
             this.mPanelPopChart.ResumeLayout(false);
@@ -367,5 +419,10 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label mChartTitle;
         private System.Windows.Forms.PictureBox mPbCross;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

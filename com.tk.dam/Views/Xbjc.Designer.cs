@@ -48,15 +48,12 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.gcMain = new DevExpress.XtraGrid.GridControl();
             this.gvMain = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
-            this.gband1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gcmYqbh = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gcmXh = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gcmJzdgd = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gcmBjgd = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gbandKs = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gcmZdcj1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gcmJccj1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gbandJs = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gcmZdcj2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gcmJccj2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.panelMonitorContainer = new System.Windows.Forms.Panel();
@@ -83,6 +80,9 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.gbBD = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gbandKs = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gbandJs = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainChart)).BeginInit();
@@ -408,7 +408,7 @@
             this.gvMain.Appearance.ViewCaption.Options.UseBackColor = true;
             this.gvMain.Appearance.ViewCaption.Options.UseBorderColor = true;
             this.gvMain.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
-            this.gband1,
+            this.gbBD,
             this.gbandKs,
             this.gbandJs});
             this.gvMain.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -439,16 +439,6 @@
             this.gvMain.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView1_RowCellStyle);
             this.gvMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gridView1_MouseMove);
             this.gvMain.MouseLeave += new System.EventHandler(this.gvMain_MouseLeave);
-            // 
-            // gband1
-            // 
-            this.gband1.Columns.Add(this.gcmYqbh);
-            this.gband1.Columns.Add(this.gcmXh);
-            this.gband1.Columns.Add(this.gcmJzdgd);
-            this.gband1.Columns.Add(this.gcmBjgd);
-            this.gband1.Name = "gband1";
-            this.gband1.VisibleIndex = 0;
-            this.gband1.Width = 156;
             // 
             // gcmYqbh
             // 
@@ -567,16 +557,6 @@
             this.gcmBjgd.Visible = true;
             this.gcmBjgd.Width = 42;
             // 
-            // gbandKs
-            // 
-            this.gbandKs.Caption = "2006.02.23监测数据(/mm)";
-            this.gbandKs.Columns.Add(this.gcmZdcj1);
-            this.gbandKs.Columns.Add(this.gcmJccj1);
-            this.gbandKs.Name = "gbandKs";
-            this.gbandKs.OptionsBand.FixedWidth = true;
-            this.gbandKs.VisibleIndex = 1;
-            this.gbandKs.Width = 84;
-            // 
             // gcmZdcj1
             // 
             this.gcmZdcj1.AppearanceCell.Options.UseTextOptions = true;
@@ -630,16 +610,6 @@
             this.gcmJccj1.OptionsFilter.AllowFilter = false;
             this.gcmJccj1.Visible = true;
             this.gcmJccj1.Width = 42;
-            // 
-            // gbandJs
-            // 
-            this.gbandJs.Caption = "2007.10.16监测数据(/mm)";
-            this.gbandJs.Columns.Add(this.gcmZdcj2);
-            this.gbandJs.Columns.Add(this.gcmJccj2);
-            this.gbandJs.Name = "gbandJs";
-            this.gbandJs.OptionsBand.FixedWidth = true;
-            this.gbandJs.VisibleIndex = 2;
-            this.gbandJs.Width = 84;
             // 
             // gcmZdcj2
             // 
@@ -1033,6 +1003,36 @@
             this.panel6.Size = new System.Drawing.Size(950, 300);
             this.panel6.TabIndex = 4;
             // 
+            // gbBD
+            // 
+            this.gbBD.Caption = "标点";
+            this.gbBD.Columns.Add(this.gcmYqbh);
+            this.gbBD.Columns.Add(this.gcmXh);
+            this.gbBD.Name = "gbBD";
+            this.gbBD.VisibleIndex = 0;
+            // 
+            // gbandKs
+            // 
+            this.gbandKs.Caption = "2006.02.23监测数据(/mm)";
+            this.gbandKs.Columns.Add(this.gcmZdcj1);
+            this.gbandKs.Columns.Add(this.gcmJccj1);
+            this.gbandKs.Columns.Add(this.gcmJzdgd);
+            this.gbandKs.Name = "gbandKs";
+            this.gbandKs.OptionsBand.FixedWidth = true;
+            this.gbandKs.VisibleIndex = 1;
+            this.gbandKs.Width = 128;
+            // 
+            // gbandJs
+            // 
+            this.gbandJs.Caption = "2007.10.16监测数据(/mm)";
+            this.gbandJs.Columns.Add(this.gcmBjgd);
+            this.gbandJs.Columns.Add(this.gcmZdcj2);
+            this.gbandJs.Columns.Add(this.gcmJccj2);
+            this.gbandJs.Name = "gbandJs";
+            this.gbandJs.OptionsBand.FixedWidth = true;
+            this.gbandJs.VisibleIndex = 2;
+            this.gbandJs.Width = 126;
+            // 
             // Xbjc
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(206)))));
@@ -1113,13 +1113,13 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gcmZdcj2;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gcmJccj2;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gcmXh;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gband1;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gbandKs;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gbandJs;
         private System.Windows.Forms.Label lblDay;
         private System.Windows.Forms.Label lblHour;
         private System.Windows.Forms.Label lblMonth;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gbBD;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gbandKs;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gbandJs;
 
     }
 }

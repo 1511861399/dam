@@ -78,6 +78,8 @@
             this.pboxVideo4 = new System.Windows.Forms.PictureBox();
             this.panel20 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.panel25 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -105,6 +107,7 @@
             this.panel24.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxVideo4)).BeginInit();
             this.panel20.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -113,6 +116,7 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Location = new System.Drawing.Point(50, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(900, 560);
@@ -146,6 +150,7 @@
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(230, 60);
             this.panel14.TabIndex = 4;
+            this.panel14.DoubleClick += new System.EventHandler(this.panel14_DoubleClick);
             this.panel14.MouseEnter += new System.EventHandler(this.panelMenu_MouseEnter);
             this.panel14.MouseLeave += new System.EventHandler(this.panelMenu_MouseLeave);
             // 
@@ -176,9 +181,9 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(52, 20);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 22);
+            this.label9.Size = new System.Drawing.Size(56, 22);
             this.label9.TabIndex = 1;
-            this.label9.Text = "前门入口";
+            this.label9.Text = "设备4";
             // 
             // pictureBox4
             // 
@@ -204,6 +209,7 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(230, 60);
             this.panel12.TabIndex = 3;
+            this.panel12.DoubleClick += new System.EventHandler(this.panel12_DoubleClick);
             this.panel12.MouseEnter += new System.EventHandler(this.panelMenu_MouseEnter);
             this.panel12.MouseLeave += new System.EventHandler(this.panelMenu_MouseLeave);
             // 
@@ -234,9 +240,9 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(52, 20);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 22);
+            this.label7.Size = new System.Drawing.Size(56, 22);
             this.label7.TabIndex = 1;
-            this.label7.Text = "停车场";
+            this.label7.Text = "设备3";
             // 
             // pictureBox3
             // 
@@ -262,7 +268,7 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(230, 60);
             this.panel10.TabIndex = 2;
-            this.panel10.DoubleClick += new System.EventHandler(this.panel_DoubleClick);
+            this.panel10.DoubleClick += new System.EventHandler(this.panel10_DoubleClick);
             this.panel10.MouseEnter += new System.EventHandler(this.panelMenu_MouseEnter);
             this.panel10.MouseLeave += new System.EventHandler(this.panelMenu_MouseLeave);
             // 
@@ -293,9 +299,9 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(52, 20);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 22);
+            this.label5.Size = new System.Drawing.Size(56, 22);
             this.label5.TabIndex = 1;
-            this.label5.Text = "接待室";
+            this.label5.Text = "设备2";
             // 
             // pictureBox2
             // 
@@ -322,6 +328,7 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(230, 60);
             this.panel8.TabIndex = 1;
+            this.panel8.DoubleClick += new System.EventHandler(this.panel8_DoubleClick);
             this.panel8.MouseEnter += new System.EventHandler(this.panelMenu_MouseEnter);
             this.panel8.MouseLeave += new System.EventHandler(this.panelMenu_MouseLeave);
             // 
@@ -360,9 +367,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(52, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 22);
+            this.label2.Size = new System.Drawing.Size(56, 22);
             this.label2.TabIndex = 1;
-            this.label2.Text = "办公室";
+            this.label2.Text = "设备1";
             // 
             // pictureBox1
             // 
@@ -460,9 +467,9 @@
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(5, 12);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(43, 14);
+            this.label10.Size = new System.Drawing.Size(38, 14);
             this.label10.TabIndex = 0;
-            this.label10.Text = "办公室";
+            this.label10.Text = "设备1";
             // 
             // panel5
             // 
@@ -478,6 +485,7 @@
             // 
             // panel22
             // 
+            this.panel22.Controls.Add(this.panel25);
             this.panel22.Controls.Add(this.lblVideo2);
             this.panel22.Controls.Add(this.pboxVideo2);
             this.panel22.Location = new System.Drawing.Point(0, 42);
@@ -523,9 +531,9 @@
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(5, 12);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(43, 14);
+            this.label11.Size = new System.Drawing.Size(38, 14);
             this.label11.TabIndex = 0;
-            this.label11.Text = "接待室";
+            this.label11.Text = "设备2";
             // 
             // panel6
             // 
@@ -586,9 +594,9 @@
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(5, 12);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(43, 14);
+            this.label12.Size = new System.Drawing.Size(38, 14);
             this.label12.TabIndex = 0;
-            this.label12.Text = "停车场";
+            this.label12.Text = "设备3";
             // 
             // panel7
             // 
@@ -649,9 +657,27 @@
             this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(5, 12);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(55, 14);
+            this.label13.Size = new System.Drawing.Size(38, 14);
             this.label13.TabIndex = 0;
-            this.label13.Text = "前门入口";
+            this.label13.Text = "设备4";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(900, 560);
+            this.pictureBox5.TabIndex = 1;
+            this.pictureBox5.TabStop = false;
+            // 
+            // panel25
+            // 
+            this.panel25.BackColor = System.Drawing.Color.Transparent;
+            this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel25.Location = new System.Drawing.Point(0, 0);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(329, 237);
+            this.panel25.TabIndex = 5;
             // 
             // Sp
             // 
@@ -662,6 +688,8 @@
             this.Controls.Add(this.panel1);
             this.Name = "Sp";
             this.Size = new System.Drawing.Size(1000, 620);
+            this.Load += new System.EventHandler(this.Sp_Load);
+            this.VisibleChanged += new System.EventHandler(this.Sp_VisibleChanged);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -702,6 +730,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pboxVideo4)).EndInit();
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -757,5 +786,7 @@
         private System.Windows.Forms.PictureBox pboxVideo3;
         private System.Windows.Forms.PictureBox pboxVideo4;
         private System.Windows.Forms.PictureBox pboxVideo1;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Panel panel25;
     }
 }

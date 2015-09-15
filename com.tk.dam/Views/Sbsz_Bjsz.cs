@@ -14,13 +14,70 @@ namespace com.tk.dam.Views
     {
         private Color mSelectedColor = Color.FromArgb(235, 163, 17);
         private Color mUnSelectedColor = Color.FromArgb(182, 182, 182);
+        private Entity.Sbzt mSbztObj;
         public Sbsz_Bjsz()
         {
             InitializeComponent();
             mPanelEditWlsz.Visible = false;
             mPanelEditWlcs.Visible=false;
+            //mCmbCsjg.SelectedIndex = 0;
+            mCmbCsjg.SelectedIndex = 0;
+            mCmbCsxy.SelectedIndex = 0;
+            mCmbSjgs.SelectedIndex = 0;
+            mCmbWlxz.SelectedIndex = 0;
         }
-  
+        public void setValue( Entity.Sbzt sbzt)
+        {
+            mSbztObj = sbzt;
+            lblWl_Qy.Text = mSbztObj.mBjsz.mQy==1?"是":"否";
+            mLblZt.Text = mSbztObj.mBjsz.mZt == -11 ? "未连接" : "连接";
+            mPbZt.Image = getImage(mSbztObj.mBjsz.mZt);
+            lblWl_Fs.Text = mSbztObj.mBjsz.mWlxz;
+            lblWl_Xy.Text = mSbztObj.mBjsz.mCsxy;
+            lblWl_Sjgs.Text = mSbztObj.mBjsz.mSjgs;
+            lblWl_IP.Text = mSbztObj.mBjsz.mIP;
+            //编辑界面
+            mCkCszt.Checked = mSbztObj.mBjsz.mQy == 1;
+            mCkJm.Checked = mSbztObj.mBjsz.mJm == 1;
+            mCmbCsjg.Text = mSbztObj.mBjsz.mCsjg.ToString();
+            mTxtIP.Text = mSbztObj.mBjsz.mIP;
+            mCmbWlxz.Text = mSbztObj.mBjsz.mWlxz;
+            mCmbCsxy.Text = mSbztObj.mBjsz.mCsxy;
+            mTxtPort.Text = mSbztObj.mBjsz.mDk;
+            mCmbSjgs.Text = mSbztObj.mBjsz.mSjgs;
+            mTxtLocalPort.Text = mSbztObj.mBjsz.mBddkh;
+
+            lblCs_Zd.Text = mSbztObj.mCssz.mZdmc;
+            lblCs_Mc.Text = mSbztObj.mCssz.mIP;
+            lblCs_Wg.Text = mSbztObj.mCssz.mWgdz;
+            lblCs_Sq.Text = mSbztObj.mCssz.mUTC;
+
+            mTxtIPCS.Text = mSbztObj.mCssz.mIP;
+            mTxtZdmc.Text = mSbztObj.mCssz.mZdmc;
+            mTxtWgdz.Text = mSbztObj.mCssz.mWgdz;
+            mCmbUTC.Text = mSbztObj.mCssz.mUTC;
+        }
+
+        private Image getImage(int zt)
+        {
+            if (zt == 0)
+            {
+                return global::com.tk.dam.Properties.Resources.wl0;
+            }
+            if (zt == 1)
+            {
+                return global::com.tk.dam.Properties.Resources.wl1;
+            }
+            if (zt == 2)
+            {
+                return global::com.tk.dam.Properties.Resources.wl2;
+            }
+            if (zt == 3)
+            {
+                return global::com.tk.dam.Properties.Resources.wl3;
+            }
+            return global::com.tk.dam.Properties.Resources.wl3;
+        }
 
     
         private void btnBj_Wl_Click(object sender, EventArgs e)
@@ -47,6 +104,92 @@ namespace com.tk.dam.Views
             btnWl_Gb_Click(null, null);
             mPanelEditWlcs.Visible = true;
             btnBj_Cs.BackColor = mSelectedColor;
+        }
+
+        //定义事件参数类
+        public class SaveEventArgs : EventArgs
+        {
+            public readonly Entity.Sbzt mSbztEntity;
+            public SaveEventArgs(Entity.Sbzt sbztEntity)
+            {
+                mSbztEntity = sbztEntity;
+            }
+        }
+
+        //定义delegate
+        public delegate void SaveEventHandler(object sender, SaveEventArgs e);
+        //用event 关键字声明事件对象
+        public event SaveEventHandler SaveEvent;
+
+        //事件触发方法
+        protected virtual void OnSaveEvent(SaveEventArgs e)
+        {
+            if (SaveEvent != null)
+                SaveEvent(this, e);
+        }
+
+        //引发事件
+        public void RaiseEvent(Entity.Sbzt sbztEntity)
+        {
+            SaveEventArgs e = new SaveEventArgs(sbztEntity);
+            OnSaveEvent(e);
+        }
+
+        private void mLblSaveWlsz_Click(object sender, EventArgs e)
+        {
+            RaiseEvent(getViewValue());
+        }
+
+        private Entity.Sbzt getViewValue()
+        {
+            //编辑界面
+            mSbztObj.mBjsz.mQy= mCkCszt.Checked?1:0;
+            mSbztObj.mBjsz.mJm = mCkJm.Checked ? 1 : 0;
+            int csjg =0;
+            Int32.TryParse(mCmbCsjg.Text.ToString(), out csjg);
+            mSbztObj.mBjsz.mCsjg = csjg;
+            mSbztObj.mBjsz.mIP = mTxtIP.Text;
+            mSbztObj.mBjsz.mWlxz = mCmbWlxz.Text;
+            mSbztObj.mBjsz.mCsxy = mCmbCsxy.Text;
+            mSbztObj.mBjsz.mDk = mTxtPort.Text;
+            mSbztObj.mBjsz.mSjgs = mCmbSjgs.Text;
+            mSbztObj.mBjsz.mBddkh = mTxtLocalPort.Text;
+
+            mSbztObj.mCssz.mIP = mTxtIPCS.Text;
+            mSbztObj.mCssz.mZdmc = mTxtZdmc.Text ;
+            mSbztObj.mCssz.mWgdz = mTxtWgdz.Text ;
+            mSbztObj.mCssz.mUTC = mCmbUTC.Text ;
+            setValue(mSbztObj);
+
+            return mSbztObj;
+        }
+
+        private void mLblResetWlsz_Click(object sender, EventArgs e)
+        {
+            mCkCszt.Checked = mSbztObj.mBjsz.mQy == 1;
+            mCkJm.Checked = mSbztObj.mBjsz.mJm == 1;
+            mCmbCsjg.Text = mSbztObj.mBjsz.mCsjg.ToString();
+            mTxtIP.Text = mSbztObj.mBjsz.mIP;
+            mCmbWlxz.Text = mSbztObj.mBjsz.mWlxz;
+            mCmbCsxy.Text = mSbztObj.mBjsz.mCsxy;
+            mTxtPort.Text = mSbztObj.mBjsz.mDk;
+            mCmbSjgs.Text = mSbztObj.mBjsz.mSjgs;
+            mTxtLocalPort.Text = mSbztObj.mBjsz.mBddkh;
+            setValue(mSbztObj);
+        }
+
+        private void mLblBcCs_Click(object sender, EventArgs e)
+        {
+            RaiseEvent(getViewValue());
+        }
+
+        private void mLblCzcs_Click(object sender, EventArgs e)
+        {
+            mTxtIPCS.Text = mSbztObj.mCssz.mIP;
+            mTxtZdmc.Text = mSbztObj.mCssz.mZdmc;
+            mTxtWgdz.Text = mSbztObj.mCssz.mWgdz;
+            mCmbUTC.Text = mSbztObj.mCssz.mUTC;
+            setValue(mSbztObj);
         }
     }
 }

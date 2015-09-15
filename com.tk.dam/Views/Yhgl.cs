@@ -83,15 +83,6 @@ namespace com.tk.dam.Views
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             MainForm.ShowYHEditFlyout(mYhList[gridView1.FocusedRowHandle]);
-        }
-       
-    }
-
-    internal class YhComparer : IComparer<Yh>
-    {
-        public int Compare(Yh yh1, Yh yh2)
-        {
-            return yh1.Xh - yh2.Xh;
-        }
+        }       
     }
 }

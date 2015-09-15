@@ -179,6 +179,13 @@
     <Compile Include="Entity\Device.cs" />
     <Compile Include="Entity\Jcd.cs" />
     <Compile Include="Entity\OffectInfo.cs" />
+    <Compile Include="Entity\Sbzt.cs" />
+    <Compile Include="Entity\Sb_Bjsz.cs" />
+    <Compile Include="Entity\Sb_Cssz.cs" />
+    <Compile Include="Entity\Sb_Xtbj.cs" />
+    <Compile Include="Entity\Sb_Xtsz.cs" />
+    <Compile Include="Entity\Sb_Ztzy.cs" />
+    <Compile Include="Entity\Wlxz.cs" />
     <Compile Include="Entity\Yh.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -188,6 +195,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\XmlUtil.cs" />
     <Compile Include="Views\Dbyxzk.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -483,6 +491,10 @@
     <None Include="Resources\scrollthumbbutton.png" />
     <None Include="Resources\scrollbutton_glyph.png" />
     <None Include="Resources\tile_tip_bg.png" />
+    <Content Include="Resources\wl0.png" />
+    <Content Include="Resources\wl1.png" />
+    <Content Include="Resources\wl2.png" />
+    <Content Include="Resources\wl3.png" />
     <Content Include="video\Bear.wmv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

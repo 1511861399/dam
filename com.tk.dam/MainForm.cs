@@ -157,7 +157,7 @@ namespace com.tk.dam
             }
             else if (e.Document.Equals(documentSBZT))
             {
-                e.Control = new Sbzt();
+                e.Control = new com.tk.dam.Views.Sbzt();
             }
             else if (e.Document.Equals(documentWXZT))
             {
