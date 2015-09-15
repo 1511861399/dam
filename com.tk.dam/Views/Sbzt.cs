@@ -106,6 +106,15 @@ namespace com.tk.dam.Views
             }
             mCurrentMenu = mMenuBjsz;
             menu_panel_click(mCurrentMenu, null);
+            if (Directory.Exists("devices") == false)//如果不存在就创建file文件夹
+            {
+                Directory.CreateDirectory("devices");
+            }
+            if (File.Exists("devices\\devices.xml") == false)//如果不存在就创建file文件夹
+            {
+                File.Create("devices\\devices.xml").Dispose(); 
+            }
+
             getDeviceList();
 
             setView("1");
