@@ -85,9 +85,9 @@
             this.mPanelMain.BackColor = System.Drawing.Color.Transparent;
             this.mPanelMain.Controls.Add(this.mPanelChart);
             this.mPanelMain.Controls.Add(this.mPanelPic);
-            this.mPanelMain.Location = new System.Drawing.Point(7, 113);
+            this.mPanelMain.Location = new System.Drawing.Point(15, 100);
             this.mPanelMain.Name = "mPanelMain";
-            this.mPanelMain.Size = new System.Drawing.Size(1042, 432);
+            this.mPanelMain.Size = new System.Drawing.Size(1042, 435);
             this.mPanelMain.TabIndex = 2;
             // 
             // mPanelChart
@@ -96,19 +96,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mPanelChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(162)))), ((int)(((byte)(29)))));
             this.mPanelChart.Controls.Add(this.mainChart);
-            this.mPanelChart.Location = new System.Drawing.Point(774, 0);
+            this.mPanelChart.Location = new System.Drawing.Point(770, 0);
             this.mPanelChart.Name = "mPanelChart";
-            this.mPanelChart.Size = new System.Drawing.Size(240, 427);
+            this.mPanelChart.Size = new System.Drawing.Size(240, 425);
             this.mPanelChart.TabIndex = 3;
             // 
             // mainChart
             // 
             this.mainChart.BackColor = System.Drawing.Color.Transparent;
             this.mainChart.BorderOptions.Color = System.Drawing.Color.Transparent;
+            xyDiagram1.AxisX.AutoScaleBreaks.MaxCount = 6;
             xyDiagram1.AxisX.Color = System.Drawing.Color.White;
             xyDiagram1.AxisX.DateTimeScaleOptions.ScaleMode = DevExpress.XtraCharts.ScaleMode.Automatic;
             xyDiagram1.AxisX.GridLines.Color = System.Drawing.Color.Transparent;
             xyDiagram1.AxisX.Label.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            xyDiagram1.AxisX.MinorCount = 6;
+            xyDiagram1.AxisX.NumericScaleOptions.ScaleMode = DevExpress.XtraCharts.ScaleMode.Manual;
             xyDiagram1.AxisX.Tickmarks.MinorVisible = false;
             xyDiagram1.AxisX.Tickmarks.Visible = false;
             xyDiagram1.AxisX.Title.Alignment = System.Drawing.StringAlignment.Far;
@@ -137,17 +140,20 @@
             xyDiagram1.AxisY.WholeRange.SideMarginsValue = 0D;
             xyDiagram1.DefaultPane.BackColor = System.Drawing.Color.Transparent;
             xyDiagram1.DefaultPane.BorderVisible = false;
-            xyDiagram1.PaneDistance = 50;
+            xyDiagram1.PaneDistance = 60;
             this.mainChart.Diagram = xyDiagram1;
             this.mainChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainChart.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Center;
+            this.mainChart.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Left;
             this.mainChart.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.BottomOutside;
             this.mainChart.Legend.BackColor = System.Drawing.Color.Transparent;
+            this.mainChart.Legend.Border.Color = System.Drawing.Color.Transparent;
             this.mainChart.Legend.EquallySpacedItems = false;
             this.mainChart.Legend.Margins.Bottom = 0;
             this.mainChart.Legend.Margins.Left = 0;
             this.mainChart.Legend.Margins.Right = 0;
             this.mainChart.Legend.Margins.Top = 0;
+            this.mainChart.Legend.MarkerVisible = false;
+            this.mainChart.Legend.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mainChart.Location = new System.Drawing.Point(0, 0);
             this.mainChart.Name = "mainChart";
             this.mainChart.Padding.Bottom = 3;
@@ -168,7 +174,8 @@
         series1,
         series2};
             this.mainChart.SideBySideBarDistanceFixed = 40;
-            this.mainChart.Size = new System.Drawing.Size(240, 427);
+            this.mainChart.SideBySideEqualBarWidth = false;
+            this.mainChart.Size = new System.Drawing.Size(240, 425);
             this.mainChart.TabIndex = 0;
             this.mainChart.CustomDrawAxisLabel += new DevExpress.XtraCharts.CustomDrawAxisLabelEventHandler(this.mPopChart_CustomDrawAxisLabel);
             // 
@@ -374,7 +381,7 @@
             this.Controls.Add(this.mPanelPopChart);
             this.Controls.Add(this.mPanelMain);
             this.Name = "Dbyxzk";
-            this.Size = new System.Drawing.Size(1024, 670);
+            this.Size = new System.Drawing.Size(1044, 660);
             this.Load += new System.EventHandler(this.Dbyxzk_Load);
             this.Click += new System.EventHandler(this.Dbyxzk_Click);
             this.mPanelMain.ResumeLayout(false);

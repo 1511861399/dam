@@ -76,6 +76,7 @@ namespace com.tk.dam.Views
 
             bindGrid();
             bindChart();
+
         }
 
         #region Grid效果控制

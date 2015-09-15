@@ -487,7 +487,7 @@
     <None Include="Resources\shui2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="video\video.mp4">
+    <Content Include="video\video.wmv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\bg_color.png" />
@@ -498,9 +498,6 @@
     <Content Include="Resources\wl1.png" />
     <Content Include="Resources\wl2.png" />
     <Content Include="Resources\wl3.png" />
-    <Content Include="video\Bear.wmv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="bin\Debug\Bear.wmv" />
     <Content Include="icon.ico" />
     <Content Include="Resources\bianji.png" />

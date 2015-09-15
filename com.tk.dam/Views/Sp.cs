@@ -74,7 +74,7 @@ namespace com.tk.dam.Views
             {
                 lblVideo.Hide();
 
-                mciCommand = string.Format("open {0}\\video\\video.mp4 alias {1} ", Environment.CurrentDirectory, alias);
+                mciCommand = string.Format("open {0}\\video\\video.wmv alias {1} ", Environment.CurrentDirectory, alias);
                 mciCommand = mciCommand + " parent " + PlayScreen.Handle.ToInt32() + " style child ";
                 LibWrap.mciSendString(mciCommand, null, 0, 0);
                 Rectangle r = PlayScreen.ClientRectangle;
@@ -133,7 +133,7 @@ namespace com.tk.dam.Views
                 pictureBox5.BringToFront();
                 pictureBox5.Controls.Add(pboxVideo2);
                 pictureBox5.Visible = true;
-                string mciCommand = string.Format(" put {0} window at 0 0 {1} {2}", "MyAVI" + pboxVideo2.Name, pictureBox5.Width, pictureBox5.Height);
+                string mciCommand = string.Format(" put {0} window at 0 0 {1} {2}", "MyAVI" + pboxVideo2.Name, pictureBox5.Width, pictureBox5.Height-60);
                 LibWrap.mciSendString(mciCommand, null, 0, 0);
             }
             else

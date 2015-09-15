@@ -31,26 +31,26 @@ namespace com.tk.dam.Views
 
         private void Dbyxzk_Load(object sender, EventArgs e)
         {
-            int mDeltaH = (int)((this.Height - 670) * 0.6);
+            int mDeltaH = (int)((this.Height - 660) * 0.6);
             int mDelatW = (int)((this.Width - 1024) * 0.6);
             if (mDeltaH > 0 && mDelatW > 0)
             {
-                if (mDelatW / mDeltaH > 1024 / 670)
+                if (mDelatW / mDeltaH > 1024 / 660)
                 {
-                    mDelatW = (int)(mDeltaH * 1024 / 670);
+                    mDelatW = (int)(mDeltaH * 1024 / 660);
                 }
                 else
                 {
-                    mDeltaH = (int)(mDelatW * 670 / 1024);
+                    mDeltaH = (int)(mDelatW * 660 / 1024);
                 }
 
                 this.mPanelMain.Height = 400 + mDeltaH;
                 this.mPanelMain.Width = 1012 + mDelatW;
-                int mNewX = this.mPanelMain.Location.X - (int)(mDelatW * 0.5);
+                int mNewX = this.mPanelMain.Location.X - (int)(mDelatW * 0.5)-20;
                 int mNewY = this.mPanelMain.Location.Y - (int)(mDeltaH * 0.6);
                 this.mPanelMain.Location = new Point(mNewX, mNewY);
 
-                this.mPanelChart.Width = (int)(this.mPanelChart.Height * 0.67);
+                this.mPanelChart.Width = (int)(this.mPanelMain.Height*6/10);
 
                 panel1.Location = new Point(this.mPanelPic.Width-100, this.mPanelPic.Height-100);
                 panel1.BackColor = Color.FromArgb(50, Color.White);
@@ -66,6 +66,9 @@ namespace com.tk.dam.Views
             this.mainChart.Series[0].Points.Clear();
             var data = mSeriesPointXbDic[id + "_tj"].ToArray();
             this.mainChart.Series[0].Points.AddRange(data);
+            //this.mainChart.Series[1].Points.Clear();
+            //this.mainChart.Series[0].Points.Add(data[0]);
+            //this.mainChart.Series[1].Points.Add(data[1]);
             if (type==1)
             {
 

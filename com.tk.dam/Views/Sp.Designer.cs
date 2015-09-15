@@ -57,7 +57,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
             this.lblVideo1 = new System.Windows.Forms.Label();
-            this.pboxVideo1 = new System.Windows.Forms.PictureBox();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -70,13 +69,11 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel23 = new System.Windows.Forms.Panel();
             this.lblVideo3 = new System.Windows.Forms.Label();
-            this.pboxVideo3 = new System.Windows.Forms.PictureBox();
             this.panel19 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel24 = new System.Windows.Forms.Panel();
             this.lblVideo4 = new System.Windows.Forms.Label();
-            this.pboxVideo4 = new System.Windows.Forms.PictureBox();
             this.panel20 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -93,7 +90,6 @@
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel21.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxVideo1)).BeginInit();
             this.panel17.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel22.SuspendLayout();
@@ -101,11 +97,9 @@
             this.panel18.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel23.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxVideo3)).BeginInit();
             this.panel19.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel24.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxVideo4)).BeginInit();
             this.panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
@@ -116,7 +110,7 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(50, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(900, 560);
             this.panel1.TabIndex = 0;
@@ -422,7 +416,6 @@
             // panel21
             // 
             this.panel21.Controls.Add(this.lblVideo1);
-            this.panel21.Controls.Add(this.pboxVideo1);
             this.panel21.Location = new System.Drawing.Point(0, 42);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(329, 237);
@@ -439,15 +432,6 @@
             this.lblVideo1.Size = new System.Drawing.Size(122, 27);
             this.lblVideo1.TabIndex = 3;
             this.lblVideo1.Text = "无视频信号";
-            // 
-            // pboxVideo1
-            // 
-            this.pboxVideo1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pboxVideo1.Location = new System.Drawing.Point(0, 0);
-            this.pboxVideo1.Name = "pboxVideo1";
-            this.pboxVideo1.Size = new System.Drawing.Size(329, 237);
-            this.pboxVideo1.TabIndex = 4;
-            this.pboxVideo1.TabStop = false;
             // 
             // panel17
             // 
@@ -558,7 +542,6 @@
             // panel23
             // 
             this.panel23.Controls.Add(this.lblVideo3);
-            this.panel23.Controls.Add(this.pboxVideo3);
             this.panel23.Location = new System.Drawing.Point(0, 41);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(329, 237);
@@ -575,15 +558,6 @@
             this.lblVideo3.Size = new System.Drawing.Size(122, 27);
             this.lblVideo3.TabIndex = 3;
             this.lblVideo3.Text = "无视频信号";
-            // 
-            // pboxVideo3
-            // 
-            this.pboxVideo3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pboxVideo3.Location = new System.Drawing.Point(0, 0);
-            this.pboxVideo3.Name = "pboxVideo3";
-            this.pboxVideo3.Size = new System.Drawing.Size(329, 237);
-            this.pboxVideo3.TabIndex = 4;
-            this.pboxVideo3.TabStop = false;
             // 
             // panel19
             // 
@@ -621,7 +595,6 @@
             // panel24
             // 
             this.panel24.Controls.Add(this.lblVideo4);
-            this.panel24.Controls.Add(this.pboxVideo4);
             this.panel24.Location = new System.Drawing.Point(0, 42);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(329, 237);
@@ -638,15 +611,6 @@
             this.lblVideo4.Size = new System.Drawing.Size(122, 27);
             this.lblVideo4.TabIndex = 3;
             this.lblVideo4.Text = "无视频信号";
-            // 
-            // pboxVideo4
-            // 
-            this.pboxVideo4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pboxVideo4.Location = new System.Drawing.Point(0, 0);
-            this.pboxVideo4.Name = "pboxVideo4";
-            this.pboxVideo4.Size = new System.Drawing.Size(329, 237);
-            this.pboxVideo4.TabIndex = 4;
-            this.pboxVideo4.TabStop = false;
             // 
             // panel20
             // 
@@ -671,6 +635,7 @@
             // 
             // pictureBox5
             // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox5.Location = new System.Drawing.Point(0, 0);
             this.pictureBox5.Name = "pictureBox5";
@@ -709,7 +674,6 @@
             this.panel4.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
             this.panel21.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxVideo1)).EndInit();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -721,13 +685,11 @@
             this.panel6.ResumeLayout(false);
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxVideo3)).EndInit();
             this.panel19.ResumeLayout(false);
             this.panel19.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel24.ResumeLayout(false);
             this.panel24.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxVideo4)).EndInit();
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -783,9 +745,6 @@
         private System.Windows.Forms.Panel panel24;
         private System.Windows.Forms.Label lblVideo4;
         private System.Windows.Forms.PictureBox pboxVideo2;
-        private System.Windows.Forms.PictureBox pboxVideo3;
-        private System.Windows.Forms.PictureBox pboxVideo4;
-        private System.Windows.Forms.PictureBox pboxVideo1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panel25;
     }
