@@ -170,6 +170,7 @@
             this.mainChart.SideBySideBarDistanceFixed = 40;
             this.mainChart.Size = new System.Drawing.Size(240, 427);
             this.mainChart.TabIndex = 0;
+            this.mainChart.CustomDrawAxisLabel += new DevExpress.XtraCharts.CustomDrawAxisLabelEventHandler(this.mPopChart_CustomDrawAxisLabel);
             // 
             // mPanelPic
             // 
@@ -341,6 +342,7 @@
             this.mPopChart.SeriesTemplate.View = lineSeriesView2;
             this.mPopChart.Size = new System.Drawing.Size(353, 184);
             this.mPopChart.TabIndex = 1;
+            this.mPopChart.CustomDrawAxisLabel += new DevExpress.XtraCharts.CustomDrawAxisLabelEventHandler(this.mPopChart_CustomDrawAxisLabel);
             // 
             // panel2
             // 

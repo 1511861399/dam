@@ -74,8 +74,8 @@ namespace com.tk.dam.Views
             }
             if (type ==2)
             {
-                this.mainChart.Series[0].LegendText = "最大值：" + data[0].Values[0];
-                this.mainChart.Series[1].LegendText = "平均值：" + data[1].Values[0];
+                this.mainChart.Series[0].LegendText = "最大值：" + data[0].Values[0] + "m/d";
+                this.mainChart.Series[1].LegendText = "平均值：" + data[1].Values[0] + "m/d";
             }
             
         }
@@ -132,24 +132,28 @@ namespace com.tk.dam.Views
             mDeviceList1 = new List<Device>();
             Device device = new Device();
             device.Id = 1;
+            device.Mc = "1";
             device.X = 139;
             device.Y = 250;
             device.Type = 1;
             mDeviceList1.Add(device);
             device = new Device();
             device.Id = 2;
+            device.Mc = "2";
             device.X = 217;
             device.Y = 247;
             device.Type = 1;
             mDeviceList1.Add(device);
             device = new Device();
             device.Id = 3;
+            device.Mc = "3";
             device.X = 323;
             device.Y = 240;
             device.Type = 1;
             mDeviceList1.Add(device);
             device = new Device();
             device.Id = 4;
+            device.Mc = "4";
             device.X = 423;
             device.Y = 232;
             device.Type = 1;
@@ -177,12 +181,14 @@ namespace com.tk.dam.Views
             mDeviceList2 = new List<Device>();
             device = new Device();
             device.Id = 5;
+            device.Mc = "1";
             device.X = 222;
             device.Y = 378;
             device.Type = 2;
             mDeviceList2.Add(device);
             device = new Device();
             device.Id = 6;
+            device.Mc = "2";
             device.X = 432;
             device.Y = 356;
             device.Type = 2;
@@ -236,8 +242,8 @@ namespace com.tk.dam.Views
             {
                 if (d.Id == deviceId)
                 {
-                    showChart(d, pb.Location);
                     type = d.Type;
+                    showChart(d, pb.Location);
                     showLeftChart(deviceId.ToString());
                     return true;
                 }
@@ -247,6 +253,7 @@ namespace com.tk.dam.Views
 
         private void showChart(Device d,Point locatioin)
         {
+
             mPbCross.Visible = true;
             mPbCross.Location = new Point(locatioin.X - 4, locatioin.Y - mPbCross.Height-3);
             int mainX =mPanelMain.Location.X;
@@ -256,6 +263,14 @@ namespace com.tk.dam.Views
             mPanelPopChart.Location = new Point(x, y);
             mPanelPopChart.Visible = true;
             bindChart(d.Id.ToString());
+            if (type == 1)
+            {
+                mChartTitle.Text = "位移监测点" + d.Mc;
+            }
+            else
+            {
+                mChartTitle.Text = "渗流监测点" + d.Mc;
+            }
         }
 
         private void hindeChart()
@@ -271,6 +286,22 @@ namespace com.tk.dam.Views
         private void Dbyxzk_Click(object sender, EventArgs e)
         {
             hindeChart();
+        }
+
+        private void mPopChart_CustomDrawAxisLabel(object sender, CustomDrawAxisLabelEventArgs e)
+        {
+            if (e.Item.Axis is AxisY)
+            {
+                if (type == 1)
+                {
+                    e.Item.Text = string.Format("{0}mm", e.Item.AxisValue);
+                }
+                if (type == 2)
+                {
+                    e.Item.Text = string.Format("{0}m/d", e.Item.AxisValue);
+                }
+                
+            }
         }
     }
 }

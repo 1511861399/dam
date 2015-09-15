@@ -32,19 +32,19 @@
             this.mPanel = new System.Windows.Forms.Panel();
             this.mPanelLeft = new System.Windows.Forms.Panel();
             this.mPanelDeviceInfo = new System.Windows.Forms.Panel();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
+            this.mLblZyUp = new System.Windows.Forms.Label();
+            this.mLblZyDy = new System.Windows.Forms.Label();
+            this.mLblZyJl = new System.Windows.Forms.Label();
+            this.mLblZyCk = new System.Windows.Forms.Label();
+            this.mLblZyWl = new System.Windows.Forms.Label();
+            this.mLblZyTd = new System.Windows.Forms.Label();
+            this.mLblZySm = new System.Windows.Forms.Label();
+            this.mLblZyLj = new System.Windows.Forms.Label();
+            this.mLblZyBDS = new System.Windows.Forms.Label();
+            this.mLblZyGLO = new System.Windows.Forms.Label();
+            this.mLblZyGPS = new System.Windows.Forms.Label();
+            this.mLblZySbbh = new System.Windows.Forms.Label();
+            this.mLblZyZdmc = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -145,19 +145,19 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mPanelDeviceInfo.BackColor = System.Drawing.Color.White;
-            this.mPanelDeviceInfo.Controls.Add(this.label45);
-            this.mPanelDeviceInfo.Controls.Add(this.label44);
-            this.mPanelDeviceInfo.Controls.Add(this.label43);
-            this.mPanelDeviceInfo.Controls.Add(this.label42);
-            this.mPanelDeviceInfo.Controls.Add(this.label41);
-            this.mPanelDeviceInfo.Controls.Add(this.label40);
-            this.mPanelDeviceInfo.Controls.Add(this.label39);
-            this.mPanelDeviceInfo.Controls.Add(this.label38);
-            this.mPanelDeviceInfo.Controls.Add(this.label37);
-            this.mPanelDeviceInfo.Controls.Add(this.label36);
-            this.mPanelDeviceInfo.Controls.Add(this.label35);
-            this.mPanelDeviceInfo.Controls.Add(this.label34);
-            this.mPanelDeviceInfo.Controls.Add(this.label33);
+            this.mPanelDeviceInfo.Controls.Add(this.mLblZyUp);
+            this.mPanelDeviceInfo.Controls.Add(this.mLblZyDy);
+            this.mPanelDeviceInfo.Controls.Add(this.mLblZyJl);
+            this.mPanelDeviceInfo.Controls.Add(this.mLblZyCk);
+            this.mPanelDeviceInfo.Controls.Add(this.mLblZyWl);
+            this.mPanelDeviceInfo.Controls.Add(this.mLblZyTd);
+            this.mPanelDeviceInfo.Controls.Add(this.mLblZySm);
+            this.mPanelDeviceInfo.Controls.Add(this.mLblZyLj);
+            this.mPanelDeviceInfo.Controls.Add(this.mLblZyBDS);
+            this.mPanelDeviceInfo.Controls.Add(this.mLblZyGLO);
+            this.mPanelDeviceInfo.Controls.Add(this.mLblZyGPS);
+            this.mPanelDeviceInfo.Controls.Add(this.mLblZySbbh);
+            this.mPanelDeviceInfo.Controls.Add(this.mLblZyZdmc);
             this.mPanelDeviceInfo.Controls.Add(this.label15);
             this.mPanelDeviceInfo.Controls.Add(this.label14);
             this.mPanelDeviceInfo.Controls.Add(this.label13);
@@ -178,148 +178,148 @@
             this.mPanelDeviceInfo.Size = new System.Drawing.Size(229, 278);
             this.mPanelDeviceInfo.TabIndex = 1;
             // 
-            // label45
+            // mLblZyUp
             // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.label45.ForeColor = System.Drawing.Color.Black;
-            this.label45.Location = new System.Drawing.Point(88, 232);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(51, 20);
-            this.label45.TabIndex = 27;
-            this.label45.Text = "未插入";
+            this.mLblZyUp.AutoSize = true;
+            this.mLblZyUp.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.mLblZyUp.ForeColor = System.Drawing.Color.Black;
+            this.mLblZyUp.Location = new System.Drawing.Point(88, 232);
+            this.mLblZyUp.Name = "mLblZyUp";
+            this.mLblZyUp.Size = new System.Drawing.Size(51, 20);
+            this.mLblZyUp.TabIndex = 27;
+            this.mLblZyUp.Text = "未插入";
             // 
-            // label44
+            // mLblZyDy
             // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.label44.ForeColor = System.Drawing.Color.Black;
-            this.label44.Location = new System.Drawing.Point(58, 208);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(28, 20);
-            this.label44.TabIndex = 26;
-            this.label44.Text = "8.6";
+            this.mLblZyDy.AutoSize = true;
+            this.mLblZyDy.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.mLblZyDy.ForeColor = System.Drawing.Color.Black;
+            this.mLblZyDy.Location = new System.Drawing.Point(58, 208);
+            this.mLblZyDy.Name = "mLblZyDy";
+            this.mLblZyDy.Size = new System.Drawing.Size(28, 20);
+            this.mLblZyDy.TabIndex = 26;
+            this.mLblZyDy.Text = "8.6";
             // 
-            // label43
+            // mLblZyJl
             // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.label43.ForeColor = System.Drawing.Color.Black;
-            this.label43.Location = new System.Drawing.Point(58, 184);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(17, 20);
-            this.label43.TabIndex = 25;
-            this.label43.Text = "0";
+            this.mLblZyJl.AutoSize = true;
+            this.mLblZyJl.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.mLblZyJl.ForeColor = System.Drawing.Color.Black;
+            this.mLblZyJl.Location = new System.Drawing.Point(58, 184);
+            this.mLblZyJl.Name = "mLblZyJl";
+            this.mLblZyJl.Size = new System.Drawing.Size(17, 20);
+            this.mLblZyJl.TabIndex = 25;
+            this.mLblZyJl.Text = "0";
             // 
-            // label42
+            // mLblZyCk
             // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.label42.ForeColor = System.Drawing.Color.Black;
-            this.label42.Location = new System.Drawing.Point(59, 160);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(28, 20);
-            this.label42.TabIndex = 24;
-            this.label42.Text = "off";
+            this.mLblZyCk.AutoSize = true;
+            this.mLblZyCk.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.mLblZyCk.ForeColor = System.Drawing.Color.Black;
+            this.mLblZyCk.Location = new System.Drawing.Point(59, 160);
+            this.mLblZyCk.Name = "mLblZyCk";
+            this.mLblZyCk.Size = new System.Drawing.Size(28, 20);
+            this.mLblZyCk.TabIndex = 24;
+            this.mLblZyCk.Text = "off";
             // 
-            // label41
+            // mLblZyWl
             // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.label41.ForeColor = System.Drawing.Color.Black;
-            this.label41.Location = new System.Drawing.Point(60, 136);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(27, 20);
-            this.label41.TabIndex = 23;
-            this.label41.Text = "on";
+            this.mLblZyWl.AutoSize = true;
+            this.mLblZyWl.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.mLblZyWl.ForeColor = System.Drawing.Color.Black;
+            this.mLblZyWl.Location = new System.Drawing.Point(60, 136);
+            this.mLblZyWl.Name = "mLblZyWl";
+            this.mLblZyWl.Size = new System.Drawing.Size(27, 20);
+            this.mLblZyWl.TabIndex = 23;
+            this.mLblZyWl.Text = "on";
             // 
-            // label40
+            // mLblZyTd
             // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.label40.ForeColor = System.Drawing.Color.Black;
-            this.label40.Location = new System.Drawing.Point(133, 156);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(17, 20);
-            this.label40.TabIndex = 22;
-            this.label40.Text = "0";
+            this.mLblZyTd.AutoSize = true;
+            this.mLblZyTd.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.mLblZyTd.ForeColor = System.Drawing.Color.Black;
+            this.mLblZyTd.Location = new System.Drawing.Point(133, 156);
+            this.mLblZyTd.Name = "mLblZyTd";
+            this.mLblZyTd.Size = new System.Drawing.Size(17, 20);
+            this.mLblZyTd.TabIndex = 22;
+            this.mLblZyTd.Text = "0";
             // 
-            // label39
+            // mLblZySm
             // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.label39.ForeColor = System.Drawing.Color.Black;
-            this.label39.Location = new System.Drawing.Point(133, 184);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(17, 20);
-            this.label39.TabIndex = 21;
-            this.label39.Text = "1";
+            this.mLblZySm.AutoSize = true;
+            this.mLblZySm.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.mLblZySm.ForeColor = System.Drawing.Color.Black;
+            this.mLblZySm.Location = new System.Drawing.Point(133, 184);
+            this.mLblZySm.Name = "mLblZySm";
+            this.mLblZySm.Size = new System.Drawing.Size(17, 20);
+            this.mLblZySm.TabIndex = 21;
+            this.mLblZySm.Text = "1";
             // 
-            // label38
+            // mLblZyLj
             // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.label38.ForeColor = System.Drawing.Color.Black;
-            this.label38.Location = new System.Drawing.Point(133, 136);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(17, 20);
-            this.label38.TabIndex = 19;
-            this.label38.Text = "1";
+            this.mLblZyLj.AutoSize = true;
+            this.mLblZyLj.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.mLblZyLj.ForeColor = System.Drawing.Color.Black;
+            this.mLblZyLj.Location = new System.Drawing.Point(133, 136);
+            this.mLblZyLj.Name = "mLblZyLj";
+            this.mLblZyLj.Size = new System.Drawing.Size(17, 20);
+            this.mLblZyLj.TabIndex = 19;
+            this.mLblZyLj.Text = "1";
             // 
-            // label37
+            // mLblZyBDS
             // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.label37.ForeColor = System.Drawing.Color.Black;
-            this.label37.Location = new System.Drawing.Point(133, 88);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(25, 20);
-            this.label37.TabIndex = 20;
-            this.label37.Text = "12";
+            this.mLblZyBDS.AutoSize = true;
+            this.mLblZyBDS.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.mLblZyBDS.ForeColor = System.Drawing.Color.Black;
+            this.mLblZyBDS.Location = new System.Drawing.Point(133, 88);
+            this.mLblZyBDS.Name = "mLblZyBDS";
+            this.mLblZyBDS.Size = new System.Drawing.Size(25, 20);
+            this.mLblZyBDS.TabIndex = 20;
+            this.mLblZyBDS.Text = "12";
             // 
-            // label36
+            // mLblZyGLO
             // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.label36.ForeColor = System.Drawing.Color.Black;
-            this.label36.Location = new System.Drawing.Point(58, 112);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(17, 20);
-            this.label36.TabIndex = 19;
-            this.label36.Text = "7";
+            this.mLblZyGLO.AutoSize = true;
+            this.mLblZyGLO.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.mLblZyGLO.ForeColor = System.Drawing.Color.Black;
+            this.mLblZyGLO.Location = new System.Drawing.Point(58, 112);
+            this.mLblZyGLO.Name = "mLblZyGLO";
+            this.mLblZyGLO.Size = new System.Drawing.Size(17, 20);
+            this.mLblZyGLO.TabIndex = 19;
+            this.mLblZyGLO.Text = "7";
             // 
-            // label35
+            // mLblZyGPS
             // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.label35.ForeColor = System.Drawing.Color.Black;
-            this.label35.Location = new System.Drawing.Point(59, 88);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(17, 20);
-            this.label35.TabIndex = 18;
-            this.label35.Text = "7";
+            this.mLblZyGPS.AutoSize = true;
+            this.mLblZyGPS.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.mLblZyGPS.ForeColor = System.Drawing.Color.Black;
+            this.mLblZyGPS.Location = new System.Drawing.Point(59, 88);
+            this.mLblZyGPS.Name = "mLblZyGPS";
+            this.mLblZyGPS.Size = new System.Drawing.Size(17, 20);
+            this.mLblZyGPS.TabIndex = 18;
+            this.mLblZyGPS.Text = "7";
             // 
-            // label34
+            // mLblZySbbh
             // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.label34.ForeColor = System.Drawing.Color.Black;
-            this.label34.Location = new System.Drawing.Point(87, 64);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(73, 20);
-            this.label34.TabIndex = 17;
-            this.label34.Text = "11350025";
+            this.mLblZySbbh.AutoSize = true;
+            this.mLblZySbbh.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.mLblZySbbh.ForeColor = System.Drawing.Color.Black;
+            this.mLblZySbbh.Location = new System.Drawing.Point(87, 64);
+            this.mLblZySbbh.Name = "mLblZySbbh";
+            this.mLblZySbbh.Size = new System.Drawing.Size(73, 20);
+            this.mLblZySbbh.TabIndex = 17;
+            this.mLblZySbbh.Text = "11350025";
             // 
-            // label33
+            // mLblZyZdmc
             // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.label33.ForeColor = System.Drawing.Color.Black;
-            this.label33.Location = new System.Drawing.Point(87, 40);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(48, 20);
-            this.label33.TabIndex = 16;
-            this.label33.Text = "SMSK";
+            this.mLblZyZdmc.AutoSize = true;
+            this.mLblZyZdmc.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.mLblZyZdmc.ForeColor = System.Drawing.Color.Black;
+            this.mLblZyZdmc.Location = new System.Drawing.Point(87, 40);
+            this.mLblZyZdmc.Name = "mLblZyZdmc";
+            this.mLblZyZdmc.Size = new System.Drawing.Size(48, 20);
+            this.mLblZyZdmc.TabIndex = 16;
+            this.mLblZyZdmc.Text = "SMSK";
             // 
             // label15
             // 
@@ -970,19 +970,19 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label mLblZyUp;
+        private System.Windows.Forms.Label mLblZyDy;
+        private System.Windows.Forms.Label mLblZyJl;
+        private System.Windows.Forms.Label mLblZyCk;
+        private System.Windows.Forms.Label mLblZyWl;
+        private System.Windows.Forms.Label mLblZyTd;
+        private System.Windows.Forms.Label mLblZySm;
+        private System.Windows.Forms.Label mLblZyLj;
+        private System.Windows.Forms.Label mLblZyBDS;
+        private System.Windows.Forms.Label mLblZyGLO;
+        private System.Windows.Forms.Label mLblZyGPS;
+        private System.Windows.Forms.Label mLblZySbbh;
+        private System.Windows.Forms.Label mLblZyZdmc;
         private DevExpress.XtraEditors.XtraUserControl xtraUserControl1;
         private DevExpress.XtraBars.Docking2010.DocumentManager documentManager1;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.WindowsUIView windowsUIView1;

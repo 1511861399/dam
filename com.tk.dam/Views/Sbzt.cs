@@ -26,7 +26,7 @@ namespace com.tk.dam.Views
         private Sbsz_Xtcq mXtcs;
         private Sbsz_Hfccsz mHfccsz;
         private Label mCurrentDeviceLabel;
-
+        private Random mRandom = new Random(1000);
         public Sbzt()
         {
             InitializeComponent();
@@ -325,13 +325,9 @@ namespace com.tk.dam.Views
 
 
             sbzt = initDefault();
-            sbzt.mId = "3";
-
+            sbzt.mId = "3"; 
             sbzt = initDefault();
-            sbzt.mId = "4";
-
-            sbzt = initDefault();
-            sbzt.mId = "5";
+            sbzt.mId = "4";  
 
             sbzt = initDefault();
             sbzt.mId = "6";
@@ -358,6 +354,8 @@ namespace com.tk.dam.Views
 
         private Entity.Sbzt initDefault()
         {
+            int a = mRandom.Next(2, 254);
+
             com.tk.dam.Entity.Sbzt sbzt = new com.tk.dam.Entity.Sbzt();
             sbzt.mId = "12";
             sbzt.mBjsz = new com.tk.dam.Entity.Sb_Bjsz();
@@ -369,23 +367,23 @@ namespace com.tk.dam.Views
             sbzt.mBjsz.mQy = 1;
             sbzt.mBjsz.mCsjg = 10;
             sbzt.mBjsz.mJm = 1;
-            sbzt.mBjsz.mIP = "192.168.3.10";
+            sbzt.mBjsz.mIP = "192.168.3." + a.ToString(); 
             sbzt.mBjsz.mWlxz = "WIFI";
             sbzt.mBjsz.mDk = "5001";
             sbzt.mBjsz.mCsxy = "TCP/IP";
             sbzt.mBjsz.mSjgs = "原始数据";
-            sbzt.mBjsz.mBddkh = "0";
+            sbzt.mBjsz.mBddkh = (6000+a).ToString();
 
-            sbzt.mCssz.mIP = "192.168.3.10";
+            sbzt.mCssz.mIP = "192.168.3." + a.ToString(); 
             sbzt.mCssz.mZdmc = "站点1";
             sbzt.mCssz.mWgdz = "192.168.3.1";
             sbzt.mCssz.mUTC = "UTC+8";
 
-            sbzt.mXtsz.mJlzt = "1";
+            sbzt.mXtsz.mJlzt = (a % 2) == 0 ? "1" : "0";
             sbzt.mXtsz.mJlfs = "每天";
             sbzt.mXtsz.mJlgs = "标准数据";
             sbzt.mXtsz.mFgwj = "连续记录不分割";
-            sbzt.mXtsz.mJljg = "1";
+            sbzt.mXtsz.mJljg = (a % 2) == 0 ? "1" : "10";
             sbzt.mXtsz.mBsm = "GPS1";
 
             sbzt.mXtbj.mBjfs = "电话";
@@ -393,18 +391,25 @@ namespace com.tk.dam.Views
             sbzt.mXtbj.mBjmb = "13588888888";
             sbzt.mXtbj.mCzjx = "30";
 
-            sbzt.mZtzy.mZdmc = "SMSK1";
-            sbzt.mZtzy.mSbbh = "113500001";
-            sbzt.mZtzy.mGPS = "5";
-            sbzt.mZtzy.mBDS = "8";
-            sbzt.mZtzy.mGLO = "6";
-            sbzt.mZtzy.mWl = "off";
-            sbzt.mZtzy.mLj = "1";
-            sbzt.mZtzy.mCk = "on";
-            sbzt.mZtzy.mTd = "0";
+            sbzt.mZtzy.mZdmc = "SMSK"+a.ToString();
+            sbzt.mZtzy.mSbbh = (113500001+a).ToString();
+            a = mRandom.Next(0, 100);
+            sbzt.mZtzy.mGPS = ((int)(8-a*0.08)).ToString();
+            a = mRandom.Next(0, 100);
+            sbzt.mZtzy.mBDS = ((int)(8 - a * 0.08)).ToString();
+
+            sbzt.mZtzy.mGLO = ((int)(6 - a * 0.06)).ToString();
+            sbzt.mZtzy.mWl =a%2==0? "off":"on";
+            sbzt.mZtzy.mLj = a % 2 == 0 ? "0" : "1";
+            a = mRandom.Next(0, 100);
+            sbzt.mZtzy.mCk = a % 2 == 0 ? "off" : "on";
+            a = mRandom.Next(0, 10);
+            sbzt.mZtzy.mTd = a.ToString();
             sbzt.mZtzy.mJl = "0";
-            sbzt.mZtzy.mSm = "1";
-            sbzt.mZtzy.mDy = "8.2";
+            a = mRandom.Next(0, 10);
+            sbzt.mZtzy.mSm =a.ToString();
+            a = mRandom.Next(0, 100);
+            sbzt.mZtzy.mDy =(a*0.1).ToString();
             sbzt.mZtzy.mUpzt = "未插入";
             mDeviceList.Add(sbzt);
             return sbzt;
@@ -471,6 +476,22 @@ namespace com.tk.dam.Views
             }
             mBjsz.setValue(mCurrentEntity);
             mXtsz.setValue(mCurrentEntity);
+
+            //设置摘要
+            mLblZyZdmc.Text = mCurrentEntity.mId;
+            mLblZySbbh.Text = mCurrentEntity.mZtzy.mSbbh;
+            mLblZyGPS.Text = mCurrentEntity.mZtzy.mGPS;
+            mLblZyBDS.Text = mCurrentEntity.mZtzy.mBDS;
+
+            mLblZyGLO.Text = mCurrentEntity.mZtzy.mGLO;
+            mLblZyWl.Text = mCurrentEntity.mBjsz.mQy==1?"on":"off";
+            mLblZyLj.Text = mCurrentEntity.mBjsz.mZt.ToString();
+            mLblZyCk.Text = mCurrentEntity.mZtzy.mCk;
+            mLblZyTd.Text = mCurrentEntity.mZtzy.mTd;
+            mLblZyJl.Text = mCurrentEntity.mZtzy.mJl;
+            mLblZySm.Text = mCurrentEntity.mZtzy.mSm;
+            mLblZyDy.Text = mCurrentEntity.mZtzy.mDy;
+            mLblZyUp.Text = mCurrentEntity.mZtzy.mUpzt;
         }
     }
 }
