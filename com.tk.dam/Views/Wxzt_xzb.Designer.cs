@@ -114,7 +114,7 @@
             chartTitle1.Text = "卫星信噪比柱状图";
             this.chartControl2.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
             chartTitle1});
-            this.chartControl2.CustomDrawSeriesPoint += new DevExpress.XtraCharts.CustomDrawSeriesPointEventHandler(this.chartControl2_CustomDrawSeriesPoint);
+            this.chartControl2.CustomDrawSeriesPoint += new DevExpress.XtraCharts.CustomDrawSeriesPointEventHandler(this.chartControl2_CustomDrawSeriesPoint);           
             // 
             // Wxzt_xzb
             // 

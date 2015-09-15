@@ -48,14 +48,18 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.gcMain = new DevExpress.XtraGrid.GridControl();
             this.gvMain = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
-            this.gcmYqbh = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gcmXh = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gcmJzdgd = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gcmBjgd = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gcmZdcj1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gcmJccj1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gcmZdcj2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gcmJccj2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gbBD = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gcmBW = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gcmBH = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gbandKs = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gcmScgc = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gcmBcgc1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gcmLjcx = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gbandJs = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gcmScds = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gcmBcgc2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gcmLjwy = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bdRepositoryItemMemoEdit = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.panelMonitorContainer = new System.Windows.Forms.Panel();
             this.lblMonitor12 = new System.Windows.Forms.Label();
             this.lblMonitor10 = new System.Windows.Forms.Label();
@@ -80,9 +84,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.gbBD = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gbandKs = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gbandJs = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainChart)).BeginInit();
@@ -97,6 +98,7 @@
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdRepositoryItemMemoEdit)).BeginInit();
             this.panelMonitorContainer.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -338,6 +340,8 @@
             this.gcMain.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gcMain.MainView = this.gvMain;
             this.gcMain.Name = "gcMain";
+            this.gcMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.bdRepositoryItemMemoEdit});
             this.gcMain.Size = new System.Drawing.Size(432, 300);
             this.gcMain.TabIndex = 0;
             this.gcMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -397,6 +401,9 @@
             this.gvMain.Appearance.Row.Options.UseBackColor = true;
             this.gvMain.Appearance.Row.Options.UseBorderColor = true;
             this.gvMain.Appearance.Row.Options.UseForeColor = true;
+            this.gvMain.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.gvMain.Appearance.SelectedRow.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.gvMain.Appearance.SelectedRow.Options.UseBackColor = true;
             this.gvMain.Appearance.VertLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(155)))), ((int)(((byte)(130)))));
             this.gvMain.Appearance.VertLine.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(155)))), ((int)(((byte)(130)))));
             this.gvMain.Appearance.VertLine.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(155)))), ((int)(((byte)(130)))));
@@ -413,14 +420,14 @@
             this.gbandJs});
             this.gvMain.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.gvMain.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
-            this.gcmYqbh,
-            this.gcmXh,
-            this.gcmJzdgd,
-            this.gcmBjgd,
-            this.gcmJccj1,
-            this.gcmZdcj1,
-            this.gcmZdcj2,
-            this.gcmJccj2});
+            this.gcmBW,
+            this.gcmBH,
+            this.gcmLjcx,
+            this.gcmScds,
+            this.gcmBcgc1,
+            this.gcmScgc,
+            this.gcmBcgc2,
+            this.gcmLjwy});
             this.gvMain.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             this.gvMain.GridControl = this.gcMain;
             this.gvMain.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
@@ -428,6 +435,7 @@
             this.gvMain.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gvMain.OptionsSelection.EnableAppearanceFocusedRow = false;
             this.gvMain.OptionsSelection.EnableAppearanceHideSelection = false;
+            this.gvMain.OptionsView.AllowCellMerge = true;
             this.gvMain.OptionsView.AllowHtmlDrawHeaders = true;
             this.gvMain.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.gvMain.OptionsView.RowAutoHeight = true;
@@ -440,230 +448,266 @@
             this.gvMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gridView1_MouseMove);
             this.gvMain.MouseLeave += new System.EventHandler(this.gvMain_MouseLeave);
             // 
-            // gcmYqbh
+            // gbBD
             // 
-            this.gcmYqbh.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(170)))), ((int)(((byte)(145)))));
-            this.gcmYqbh.AppearanceCell.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(170)))), ((int)(((byte)(145)))));
-            this.gcmYqbh.AppearanceCell.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(170)))), ((int)(((byte)(145)))));
-            this.gcmYqbh.AppearanceCell.Options.UseBackColor = true;
-            this.gcmYqbh.AppearanceCell.Options.UseBorderColor = true;
-            this.gcmYqbh.AppearanceCell.Options.UseTextOptions = true;
-            this.gcmYqbh.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcmYqbh.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(170)))), ((int)(((byte)(145)))));
-            this.gcmYqbh.AppearanceHeader.Options.UseBackColor = true;
-            this.gcmYqbh.AppearanceHeader.Options.UseTextOptions = true;
-            this.gcmYqbh.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcmYqbh.Caption = "仪器编号";
-            this.gcmYqbh.FieldName = "Yqbh";
-            this.gcmYqbh.MinWidth = 36;
-            this.gcmYqbh.Name = "gcmYqbh";
-            this.gcmYqbh.OptionsColumn.AllowEdit = false;
-            this.gcmYqbh.OptionsColumn.AllowFocus = false;
-            this.gcmYqbh.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmYqbh.OptionsColumn.AllowIncrementalSearch = false;
-            this.gcmYqbh.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmYqbh.OptionsColumn.AllowMove = false;
-            this.gcmYqbh.OptionsColumn.AllowShowHide = false;
-            this.gcmYqbh.OptionsColumn.AllowSize = false;
-            this.gcmYqbh.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmYqbh.OptionsColumn.FixedWidth = true;
-            this.gcmYqbh.OptionsColumn.ReadOnly = true;
-            this.gcmYqbh.OptionsColumn.ShowInCustomizationForm = false;
-            this.gcmYqbh.OptionsColumn.ShowInExpressionEditor = false;
-            this.gcmYqbh.OptionsFilter.AllowAutoFilter = false;
-            this.gcmYqbh.OptionsFilter.AllowFilter = false;
-            this.gcmYqbh.Visible = true;
-            this.gcmYqbh.Width = 36;
+            this.gbBD.Caption = "标点";
+            this.gbBD.Columns.Add(this.gcmBW);
+            this.gbBD.Columns.Add(this.gcmBH);
+            this.gbBD.Name = "gbBD";
+            this.gbBD.VisibleIndex = 0;
+            this.gbBD.Width = 72;
             // 
-            // gcmXh
+            // gcmBW
             // 
-            this.gcmXh.AppearanceCell.Options.UseTextOptions = true;
-            this.gcmXh.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcmXh.AppearanceHeader.Options.UseTextOptions = true;
-            this.gcmXh.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcmXh.Caption = "型号";
-            this.gcmXh.FieldName = "Xh";
-            this.gcmXh.Name = "gcmXh";
-            this.gcmXh.OptionsColumn.AllowEdit = false;
-            this.gcmXh.OptionsColumn.AllowFocus = false;
-            this.gcmXh.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmXh.OptionsColumn.AllowIncrementalSearch = false;
-            this.gcmXh.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmXh.OptionsColumn.AllowMove = false;
-            this.gcmXh.OptionsColumn.AllowShowHide = false;
-            this.gcmXh.OptionsColumn.AllowSize = false;
-            this.gcmXh.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmXh.OptionsColumn.ReadOnly = true;
-            this.gcmXh.OptionsColumn.ShowInCustomizationForm = false;
-            this.gcmXh.OptionsColumn.ShowInExpressionEditor = false;
-            this.gcmXh.OptionsFilter.AllowAutoFilter = false;
-            this.gcmXh.OptionsFilter.AllowFilter = false;
-            this.gcmXh.Visible = true;
-            this.gcmXh.Width = 34;
+            this.gcmBW.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(170)))), ((int)(((byte)(145)))));
+            this.gcmBW.AppearanceCell.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(170)))), ((int)(((byte)(145)))));
+            this.gcmBW.AppearanceCell.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(170)))), ((int)(((byte)(145)))));
+            this.gcmBW.AppearanceCell.Options.UseBackColor = true;
+            this.gcmBW.AppearanceCell.Options.UseBorderColor = true;
+            this.gcmBW.AppearanceCell.Options.UseTextOptions = true;
+            this.gcmBW.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcmBW.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(170)))), ((int)(((byte)(145)))));
+            this.gcmBW.AppearanceHeader.Options.UseBackColor = true;
+            this.gcmBW.AppearanceHeader.Options.UseTextOptions = true;
+            this.gcmBW.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcmBW.Caption = "部位";
+            this.gcmBW.FieldName = "BW";
+            this.gcmBW.MinWidth = 36;
+            this.gcmBW.Name = "gcmBW";
+            this.gcmBW.OptionsColumn.AllowEdit = false;
+            this.gcmBW.OptionsColumn.AllowFocus = false;
+            this.gcmBW.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.gcmBW.OptionsColumn.AllowIncrementalSearch = false;
+            this.gcmBW.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gcmBW.OptionsColumn.AllowMove = false;
+            this.gcmBW.OptionsColumn.AllowShowHide = false;
+            this.gcmBW.OptionsColumn.AllowSize = false;
+            this.gcmBW.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gcmBW.OptionsColumn.ReadOnly = true;
+            this.gcmBW.OptionsColumn.ShowInCustomizationForm = false;
+            this.gcmBW.OptionsColumn.ShowInExpressionEditor = false;
+            this.gcmBW.OptionsFilter.AllowAutoFilter = false;
+            this.gcmBW.OptionsFilter.AllowFilter = false;
+            this.gcmBW.Visible = true;
+            this.gcmBW.Width = 36;
             // 
-            // gcmJzdgd
+            // gcmBH
             // 
-            this.gcmJzdgd.AppearanceCell.Options.UseTextOptions = true;
-            this.gcmJzdgd.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcmJzdgd.AppearanceHeader.Options.UseTextOptions = true;
-            this.gcmJzdgd.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcmJzdgd.Caption = "基准点高程(/m)";
-            this.gcmJzdgd.FieldName = "Jzdgc";
-            this.gcmJzdgd.MinWidth = 44;
-            this.gcmJzdgd.Name = "gcmJzdgd";
-            this.gcmJzdgd.OptionsColumn.AllowEdit = false;
-            this.gcmJzdgd.OptionsColumn.AllowFocus = false;
-            this.gcmJzdgd.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmJzdgd.OptionsColumn.AllowIncrementalSearch = false;
-            this.gcmJzdgd.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmJzdgd.OptionsColumn.AllowMove = false;
-            this.gcmJzdgd.OptionsColumn.AllowShowHide = false;
-            this.gcmJzdgd.OptionsColumn.AllowSize = false;
-            this.gcmJzdgd.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmJzdgd.OptionsColumn.FixedWidth = true;
-            this.gcmJzdgd.OptionsColumn.ReadOnly = true;
-            this.gcmJzdgd.OptionsColumn.ShowInCustomizationForm = false;
-            this.gcmJzdgd.OptionsColumn.ShowInExpressionEditor = false;
-            this.gcmJzdgd.OptionsFilter.AllowAutoFilter = false;
-            this.gcmJzdgd.OptionsFilter.AllowFilter = false;
-            this.gcmJzdgd.Visible = true;
-            this.gcmJzdgd.Width = 44;
+            this.gcmBH.AppearanceCell.Options.UseTextOptions = true;
+            this.gcmBH.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcmBH.AppearanceHeader.Options.UseTextOptions = true;
+            this.gcmBH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcmBH.Caption = "编号";
+            this.gcmBH.FieldName = "BH";
+            this.gcmBH.MinWidth = 36;
+            this.gcmBH.Name = "gcmBH";
+            this.gcmBH.OptionsColumn.AllowEdit = false;
+            this.gcmBH.OptionsColumn.AllowFocus = false;
+            this.gcmBH.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.gcmBH.OptionsColumn.AllowIncrementalSearch = false;
+            this.gcmBH.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gcmBH.OptionsColumn.AllowMove = false;
+            this.gcmBH.OptionsColumn.AllowShowHide = false;
+            this.gcmBH.OptionsColumn.AllowSize = false;
+            this.gcmBH.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gcmBH.OptionsColumn.ReadOnly = true;
+            this.gcmBH.OptionsColumn.ShowInCustomizationForm = false;
+            this.gcmBH.OptionsColumn.ShowInExpressionEditor = false;
+            this.gcmBH.OptionsFilter.AllowAutoFilter = false;
+            this.gcmBH.OptionsFilter.AllowFilter = false;
+            this.gcmBH.Visible = true;
+            this.gcmBH.Width = 36;
             // 
-            // gcmBjgd
+            // gbandKs
             // 
-            this.gcmBjgd.AppearanceCell.Options.UseTextOptions = true;
-            this.gcmBjgd.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcmBjgd.AppearanceHeader.Options.UseTextOptions = true;
-            this.gcmBjgd.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcmBjgd.Caption = "坝基高程(/m)";
-            this.gcmBjgd.FieldName = "Bjgc";
-            this.gcmBjgd.MinWidth = 42;
-            this.gcmBjgd.Name = "gcmBjgd";
-            this.gcmBjgd.OptionsColumn.AllowEdit = false;
-            this.gcmBjgd.OptionsColumn.AllowFocus = false;
-            this.gcmBjgd.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmBjgd.OptionsColumn.AllowIncrementalSearch = false;
-            this.gcmBjgd.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmBjgd.OptionsColumn.AllowMove = false;
-            this.gcmBjgd.OptionsColumn.AllowShowHide = false;
-            this.gcmBjgd.OptionsColumn.AllowSize = false;
-            this.gcmBjgd.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmBjgd.OptionsColumn.FixedWidth = true;
-            this.gcmBjgd.OptionsColumn.ReadOnly = true;
-            this.gcmBjgd.OptionsColumn.ShowInCustomizationForm = false;
-            this.gcmBjgd.OptionsColumn.ShowInExpressionEditor = false;
-            this.gcmBjgd.OptionsFilter.AllowAutoFilter = false;
-            this.gcmBjgd.OptionsFilter.AllowFilter = false;
-            this.gcmBjgd.Visible = true;
-            this.gcmBjgd.Width = 42;
+            this.gbandKs.Caption = "沉陷观察效果";
+            this.gbandKs.Columns.Add(this.gcmScgc);
+            this.gbandKs.Columns.Add(this.gcmBcgc1);
+            this.gbandKs.Columns.Add(this.gcmLjcx);
+            this.gbandKs.Name = "gbandKs";
+            this.gbandKs.OptionsBand.FixedWidth = true;
+            this.gbandKs.VisibleIndex = 1;
+            this.gbandKs.Width = 180;
             // 
-            // gcmZdcj1
+            // gcmScgc
             // 
-            this.gcmZdcj1.AppearanceCell.Options.UseTextOptions = true;
-            this.gcmZdcj1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcmZdcj1.AppearanceHeader.Options.UseTextOptions = true;
-            this.gcmZdcj1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcmZdcj1.Caption = "最大沉降";
-            this.gcmZdcj1.FieldName = "Zdcj1";
-            this.gcmZdcj1.MinWidth = 42;
-            this.gcmZdcj1.Name = "gcmZdcj1";
-            this.gcmZdcj1.OptionsColumn.AllowEdit = false;
-            this.gcmZdcj1.OptionsColumn.AllowFocus = false;
-            this.gcmZdcj1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmZdcj1.OptionsColumn.AllowIncrementalSearch = false;
-            this.gcmZdcj1.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmZdcj1.OptionsColumn.AllowMove = false;
-            this.gcmZdcj1.OptionsColumn.AllowShowHide = false;
-            this.gcmZdcj1.OptionsColumn.AllowSize = false;
-            this.gcmZdcj1.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmZdcj1.OptionsColumn.ReadOnly = true;
-            this.gcmZdcj1.OptionsColumn.ShowInCustomizationForm = false;
-            this.gcmZdcj1.OptionsColumn.ShowInExpressionEditor = false;
-            this.gcmZdcj1.OptionsFilter.AllowAutoFilter = false;
-            this.gcmZdcj1.OptionsFilter.AllowFilter = false;
-            this.gcmZdcj1.Visible = true;
-            this.gcmZdcj1.Width = 42;
+            this.gcmScgc.AppearanceCell.Options.UseTextOptions = true;
+            this.gcmScgc.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcmScgc.AppearanceHeader.Options.UseTextOptions = true;
+            this.gcmScgc.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcmScgc.Caption = "始测高程";
+            this.gcmScgc.FieldName = "Scgc";
+            this.gcmScgc.MinWidth = 60;
+            this.gcmScgc.Name = "gcmScgc";
+            this.gcmScgc.OptionsColumn.AllowEdit = false;
+            this.gcmScgc.OptionsColumn.AllowFocus = false;
+            this.gcmScgc.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.gcmScgc.OptionsColumn.AllowIncrementalSearch = false;
+            this.gcmScgc.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gcmScgc.OptionsColumn.AllowMove = false;
+            this.gcmScgc.OptionsColumn.AllowShowHide = false;
+            this.gcmScgc.OptionsColumn.AllowSize = false;
+            this.gcmScgc.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gcmScgc.OptionsColumn.ReadOnly = true;
+            this.gcmScgc.OptionsColumn.ShowInCustomizationForm = false;
+            this.gcmScgc.OptionsColumn.ShowInExpressionEditor = false;
+            this.gcmScgc.OptionsFilter.AllowAutoFilter = false;
+            this.gcmScgc.OptionsFilter.AllowFilter = false;
+            this.gcmScgc.Visible = true;
+            this.gcmScgc.Width = 60;
             // 
-            // gcmJccj1
+            // gcmBcgc1
             // 
-            this.gcmJccj1.AppearanceCell.Options.UseTextOptions = true;
-            this.gcmJccj1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcmJccj1.AppearanceHeader.Options.UseTextOptions = true;
-            this.gcmJccj1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcmJccj1.Caption = "基础沉降";
-            this.gcmJccj1.FieldName = "Jccj1";
-            this.gcmJccj1.MinWidth = 42;
-            this.gcmJccj1.Name = "gcmJccj1";
-            this.gcmJccj1.OptionsColumn.AllowEdit = false;
-            this.gcmJccj1.OptionsColumn.AllowFocus = false;
-            this.gcmJccj1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmJccj1.OptionsColumn.AllowIncrementalSearch = false;
-            this.gcmJccj1.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmJccj1.OptionsColumn.AllowMove = false;
-            this.gcmJccj1.OptionsColumn.AllowShowHide = false;
-            this.gcmJccj1.OptionsColumn.AllowSize = false;
-            this.gcmJccj1.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmJccj1.OptionsColumn.ReadOnly = true;
-            this.gcmJccj1.OptionsColumn.ShowInCustomizationForm = false;
-            this.gcmJccj1.OptionsColumn.ShowInExpressionEditor = false;
-            this.gcmJccj1.OptionsFilter.AllowAutoFilter = false;
-            this.gcmJccj1.OptionsFilter.AllowFilter = false;
-            this.gcmJccj1.Visible = true;
-            this.gcmJccj1.Width = 42;
+            this.gcmBcgc1.AppearanceCell.Options.UseTextOptions = true;
+            this.gcmBcgc1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcmBcgc1.AppearanceHeader.Options.UseTextOptions = true;
+            this.gcmBcgc1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcmBcgc1.Caption = "本次观测";
+            this.gcmBcgc1.FieldName = "Bcgc1";
+            this.gcmBcgc1.MinWidth = 60;
+            this.gcmBcgc1.Name = "gcmBcgc1";
+            this.gcmBcgc1.OptionsColumn.AllowEdit = false;
+            this.gcmBcgc1.OptionsColumn.AllowFocus = false;
+            this.gcmBcgc1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.gcmBcgc1.OptionsColumn.AllowIncrementalSearch = false;
+            this.gcmBcgc1.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gcmBcgc1.OptionsColumn.AllowMove = false;
+            this.gcmBcgc1.OptionsColumn.AllowShowHide = false;
+            this.gcmBcgc1.OptionsColumn.AllowSize = false;
+            this.gcmBcgc1.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gcmBcgc1.OptionsColumn.ReadOnly = true;
+            this.gcmBcgc1.OptionsColumn.ShowInCustomizationForm = false;
+            this.gcmBcgc1.OptionsColumn.ShowInExpressionEditor = false;
+            this.gcmBcgc1.OptionsFilter.AllowAutoFilter = false;
+            this.gcmBcgc1.OptionsFilter.AllowFilter = false;
+            this.gcmBcgc1.Visible = true;
+            this.gcmBcgc1.Width = 60;
             // 
-            // gcmZdcj2
+            // gcmLjcx
             // 
-            this.gcmZdcj2.AppearanceCell.Options.UseTextOptions = true;
-            this.gcmZdcj2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcmZdcj2.AppearanceHeader.Options.UseTextOptions = true;
-            this.gcmZdcj2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcmZdcj2.Caption = "最大沉降";
-            this.gcmZdcj2.FieldName = "Zdcj2";
-            this.gcmZdcj2.MinWidth = 42;
-            this.gcmZdcj2.Name = "gcmZdcj2";
-            this.gcmZdcj2.OptionsColumn.AllowEdit = false;
-            this.gcmZdcj2.OptionsColumn.AllowFocus = false;
-            this.gcmZdcj2.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmZdcj2.OptionsColumn.AllowIncrementalSearch = false;
-            this.gcmZdcj2.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmZdcj2.OptionsColumn.AllowMove = false;
-            this.gcmZdcj2.OptionsColumn.AllowShowHide = false;
-            this.gcmZdcj2.OptionsColumn.AllowSize = false;
-            this.gcmZdcj2.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmZdcj2.OptionsColumn.ReadOnly = true;
-            this.gcmZdcj2.OptionsColumn.ShowInCustomizationForm = false;
-            this.gcmZdcj2.OptionsColumn.ShowInExpressionEditor = false;
-            this.gcmZdcj2.OptionsFilter.AllowAutoFilter = false;
-            this.gcmZdcj2.OptionsFilter.AllowFilter = false;
-            this.gcmZdcj2.Visible = true;
-            this.gcmZdcj2.Width = 42;
+            this.gcmLjcx.AppearanceCell.Options.UseTextOptions = true;
+            this.gcmLjcx.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcmLjcx.AppearanceHeader.Options.UseTextOptions = true;
+            this.gcmLjcx.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcmLjcx.Caption = "累计沉陷";
+            this.gcmLjcx.FieldName = "Ljcx";
+            this.gcmLjcx.MinWidth = 60;
+            this.gcmLjcx.Name = "gcmLjcx";
+            this.gcmLjcx.OptionsColumn.AllowEdit = false;
+            this.gcmLjcx.OptionsColumn.AllowFocus = false;
+            this.gcmLjcx.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.gcmLjcx.OptionsColumn.AllowIncrementalSearch = false;
+            this.gcmLjcx.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gcmLjcx.OptionsColumn.AllowMove = false;
+            this.gcmLjcx.OptionsColumn.AllowShowHide = false;
+            this.gcmLjcx.OptionsColumn.AllowSize = false;
+            this.gcmLjcx.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gcmLjcx.OptionsColumn.ReadOnly = true;
+            this.gcmLjcx.OptionsColumn.ShowInCustomizationForm = false;
+            this.gcmLjcx.OptionsColumn.ShowInExpressionEditor = false;
+            this.gcmLjcx.OptionsFilter.AllowAutoFilter = false;
+            this.gcmLjcx.OptionsFilter.AllowFilter = false;
+            this.gcmLjcx.Visible = true;
+            this.gcmLjcx.Width = 60;
             // 
-            // gcmJccj2
+            // gbandJs
             // 
-            this.gcmJccj2.AppearanceCell.Options.UseTextOptions = true;
-            this.gcmJccj2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcmJccj2.AppearanceHeader.Options.UseTextOptions = true;
-            this.gcmJccj2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcmJccj2.Caption = "基础沉降";
-            this.gcmJccj2.FieldName = "Jccj2";
-            this.gcmJccj2.MinWidth = 42;
-            this.gcmJccj2.Name = "gcmJccj2";
-            this.gcmJccj2.OptionsColumn.AllowEdit = false;
-            this.gcmJccj2.OptionsColumn.AllowFocus = false;
-            this.gcmJccj2.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmJccj2.OptionsColumn.AllowIncrementalSearch = false;
-            this.gcmJccj2.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmJccj2.OptionsColumn.AllowMove = false;
-            this.gcmJccj2.OptionsColumn.AllowShowHide = false;
-            this.gcmJccj2.OptionsColumn.AllowSize = false;
-            this.gcmJccj2.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gcmJccj2.OptionsColumn.ReadOnly = true;
-            this.gcmJccj2.OptionsColumn.ShowInCustomizationForm = false;
-            this.gcmJccj2.OptionsColumn.ShowInExpressionEditor = false;
-            this.gcmJccj2.OptionsFilter.AllowAutoFilter = false;
-            this.gcmJccj2.OptionsFilter.AllowFilter = false;
-            this.gcmJccj2.Visible = true;
-            this.gcmJccj2.Width = 42;
+            this.gbandJs.Caption = "位移观测效果";
+            this.gbandJs.Columns.Add(this.gcmScds);
+            this.gbandJs.Columns.Add(this.gcmBcgc2);
+            this.gbandJs.Columns.Add(this.gcmLjwy);
+            this.gbandJs.Name = "gbandJs";
+            this.gbandJs.OptionsBand.FixedWidth = true;
+            this.gbandJs.VisibleIndex = 2;
+            this.gbandJs.Width = 180;
+            // 
+            // gcmScds
+            // 
+            this.gcmScds.AppearanceCell.Options.UseTextOptions = true;
+            this.gcmScds.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcmScds.AppearanceHeader.Options.UseTextOptions = true;
+            this.gcmScds.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcmScds.Caption = "始测读数";
+            this.gcmScds.FieldName = "Scds";
+            this.gcmScds.MinWidth = 60;
+            this.gcmScds.Name = "gcmScds";
+            this.gcmScds.OptionsColumn.AllowEdit = false;
+            this.gcmScds.OptionsColumn.AllowFocus = false;
+            this.gcmScds.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.gcmScds.OptionsColumn.AllowIncrementalSearch = false;
+            this.gcmScds.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gcmScds.OptionsColumn.AllowMove = false;
+            this.gcmScds.OptionsColumn.AllowShowHide = false;
+            this.gcmScds.OptionsColumn.AllowSize = false;
+            this.gcmScds.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gcmScds.OptionsColumn.ReadOnly = true;
+            this.gcmScds.OptionsColumn.ShowInCustomizationForm = false;
+            this.gcmScds.OptionsColumn.ShowInExpressionEditor = false;
+            this.gcmScds.OptionsFilter.AllowAutoFilter = false;
+            this.gcmScds.OptionsFilter.AllowFilter = false;
+            this.gcmScds.Visible = true;
+            this.gcmScds.Width = 60;
+            // 
+            // gcmBcgc2
+            // 
+            this.gcmBcgc2.AppearanceCell.Options.UseTextOptions = true;
+            this.gcmBcgc2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcmBcgc2.AppearanceHeader.Options.UseTextOptions = true;
+            this.gcmBcgc2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcmBcgc2.Caption = "本次观测";
+            this.gcmBcgc2.FieldName = "Bcgc2";
+            this.gcmBcgc2.MinWidth = 60;
+            this.gcmBcgc2.Name = "gcmBcgc2";
+            this.gcmBcgc2.OptionsColumn.AllowEdit = false;
+            this.gcmBcgc2.OptionsColumn.AllowFocus = false;
+            this.gcmBcgc2.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.gcmBcgc2.OptionsColumn.AllowIncrementalSearch = false;
+            this.gcmBcgc2.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gcmBcgc2.OptionsColumn.AllowMove = false;
+            this.gcmBcgc2.OptionsColumn.AllowShowHide = false;
+            this.gcmBcgc2.OptionsColumn.AllowSize = false;
+            this.gcmBcgc2.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gcmBcgc2.OptionsColumn.ReadOnly = true;
+            this.gcmBcgc2.OptionsColumn.ShowInCustomizationForm = false;
+            this.gcmBcgc2.OptionsColumn.ShowInExpressionEditor = false;
+            this.gcmBcgc2.OptionsFilter.AllowAutoFilter = false;
+            this.gcmBcgc2.OptionsFilter.AllowFilter = false;
+            this.gcmBcgc2.Visible = true;
+            this.gcmBcgc2.Width = 60;
+            // 
+            // gcmLjwy
+            // 
+            this.gcmLjwy.AppearanceCell.Options.UseTextOptions = true;
+            this.gcmLjwy.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcmLjwy.AppearanceHeader.Options.UseTextOptions = true;
+            this.gcmLjwy.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcmLjwy.Caption = "累计位移";
+            this.gcmLjwy.FieldName = "Ljwy";
+            this.gcmLjwy.MinWidth = 60;
+            this.gcmLjwy.Name = "gcmLjwy";
+            this.gcmLjwy.OptionsColumn.AllowEdit = false;
+            this.gcmLjwy.OptionsColumn.AllowFocus = false;
+            this.gcmLjwy.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.gcmLjwy.OptionsColumn.AllowIncrementalSearch = false;
+            this.gcmLjwy.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gcmLjwy.OptionsColumn.AllowMove = false;
+            this.gcmLjwy.OptionsColumn.AllowShowHide = false;
+            this.gcmLjwy.OptionsColumn.AllowSize = false;
+            this.gcmLjwy.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gcmLjwy.OptionsColumn.ReadOnly = true;
+            this.gcmLjwy.OptionsColumn.ShowInCustomizationForm = false;
+            this.gcmLjwy.OptionsColumn.ShowInExpressionEditor = false;
+            this.gcmLjwy.OptionsFilter.AllowAutoFilter = false;
+            this.gcmLjwy.OptionsFilter.AllowFilter = false;
+            this.gcmLjwy.Visible = true;
+            this.gcmLjwy.Width = 60;
+            // 
+            // bdRepositoryItemMemoEdit
+            // 
+            this.bdRepositoryItemMemoEdit.Appearance.Options.UseTextOptions = true;
+            this.bdRepositoryItemMemoEdit.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.bdRepositoryItemMemoEdit.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.bdRepositoryItemMemoEdit.Name = "bdRepositoryItemMemoEdit";
             // 
             // panelMonitorContainer
             // 
@@ -1003,36 +1047,6 @@
             this.panel6.Size = new System.Drawing.Size(950, 300);
             this.panel6.TabIndex = 4;
             // 
-            // gbBD
-            // 
-            this.gbBD.Caption = "标点";
-            this.gbBD.Columns.Add(this.gcmYqbh);
-            this.gbBD.Columns.Add(this.gcmXh);
-            this.gbBD.Name = "gbBD";
-            this.gbBD.VisibleIndex = 0;
-            // 
-            // gbandKs
-            // 
-            this.gbandKs.Caption = "2006.02.23监测数据(/mm)";
-            this.gbandKs.Columns.Add(this.gcmZdcj1);
-            this.gbandKs.Columns.Add(this.gcmJccj1);
-            this.gbandKs.Columns.Add(this.gcmJzdgd);
-            this.gbandKs.Name = "gbandKs";
-            this.gbandKs.OptionsBand.FixedWidth = true;
-            this.gbandKs.VisibleIndex = 1;
-            this.gbandKs.Width = 128;
-            // 
-            // gbandJs
-            // 
-            this.gbandJs.Caption = "2007.10.16监测数据(/mm)";
-            this.gbandJs.Columns.Add(this.gcmBjgd);
-            this.gbandJs.Columns.Add(this.gcmZdcj2);
-            this.gbandJs.Columns.Add(this.gcmJccj2);
-            this.gbandJs.Name = "gbandJs";
-            this.gbandJs.OptionsBand.FixedWidth = true;
-            this.gbandJs.VisibleIndex = 2;
-            this.gbandJs.Width = 126;
-            // 
             // Xbjc
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(206)))));
@@ -1057,6 +1071,7 @@
             this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdRepositoryItemMemoEdit)).EndInit();
             this.panelMonitorContainer.ResumeLayout(false);
             this.panelMonitorContainer.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -1105,14 +1120,14 @@
         private System.Windows.Forms.Panel panel9;
         private DevExpress.XtraGrid.GridControl gcMain;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView gvMain;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gcmYqbh;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gcmJzdgd;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gcmBjgd;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gcmJccj1;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gcmZdcj1;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gcmZdcj2;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gcmJccj2;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gcmXh;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gcmBW;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gcmLjcx;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gcmScds;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gcmBcgc1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gcmScgc;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gcmBcgc2;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gcmLjwy;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gcmBH;
         private System.Windows.Forms.Label lblDay;
         private System.Windows.Forms.Label lblHour;
         private System.Windows.Forms.Label lblMonth;
@@ -1120,6 +1135,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gbBD;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gbandKs;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gbandJs;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit bdRepositoryItemMemoEdit;
 
     }
 }

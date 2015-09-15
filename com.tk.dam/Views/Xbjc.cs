@@ -96,26 +96,26 @@ namespace com.tk.dam.Views
                     gvMain.RefreshRow(prevHotTrackRow);
                     gvMain.RefreshRow(hotTrackRow);
 
-                    if (hotTrackRow >= 0)
-                        gcMain.Cursor = Cursors.Hand;
-                    else
-                        gcMain.Cursor = Cursors.Default;
+                    //if (hotTrackRow >= 0)
+                    //    gcMain.Cursor = Cursors.Hand;
+                    //else
+                    //    gcMain.Cursor = Cursors.Default;
                 }
             }
         }
 
         private void gridView1_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
         {
-            var info = gvMain.CalcHitInfo(new Point(e.X, e.Y));
-            if (info.InRowCell)
-                HotTrackRow = info.RowHandle;
-            else
-                HotTrackRow = DevExpress.XtraGrid.GridControl.InvalidRowHandle;
+            //var info = gvMain.CalcHitInfo(new Point(e.X, e.Y));
+            //if (info.InRowCell)
+            //    HotTrackRow = info.RowHandle;
+            //else
+            //    HotTrackRow = DevExpress.XtraGrid.GridControl.InvalidRowHandle;
         }
 
         private void gvMain_MouseLeave(object sender, EventArgs e)
         {
-            HotTrackRow = DevExpress.XtraGrid.GridControl.InvalidRowHandle;
+            //HotTrackRow = DevExpress.XtraGrid.GridControl.InvalidRowHandle;
         }
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
@@ -187,6 +187,7 @@ namespace com.tk.dam.Views
                 mCurrentMonitorLb.BackColor = mActiveColor;
             }
             bindChart();
+            HotTrackRow = int.Parse(mCurrentMonitorLb.Text) - 1;
         }
 
         private void bindChart()
@@ -251,16 +252,18 @@ namespace com.tk.dam.Views
 
         private void bindGrid()
         {
-            gbandKs.Caption = String.Format("{0}\n监测数据(/mm)", mNow.AddYears(-1).ToString("yyyy.MM.dd"));
-            gbandJs.Caption = String.Format("{0}\n监测数据(/mm)", mNow.ToString("yyyy.MM.dd"));
-            gcmYqbh.Caption = "仪器\n编号";
-            gcmXh.Caption = "仪器\n编号";
-            gcmJzdgd.Caption = "基准点\n高程\n(/m)";
-            gcmBjgd.Caption = "坝基\n高程\n(/m)";
-            gcmJccj1.Caption = "基础\n沉降";
-            gcmZdcj1.Caption = "最大\n沉降";
-            gcmJccj2.Caption = "基础\n沉降";
-            gcmZdcj2.Caption = "最大\n沉降"; ;
+            gbBD.Caption = "\n标点\n ";
+            //gbandKs.Caption = String.Format("{0}\n监测数据(/mm)", mNow.AddYears(-1).ToString("yyyy.MM.dd"));
+            //gbandJs.Caption = String.Format("{0}\n监测数据(/mm)", mNow.ToString("yyyy.MM.dd"));
+            gcmBW.Caption = "部位";
+            gcmBH.Caption = "编号";
+                                  
+            gcmScgc.Caption = "始测高程\n(m)";     
+            gcmBcgc1.Caption = "本次观测\n(m)";
+            gcmLjcx.Caption = "累计沉陷\n(mm)";
+            gcmScds.Caption = "始测读数\n(mm)";       
+            gcmBcgc2.Caption = "本次观测\n(mm)" ;
+            gcmLjwy.Caption = "累计位移\n(mm)";
 
             mCurrentMonitorLb = this.lblMonitor1;
             mCurrentTimeLb = this.lblDay;
@@ -270,21 +273,44 @@ namespace com.tk.dam.Views
             IList<Jcd> mJcdList = new List<Jcd>();
             for (int i = 1; i <= 12; i++)
             {
-                Jcd item = new Jcd()
+                List<double> mCurrentXbList = MainForm.XbjcDic[i.ToString()];
+                Jcd item = new Jcd();
+                item.BH = i.ToString();
+                item.Scds = mRandom.Next(30) / 10.0;
+                item.Bcgc2 = mCurrentXbList[0];
+                item.Ljwy = item.Bcgc2 - item.Scds;
+                if (i <= 6)
                 {
-                    Yqbh = "ES-" + i,
-                    Xh = string.Format("平行0+0{0}，垂直0+2{1}", 7.5f - mRandom.Next(20) * 0.1f, 50.0f - mRandom.Next(60) * 0.1f),
-                    Jzdgc = 738.0f + mRandom.Next(40) * 0.01f,
-                    Bjgc = 738.0f + mRandom.Next(40) * 0.01f,
-                    Jccj1 = mRandom.Next(50) + 100,
-                    Jccj2 = mRandom.Next(50) + 100,
-                    Zdcj1 = mRandom.Next(50) + 200,
-                    Zdcj2 = mRandom.Next(50) + 200
-                };
+                    item.BW = "坝顶\n108\n高程";
+                    double m1 = mRandom.Next(4);
+                    double m2 = mRandom.Next(4);
+                    item.Scgc = 105.4 + m1 / 100;
+                    item.Bcgc1 = 105.4 + m2 / 100;
+                    item.Ljcx = Math.Abs(m2 - m1);
+                }
+                else if (i <= 9)
+                {
+                    item.BW = "背水\n坡90\n平台";
+                    double m1 = mRandom.Next(4);
+                    double m2 = mRandom.Next(4);
+                    item.Scgc = 88.4 + m1 / 100;
+                    item.Bcgc1 = 88.4 + m2 / 100;
+                    item.Ljcx = Math.Abs(m2 - m1);
+                }
+                else
+                {
+                    item.BW = "背水\n坡75\n平台";
+                    double m1 = mRandom.Next(4);
+                    double m2 = mRandom.Next(4);
+                    item.Scgc = 73.2 + m1 / 100;
+                    item.Bcgc1 = 73.2 + m2 / 100;
+                    item.Ljcx = Math.Abs(m2 - m1);
+                }
                 mJcdList.Add(item);
             }
             gcMain.DataSource = mJcdList;
         }
+
         #endregion
     }
 }

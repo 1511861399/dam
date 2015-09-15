@@ -22,6 +22,7 @@ namespace com.tk.dam.Views
 
         private void Wxzt_xzb_Load(object sender, EventArgs e)
         {
+            
         }
 
         public void SetPoints(List<SeriesPoint> gpsPoints, List<SeriesPoint> gloPoints, List<SeriesPoint> bdPoints)
@@ -79,5 +80,6 @@ namespace com.tk.dam.Views
         {
             e.LabelText = e.SeriesPoint.Tag.ToString();
         }
+
     }
 }
