@@ -30,6 +30,7 @@
         {
             DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PointSeriesLabel pointSeriesLabel1 = new DevExpress.XtraCharts.PointSeriesLabel();
             DevExpress.XtraCharts.LineSeriesView lineSeriesView1 = new DevExpress.XtraCharts.LineSeriesView();
             DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.LineSeriesView lineSeriesView2 = new DevExpress.XtraCharts.LineSeriesView();
@@ -58,7 +59,7 @@
             this.gbandJs = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gcmZdcj2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gcmJccj2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelMonitorContainer = new System.Windows.Forms.Panel();
             this.lblMonitor12 = new System.Windows.Forms.Label();
             this.lblMonitor10 = new System.Windows.Forms.Label();
             this.lblMonitor8 = new System.Windows.Forms.Label();
@@ -80,12 +81,14 @@
             this.lblTjTip = new System.Windows.Forms.Label();
             this.lblSsTip = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(lineSeriesView2)).BeginInit();
@@ -94,7 +97,7 @@
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMain)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.panelMonitorContainer.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -132,6 +135,7 @@
             // 
             // mainChart
             // 
+            this.mainChart.AppearanceNameSerializable = "Light";
             this.mainChart.BackColor = System.Drawing.Color.Transparent;
             this.mainChart.BorderOptions.Color = System.Drawing.Color.Transparent;
             xyDiagram1.AxisX.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -146,7 +150,9 @@
             xyDiagram1.AxisX.Title.Text = "时间";
             xyDiagram1.AxisX.Title.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             xyDiagram1.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            xyDiagram1.AxisX.Visibility = DevExpress.Utils.DefaultBoolean.True;
             xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram1.AxisY.Alignment = DevExpress.XtraCharts.AxisAlignment.Zero;
             xyDiagram1.AxisY.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             xyDiagram1.AxisY.GridLines.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             xyDiagram1.AxisY.Label.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -160,20 +166,23 @@
             xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
             xyDiagram1.AxisY.VisualRange.Auto = false;
             xyDiagram1.AxisY.VisualRange.AutoSideMargins = false;
-            xyDiagram1.AxisY.VisualRange.MaxValueSerializable = "40";
-            xyDiagram1.AxisY.VisualRange.MinValueSerializable = "-40";
-            xyDiagram1.AxisY.VisualRange.SideMarginsValue = 0.88000000000000012D;
+            xyDiagram1.AxisY.VisualRange.MaxValueSerializable = "4";
+            xyDiagram1.AxisY.VisualRange.MinValueSerializable = "-4";
+            xyDiagram1.AxisY.VisualRange.SideMarginsValue = 0.0099999999999998753D;
+            xyDiagram1.AxisY.WholeRange.AlwaysShowZeroLevel = false;
             xyDiagram1.AxisY.WholeRange.Auto = false;
             xyDiagram1.AxisY.WholeRange.AutoSideMargins = false;
-            xyDiagram1.AxisY.WholeRange.MaxValueSerializable = "40";
-            xyDiagram1.AxisY.WholeRange.MinValueSerializable = "-40";
-            xyDiagram1.AxisY.WholeRange.SideMarginsValue = 0.88000000000000012D;
+            xyDiagram1.AxisY.WholeRange.MaxValueSerializable = "4";
+            xyDiagram1.AxisY.WholeRange.MinValueSerializable = "-4";
+            xyDiagram1.AxisY.WholeRange.SideMarginsValue = 0.0099999999999998753D;
             xyDiagram1.DefaultPane.BackColor = System.Drawing.Color.Transparent;
+            xyDiagram1.DefaultPane.BorderColor = System.Drawing.Color.Transparent;
             this.mainChart.Diagram = xyDiagram1;
             this.mainChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainChart.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Center;
             this.mainChart.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.BottomOutside;
             this.mainChart.Legend.BackColor = System.Drawing.Color.Transparent;
+            this.mainChart.Legend.Border.Color = System.Drawing.Color.Transparent;
             this.mainChart.Legend.Direction = DevExpress.XtraCharts.LegendDirection.LeftToRight;
             this.mainChart.Legend.EquallySpacedItems = false;
             this.mainChart.Legend.Margins.Bottom = 0;
@@ -186,7 +195,10 @@
             this.mainChart.Padding.Left = 3;
             this.mainChart.Padding.Right = 3;
             this.mainChart.Padding.Top = 3;
+            this.mainChart.PaletteName = "Civic";
             series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
+            pointSeriesLabel1.TextPattern = "{V}";
+            series1.Label = pointSeriesLabel1;
             series1.Name = "位移";
             lineSeriesView1.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
             series1.View = lineSeriesView1;
@@ -303,7 +315,7 @@
             this.panel2.Controls.Add(this.panel9);
             this.panel2.Location = new System.Drawing.Point(518, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(327, 303);
+            this.panel2.Size = new System.Drawing.Size(432, 303);
             this.panel2.TabIndex = 1;
             // 
             // panel9
@@ -315,20 +327,18 @@
             this.panel9.Controls.Add(this.gcMain);
             this.panel9.Location = new System.Drawing.Point(0, 0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(327, 300);
+            this.panel9.Size = new System.Drawing.Size(432, 300);
             this.panel9.TabIndex = 1;
             // 
             // gcMain
             // 
-            this.gcMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gcMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcMain.Location = new System.Drawing.Point(0, 0);
             this.gcMain.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.gcMain.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gcMain.MainView = this.gvMain;
             this.gcMain.Name = "gcMain";
-            this.gcMain.Size = new System.Drawing.Size(327, 300);
+            this.gcMain.Size = new System.Drawing.Size(432, 300);
             this.gcMain.TabIndex = 0;
             this.gcMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMain});
@@ -685,29 +695,29 @@
             this.gcmJccj2.Visible = true;
             this.gcmJccj2.Width = 42;
             // 
-            // panel3
+            // panelMonitorContainer
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panelMonitorContainer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.AutoSize = true;
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(161)))), ((int)(((byte)(246)))));
-            this.panel3.Controls.Add(this.lblMonitor12);
-            this.panel3.Controls.Add(this.lblMonitor10);
-            this.panel3.Controls.Add(this.lblMonitor8);
-            this.panel3.Controls.Add(this.lblMonitor6);
-            this.panel3.Controls.Add(this.lblMonitor4);
-            this.panel3.Controls.Add(this.lblMonitor2);
-            this.panel3.Controls.Add(this.lblMonitor11);
-            this.panel3.Controls.Add(this.lblMonitor9);
-            this.panel3.Controls.Add(this.lblMonitor7);
-            this.panel3.Controls.Add(this.lblMonitor5);
-            this.panel3.Controls.Add(this.lblMonitor3);
-            this.panel3.Controls.Add(this.lblMonitor1);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(851, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(159, 397);
-            this.panel3.TabIndex = 2;
+            this.panelMonitorContainer.AutoSize = true;
+            this.panelMonitorContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(161)))), ((int)(((byte)(246)))));
+            this.panelMonitorContainer.Controls.Add(this.lblMonitor12);
+            this.panelMonitorContainer.Controls.Add(this.lblMonitor10);
+            this.panelMonitorContainer.Controls.Add(this.lblMonitor8);
+            this.panelMonitorContainer.Controls.Add(this.lblMonitor6);
+            this.panelMonitorContainer.Controls.Add(this.lblMonitor4);
+            this.panelMonitorContainer.Controls.Add(this.lblMonitor2);
+            this.panelMonitorContainer.Controls.Add(this.lblMonitor11);
+            this.panelMonitorContainer.Controls.Add(this.lblMonitor9);
+            this.panelMonitorContainer.Controls.Add(this.lblMonitor7);
+            this.panelMonitorContainer.Controls.Add(this.lblMonitor5);
+            this.panelMonitorContainer.Controls.Add(this.lblMonitor3);
+            this.panelMonitorContainer.Controls.Add(this.lblMonitor1);
+            this.panelMonitorContainer.Controls.Add(this.label4);
+            this.panelMonitorContainer.Location = new System.Drawing.Point(959, 0);
+            this.panelMonitorContainer.Name = "panelMonitorContainer";
+            this.panelMonitorContainer.Size = new System.Drawing.Size(159, 397);
+            this.panelMonitorContainer.TabIndex = 2;
             // 
             // lblMonitor12
             // 
@@ -915,7 +925,7 @@
             this.panel4.Controls.Add(this.lblSsTip);
             this.panel4.Location = new System.Drawing.Point(0, 311);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(842, 86);
+            this.panel4.Size = new System.Drawing.Size(950, 86);
             this.panel4.TabIndex = 3;
             // 
             // lblSswy
@@ -989,13 +999,27 @@
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel5.AutoSize = true;
             this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.Controls.Add(this.label1);
             this.panel5.Controls.Add(this.panel4);
-            this.panel5.Controls.Add(this.panel3);
+            this.panel5.Controls.Add(this.panelMonitorContainer);
             this.panel5.Controls.Add(this.panel6);
-            this.panel5.Location = new System.Drawing.Point(7, 113);
+            this.panel5.Location = new System.Drawing.Point(35, 90);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1012, 400);
+            this.panel5.Size = new System.Drawing.Size(1120, 460);
             this.panel5.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.label1.Location = new System.Drawing.Point(4, 417);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(628, 17);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "温馨提示：卫星监测误差，水平位移在3MM以内，沉降位移在5mm以内，属于正常范畴，可以忽略。";
             // 
             // panel6
             // 
@@ -1006,7 +1030,7 @@
             this.panel6.Controls.Add(this.panel1);
             this.panel6.Location = new System.Drawing.Point(0, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(842, 300);
+            this.panel6.Size = new System.Drawing.Size(950, 300);
             this.panel6.TabIndex = 4;
             // 
             // Xbjc
@@ -1017,11 +1041,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel5);
             this.Name = "Xbjc";
-            this.Size = new System.Drawing.Size(1024, 670);
+            this.Size = new System.Drawing.Size(1200, 670);
             this.Load += new System.EventHandler(this.Xbjc_Load);
             this.panel1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(lineSeriesView2)).EndInit();
@@ -1032,8 +1057,8 @@
             this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMain)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panelMonitorContainer.ResumeLayout(false);
+            this.panelMonitorContainer.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -1049,7 +1074,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelMonitorContainer;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
@@ -1094,6 +1119,7 @@
         private System.Windows.Forms.Label lblDay;
         private System.Windows.Forms.Label lblHour;
         private System.Windows.Forms.Label lblMonth;
+        private System.Windows.Forms.Label label1;
 
     }
 }

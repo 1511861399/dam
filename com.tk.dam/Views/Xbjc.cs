@@ -33,37 +33,49 @@ namespace com.tk.dam.Views
             InitializeComponent();
         }
 
+        public void SetCurrentMonitor(string monitor)
+        {
+            if (mCurrentMonitorLb.Text != monitor)
+            {
+                foreach (Label label in panelMonitorContainer.Controls)
+                {
+                    if (label != null && label.Text == monitor)
+                    {
+                        lblMonitor_Click(label, new EventArgs());
+                    }
+                }
+            }
+        }
+
         private void Xbjc_Load(object sender, EventArgs e)
         {
 
             int mDeltaH = (int)((this.Height - 670) * 0.6);
-            int mDelatW = (int)((this.Width - 1024) * 0.6);
+            int mDelatW = (int)((this.Width - 1200) * 0.6);
             if (mDeltaH > 0 && mDelatW > 0)
             {
-                if (mDelatW / mDeltaH > 1024 / 670)
+                if (mDelatW / mDeltaH > 1200 / 670)
                 {
-                    mDelatW = (int)(mDeltaH * 1024 / 670);
+                    mDelatW = (int)(mDeltaH * 1200 / 670);
                 }
                 else
                 {
-                    mDeltaH = (int)(mDelatW * 670 / 1024);
+                    mDeltaH = (int)(mDelatW * 670 / 1200);
                 }
 
-                this.panel5.Height = 400 + mDeltaH;
-                this.panel5.Width = 1012 + mDelatW;
+                this.panel5.Height = 460 + mDeltaH;
+                this.panel5.Width = 1120 + mDelatW;
                 int mNewX = this.panel5.Location.X - (int)(mDelatW * 0.5);
-                int mNewY = this.panel5.Location.Y - (int)(mDeltaH * 0.6);
+                int mNewY = this.panel5.Location.Y - (int)(mDeltaH * 0.65);
                 this.panel5.Location = new Point(mNewX, mNewY);
 
-                this.panel2.Width = (int)(this.panel2.Height * 1.08);
+                this.panel2.Width = (int)(this.panel2.Height * 1.2);
                 this.panel1.Width = this.panel6.Width - this.panel2.Width - 10;
                 this.panel2.Location = new Point(this.panel1.Width + 10, this.panel2.Location.Y);
             }
 
-
             bindGrid();
             bindChart();
-
         }
 
         #region Grid效果控制
@@ -181,24 +193,25 @@ namespace com.tk.dam.Views
         {
             string mKey = string.Format("{0}_{1}_{2}", mCurrentMonitorLb.Text, mCurrentTypeLb.Text, mCurrentTimeLb.Text);
             string mMonitor = mCurrentMonitorLb.Text;
-            if (!mSswyDic.ContainsKey(mMonitor))
-            {
-                mSswyDic.Add(mMonitor, "位移：" + (mRandom.Next(20) - 10).ToString().PadLeft(2, ' ') + "mm");
-                mSscjDic.Add(mMonitor, "沉降：" + (mRandom.Next(20) - 10).ToString().PadLeft(2, ' ') + "mm");
-            }
+            List<double> mCurrentXbList = MainForm.XbjcDic[mMonitor];
             if (!mSeriesPointWyDic.ContainsKey(mKey))
             {
                 List<SeriesPoint> mPointsWy = new List<SeriesPoint>();
                 List<SeriesPoint> mPointsCj = new List<SeriesPoint>();
-                int mMaxWy=0, mMinWy=0, mMaxCj=0, mMinCj=0;
+                double mTotalWy = 0, mLjWy = 0, mTotalCj = 0, mLjCj = 0;              
                 for (int i = -8; i <= 0; i++)
                 {
-                    int mWy = mRandom.Next(30) - 15;
-                    int mCj = mRandom.Next(30) - 15;
-                    mMaxWy = mMaxWy > mWy ? mMaxWy : mWy;
-                    mMinWy = mMinWy < mWy ? mMinWy : mWy;
-                    mMaxCj = mMaxCj > mCj ? mMaxCj : mCj;
-                    mMinCj = mMinCj < mCj ? mMinCj : mCj;
+                    double mWy = mRandom.Next(20) / 10.0 - 1;
+                    double mCj = mRandom.Next(40) / 10.0 - 2;
+                    if (i == 0)
+                    {
+                        mWy = mCurrentXbList[0];
+                        mCj = mCurrentXbList[1];
+                    }
+                    mTotalWy = mTotalWy + Math.Abs(mWy);
+                    mTotalCj = mTotalCj + Math.Abs(mCj);
+                    mLjWy = mLjWy + mWy;
+                    mLjCj = mLjCj + mCj;
                     switch (mCurrentTimeLb.Text)
                     {
                         case "月":
@@ -214,14 +227,18 @@ namespace com.tk.dam.Views
                             mPointsCj.Add(new SeriesPoint(mNow.AddDays(i), mCj));
                             break;
                     }
-
                 }
                 mSeriesPointWyDic.Add(mKey, mPointsWy);
                 mSeriesPointCjDic.Add(mKey, mPointsCj);
-                mTjwyDic.Add(mKey, string.Format("最大位移：{0}mm    最小位移：{1}mm", mMaxWy.ToString().PadLeft(3, ' '), mMinWy.ToString().PadLeft(3, ' ')));
-                mTjcjDic.Add(mKey, string.Format("最大沉降：{0}mm    最小沉降：{1}mm", mMaxCj.ToString().PadLeft(3, ' '), mMinCj.ToString().PadLeft(3, ' ')));
+                mTjwyDic.Add(mKey, string.Format("平均位移：{0}mm    累计位移：{1}mm", (mTotalWy / 8).ToString("F2").PadLeft(3, ' '), mLjWy.ToString().PadLeft(3, ' ')));
+                mTjcjDic.Add(mKey, string.Format("平均沉降：{0}mm    累计沉降：{1}mm", (mTotalCj / 8).ToString("F2").PadLeft(3, ' '), mLjCj.ToString().PadLeft(3, ' ')));
             }
 
+            if (!mSswyDic.ContainsKey(mMonitor))
+            {
+                mSswyDic.Add(mMonitor, "位移：" + mCurrentXbList[0].ToString("F2").PadLeft(2, ' ') + "mm");
+                mSscjDic.Add(mMonitor, "沉降：" + mCurrentXbList[1].ToString("F2").PadLeft(2, ' ') + "mm");
+            }
             this.lblSswy.Text = mSswyDic[mMonitor];
             this.lblSscj.Text = mSscjDic[mMonitor];
             this.lblTjwy.Text = mTjwyDic[mKey];
@@ -257,7 +274,7 @@ namespace com.tk.dam.Views
                 {
                     Yqbh = "ES-" + i,
                     Xh = string.Format("平行0+0{0}，垂直0+2{1}", 7.5f - mRandom.Next(20) * 0.1f, 50.0f - mRandom.Next(60) * 0.1f),
-                    Jzdgc = 738.0f + mRandom.Next(40)*0.01f,
+                    Jzdgc = 738.0f + mRandom.Next(40) * 0.01f,
                     Bjgc = 738.0f + mRandom.Next(40) * 0.01f,
                     Jccj1 = mRandom.Next(50) + 100,
                     Jccj2 = mRandom.Next(50) + 100,

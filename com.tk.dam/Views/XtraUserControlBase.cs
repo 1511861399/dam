@@ -17,6 +17,7 @@ namespace com.tk.dam.Views
         public XtraUserControlBase()
         {
             InitializeComponent();
+           
             this.BackColor = Color.FromArgb(0, 126, 206);
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint, true);
         }
@@ -43,6 +44,11 @@ namespace com.tk.dam.Views
                     e.Graphics.DrawImage(Properties.Resources.bg02, rect);
                 }
             }
+        }
+
+        public void ReLoad()
+        {
+            this.Location = new Point(0, 300);
         }
     }
 }

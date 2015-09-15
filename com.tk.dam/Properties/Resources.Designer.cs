@@ -283,6 +283,26 @@ namespace com.tk.dam.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap scrollbutton_glyph {
+            get {
+                object obj = ResourceManager.GetObject("scrollbutton_glyph", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap scrollthumbbutton {
+            get {
+                object obj = ResourceManager.GetObject("scrollthumbbutton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap shanchu {
             get {
                 object obj = ResourceManager.GetObject("shanchu", resourceCulture);
@@ -386,6 +406,16 @@ namespace com.tk.dam.Properties {
         internal static System.Drawing.Bitmap tile_bg_yhgl {
             get {
                 object obj = ResourceManager.GetObject("tile_bg_yhgl", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap tile_tip_bg {
+            get {
+                object obj = ResourceManager.GetObject("tile_tip_bg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

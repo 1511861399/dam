@@ -26,11 +26,38 @@ namespace com.tk.dam
         public bool IsPicTheme = false;
         popupTj mPopupTjControl = new popupTj();
         popupYHEdit mPopupYHEditControl = new popupYHEdit();
+        private Random mRandom = new Random(360);
+        Dictionary<string, List<double>> mXbjcDic = new Dictionary<string, List<double>>();
+        Dictionary<string, List<int>> mWxztDic = new Dictionary<string, List<int>>();
+        Dictionary<string, int> mQxDic = new Dictionary<string, int>();
+
+        //Xbjc mXbjc;
+        //Wxzt mWxzt;
 
         public MainForm()
         {
 
             InitializeComponent();
+
+            //自定义滚动栏的样式
+            var mCommonSkins = CommonSkins.GetSkin(UserLookAndFeel.Default.ActiveLookAndFeel);
+            SkinElement skinScrollButton = mCommonSkins[CommonSkins.SkinScrollButton];
+            skinScrollButton.Color.BackColor = Color.FromArgb(0, 126, 206);
+            skinScrollButton.Image.ImageCount = 0;
+            skinScrollButton.Glyph.ImageCount = 0;
+            //skinScrollButton.Image.SetImage(Properties.Resources.scrollbutton_glyph, Color.Transparent);
+            //skinScrollButton.Glyph.SetImage(Properties.Resources.scrollbutton_glyph, Color.Transparent);
+            SkinElement skinScrollButtonThumb = mCommonSkins[CommonSkins.SkinScrollButtonThumb];
+            skinScrollButtonThumb.Color.BackColor = Color.Transparent;
+            skinScrollButtonThumb.Image.ImageCount = 0;
+            skinScrollButtonThumb.Glyph.ImageCount = 0;
+            //skinScrollButtonThumb.Image.SetImage(Properties.Resources.scrollthumbbutton, Color.Transparent);
+            //skinScrollButtonThumb.Glyph.SetImage(Properties.Resources.scrollthumbbutton, Color.Transparent);            
+            SkinElement skinSkinScrollShaft = mCommonSkins[CommonSkins.SkinScrollShaft];
+            skinSkinScrollShaft.Color.BackColor = Color.Transparent;
+            skinSkinScrollShaft.Image.ImageCount = 0;
+            LookAndFeelHelper.ForceDefaultLookAndFeelChanged();
+
 
             mainWindowsUIView.Appearance.BackColor = Color.FromArgb(0, 126, 206);
             //mainWindowsUIView.AppearanceActionsBar.BackColor = Color.FromArgb(0, 169, 254);
@@ -65,8 +92,50 @@ namespace com.tk.dam
 
             mainWindowsUIView.AddDocument(mPopupTjControl);
             mainWindowsUIView.AddDocument(mPopupYHEditControl);
-        }
 
+            
+            for (int i = 1; i <= 12; i++)
+            {              
+                //形变监测
+                List<double> xbjcList = new List<double>() { mRandom.Next(13) / 10.0f, mRandom.Next(24) / 10.0f };
+                var frame = new TileItemFrame();
+                frame.Tag = i;
+                foreach (TileItemElement element in tileXBJC.Elements)
+                {
+                    frame.Elements.Add(element.Clone() as TileItemElement);
+                }
+                frame.Interval = 5000;
+                if (xbjcList[0] < 1.0 && xbjcList[1] < 1.5)
+                {
+                    frame.Elements[1].Text = string.Format("站点{0}：未变化", i);
+                }
+                else
+                {
+                    frame.Elements[1].Text = string.Format("站点{0}：水平偏移:{1}mm  沉降:{2}mm", i, xbjcList[0], xbjcList[1]);
+                    var font = frame.Elements[1].Appearance.Normal.Font;
+                    frame.Elements[1].Appearance.Normal.Font = new Font(font.FontFamily, font.Size - 4);
+                }
+                tileXBJC.Frames.Add(frame);
+                mXbjcDic.Add(i.ToString(), xbjcList);
+
+                //卫星状态 
+                List<int> wxztList = new List<int>() { mRandom.Next(2) + 8, mRandom.Next(2) + 5, mRandom.Next(2) + 5 };
+                frame = new TileItemFrame();
+                frame.Tag = i;
+                foreach (TileItemElement element in tileWXZT.Elements)
+                {
+                    frame.Elements.Add(element.Clone() as TileItemElement);
+                }
+                frame.Interval = 13000;
+                frame.Elements[1].Text = string.Format("站点{0}：BDS:{1}  GPS:{2}  GLO:{3}", i,wxztList[0],wxztList[1],wxztList[2]);
+                tileWXZT.Frames.Add(frame);
+                mWxztDic.Add(i.ToString(),wxztList);
+            }
+            mQxDic.Add("SW", 95);
+            mQxDic.Add("WD", 30);
+            tileQX.Elements[1].Text = string.Format("水位:{0}m  温度:{1}°C",mQxDic["SW"],mQxDic["WD"]);
+
+        }
 
         private void mainWindowsUIView_QueryControl(object sender, DevExpress.XtraBars.Docking2010.Views.QueryControlEventArgs e)
         {
@@ -138,6 +207,14 @@ namespace com.tk.dam
                         mPopupTjControl.Reload();
                     }
                 }
+                else if (e.Document == documentWXZT)
+                {
+                    ((Wxzt)e.Document.Control).SetCurrentMonitor(tileWXZT.CurrentFrame.Tag.ToString());
+                }
+                else if (e.Document == documentXBJC)
+                {
+                    ((Xbjc)e.Document.Control).SetCurrentMonitor(tileXBJC.CurrentFrame.Tag.ToString());
+                }
             }
         }
 
@@ -205,7 +282,7 @@ namespace com.tk.dam
             var aboutAppAction = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutAction()
             {
                 Caption = "关于",
-                Description = "大坝安全检查系统 V1.0\nCopyright@2012 福建泉州泰克通信设备有限公司"
+                Description = "北斗大坝安全监测系统 V1.0\nCopyright@2012 福建泉州泰克通信设备有限公司"
             };
             aboutAppAction.Commands.Add(FlyoutCommand.OK);
             closeAppFlyout.Action = aboutAppAction;
@@ -349,6 +426,26 @@ namespace com.tk.dam
             messageAction.Commands.Add(FlyoutCommand.OK);
             closeAppFlyout.Action = messageAction;
             mainWindowsUIView.ShowFlyoutDialog(closeAppFlyout);
+        }
+
+        public Dictionary<string, List<double>> XbjcDic
+        {
+            get { return mXbjcDic; }
+        }
+
+        public Dictionary<string, List<int>> WxztDic
+        {
+            get { return mWxztDic; }
+        }
+
+        public Dictionary<string,int> QxDic
+        {
+            get { return mQxDic; }
+            set 
+            {
+                mQxDic = value;
+                tileQX.Elements[1].Text = string.Format("水位:{0}m  温度:{1}°C", mQxDic["SW"], mQxDic["WD"]);
+            }
         }
 
         #endregion

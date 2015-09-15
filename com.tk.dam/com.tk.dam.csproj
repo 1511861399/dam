@@ -479,6 +479,10 @@
     <None Include="Resources\shui2.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\bg_color.png" />
+    <None Include="Resources\scrollthumbbutton.png" />
+    <None Include="Resources\scrollbutton_glyph.png" />
+    <None Include="Resources\tile_tip_bg.png" />
     <Content Include="video\Bear.wmv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
