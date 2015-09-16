@@ -176,9 +176,11 @@
             xyDiagram1.AxisY.WholeRange.AutoSideMargins = false;
             xyDiagram1.AxisY.WholeRange.MaxValueSerializable = "4";
             xyDiagram1.AxisY.WholeRange.MinValueSerializable = "-4";
-            xyDiagram1.AxisY.WholeRange.SideMarginsValue = 0.0099999999999998753D;
+            xyDiagram1.AxisY.WholeRange.SideMarginsValue = 0.05D;
             xyDiagram1.DefaultPane.BackColor = System.Drawing.Color.Transparent;
             xyDiagram1.DefaultPane.BorderColor = System.Drawing.Color.Transparent;
+            xyDiagram1.EnableAxisXScrolling = true;
+            xyDiagram1.EnableAxisXZooming = true;
             this.mainChart.Diagram = xyDiagram1;
             this.mainChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainChart.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Center;

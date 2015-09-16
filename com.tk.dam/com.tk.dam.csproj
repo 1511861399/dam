@@ -487,6 +487,7 @@
     <None Include="Resources\shui2.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\lb_sw_bg.png" />
     <Content Include="video\video.wmv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

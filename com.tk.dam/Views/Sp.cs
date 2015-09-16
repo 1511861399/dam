@@ -18,6 +18,15 @@ namespace com.tk.dam.Views
             InitializeComponent();
         }
 
+        private void Sp_Load(object sender, EventArgs e)
+        {
+            videoCtrl(pboxVideo2, lblVideo2, pboxVideo2.Name);
+            setAudioOff();
+            panel25.Parent = pboxVideo2;
+            panel25.DoubleClick += panel25_DoubleClick;
+            pictureBox5.Visible = false;
+        }
+
         private void panelMenu_MouseEnter(object sender, EventArgs e)
         {
             var panel = sender as Panel;
@@ -69,7 +78,7 @@ namespace com.tk.dam.Views
         private void videoCtrl(PictureBox PlayScreen, Label lblVideo,string screan)
         {
             string mciCommand;
-            string alias = "MyAVI" + screan;
+            string alias = "MyAVI";
             if (lblVideo.Tag == null || lblVideo.Tag.ToString() != "正在播放")
             {
                 lblVideo.Hide();
@@ -117,13 +126,7 @@ namespace com.tk.dam.Views
             string alias = "MyAVI";
             LibWrap.mciSendString(string.Format(" setaudio   {0} on ", alias), null, 0, 0);
         }
-        private void Sp_Load(object sender, EventArgs e)
-        {
-            videoCtrl(pboxVideo2, lblVideo2, pboxVideo2.Name);
-            panel25.Parent = pboxVideo2;
-            panel25.DoubleClick += panel25_DoubleClick;
-            pictureBox5.Visible = false;
-        }
+
         private bool mFull = false;
         void panel25_DoubleClick(object sender, EventArgs e)
         {
@@ -133,7 +136,7 @@ namespace com.tk.dam.Views
                 pictureBox5.BringToFront();
                 pictureBox5.Controls.Add(pboxVideo2);
                 pictureBox5.Visible = true;
-                string mciCommand = string.Format(" put {0} window at 0 0 {1} {2}", "MyAVI" + pboxVideo2.Name, pictureBox5.Width, pictureBox5.Height-60);
+                string mciCommand = string.Format(" put {0} window at 0 0 {1} {2}", "MyAVI", pictureBox5.Width, pictureBox5.Height-60);
                 LibWrap.mciSendString(mciCommand, null, 0, 0);
             }
             else
@@ -142,7 +145,7 @@ namespace com.tk.dam.Views
                 pictureBox5.Visible = false;
                 panel22.Controls.Add(pboxVideo2);
 
-                string mciCommand = string.Format(" put {0} window at 0 0 {1} {2}", "MyAVI" + pboxVideo2.Name, pboxVideo2.Width, pboxVideo2.Height);
+                string mciCommand = string.Format(" put {0} window at 0 0 {1} {2}", "MyAVI", pboxVideo2.Width, pboxVideo2.Height);
                 LibWrap.mciSendString(mciCommand, null, 0, 0);
             }
             mFull = !mFull;

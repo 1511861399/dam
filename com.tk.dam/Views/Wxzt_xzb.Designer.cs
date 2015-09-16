@@ -33,8 +33,6 @@
             DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel1 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
             DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel2 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
-            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel3 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
             DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
             this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).BeginInit();
@@ -43,8 +41,6 @@
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel3)).BeginInit();
             this.SuspendLayout();
             // 
             // chartControl2
@@ -52,9 +48,14 @@
             this.chartControl2.AppearanceNameSerializable = "Nature Colors";
             this.chartControl2.BackColor = System.Drawing.Color.Transparent;
             this.chartControl2.BorderOptions.Color = System.Drawing.Color.Transparent;
-            xyDiagram1.AxisX.Label.Visible = false;
+            xyDiagram1.AxisX.NumericScaleOptions.AutoGrid = false;
+            xyDiagram1.AxisX.NumericScaleOptions.GridOffset = 1D;
+            xyDiagram1.AxisX.NumericScaleOptions.ScaleMode = DevExpress.XtraCharts.ScaleMode.Manual;
+            xyDiagram1.AxisX.Tickmarks.Length = 2;
+            xyDiagram1.AxisX.Tickmarks.MinorVisible = false;
             xyDiagram1.AxisX.Title.Text = "卫星编号";
             xyDiagram1.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            xyDiagram1.AxisX.Visibility = DevExpress.Utils.DefaultBoolean.True;
             xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
             xyDiagram1.AxisX.WholeRange.AutoSideMargins = true;
             xyDiagram1.AxisY.GridLines.Color = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
@@ -81,40 +82,31 @@
             sideBySideBarSeriesLabel1.Border.Color = System.Drawing.Color.Transparent;
             sideBySideBarSeriesLabel1.Indent = 5;
             sideBySideBarSeriesLabel1.Position = DevExpress.XtraCharts.BarSeriesLabelPosition.BottomInside;
+            sideBySideBarSeriesLabel1.ShowForZeroValues = true;
+            sideBySideBarSeriesLabel1.TextAlignment = System.Drawing.StringAlignment.Far;
             sideBySideBarSeriesLabel1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             series1.Label = sideBySideBarSeriesLabel1;
-            series1.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series1.LegendText = "G=GPS";
-            series1.Name = "GPS";
+            series1.LegendText = "L1";
+            series1.Name = "L1";
             sideBySideBarSeriesLabel2.BackColor = System.Drawing.Color.Transparent;
             sideBySideBarSeriesLabel2.Border.Color = System.Drawing.Color.Transparent;
             sideBySideBarSeriesLabel2.Indent = 5;
             sideBySideBarSeriesLabel2.Position = DevExpress.XtraCharts.BarSeriesLabelPosition.BottomInside;
             sideBySideBarSeriesLabel2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             series2.Label = sideBySideBarSeriesLabel2;
-            series2.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series2.LegendText = "C=Gloness";
-            series2.Name = "GLO";
-            sideBySideBarSeriesLabel3.BackColor = System.Drawing.Color.Transparent;
-            sideBySideBarSeriesLabel3.Border.Color = System.Drawing.Color.Transparent;
-            sideBySideBarSeriesLabel3.Indent = 5;
-            sideBySideBarSeriesLabel3.Position = DevExpress.XtraCharts.BarSeriesLabelPosition.BottomInside;
-            sideBySideBarSeriesLabel3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            series3.Label = sideBySideBarSeriesLabel3;
-            series3.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series3.LegendText = "B=BD";
-            series3.Name = "BD";
+            series2.LegendText = "L2";
+            series2.Name = "L2";
             this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1,
-        series2,
-        series3};
+        series2};
             this.chartControl2.SideBySideBarDistanceFixed = 0;
             this.chartControl2.Size = new System.Drawing.Size(900, 600);
             this.chartControl2.TabIndex = 1;
             chartTitle1.Text = "卫星信噪比柱状图";
             this.chartControl2.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
             chartTitle1});
-            this.chartControl2.CustomDrawSeriesPoint += new DevExpress.XtraCharts.CustomDrawSeriesPointEventHandler(this.chartControl2_CustomDrawSeriesPoint);           
+            this.chartControl2.CustomDrawSeriesPoint += new DevExpress.XtraCharts.CustomDrawSeriesPointEventHandler(this.chartControl2_CustomDrawSeriesPoint);
+            this.chartControl2.CustomDrawAxisLabel += new DevExpress.XtraCharts.CustomDrawAxisLabelEventHandler(this.chartControl2_CustomDrawAxisLabel);
             // 
             // Wxzt_xzb
             // 
@@ -134,8 +126,6 @@
             ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
             this.ResumeLayout(false);
 

@@ -74,6 +74,7 @@
             this.lblDateTime2 = new System.Windows.Forms.Label();
             this.lblDateTime3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lbDjsw = new System.Windows.Forms.Label();
             this.pboxSW = new com.tk.dam.Views.PictureBoxModel();
             this.pboxS = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -472,6 +473,7 @@
             // 
             this.panel4.AutoSize = true;
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(169)))), ((int)(((byte)(245)))));
+            this.panel4.Controls.Add(this.lbDjsw);
             this.panel4.Controls.Add(this.pboxSW);
             this.panel4.Controls.Add(this.pboxS);
             this.panel4.Controls.Add(this.label5);
@@ -479,6 +481,18 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(278, 500);
             this.panel4.TabIndex = 21;
+            // 
+            // lbDjsw
+            // 
+            this.lbDjsw.BackColor = System.Drawing.Color.Transparent;
+            this.lbDjsw.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbDjsw.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbDjsw.Location = new System.Drawing.Point(113, 10);
+            this.lbDjsw.Name = "lbDjsw";
+            this.lbDjsw.Size = new System.Drawing.Size(154, 42);
+            this.lbDjsw.TabIndex = 26;
+            this.lbDjsw.Text = "当前水位：95m  ";
+            this.lbDjsw.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pboxSW
             // 
@@ -490,6 +504,7 @@
             // 
             // pboxS
             // 
+            this.pboxS.BackColor = System.Drawing.Color.Transparent;
             this.pboxS.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pboxS.Image = global::com.tk.dam.Properties.Resources.shui1;
             this.pboxS.Location = new System.Drawing.Point(0, 301);
@@ -856,5 +871,6 @@
         private System.Windows.Forms.PictureBox pboxDirectionSW;
         private System.Windows.Forms.PictureBox pboxDirectionES;
         private System.Windows.Forms.PictureBox pboxDirectionNE;
+        private System.Windows.Forms.Label lbDjsw;
     }
 }

@@ -13,8 +13,10 @@ namespace com.tk.dam.Views
 {
     public partial class Wxzt_xzb : DevExpress.XtraEditors.XtraUserControl
     {
-        private Random mRandom;
-
+        private Random mRandom = new Random(360);
+        int mGpsCount;
+        int mGloCount;
+        int mBdCount;
         public Wxzt_xzb()
         {
             InitializeComponent();
@@ -27,26 +29,45 @@ namespace com.tk.dam.Views
 
         public void SetPoints(List<SeriesPoint> gpsPoints, List<SeriesPoint> gloPoints, List<SeriesPoint> bdPoints)
         {
+            mGpsCount = gpsPoints.Count;
+            mGloCount = gloPoints.Count;
+            mBdCount = bdPoints.Count;
+
             this.chartControl2.Series[0].Points.Clear();
             this.chartControl2.Series[1].Points.Clear();
-            this.chartControl2.Series[2].Points.Clear();
+  
             int i = 0;
             foreach (SeriesPoint point in gpsPoints)
             {
                 i++;
-                this.chartControl2.Series[0].Points.Add(point);
+                SeriesPoint point1 = new SeriesPoint(i, point.Values[0] + mRandom.Next(10) - 4);
+                SeriesPoint point2 = new SeriesPoint(i, point.Values[0] + mRandom.Next(10) - 4);
+                point1.Tag = "G";
+                point2.Tag = i.ToString();
+                this.chartControl2.Series[0].Points.Add(point1);
+                this.chartControl2.Series[1].Points.Add(point2);
                 addAnnotation(point, i);
             }
             foreach (SeriesPoint point in gloPoints)
             {
                 i++;
-                this.chartControl2.Series[1].Points.Add(point);
+                SeriesPoint point1 = new SeriesPoint(i, point.Values[0] + mRandom.Next(10) - 4);
+                SeriesPoint point2 = new SeriesPoint(i, point.Values[0] + mRandom.Next(10) - 4);
+                point1.Tag = "C";
+                point2.Tag = i.ToString();
+                this.chartControl2.Series[0].Points.Add(point1);
+                this.chartControl2.Series[1].Points.Add(point2);
                 addAnnotation(point, i);
             }
             foreach (SeriesPoint point in bdPoints)
             {
                 i++;
-                this.chartControl2.Series[2].Points.Add(point);
+                SeriesPoint point1 = new SeriesPoint(i, point.Values[0] + mRandom.Next(10) - 4);
+                SeriesPoint point2 = new SeriesPoint(i, point.Values[0] + mRandom.Next(10) - 4);
+                point1.Tag = "B";
+                point2.Tag = i.ToString();
+                this.chartControl2.Series[0].Points.Add(point1);
+                this.chartControl2.Series[1].Points.Add(point2);
                 addAnnotation(point, i);
             }
         }
@@ -79,6 +100,31 @@ namespace com.tk.dam.Views
         private void chartControl2_CustomDrawSeriesPoint(object sender, CustomDrawSeriesPointEventArgs e)
         {
             e.LabelText = e.SeriesPoint.Tag.ToString();
+        }
+
+        private void chartControl2_CustomDrawAxisLabel(object sender, CustomDrawAxisLabelEventArgs e)
+        {
+            if (e.Item.Axis is AxisX)
+            {
+                int value = (int)double.Parse(e.Item.AxisValue.ToString());
+                if (value > 0 && value <= mGpsCount)
+                {
+                    e.Item.Text = "G" + value;
+                }
+                   
+                else if (value > mGpsCount && value <= mGpsCount+mGloCount)
+                {
+                    e.Item.Text = "C" + (value-mGpsCount);
+                }
+                else if (value > mGpsCount + mGloCount && value <= mGpsCount + mGloCount + mBdCount)
+                {
+                    e.Item.Text = "B" + (value - mGpsCount - mGloCount);
+                }
+                else
+                {
+                    e.Item.Text = "";
+                }
+            }
         }
 
     }

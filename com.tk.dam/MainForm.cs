@@ -126,7 +126,7 @@ namespace com.tk.dam
                 {
                     frame.Elements.Add(element.Clone() as TileItemElement);
                 }
-                frame.Interval = 13000;
+                frame.Interval = 5000;
                 frame.Elements[1].Text = string.Format("站点{0}：BDS:{1}  GPS:{2}  GLO:{3}", i,wxztList[0],wxztList[1],wxztList[2]);
                 tileWXZT.Frames.Add(frame);
                 mWxztDic.Add(i.ToString(),wxztList);

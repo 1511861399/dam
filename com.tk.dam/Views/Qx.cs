@@ -31,13 +31,14 @@ namespace com.tk.dam.Views
 
         private void Qx_Load(object sender, EventArgs e)
         {
+            this.lbDjsw.Parent = this.pboxS;
+            this.lbDjsw.Dock = DockStyle.Bottom;
             try
             {
                 mQxDic = MainForm.QxDic;
                 var location = webClient.DownloadString("http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json");
                 var json = new JavaScriptSerializer().Deserialize<dynamic>(location);
                 string city = HttpUtility.UrlDecode(json["city"]);
-
                 LoadWeather(city);
                 LoadSD(city);
             }
@@ -105,6 +106,7 @@ namespace com.tk.dam.Views
             if (mQxDic != null && mQxDic.ContainsKey("SW"))
             {
                 double mSW = mQxDic["SW"];
+                this.lbDjsw.Text = string.Format("当前水位:{0}m ", mSW);
                 for (int j = -4; j < 0; j++)
                 {
                     this.chartControl1.Series[0].Points.Add(new SeriesPoint(mNow.AddDays(j), mRandom.Next(10) / 10.0 + mSW));
