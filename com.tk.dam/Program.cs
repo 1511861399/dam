@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using DevExpress.LookAndFeel;
+using com.tk.orm.dao;
+using com.tk.orm.model;
 
 namespace com.tk.dam
 {
@@ -18,6 +20,9 @@ namespace com.tk.dam
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            var insertProductId = 0;
+            //查单条记录
+            var model = BaseDA.Get<Product>("SelectByProductId", insertProductId);
             Application.Run(new MainForm());
         }
     }

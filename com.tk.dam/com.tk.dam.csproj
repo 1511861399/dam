@@ -58,6 +58,9 @@
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.DynamicProxy">
+      <HintPath>..\Lib\MyBatisLib\Castle.DynamicProxy.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.BonusSkins.v14.2, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -159,6 +162,21 @@
     </Reference>
     <Reference Include="DevExpress.XtraTreeList.v14.2, Version=14.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
+    </Reference>
+    <Reference Include="IBatisNet.Common">
+      <HintPath>..\Lib\MyBatisLib\IBatisNet.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="IBatisNet.Common.Logging.Log4Net">
+      <HintPath>..\Lib\MyBatisLib\IBatisNet.Common.Logging.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="IBatisNet.DataAccess">
+      <HintPath>..\Lib\MyBatisLib\IBatisNet.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="IBatisNet.DataMapper">
+      <HintPath>..\Lib\MyBatisLib\IBatisNet.DataMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Lib\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -308,6 +326,9 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <Content Include="DataBase.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Views\popupTj.resx">
       <DependentUpon>popupTj.cs</DependentUpon>
@@ -382,6 +403,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="SqlMap.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
@@ -406,6 +430,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Providers.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\tile_bg_tj.png" />
   </ItemGroup>
   <ItemGroup>
@@ -488,9 +515,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lb_sw_bg.png" />
-    <Content Include="video\video.wmv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\bg_color.png" />
     <None Include="Resources\scrollthumbbutton.png" />
     <None Include="Resources\scrollbutton_glyph.png" />
@@ -552,7 +576,15 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="video\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\com.tk.orm\com.tk.orm.csproj">
+      <Project>{52a49ca4-20bd-45e1-b537-08370b9edfbb}</Project>
+      <Name>com.tk.orm</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

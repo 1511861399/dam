@@ -1,7 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.tk.dam", "com.tk.dam\com.tk.dam.csproj", "{B3968DC1-A659-411F-9258-6F8D24D537E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.tk.orm", "com.tk.orm\com.tk.orm.csproj", "{52A49CA4-20BD-45E1-B537-08370B9EDFBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +15,10 @@ Global
 		{B3968DC1-A659-411F-9258-6F8D24D537E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3968DC1-A659-411F-9258-6F8D24D537E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3968DC1-A659-411F-9258-6F8D24D537E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52A49CA4-20BD-45E1-B537-08370B9EDFBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52A49CA4-20BD-45E1-B537-08370B9EDFBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52A49CA4-20BD-45E1-B537-08370B9EDFBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52A49CA4-20BD-45E1-B537-08370B9EDFBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
