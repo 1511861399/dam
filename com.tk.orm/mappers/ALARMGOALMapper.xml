@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?> 
+<sqlMap namespace="EntityModel" xmlns="http://ibatis.apache.org/mapping"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+    <alias>
+		<!--类的别名-->
+		<typeAlias alias="ALARMGOAL" type="com.tk.orm.model.ALARMGOAL,com.tk.orm"/>
+	</alias>
+    <parameterMaps>
+	<parameterMap id="ALARMGOAL_params">
+    			<parameter property="ID" column="ID" type="int" dbType="int" ></parameter>
+    			<parameter property="NAME" column="NAME" dbType="Varchar" ></parameter>
+    			<parameter property="TEL" column="TEL" dbType="Varchar" ></parameter>
+    			<parameter property="EMAIL" column="EMAIL" dbType="Varchar" ></parameter>
+    	</parameterMap>
+    </parameterMaps>
+    <resultMaps>
+        <resultMap id="ALARMGOALResult" class="ALARMGOAL"> 
+            <result property="ID" column="ID"/>
+            <result property="NAME" column="NAME"/>
+            <result property="TEL" column="TEL"/>
+            <result property="EMAIL" column="EMAIL"/>
+        </resultMap>
+    </resultMaps>
+    <statements>
+    <!--查询所有记录-->
+		<select id="SelectAllALARMGOAL" resultMap="ALARMGOALResult">
+			<![CDATA[SELECT  
+             ID,
+    	     
+             NAME,
+    	     
+             TEL,
+    	     
+             EMAIL
+    	     FROM T_ALARMGOAL]]>
+		</select>
+        <!--查询单条记录-->
+		<select id="SelectALARMGOALById" parameterClass="int" resultMap="ALARMGOALResult" extends="SelectAllALARMGOAL">
+			<![CDATA[ where ID = #value#  ]]>
+		</select> 
+        
+        
+        
+        <!--插入新记录-->
+		<insert id="InsertALARMGOAL" parameterClass="ALARMGOAL">	
+          select 1;
+    			<!--id自动生成的示例用法-->
+          <selectKey property="ID" type="post" resultClass="int">
+          <![CDATA[
+            INSERT into T_ALARMGOAL(NAME, TEL, EMAIL )
+    			  VALUES(#NAME#, #TEL#, #EMAIL# )
+            SELECT SCOPE_IDENTITY() as ID
+          ]]>
+          </selectKey>
+      
+		</insert>
+        
+        <!--更新单条记录-->
+		<update id="UpdateALARMGOAL" parameterClass="ALARMGOAL">
+			<![CDATA[Update T_ALARMGOAL 
+            SET  
+                    NAME=#NAME#
+                , 
+                    TEL=#TEL#
+                , 
+                    EMAIL=#EMAIL#
+                 
+			Where ID=#ID#]]>
+		</update>
+
+		<!--根据主键删除单条记录-->
+		<delete id="DeleteALARMGOALById" parameterClass="int">
+			<![CDATA[Delete From T_ALARMGOAL Where ID=#value#]]>
+		</delete>
+        <select id="SelectALARMGOALQuery" parameterMap="ALARMGOAL_params" resultMap="ALARMGOALResult">
+    
+                select
+            		a.ID,
+            		a.NAME,
+            		a.TEL,
+            		a.EMAIL,	
+        	from T_ALARMGOAL a 
+        	<dynamic prepend="where">
+        		<isPropertyAvailable prepend="" property="ID">
+        			<isGreaterThan prepend="and" property="ID" compareValue="0">
+        				a.ID = #ID#
+        			</isGreaterThan>
+        		</isPropertyAvailable>
+        	</dynamic>
+        	<!--order by-->
+        	<dynamic>
+        	order by
+        	a.ID
+        	</dynamic>
+        </select> 
+        
+       
+    </statements>
+</sqlMap>  

@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?> 
+<sqlMap namespace="EntityModel" xmlns="http://ibatis.apache.org/mapping"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+    <alias>
+		<!--类的别名-->
+		<typeAlias alias="STATION_ORIGINAL" type="com.tk.orm.model.STATION_ORIGINAL,com.tk.orm"/>
+	</alias>
+    <parameterMaps>
+	<parameterMap id="STATION_ORIGINAL_params">
+    			<parameter property="ID" column="ID" type="long" dbType="bigint" ></parameter>
+    			 <parameter property="GDATETIME" column="GDATETIME" type="DateTime" dbType="datetime" ></parameter>
+    			<parameter property="X" column="X" type="double" dbType="float" ></parameter>
+    			<parameter property="Y" column="Y" type="double" dbType="float" ></parameter>
+    			<parameter property="H" column="H" type="double" dbType="float" ></parameter>
+    			<parameter property="DLTAX" column="DLTAX" type="double" dbType="float" ></parameter>
+    			<parameter property="DLTAY" column="DLTAY" type="double" dbType="float" ></parameter>
+    			<parameter property="DLTAH" column="DLTAH" type="double" dbType="float" ></parameter>
+    	</parameterMap>
+    </parameterMaps>
+    <resultMaps>
+        <resultMap id="STATION_ORIGINALResult" class="STATION_ORIGINAL"> 
+            <result property="ID" column="ID"/>
+            <result property="GDATETIME" column="GDATETIME"/>
+            <result property="X" column="X"/>
+            <result property="Y" column="Y"/>
+            <result property="H" column="H"/>
+            <result property="DLTAX" column="DLTAX"/>
+            <result property="DLTAY" column="DLTAY"/>
+            <result property="DLTAH" column="DLTAH"/>
+        </resultMap>
+    </resultMaps>
+    <statements>
+    <!--查询所有记录-->
+		<select id="SelectAllSTATION_ORIGINAL" resultMap="STATION_ORIGINALResult">
+			<![CDATA[SELECT  
+             ID,
+    	     
+             GDATETIME,
+    	     
+             X,
+    	     
+             Y,
+    	     
+             H,
+    	     
+             DLTAX,
+    	     
+             DLTAY,
+    	     
+             DLTAH
+    	     FROM T_STATION_ORIGINAL]]>
+		</select>
+        <!--查询单条记录-->
+		<select id="SelectSTATION_ORIGINALById" parameterClass="int" resultMap="STATION_ORIGINALResult" extends="SelectAllSTATION_ORIGINAL">
+			<![CDATA[ where ID = #value#  ]]>
+		</select> 
+        
+        
+        
+        <!--插入新记录-->
+		<insert id="InsertSTATION_ORIGINAL" parameterClass="STATION_ORIGINAL">	
+          select 1;
+    			<!--id自动生成的示例用法-->
+          <selectKey property="ID" type="post" resultClass="int">
+          <![CDATA[
+            INSERT into T_STATION_ORIGINAL(GDATETIME, X, Y, H, DLTAX, DLTAY, DLTAH )
+    			  VALUES(#GDATETIME#, #X#, #Y#, #H#, #DLTAX#, #DLTAY#, #DLTAH# )
+            SELECT SCOPE_IDENTITY() as ID
+          ]]>
+          </selectKey>
+      
+		</insert>
+        
+        <!--更新单条记录-->
+		<update id="UpdateSTATION_ORIGINAL" parameterClass="STATION_ORIGINAL">
+			<![CDATA[Update T_STATION_ORIGINAL 
+            SET  
+                    GDATETIME=#GDATETIME#
+                , 
+                    X=#X#
+                , 
+                    Y=#Y#
+                , 
+                    H=#H#
+                , 
+                    DLTAX=#DLTAX#
+                , 
+                    DLTAY=#DLTAY#
+                , 
+                    DLTAH=#DLTAH#
+                 
+			Where ID=#ID#]]>
+		</update>
+
+		<!--根据主键删除单条记录-->
+		<delete id="DeleteSTATION_ORIGINALById" parameterClass="int">
+			<![CDATA[Delete From T_STATION_ORIGINAL Where ID=#value#]]>
+		</delete>
+        <select id="SelectSTATION_ORIGINALQuery" parameterMap="STATION_ORIGINAL_params" resultMap="STATION_ORIGINALResult">
+    
+                select
+            		a.ID,
+            		a.GDATETIME,
+            		a.X,
+            		a.Y,
+            		a.H,
+            		a.DLTAX,
+            		a.DLTAY,
+            		a.DLTAH,	
+        	from T_STATION_ORIGINAL a 
+        	<dynamic prepend="where">
+        		<isPropertyAvailable prepend="" property="ID">
+        			<isGreaterThan prepend="and" property="ID" compareValue="0">
+        				a.ID = #ID#
+        			</isGreaterThan>
+        		</isPropertyAvailable>
+        	</dynamic>
+        	<!--order by-->
+        	<dynamic>
+        	order by
+        	a.ID
+        	</dynamic>
+        </select> 
+        
+       
+    </statements>
+</sqlMap>  

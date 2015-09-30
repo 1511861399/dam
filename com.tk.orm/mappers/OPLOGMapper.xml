@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?> 
+<sqlMap namespace="EntityModel" xmlns="http://ibatis.apache.org/mapping"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+    <alias>
+		<!--类的别名-->
+		<typeAlias alias="OPLOG" type="com.tk.orm.model.OPLOG,com.tk.orm"/>
+	</alias>
+    <parameterMaps>
+	<parameterMap id="OPLOG_params">
+    			<parameter property="ID" column="ID" type="int" dbType="int" ></parameter>
+    			 <parameter property="ODATETIME" column="ODATETIME" type="DateTime" dbType="datetime" ></parameter>
+    			<parameter property="ONAME" column="ONAME" dbType="Varchar" ></parameter>
+    			<parameter property="LOG_INFO" column="LOG_INFO" dbType="Varchar" ></parameter>
+    			<parameter property="EVENT" column="EVENT" type="int" dbType="int" ></parameter>
+    			<parameter property="OMODULE" column="OMODULE" dbType="Varchar" ></parameter>
+    	</parameterMap>
+    </parameterMaps>
+    <resultMaps>
+        <resultMap id="OPLOGResult" class="OPLOG"> 
+            <result property="ID" column="ID"/>
+            <result property="ODATETIME" column="ODATETIME"/>
+            <result property="ONAME" column="ONAME"/>
+            <result property="LOG_INFO" column="LOG_INFO"/>
+            <result property="EVENT" column="EVENT"/>
+            <result property="OMODULE" column="OMODULE"/>
+        </resultMap>
+    </resultMaps>
+    <statements>
+    <!--查询所有记录-->
+		<select id="SelectAllOPLOG" resultMap="OPLOGResult">
+			<![CDATA[SELECT  
+             ID,
+    	     
+             ODATETIME,
+    	     
+             ONAME,
+    	     
+             LOG_INFO,
+    	     
+             EVENT,
+    	     
+             OMODULE
+    	     FROM T_OPLOG]]>
+		</select>
+        <!--查询单条记录-->
+		<select id="SelectOPLOGById" parameterClass="int" resultMap="OPLOGResult" extends="SelectAllOPLOG">
+			<![CDATA[ where ID = #value#  ]]>
+		</select> 
+        
+        
+        
+        <!--插入新记录-->
+		<insert id="InsertOPLOG" parameterClass="OPLOG">	
+          select 1;
+    			<!--id自动生成的示例用法-->
+          <selectKey property="ID" type="post" resultClass="int">
+          <![CDATA[
+            INSERT into T_OPLOG(ODATETIME, ONAME, LOG_INFO, EVENT, OMODULE )
+    			  VALUES(#ODATETIME#, #ONAME#, #LOG_INFO#, #EVENT#, #OMODULE# )
+            SELECT SCOPE_IDENTITY() as ID
+          ]]>
+          </selectKey>
+      
+		</insert>
+        
+        <!--更新单条记录-->
+		<update id="UpdateOPLOG" parameterClass="OPLOG">
+			<![CDATA[Update T_OPLOG 
+            SET  
+                    ODATETIME=#ODATETIME#
+                , 
+                    ONAME=#ONAME#
+                , 
+                    LOG_INFO=#LOG_INFO#
+                , 
+                    EVENT=#EVENT#
+                , 
+                    OMODULE=#OMODULE#
+                 
+			Where ID=#ID#]]>
+		</update>
+
+		<!--根据主键删除单条记录-->
+		<delete id="DeleteOPLOGById" parameterClass="int">
+			<![CDATA[Delete From T_OPLOG Where ID=#value#]]>
+		</delete>
+        <select id="SelectOPLOGQuery" parameterMap="OPLOG_params" resultMap="OPLOGResult">
+    
+                select
+            		a.ID,
+            		a.ODATETIME,
+            		a.ONAME,
+            		a.LOG_INFO,
+            		a.EVENT,
+            		a.OMODULE,	
+        	from T_OPLOG a 
+        	<dynamic prepend="where">
+        		<isPropertyAvailable prepend="" property="ID">
+        			<isGreaterThan prepend="and" property="ID" compareValue="0">
+        				a.ID = #ID#
+        			</isGreaterThan>
+        		</isPropertyAvailable>
+        	</dynamic>
+        	<!--order by-->
+        	<dynamic>
+        	order by
+        	a.ID
+        	</dynamic>
+        </select> 
+        
+       
+    </statements>
+</sqlMap>  

@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?> 
+<sqlMap namespace="EntityModel" xmlns="http://ibatis.apache.org/mapping"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+    <alias>
+		<!--类的别名-->
+		<typeAlias alias="STATION" type="com.tk.orm.model.STATION,com.tk.orm"/>
+	</alias>
+    <parameterMaps>
+	<parameterMap id="STATION_params">
+    			<parameter property="ID" column="ID" type="int" dbType="int" ></parameter>
+    			<parameter property="PROJ_ID" column="PROJ_ID" type="int" dbType="int" ></parameter>
+    			<parameter property="STATE" column="STATE" type="byte" dbType="tinyint" ></parameter>
+    			<parameter property="NAME" column="NAME" dbType="Varchar" ></parameter>
+    			<parameter property="SSN" column="SSN" dbType="Varchar" ></parameter>
+    			<parameter property="SSTYLE" column="SSTYLE" type="int" dbType="int" ></parameter>
+    			<parameter property="ESTYLE" column="ESTYLE" type="int" dbType="int" ></parameter>
+    			<parameter property="SX" column="SX" type="double" dbType="float" ></parameter>
+    			<parameter property="SY" column="SY" type="double" dbType="float" ></parameter>
+    			<parameter property="SH" column="SH" type="double" dbType="float" ></parameter>
+    			<parameter property="SB" column="SB" type="double" dbType="float" ></parameter>
+    			<parameter property="SL" column="SL" type="double" dbType="float" ></parameter>
+    			<parameter property="SHEIGHT" column="SHEIGHT" type="double" dbType="float" ></parameter>
+    			<parameter property="SCOORNAME" column="SCOORNAME" dbType="Varchar" ></parameter>
+    			<parameter property="SFILTERNAME1" column="SFILTERNAME1" dbType="Varchar" ></parameter>
+    			<parameter property="SFILTERNAME2" column="SFILTERNAME2" dbType="Varchar" ></parameter>
+    			<parameter property="S1X" column="S1X" type="double" dbType="float" ></parameter>
+    			<parameter property="S1Y" column="S1Y" type="double" dbType="float" ></parameter>
+    			<parameter property="S1H" column="S1H" type="double" dbType="float" ></parameter>
+    			<parameter property="X" column="X" type="double" dbType="float" ></parameter>
+    			<parameter property="Y" column="Y" type="double" dbType="float" ></parameter>
+    			<parameter property="COMMENT" column="COMMENT" dbType="Varchar" ></parameter>
+    			<parameter property="EMODEL" column="EMODEL" dbType="Varchar" ></parameter>
+    			<parameter property="EPROVIDER" column="EPROVIDER" dbType="Varchar" ></parameter>
+    			 <parameter property="ESTARTDATE" column="ESTARTDATE" type="DateTime" dbType="datetime" ></parameter>
+    			<parameter property="EINSTALLER" column="EINSTALLER" dbType="Varchar" ></parameter>
+    			<parameter property="BYS1X" column="BYS1X" type="double" dbType="float" ></parameter>
+    			<parameter property="BYS1Y" column="BYS1Y" type="double" dbType="float" ></parameter>
+    			<parameter property="BYS1H" column="BYS1H" type="double" dbType="float" ></parameter>
+    			<parameter property="SCONFIG" column="SCONFIG" dbType="Varchar" ></parameter>
+    	</parameterMap>
+    </parameterMaps>
+    <resultMaps>
+        <resultMap id="STATIONResult" class="STATION"> 
+            <result property="ID" column="ID"/>
+            <result property="PROJ_ID" column="PROJ_ID"/>
+            <result property="STATE" column="STATE"/>
+            <result property="NAME" column="NAME"/>
+            <result property="SSN" column="SSN"/>
+            <result property="SSTYLE" column="SSTYLE"/>
+            <result property="ESTYLE" column="ESTYLE"/>
+            <result property="SX" column="SX"/>
+            <result property="SY" column="SY"/>
+            <result property="SH" column="SH"/>
+            <result property="SB" column="SB"/>
+            <result property="SL" column="SL"/>
+            <result property="SHEIGHT" column="SHEIGHT"/>
+            <result property="SCOORNAME" column="SCOORNAME"/>
+            <result property="SFILTERNAME1" column="SFILTERNAME1"/>
+            <result property="SFILTERNAME2" column="SFILTERNAME2"/>
+            <result property="S1X" column="S1X"/>
+            <result property="S1Y" column="S1Y"/>
+            <result property="S1H" column="S1H"/>
+            <result property="X" column="X"/>
+            <result property="Y" column="Y"/>
+            <result property="COMMENT" column="COMMENT"/>
+            <result property="EMODEL" column="EMODEL"/>
+            <result property="EPROVIDER" column="EPROVIDER"/>
+            <result property="ESTARTDATE" column="ESTARTDATE"/>
+            <result property="EINSTALLER" column="EINSTALLER"/>
+            <result property="BYS1X" column="BYS1X"/>
+            <result property="BYS1Y" column="BYS1Y"/>
+            <result property="BYS1H" column="BYS1H"/>
+            <result property="SCONFIG" column="SCONFIG"/>
+        </resultMap>
+    </resultMaps>
+    <statements>
+    <!--查询所有记录-->
+		<select id="SelectAllSTATION" resultMap="STATIONResult">
+			<![CDATA[SELECT  
+             ID,
+    	     
+             PROJ_ID,
+    	     
+             STATE,
+    	     
+             NAME,
+    	     
+             SSN,
+    	     
+             SSTYLE,
+    	     
+             ESTYLE,
+    	     
+             SX,
+    	     
+             SY,
+    	     
+             SH,
+    	     
+             SB,
+    	     
+             SL,
+    	     
+             SHEIGHT,
+    	     
+             SCOORNAME,
+    	     
+             SFILTERNAME1,
+    	     
+             SFILTERNAME2,
+    	     
+             S1X,
+    	     
+             S1Y,
+    	     
+             S1H,
+    	     
+             X,
+    	     
+             Y,
+    	     
+             COMMENT,
+    	     
+             EMODEL,
+    	     
+             EPROVIDER,
+    	     
+             ESTARTDATE,
+    	     
+             EINSTALLER,
+    	     
+             BYS1X,
+    	     
+             BYS1Y,
+    	     
+             BYS1H,
+    	     
+             SCONFIG
+    	     FROM T_STATION]]>
+		</select>
+        <!--查询单条记录-->
+		<select id="SelectSTATIONById" parameterClass="int" resultMap="STATIONResult" extends="SelectAllSTATION">
+			<![CDATA[ where ID = #value#  ]]>
+		</select> 
+        
+        
+        
+        <!--插入新记录-->
+		<insert id="InsertSTATION" parameterClass="STATION">	
+          select 1;
+    			<!--id自动生成的示例用法-->
+          <selectKey property="ID" type="post" resultClass="int">
+          <![CDATA[
+            INSERT into T_STATION(PROJ_ID, STATE, NAME, SSN, SSTYLE, ESTYLE, SX, SY, SH, SB, SL, SHEIGHT, SCOORNAME, SFILTERNAME1, SFILTERNAME2, S1X, S1Y, S1H, X, Y, COMMENT, EMODEL, EPROVIDER, ESTARTDATE, EINSTALLER, BYS1X, BYS1Y, BYS1H, SCONFIG )
+    			  VALUES(#PROJ_ID#, #STATE#, #NAME#, #SSN#, #SSTYLE#, #ESTYLE#, #SX#, #SY#, #SH#, #SB#, #SL#, #SHEIGHT#, #SCOORNAME#, #SFILTERNAME1#, #SFILTERNAME2#, #S1X#, #S1Y#, #S1H#, #X#, #Y#, #COMMENT#, #EMODEL#, #EPROVIDER#, #ESTARTDATE#, #EINSTALLER#, #BYS1X#, #BYS1Y#, #BYS1H#, #SCONFIG# )
+            SELECT SCOPE_IDENTITY() as ID
+          ]]>
+          </selectKey>
+      
+		</insert>
+        
+        <!--更新单条记录-->
+		<update id="UpdateSTATION" parameterClass="STATION">
+			<![CDATA[Update T_STATION 
+            SET  
+                    PROJ_ID=#PROJ_ID#
+                , 
+                    STATE=#STATE#
+                , 
+                    NAME=#NAME#
+                , 
+                    SSN=#SSN#
+                , 
+                    SSTYLE=#SSTYLE#
+                , 
+                    ESTYLE=#ESTYLE#
+                , 
+                    SX=#SX#
+                , 
+                    SY=#SY#
+                , 
+                    SH=#SH#
+                , 
+                    SB=#SB#
+                , 
+                    SL=#SL#
+                , 
+                    SHEIGHT=#SHEIGHT#
+                , 
+                    SCOORNAME=#SCOORNAME#
+                , 
+                    SFILTERNAME1=#SFILTERNAME1#
+                , 
+                    SFILTERNAME2=#SFILTERNAME2#
+                , 
+                    S1X=#S1X#
+                , 
+                    S1Y=#S1Y#
+                , 
+                    S1H=#S1H#
+                , 
+                    X=#X#
+                , 
+                    Y=#Y#
+                , 
+                    COMMENT=#COMMENT#
+                , 
+                    EMODEL=#EMODEL#
+                , 
+                    EPROVIDER=#EPROVIDER#
+                , 
+                    ESTARTDATE=#ESTARTDATE#
+                , 
+                    EINSTALLER=#EINSTALLER#
+                , 
+                    BYS1X=#BYS1X#
+                , 
+                    BYS1Y=#BYS1Y#
+                , 
+                    BYS1H=#BYS1H#
+                , 
+                    SCONFIG=#SCONFIG#
+                 
+			Where ID=#ID#]]>
+		</update>
+
+		<!--根据主键删除单条记录-->
+		<delete id="DeleteSTATIONById" parameterClass="int">
+			<![CDATA[Delete From T_STATION Where ID=#value#]]>
+		</delete>
+        <select id="SelectSTATIONQuery" parameterMap="STATION_params" resultMap="STATIONResult">
+    
+                select
+            		a.ID,
+            		a.PROJ_ID,
+            		a.STATE,
+            		a.NAME,
+            		a.SSN,
+            		a.SSTYLE,
+            		a.ESTYLE,
+            		a.SX,
+            		a.SY,
+            		a.SH,
+            		a.SB,
+            		a.SL,
+            		a.SHEIGHT,
+            		a.SCOORNAME,
+            		a.SFILTERNAME1,
+            		a.SFILTERNAME2,
+            		a.S1X,
+            		a.S1Y,
+            		a.S1H,
+            		a.X,
+            		a.Y,
+            		a.COMMENT,
+            		a.EMODEL,
+            		a.EPROVIDER,
+            		a.ESTARTDATE,
+            		a.EINSTALLER,
+            		a.BYS1X,
+            		a.BYS1Y,
+            		a.BYS1H,
+            		a.SCONFIG,	
+        	from T_STATION a 
+        	<dynamic prepend="where">
+        		<isPropertyAvailable prepend="" property="ID">
+        			<isGreaterThan prepend="and" property="ID" compareValue="0">
+        				a.ID = #ID#
+        			</isGreaterThan>
+        		</isPropertyAvailable>
+        	</dynamic>
+        	<!--order by-->
+        	<dynamic>
+        	order by
+        	a.ID
+        	</dynamic>
+        </select> 
+        
+       
+    </statements>
+</sqlMap>  

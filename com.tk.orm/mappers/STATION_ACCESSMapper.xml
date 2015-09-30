@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?> 
+<sqlMap namespace="EntityModel" xmlns="http://ibatis.apache.org/mapping"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+    <alias>
+		<!--类的别名-->
+		<typeAlias alias="STATION_ACCESS" type="com.tk.orm.model.STATION_ACCESS,com.tk.orm"/>
+	</alias>
+    <parameterMaps>
+	<parameterMap id="STATION_ACCESS_params">
+    			<parameter property="ID" column="ID" type="int" dbType="int" ></parameter>
+    			<parameter property="STATION_ID" column="STATION_ID" type="int" dbType="int" ></parameter>
+    			<parameter property="ACCESS_STYLE" column="ACCESS_STYLE" type="byte" dbType="tinyint" ></parameter>
+    			<parameter property="ACCESS_PARAS" column="ACCESS_PARAS" dbType="Varchar" ></parameter>
+    	</parameterMap>
+    </parameterMaps>
+    <resultMaps>
+        <resultMap id="STATION_ACCESSResult" class="STATION_ACCESS"> 
+            <result property="ID" column="ID"/>
+            <result property="STATION_ID" column="STATION_ID"/>
+            <result property="ACCESS_STYLE" column="ACCESS_STYLE"/>
+            <result property="ACCESS_PARAS" column="ACCESS_PARAS"/>
+        </resultMap>
+    </resultMaps>
+    <statements>
+    <!--查询所有记录-->
+		<select id="SelectAllSTATION_ACCESS" resultMap="STATION_ACCESSResult">
+			<![CDATA[SELECT  
+             ID,
+    	     
+             STATION_ID,
+    	     
+             ACCESS_STYLE,
+    	     
+             ACCESS_PARAS
+    	     FROM T_STATION_ACCESS]]>
+		</select>
+        <!--查询单条记录-->
+		<select id="SelectSTATION_ACCESSById" parameterClass="int" resultMap="STATION_ACCESSResult" extends="SelectAllSTATION_ACCESS">
+			<![CDATA[ where ID = #value#  ]]>
+		</select> 
+        
+        
+        
+        <!--插入新记录-->
+		<insert id="InsertSTATION_ACCESS" parameterClass="STATION_ACCESS">	
+          select 1;
+    			<!--id自动生成的示例用法-->
+          <selectKey property="ID" type="post" resultClass="int">
+          <![CDATA[
+            INSERT into T_STATION_ACCESS(STATION_ID, ACCESS_STYLE, ACCESS_PARAS )
+    			  VALUES(#STATION_ID#, #ACCESS_STYLE#, #ACCESS_PARAS# )
+            SELECT SCOPE_IDENTITY() as ID
+          ]]>
+          </selectKey>
+      
+		</insert>
+        
+        <!--更新单条记录-->
+		<update id="UpdateSTATION_ACCESS" parameterClass="STATION_ACCESS">
+			<![CDATA[Update T_STATION_ACCESS 
+            SET  
+                    STATION_ID=#STATION_ID#
+                , 
+                    ACCESS_STYLE=#ACCESS_STYLE#
+                , 
+                    ACCESS_PARAS=#ACCESS_PARAS#
+                 
+			Where ID=#ID#]]>
+		</update>
+
+		<!--根据主键删除单条记录-->
+		<delete id="DeleteSTATION_ACCESSById" parameterClass="int">
+			<![CDATA[Delete From T_STATION_ACCESS Where ID=#value#]]>
+		</delete>
+        <select id="SelectSTATION_ACCESSQuery" parameterMap="STATION_ACCESS_params" resultMap="STATION_ACCESSResult">
+    
+                select
+            		a.ID,
+            		a.STATION_ID,
+            		a.ACCESS_STYLE,
+            		a.ACCESS_PARAS,	
+        	from T_STATION_ACCESS a 
+        	<dynamic prepend="where">
+        		<isPropertyAvailable prepend="" property="ID">
+        			<isGreaterThan prepend="and" property="ID" compareValue="0">
+        				a.ID = #ID#
+        			</isGreaterThan>
+        		</isPropertyAvailable>
+        	</dynamic>
+        	<!--order by-->
+        	<dynamic>
+        	order by
+        	a.ID
+        	</dynamic>
+        </select> 
+        
+       
+    </statements>
+</sqlMap>  

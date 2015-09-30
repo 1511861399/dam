@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?> 
+<sqlMap namespace="EntityModel" xmlns="http://ibatis.apache.org/mapping"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+    <alias>
+		<!--类的别名-->
+		<typeAlias alias="RIGHT" type="com.tk.orm.model.RIGHT,com.tk.orm"/>
+	</alias>
+    <parameterMaps>
+	<parameterMap id="RIGHT_params">
+    			<parameter property="ID" column="ID" type="int" dbType="int" ></parameter>
+    			<parameter property="NAME" column="NAME" dbType="Varchar" ></parameter>
+    			<parameter property="DESCRIPTION" column="DESCRIPTION" dbType="Varchar" ></parameter>
+    	</parameterMap>
+    </parameterMaps>
+    <resultMaps>
+        <resultMap id="RIGHTResult" class="RIGHT"> 
+            <result property="ID" column="ID"/>
+            <result property="NAME" column="NAME"/>
+            <result property="DESCRIPTION" column="DESCRIPTION"/>
+        </resultMap>
+    </resultMaps>
+    <statements>
+    <!--查询所有记录-->
+		<select id="SelectAllRIGHT" resultMap="RIGHTResult">
+			<![CDATA[SELECT  
+             ID,
+    	     
+             NAME,
+    	     
+             DESCRIPTION
+    	     FROM T_RIGHT]]>
+		</select>
+        <!--查询单条记录-->
+		<select id="SelectRIGHTById" parameterClass="int" resultMap="RIGHTResult" extends="SelectAllRIGHT">
+			<![CDATA[ where ID = #value#  ]]>
+		</select> 
+        
+        
+        
+        <!--插入新记录-->
+		<insert id="InsertRIGHT" parameterClass="RIGHT">	
+          select 1;
+    			<!--id自动生成的示例用法-->
+          <selectKey property="ID" type="post" resultClass="int">
+          <![CDATA[
+            INSERT into T_RIGHT(NAME, DESCRIPTION )
+    			  VALUES(#NAME#, #DESCRIPTION# )
+            SELECT SCOPE_IDENTITY() as ID
+          ]]>
+          </selectKey>
+      
+		</insert>
+        
+        <!--更新单条记录-->
+		<update id="UpdateRIGHT" parameterClass="RIGHT">
+			<![CDATA[Update T_RIGHT 
+            SET  
+                    NAME=#NAME#
+                , 
+                    DESCRIPTION=#DESCRIPTION#
+                 
+			Where ID=#ID#]]>
+		</update>
+
+		<!--根据主键删除单条记录-->
+		<delete id="DeleteRIGHTById" parameterClass="int">
+			<![CDATA[Delete From T_RIGHT Where ID=#value#]]>
+		</delete>
+        <select id="SelectRIGHTQuery" parameterMap="RIGHT_params" resultMap="RIGHTResult">
+    
+                select
+            		a.ID,
+            		a.NAME,
+            		a.DESCRIPTION,	
+        	from T_RIGHT a 
+        	<dynamic prepend="where">
+        		<isPropertyAvailable prepend="" property="ID">
+        			<isGreaterThan prepend="and" property="ID" compareValue="0">
+        				a.ID = #ID#
+        			</isGreaterThan>
+        		</isPropertyAvailable>
+        	</dynamic>
+        	<!--order by-->
+        	<dynamic>
+        	order by
+        	a.ID
+        	</dynamic>
+        </select> 
+        
+       
+    </statements>
+</sqlMap>  

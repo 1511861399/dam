@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using DevExpress.LookAndFeel;
-using com.tk.orm.dao;
 using com.tk.orm.model;
+using com.tk.orm.dao;
 
 namespace com.tk.dam
 {
@@ -20,9 +20,16 @@ namespace com.tk.dam
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            var insertProductId = 0;
-            //查单条记录
-            var model = BaseDA.Get<Product>("SelectByProductId", insertProductId);
+            ALARMAPPEND model = new ALARMAPPEND();
+            model.ALEVEl = 0;
+            model.GOAL_ID = 0;
+            model.METHOD = 0;
+            ALARMAPPENDDao.Insert(model);
+            model = ALARMAPPENDDao.Get(2);
+            int i = ALARMAPPENDDao.Delete(1);
+            model.METHOD = 1;
+            i = ALARMAPPENDDao.Update(model);
+            IList<ALARMAPPEND> list = ALARMAPPENDDao.QueryForList(null);
             Application.Run(new MainForm());
         }
     }

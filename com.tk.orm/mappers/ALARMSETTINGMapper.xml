@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?> 
+<sqlMap namespace="EntityModel" xmlns="http://ibatis.apache.org/mapping"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+    <alias>
+		<!--类的别名-->
+		<typeAlias alias="ALARMSETTING" type="com.tk.orm.model.ALARMSETTING,com.tk.orm"/>
+	</alias>
+    <parameterMaps>
+	<parameterMap id="ALARMSETTING_params">
+    			<parameter property="ID" column="ID" type="int" dbType="int" ></parameter>
+    			<parameter property="STATIONID" column="STATIONID" type="int" dbType="int" ></parameter>
+    			<parameter property="ALEVEl" column="ALEVEl" type="byte" dbType="tinyint" ></parameter>
+    			<parameter property="SXLIMIT" column="SXLIMIT" type="double" dbType="float" ></parameter>
+    			<parameter property="SYLIMIT" column="SYLIMIT" type="double" dbType="float" ></parameter>
+    			<parameter property="SHLIMIT" column="SHLIMIT" type="double" dbType="float" ></parameter>
+    			<parameter property="SPXLIMIT" column="SPXLIMIT" type="double" dbType="float" ></parameter>
+    			<parameter property="SPYLIMIT" column="SPYLIMIT" type="double" dbType="float" ></parameter>
+    			<parameter property="SPHLIMIT" column="SPHLIMIT" type="double" dbType="float" ></parameter>
+    			<parameter property="SX1LIMIT" column="SX1LIMIT" type="double" dbType="float" ></parameter>
+    			<parameter property="SY1LIMIT" column="SY1LIMIT" type="double" dbType="float" ></parameter>
+    			<parameter property="SH1LIMIT" column="SH1LIMIT" type="double" dbType="float" ></parameter>
+    	</parameterMap>
+    </parameterMaps>
+    <resultMaps>
+        <resultMap id="ALARMSETTINGResult" class="ALARMSETTING"> 
+            <result property="ID" column="ID"/>
+            <result property="STATIONID" column="STATIONID"/>
+            <result property="ALEVEl" column="ALEVEl"/>
+            <result property="SXLIMIT" column="SXLIMIT"/>
+            <result property="SYLIMIT" column="SYLIMIT"/>
+            <result property="SHLIMIT" column="SHLIMIT"/>
+            <result property="SPXLIMIT" column="SPXLIMIT"/>
+            <result property="SPYLIMIT" column="SPYLIMIT"/>
+            <result property="SPHLIMIT" column="SPHLIMIT"/>
+            <result property="SX1LIMIT" column="SX1LIMIT"/>
+            <result property="SY1LIMIT" column="SY1LIMIT"/>
+            <result property="SH1LIMIT" column="SH1LIMIT"/>
+        </resultMap>
+    </resultMaps>
+    <statements>
+    <!--查询所有记录-->
+		<select id="SelectAllALARMSETTING" resultMap="ALARMSETTINGResult">
+			<![CDATA[SELECT  
+             ID,
+    	     
+             STATIONID,
+    	     
+             ALEVEl,
+    	     
+             SXLIMIT,
+    	     
+             SYLIMIT,
+    	     
+             SHLIMIT,
+    	     
+             SPXLIMIT,
+    	     
+             SPYLIMIT,
+    	     
+             SPHLIMIT,
+    	     
+             SX1LIMIT,
+    	     
+             SY1LIMIT,
+    	     
+             SH1LIMIT
+    	     FROM T_ALARMSETTING]]>
+		</select>
+        <!--查询单条记录-->
+		<select id="SelectALARMSETTINGById" parameterClass="int" resultMap="ALARMSETTINGResult" extends="SelectAllALARMSETTING">
+			<![CDATA[ where ID = #value#  ]]>
+		</select> 
+        
+        
+        
+        <!--插入新记录-->
+		<insert id="InsertALARMSETTING" parameterClass="ALARMSETTING">	
+          select 1;
+    			<!--id自动生成的示例用法-->
+          <selectKey property="ID" type="post" resultClass="int">
+          <![CDATA[
+            INSERT into T_ALARMSETTING(STATIONID, ALEVEl, SXLIMIT, SYLIMIT, SHLIMIT, SPXLIMIT, SPYLIMIT, SPHLIMIT, SX1LIMIT, SY1LIMIT, SH1LIMIT )
+    			  VALUES(#STATIONID#, #ALEVEl#, #SXLIMIT#, #SYLIMIT#, #SHLIMIT#, #SPXLIMIT#, #SPYLIMIT#, #SPHLIMIT#, #SX1LIMIT#, #SY1LIMIT#, #SH1LIMIT# )
+            SELECT SCOPE_IDENTITY() as ID
+          ]]>
+          </selectKey>
+      
+		</insert>
+        
+        <!--更新单条记录-->
+		<update id="UpdateALARMSETTING" parameterClass="ALARMSETTING">
+			<![CDATA[Update T_ALARMSETTING 
+            SET  
+                    STATIONID=#STATIONID#
+                , 
+                    ALEVEl=#ALEVEl#
+                , 
+                    SXLIMIT=#SXLIMIT#
+                , 
+                    SYLIMIT=#SYLIMIT#
+                , 
+                    SHLIMIT=#SHLIMIT#
+                , 
+                    SPXLIMIT=#SPXLIMIT#
+                , 
+                    SPYLIMIT=#SPYLIMIT#
+                , 
+                    SPHLIMIT=#SPHLIMIT#
+                , 
+                    SX1LIMIT=#SX1LIMIT#
+                , 
+                    SY1LIMIT=#SY1LIMIT#
+                , 
+                    SH1LIMIT=#SH1LIMIT#
+                 
+			Where ID=#ID#]]>
+		</update>
+
+		<!--根据主键删除单条记录-->
+		<delete id="DeleteALARMSETTINGById" parameterClass="int">
+			<![CDATA[Delete From T_ALARMSETTING Where ID=#value#]]>
+		</delete>
+        <select id="SelectALARMSETTINGQuery" parameterMap="ALARMSETTING_params" resultMap="ALARMSETTINGResult">
+    
+                select
+            		a.ID,
+            		a.STATIONID,
+            		a.ALEVEl,
+            		a.SXLIMIT,
+            		a.SYLIMIT,
+            		a.SHLIMIT,
+            		a.SPXLIMIT,
+            		a.SPYLIMIT,
+            		a.SPHLIMIT,
+            		a.SX1LIMIT,
+            		a.SY1LIMIT,
+            		a.SH1LIMIT,	
+        	from T_ALARMSETTING a 
+        	<dynamic prepend="where">
+        		<isPropertyAvailable prepend="" property="ID">
+        			<isGreaterThan prepend="and" property="ID" compareValue="0">
+        				a.ID = #ID#
+        			</isGreaterThan>
+        		</isPropertyAvailable>
+        	</dynamic>
+        	<!--order by-->
+        	<dynamic>
+        	order by
+        	a.ID
+        	</dynamic>
+        </select> 
+        
+       
+    </statements>
+</sqlMap>  

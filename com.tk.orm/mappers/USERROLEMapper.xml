@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?> 
+<sqlMap namespace="EntityModel" xmlns="http://ibatis.apache.org/mapping"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+    <alias>
+		<!--类的别名-->
+		<typeAlias alias="USERROLE" type="com.tk.orm.model.USERROLE,com.tk.orm"/>
+	</alias>
+    <parameterMaps>
+	<parameterMap id="USERROLE_params">
+    			<parameter property="ID" column="ID" type="int" dbType="int" ></parameter>
+    			<parameter property="USER_ID" column="USER_ID" type="int" dbType="int" ></parameter>
+    			<parameter property="ROLE_ID" column="ROLE_ID" type="int" dbType="int" ></parameter>
+    			<parameter property="PROJ_ID" column="PROJ_ID" type="int" dbType="int" ></parameter>
+    	</parameterMap>
+    </parameterMaps>
+    <resultMaps>
+        <resultMap id="USERROLEResult" class="USERROLE"> 
+            <result property="ID" column="ID"/>
+            <result property="USER_ID" column="USER_ID"/>
+            <result property="ROLE_ID" column="ROLE_ID"/>
+            <result property="PROJ_ID" column="PROJ_ID"/>
+        </resultMap>
+    </resultMaps>
+    <statements>
+    <!--查询所有记录-->
+		<select id="SelectAllUSERROLE" resultMap="USERROLEResult">
+			<![CDATA[SELECT  
+             ID,
+    	     
+             USER_ID,
+    	     
+             ROLE_ID,
+    	     
+             PROJ_ID
+    	     FROM T_USERROLE]]>
+		</select>
+        <!--查询单条记录-->
+		<select id="SelectUSERROLEById" parameterClass="int" resultMap="USERROLEResult" extends="SelectAllUSERROLE">
+			<![CDATA[ where ID = #value#  ]]>
+		</select> 
+        
+        
+        
+        <!--插入新记录-->
+		<insert id="InsertUSERROLE" parameterClass="USERROLE">	
+          select 1;
+    			<!--id自动生成的示例用法-->
+          <selectKey property="ID" type="post" resultClass="int">
+          <![CDATA[
+            INSERT into T_USERROLE(USER_ID, ROLE_ID, PROJ_ID )
+    			  VALUES(#USER_ID#, #ROLE_ID#, #PROJ_ID# )
+            SELECT SCOPE_IDENTITY() as ID
+          ]]>
+          </selectKey>
+      
+		</insert>
+        
+        <!--更新单条记录-->
+		<update id="UpdateUSERROLE" parameterClass="USERROLE">
+			<![CDATA[Update T_USERROLE 
+            SET  
+                    USER_ID=#USER_ID#
+                , 
+                    ROLE_ID=#ROLE_ID#
+                , 
+                    PROJ_ID=#PROJ_ID#
+                 
+			Where ID=#ID#]]>
+		</update>
+
+		<!--根据主键删除单条记录-->
+		<delete id="DeleteUSERROLEById" parameterClass="int">
+			<![CDATA[Delete From T_USERROLE Where ID=#value#]]>
+		</delete>
+        <select id="SelectUSERROLEQuery" parameterMap="USERROLE_params" resultMap="USERROLEResult">
+    
+                select
+            		a.ID,
+            		a.USER_ID,
+            		a.ROLE_ID,
+            		a.PROJ_ID,	
+        	from T_USERROLE a 
+        	<dynamic prepend="where">
+        		<isPropertyAvailable prepend="" property="ID">
+        			<isGreaterThan prepend="and" property="ID" compareValue="0">
+        				a.ID = #ID#
+        			</isGreaterThan>
+        		</isPropertyAvailable>
+        	</dynamic>
+        	<!--order by-->
+        	<dynamic>
+        	order by
+        	a.ID
+        	</dynamic>
+        </select> 
+        
+       
+    </statements>
+</sqlMap>  

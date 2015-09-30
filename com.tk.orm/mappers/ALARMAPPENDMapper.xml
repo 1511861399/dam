@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?> 
+<sqlMap namespace="EntityModel" xmlns="http://ibatis.apache.org/mapping"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+    <alias>
+		<!--类的别名-->
+		<typeAlias alias="ALARMAPPEND" type="com.tk.orm.model.ALARMAPPEND,com.tk.orm"/>
+	</alias>
+    <parameterMaps>
+	<parameterMap id="ALARMAPPEND_params">
+    			<parameter property="ID" column="ID" type="int" dbType="int" ></parameter>
+    			<parameter property="GOAL_ID" column="GOAL_ID" type="int" dbType="int" ></parameter>
+    			<parameter property="METHOD" column="METHOD" type="int" dbType="int" ></parameter>
+    			<parameter property="ALEVEl" column="ALEVEl" type="byte" dbType="tinyint" ></parameter>
+    	</parameterMap>
+    </parameterMaps>
+    <resultMaps>
+        <resultMap id="ALARMAPPENDResult" class="ALARMAPPEND"> 
+            <result property="ID" column="ID"/>
+            <result property="GOAL_ID" column="GOAL_ID"/>
+            <result property="METHOD" column="METHOD"/>
+            <result property="ALEVEl" column="ALEVEl"/>
+        </resultMap>
+    </resultMaps>
+    <statements>
+    <!--查询所有记录-->
+		<select id="SelectAllALARMAPPEND" resultMap="ALARMAPPENDResult">
+			<![CDATA[SELECT  
+             ID,
+    	     
+             GOAL_ID,
+    	     
+             METHOD,
+    	     
+             ALEVEl
+    	     FROM T_ALARMAPPEND]]>
+		</select>
+        <!--查询单条记录-->
+		<select id="SelectALARMAPPENDById" parameterClass="int" resultMap="ALARMAPPENDResult" extends="SelectAllALARMAPPEND">
+			<![CDATA[ where ID = #value#  ]]>
+		</select> 
+        
+        
+        
+        <!--插入新记录-->
+		<insert id="InsertALARMAPPEND" parameterClass="ALARMAPPEND">	
+          select 1;
+    			<!--id自动生成的示例用法-->
+          <selectKey property="ID" type="post" resultClass="int">
+          <![CDATA[
+            INSERT into T_ALARMAPPEND(GOAL_ID, METHOD, ALEVEl )
+    			  VALUES(#GOAL_ID#, #METHOD#, #ALEVEl# )
+            SELECT SCOPE_IDENTITY() as ID
+          ]]>
+          </selectKey>
+      
+		</insert>
+        
+        <!--更新单条记录-->
+		<update id="UpdateALARMAPPEND" parameterClass="ALARMAPPEND">
+			<![CDATA[Update T_ALARMAPPEND 
+            SET  
+                    GOAL_ID=#GOAL_ID#
+                , 
+                    METHOD=#METHOD#
+                , 
+                    ALEVEl=#ALEVEl#
+                 
+			Where ID=#ID#]]>
+		</update>
+
+		<!--根据主键删除单条记录-->
+		<delete id="DeleteALARMAPPENDById" parameterClass="int">
+			<![CDATA[Delete From T_ALARMAPPEND Where ID=#value#]]>
+		</delete>
+        <select id="SelectALARMAPPENDQuery" parameterMap="ALARMAPPEND_params" resultMap="ALARMAPPENDResult">
+    
+                select
+            		a.ID,
+            		a.GOAL_ID,
+            		a.METHOD,
+            		a.ALEVEl,	
+        	from T_ALARMAPPEND a 
+        	<dynamic prepend="where">
+        		<isPropertyAvailable prepend="" property="ID">
+        			<isGreaterThan prepend="and" property="ID" compareValue="0">
+        				a.ID = #ID#
+        			</isGreaterThan>
+        		</isPropertyAvailable>
+        	</dynamic>
+        	<!--order by-->
+        	<dynamic>
+        	order by
+        	a.ID
+        	</dynamic>
+        </select> 
+        
+       
+    </statements>
+</sqlMap>  

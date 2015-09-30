@@ -405,6 +405,7 @@
     </Compile>
     <EmbeddedResource Include="SqlMap.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

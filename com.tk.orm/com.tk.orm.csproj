@@ -58,13 +58,76 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dao\ALARMAPPENDDao.cs" />
+    <Compile Include="dao\ALARMGOALDao.cs" />
+    <Compile Include="dao\ALARMLOGDao.cs" />
+    <Compile Include="dao\ALARMSETTINGDao.cs" />
     <Compile Include="dao\BaseDA.cs" />
+    <Compile Include="dao\GPSINFODao.cs" />
+    <Compile Include="dao\OPLOGDao.cs" />
+    <Compile Include="dao\Product.cs" />
+    <Compile Include="dao\PROJECTDao.cs" />
+    <Compile Include="dao\RIGHTDao.cs" />
+    <Compile Include="dao\ROLEDao.cs" />
+    <Compile Include="dao\ROLERIGHTDao.cs" />
+    <Compile Include="dao\SATDao.cs" />
+    <Compile Include="dao\STATIONDao.cs" />
+    <Compile Include="dao\STATION_ACCESSDao.cs" />
+    <Compile Include="dao\STATION_FILTERDao.cs" />
+    <Compile Include="dao\STATION_ORIGINALDao.cs" />
+    <Compile Include="dao\STATION_STATUSDao.cs" />
+    <Compile Include="dao\TEMPGPSDao.cs" />
+    <Compile Include="dao\USERDao.cs" />
+    <Compile Include="dao\USERROLEDao.cs" />
+    <Compile Include="model\ALARMAPPEND.cs" />
+    <Compile Include="model\ALARMGOAL.cs" />
+    <Compile Include="model\ALARMLOG.cs" />
+    <Compile Include="model\ALARMSETTING.cs" />
+    <Compile Include="model\GPSINFO.cs" />
+    <Compile Include="model\OPLOG.cs" />
     <Compile Include="model\Product.cs" />
+    <Compile Include="model\PROJECT.cs" />
+    <Compile Include="model\RIGHT.cs" />
+    <Compile Include="model\ROLE.cs" />
+    <Compile Include="model\ROLERIGHT.cs" />
+    <Compile Include="model\SAT.cs" />
+    <Compile Include="model\STATION.cs" />
+    <Compile Include="model\STATION_ACCESS.cs" />
+    <Compile Include="model\STATION_FILTER.cs" />
+    <Compile Include="model\STATION_ORIGINAL.cs" />
+    <Compile Include="model\STATION_STATUS.cs" />
+    <Compile Include="model\TEMPGPS.cs" />
+    <Compile Include="model\USER.cs" />
+    <Compile Include="model\USERROLE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="mappers\ProductMap.xml" />
+    <EmbeddedResource Include="mappers\ProductMap.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="mappers\ALARMAPPENDMapper.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="mappers\ALARMGOALMapper.xml" />
+    <EmbeddedResource Include="mappers\ALARMLOGMapper.xml" />
+    <EmbeddedResource Include="mappers\ALARMSETTINGMapper.xml" />
+    <EmbeddedResource Include="mappers\GPSINFOMapper.xml" />
+    <EmbeddedResource Include="mappers\OPLOGMapper.xml" />
+    <EmbeddedResource Include="mappers\PROJECTMapper.xml" />
+    <EmbeddedResource Include="mappers\RIGHTMapper.xml" />
+    <EmbeddedResource Include="mappers\ROLEMapper.xml" />
+    <EmbeddedResource Include="mappers\ROLERIGHTMapper.xml" />
+    <EmbeddedResource Include="mappers\SATMapper.xml" />
+    <EmbeddedResource Include="mappers\STATIONMapper.xml" />
+    <EmbeddedResource Include="mappers\STATION_ACCESSMapper.xml" />
+    <EmbeddedResource Include="mappers\STATION_FILTERMapper.xml" />
+    <EmbeddedResource Include="mappers\STATION_ORIGINALMapper.xml" />
+    <EmbeddedResource Include="mappers\STATION_STATUSMapper.xml" />
+    <EmbeddedResource Include="mappers\TEMPGPSMapper.xml" />
+    <EmbeddedResource Include="mappers\USERMapper.xml" />
+    <EmbeddedResource Include="mappers\USERROLEMapper.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
