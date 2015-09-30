@@ -1,0 +1,53 @@
+﻿<%-- 
+Name: ODRM.Controller
+Author: Nick Lee
+Description: ODRM Object Templete
+--%>
+<%@ CodeTemplate Language="C#" TargetLanguage="C#"   ResponseEncoding="UTF-8" %>
+
+<%@ Property Name="SourceTable" Type="SchemaExplorer.TableSchema" Category="Context" Description="Table that the mapping file is based on" %>
+<%@ Property Name="Namespace" Type="System.String" Default="FortuneDomain" Category="Object" Description="The class namespace that the mapping file should use" %>
+<%@ Property Name="Assembly" Type="System.String" Default="FortuneDomain.dll" Category="Object" Description="The assembly that the class will be used in" %> 
+
+<%@ Property Name="ProjectName" Type="System.String" Default="ishitong.project" Category="Java" Description="ibatis map namespace" %>  
+<%@ Property Name="ModuleName" Type="System.String" Default="demo" Category="Java" Description="ibatis map namespace" %>  
+
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="System.Design" %>
+<%@ Assembly Name="System.Data" %>
+<%@ Import Namespace="System.Text"%>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="System.Text.RegularExpressions" %> 
+
+
+using System;
+<%string shortTableName=SourceTable.Name.Substring(2,SourceTable.Name.Length-2); %>
+namespace <%= ProjectName %>.<%=ModuleName%>model
+{
+    /**
+     * <%=shortTableName%>Model表数据交互对象
+     * annotation=@MessagePackMessage 
+     * Without annotation You register your class before use.
+     * MessagePack.register(MyClass.class);
+     */ 
+    public class <%=shortTableName%> 
+    {
+    	<% foreach(ColumnSchema column in SourceTable.Columns) { %>    
+
+        /// <summary>
+        /// </summary>
+        public <%=GetOracleCSharpType2(column.NativeType) %> <%=column.Name %>{ get; set; }
+        <%} %>
+    }
+}
+<!-- #include file="MybatisCSharpUtil.js" -->
+<script runat="template">
+	/*
+	Title    : (Object/(DataSet,DataReader) Relational Mapping) object CodeSmith Templete 4.0
+	Author   : Nick Lee  (Modified from version provided by Nick Lee (boyorgril@msn.com) http://www.cnblogs.com/mail-ricklee)
+
+	Summary  : Codesmith template to generate the class to db mapping file for use with (Object/(DataSet,DataReader) Relational Mapping).
+	Notes    : Full object C# code is output, including Methods
+	*/
+</script>

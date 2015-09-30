@@ -1,0 +1,215 @@
+﻿<%-- 
+Name: ODRM.XML
+Author: Nick Lee
+Description: ODRM XML Templete
+--%>
+<%@ CodeTemplate Language="C#" ResponseEncoding="UTF-8" TargetLanguage="XML" Description="Generates a db<->class mapping file for use with IBatisNet." %>
+<%@ Property Name="SourceTable" Type="SchemaExplorer.TableSchema" Category="Context" Description="Table that the mapping file is based on" %>
+<%@ Property Name="Assembly" Type="System.String" Default="FortuneDomain.dll" Category="Object" Description="The assembly that the class will be used in" %>
+<%@ Property Name="RemoveTablePrefix" Type="System.String" Default="tbl" Category="Object" Description="The prefix to remove from table names" %>
+<%@ Property Name="ForceId" Type="System.Boolean" Default="true" Category="Object" Description="Force Id for identity column" %>
+<%@ Property Name="mTableAlias" Type="System.String" Default="a" Category="Customer" Description="Table Alias." %>
+<%@ Property Name="mORMState" Type="System.Boolean" Default="true" Category="Customer" Description="ORM State." %>
+<%@ Property Name="mInsertPrimaryKey" Type="System.Boolean" Default="false" Category="Customer" Description="Insert Primary Key State." %>
+<%@ Property Name="sInsertState" Type="System.Boolean" Default="true" Category="Customer" Description="Insert State." %>
+<%@ Property Name="sUpdateState" Type="System.Boolean" Default="true" Category="Customer" Description="Update State." %>
+<%@ Property Name="sDeleteState" Type="System.Boolean" Default="true" Category="Customer" Description="Delete State." %>
+<%@ Property Name="sSelectKeyState" Type="System.Boolean" Default="true" Category="Customer" Description="Select By Key State." %>
+<%@ Property Name="sSelectListState" Type="System.Boolean" Default="true" Category="Customer" Description="Select By List State." %>
+<%@ Property Name="IsOracle" Type="System.Boolean" Default="true" Category="Customer" Description="Is Oracle database or SQLServer database." %>
+<%@ Property Name="Namespace" Type="System.String" Default=" " Category="Customer" Description="ibatis namespace" %>
+<%@ Property Name="ProjectName" Type="System.String" Default="ishitong.project" Category="Java" Description="ibatis map namespace" %>  
+<%@ Property Name="ModuleName" Type="System.String" Default="demo" Category="Java" Description="ibatis map namespace" %>  
+<%@ Property Name="IsRealTotalCount" Type="System.Boolean" Default="false" Category="其他" Description="是否使用真实的记录总数用于查询列表，真实数会影响性能，默认否" %>
+
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="System.Data" %>
+
+<%@ Import Namespace="SchemaExplorer" %> 
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="System.Text.RegularExpressions" %>
+<%@ Import Namespace="System.Linq.Expressions" %>
+<%@ Import Namespace="System.Linq" %>
+<%@ Import Namespace="System.Text" %>
+<?xml version="1.0" encoding="UTF-8" ?> 
+<sqlMap namespace="EntityModel" xmlns="http://ibatis.apache.org/mapping"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+    <%string shortTableName=SourceTable.Name.Substring(2,SourceTable.Name.Length-2); %>
+    <alias>
+		<!--类的别名-->
+		<typeAlias alias="<%= shortTableName %>" type="<%= ProjectName %>.model<%=ModuleName%>.<%= shortTableName %>,<%= ProjectName %>"/>
+	</alias>
+    <%ColumnSchema privateColumn=SourceTable.Columns.Find(r=>r.IsPrimaryKeyMember);%>
+    <%int columnCount=SourceTable.Columns.Count; %>
+    <%int index=0; %>
+    <parameterMaps>
+	<parameterMap id="<%= shortTableName %>_params">
+    <% foreach(ColumnSchema column in SourceTable.Columns) { %>
+    	<% if (IsOracle){ %>
+    		<% if (MemberType(column).ToUpper() == "DATETIME") {%>
+    			 <parameter property="<%= column.Name %>" column="<%= column.Name %>" type="DateTime" dbType="datetime" ></parameter>
+    		<% } else  if (column.NativeType.ToUpper() == "TIME") {%>
+    			<parameter property="<%= column.Name %>" column="<%= column.Name %>"  type="DateTime" dbType="datetime" ></parameter>
+            <% }else  if (column.NativeType.ToUpper() == "TEXT") {%>
+    			<parameter property="<%= column.Name %>" column="<%= column.Name %>"  type="String" dbType="text" ></parameter>
+            <% } else  if (column.NativeType.ToUpper() == "VARCHAR") {%>
+    			<parameter property="<%= column.Name %>" column="<%= column.Name %>" dbType="Varchar" ></parameter>
+            <% } else  if (column.NativeType.ToUpper() == "NVARCHAR") {%>
+    			<parameter property="<%= column.Name %>" column="<%= column.Name %>" type="String" dbType="NVarchar" ></parameter>
+    		<% } else if (MemberType(column).ToUpper() == "MONEY"||MemberType(column).ToUpper() == "DECIMAL") {%>
+    			<parameter property="<%= column.Name %>" column="<%= column.Name %>" type="Decimal" dbType="money" ></parameter>
+    		<% } else  if (MemberType(column).ToUpper() == "INT"|| MemberType(column).ToUpper() == "INT" || MemberType(column).ToUpper() == "INT64" ) {%>
+    			<parameter property="<%= column.Name %>" column="<%= column.Name %>" type="int" dbType="int" ></parameter>
+            <% }else  if ( MemberType(column).ToUpper() == "SHORT" ||  MemberType(column).ToUpper() == "SMALLINT") {%>
+    			<parameter property="<%= column.Name %>" column="<%= column.Name %>" type="short" dbType="smallint" ></parameter>
+            <% } else  if (MemberType(column).ToUpper() == "BIGINT"|| MemberType(column).ToUpper() == "LONG") {%>
+    			<parameter property="<%= column.Name %>" column="<%= column.Name %>" type="long" dbType="bigint" ></parameter>
+            <% }else  if (MemberType(column).ToUpper() == "FLOAT"||MemberType(column).ToUpper() == "DOUBLE") {%>
+    			<parameter property="<%= column.Name %>" column="<%= column.Name %>" type="double" dbType="float" ></parameter>
+            <% }else  if (MemberType(column).ToUpper() == "IMAGE") {%>
+    			<parameter property="<%= column.Name %>" column="<%= column.Name %>" type="Byte[]" dbType="image" ></parameter>
+    		<% } else  if (MemberType(column).ToUpper() == "BINARY") {%>
+    			<parameter property="<%= column.Name %>" column="<%= column.Name %>" type="Byte[]" dbType="binary" ></parameter>
+    		<% }else  if (MemberType(column).ToUpper() == "BYTE" || MemberType(column).ToUpper() == "TINYINT") {%>
+    			<parameter property="<%= column.Name %>" column="<%= column.Name %>" type="byte" dbType="tinyint" ></parameter>
+    		<% }else{ %>
+    				<parameter property="<%= column.Name %>" column="<%= column.Name %>" type="<%=MemberType(column).ToString()%>" dbType="<%=MemberType(column).ToString()%>" ></parameter>
+    		<% }%>
+    	<% }else{%>
+    		<parameter property="<%= column.Name %>" column="<%= column.Name %>" type="<%=MemberType(column).ToString()%>" dbType="<%=MemberType(column).ToString()%>" ></parameter>
+    	<% }%>
+    <% } %>
+    	</parameterMap>
+    </parameterMaps>
+    <resultMaps>
+        <resultMap id="<%= shortTableName %>Result" class="<%= shortTableName %>"> 
+            <% foreach(ColumnSchema column in SourceTable.Columns) { %>  
+            <result property="<%= column.Name %>" column="<%= column.Name %>"/>
+        	<% } %>
+        </resultMap>
+    </resultMaps>
+    <statements>
+    <!--查询所有记录-->
+		<select id="SelectAll<%= shortTableName %>" resultMap="<%= shortTableName %>Result">
+			<![CDATA[SELECT <% foreach(ColumnSchema column in SourceTable.Columns) { %> 
+             <%= column.Name %><% if(index != columnCount-1){%>,<% } index++;%>
+    	    <% } %> FROM <%= SourceTable.Name %>]]>
+		</select>
+        <!--查询单条记录-->
+		<select id="Select<%= shortTableName %>ById" parameterClass="int" resultMap="<%= shortTableName %>Result" extends="SelectAll<%= shortTableName %>">
+			<![CDATA[ where <%=privateColumn.Name %> = #value#  ]]>
+		</select> 
+        
+        
+        
+        <!--插入新记录-->
+		<insert id="Insert<%= shortTableName %>" parameterClass="<%= shortTableName %>">	
+          select 1;
+    			<!--id自动生成的示例用法-->
+          <selectKey property="<%=privateColumn.Name %>" type="post" resultClass="int">
+          <![CDATA[
+           <%index=0; %>
+            INSERT into <%= SourceTable.Name %>(<% foreach(ColumnSchema column in SourceTable.Columns) { %><% if(privateColumn.Name!= column.Name){%><%= column.Name %><% if(index!= columnCount-1){%>,<% } %> <%  } %><%index++;} %>)
+    			  VALUES(<% index=0;foreach(ColumnSchema column in SourceTable.Columns) { %><% if(privateColumn.Name!= column.Name){%>#<%= column.Name %>#<% if(index!= columnCount-1){%>,<% }%> <% } %><%  index++;} %>)
+            SELECT SCOPE_IDENTITY() as <%=privateColumn.Name %>
+          ]]>
+          </selectKey>
+      
+		</insert>
+        
+        <!--更新单条记录-->
+		<update id="Update<%= shortTableName %>" parameterClass="<%= shortTableName %>">
+			<![CDATA[Update <%= SourceTable.Name %> 
+            SET  
+            <% index=0; foreach(ColumnSchema column in SourceTable.Columns) { %>
+                <% if(privateColumn.Name!= column.Name){%>
+                    <%= column.Name %>=#<%= column.Name %>#
+                <% if(index!= columnCount-1){%>,<% } %> 
+            <% } %><% index++;} %>
+			Where <%=privateColumn.Name %>=#<%=privateColumn.Name %>#]]>
+		</update>
+
+		<!--根据主键删除单条记录-->
+		<delete id="Delete<%= shortTableName %>ById" parameterClass="int">
+			<![CDATA[Delete From <%= SourceTable.Name %> Where <%=privateColumn.Name %>=#value#]]>
+		</delete>
+        <select id="Select<%= shortTableName %>Query" parameterMap="<%= shortTableName %>_params" resultMap="<%= shortTableName %>Result">
+    
+                select
+            <% foreach(ColumnSchema column in SourceTable.Columns) { %>
+            	<% if( SourceTable.Columns.IndexOf(column)!=(SourceTable.Columns.Count-1)){%>
+            		<%=mTableAlias%>.<%= column.Name %>,
+            	<% } else{%>
+            		<%=mTableAlias%>.<%= column.Name %>,	
+            	<% } %>
+            <% } %>
+        	from <%= SourceTable.Name %> <%=mTableAlias%> 
+        	<% if(IsOracle){ %>
+        	<dynamic prepend="where">
+        	<% if(SourceTable.HasPrimaryKey) {%>
+        		<% foreach(ColumnSchema column in SourceTable.PrimaryKey.MemberColumns) { %>
+        			<% if (column.IsPrimaryKeyMember==true){ %>
+        				<% if( SourceTable.Columns.IndexOf(column)==0){%>
+        					<% if( SourceTable.Columns.IndexOf(column)!=(SourceTable.PrimaryKey.MemberColumns.Count-1)){%>
+        		<isPropertyAvailable prepend="" property="<%= column.Name %>">
+        			<% if (MemberType(column).ToUpper() == "DECIMAL" || MemberType(column).ToUpper() == "INT32"|| MemberType(column).ToUpper() == "INT" || MemberType(column).ToUpper() == "INT64" || MemberType(column).ToUpper() == "LONG"|| MemberType(column).ToUpper() == "DOUBLE"|| MemberType(column).ToUpper() == "FLOAT" || MemberType(column).ToUpper() == "SHORT") {%>
+        			<isGreaterThan prepend="and" property="<%= column.Name %>" compareValue="0">
+        				<%=mTableAlias%>.<%= column.Name %> = #<%= column.Name %>#
+        			</isGreaterThan>
+        		<% }else{%>
+        			<isNotEmpty prepend="and" property="<%= column.Name %>">
+        				<%=mTableAlias%>.<%= column.Name %> = #<%= column.Name %>#
+        			</isNotEmpty>
+        		<% }%>
+        		</isPropertyAvailable>
+        					<% } else{%>
+        		<isPropertyAvailable prepend="" property="<%= column.Name %>">
+        			<% if (MemberType(column).ToUpper() == "DECIMAL" || MemberType(column).ToUpper() == "BIGINT"|| MemberType(column).ToUpper() == "INT" || MemberType(column).ToUpper() == "BIT" || MemberType(column).ToUpper() == "LONG"|| MemberType(column).ToUpper() == "DOUBLE"|| MemberType(column).ToUpper() == "FLOAT" || MemberType(column).ToUpper() == "SHORT") {%>
+        			<isGreaterThan prepend="and" property="<%= column.Name %>" compareValue="0">
+        				<%=mTableAlias%>.<%= column.Name %> = #<%= column.Name %>#
+        			</isGreaterThan>
+        		<% }else{%>
+        			<isNotEmpty prepend="and" property="<%= column.Name %>">
+        				<%=mTableAlias%>.<%= column.Name %> = #<%= column.Name %>#
+        			</isNotEmpty>
+        		<% }%>
+        		</isPropertyAvailable>
+        					<% } %>
+        				<% }%>
+        			<% } %>
+        		<% } %>	
+        	<% }%>
+        	</dynamic>
+        	<% } %>
+        	<!--order by-->
+        	<dynamic>
+        <% if(SourceTable.HasPrimaryKey) {%>
+        	order by
+        	<% foreach(ColumnSchema column in SourceTable.PrimaryKey.MemberColumns) { %>
+        		<% if (column.IsPrimaryKeyMember==true){ %>
+        			<% if( SourceTable.Columns.IndexOf(column)==0){%>
+        				<% if( SourceTable.Columns.IndexOf(column)!=(SourceTable.PrimaryKey.MemberColumns.Count-1)){%>
+        	<%=mTableAlias%>.<%= column.Name %>
+        				<% } else{%>
+        	<%=mTableAlias%>.<%= column.Name %>
+        				<% } %>
+        			<% }%>
+        		<% } %>
+        	<% } %>	
+        <% }%>
+        	</dynamic>
+        </select> 
+        
+       
+    </statements>
+</sqlMap>  
+<!-- #include file="IBatisNet.inc" -->
+<script runat="template">
+	/*
+	Title    : (Object/(DataSet,DataReader) Relational Mapping) XML CodeSmith Templete 4.0
+	Author   : Nick Lee  (Modified from version provided by Nick Lee (boyorgril@msn.com) http://www.cnblogs.com/mail-ricklee)
+
+	Summary  : Codesmith template to generate the class to db mapping file for use with (Object/(DataSet,DataReader) Relational Mapping).
+	Notes    : Full XML code is output, including Methods
+	*/
+</script>

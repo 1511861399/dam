@@ -1,0 +1,351 @@
+﻿<%-- 
+Name: ODRM
+Author: Nick Lee
+Description: ODRM for objects,xml,rule,Control,ui all files Templete
+--%>
+<%@ CodeTemplate Language="C#" TargetLanguage="C#" Description="This Template Generates C# domain objects for NHibernate" Debug="true"  ResponseEncoding="UTF-8"%>
+ 
+<%@ Property Name="ModuleName" Type="System.String" Category="Other" Description="模块名，为DotNet的模块名，即首字母大写；java将自动处理"  Default="Sys"%>
+<%@ Property Name="ProjectName" Type="System.String" Category="Other" Description="系统名，用于命名空间使用。比如Project，则其他命名空间为IShiTong.Project.XXX"  Default="Project"%>
+<%@ Property Name="sourceTable" Type="SchemaExplorer.TableSchema" Category="Other" Description="选择要生成代码的数据库表" %>
+<%--
+add other Property
+--%>  
+
+<%@ Assembly Name="System.Design" %>
+<%@ Assembly Name="SchemaExplorer" %>
+
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.IO" %>
+<%@ Import Namespace="System.Xml" %>
+<%@ Import Namespace="System.Text" %>
+<%@ Import Namespace="System.Windows.Forms.Design" %>
+<%@ Import Namespace="System.Text.RegularExpressions" %>
+
+
+<script runat="template"> 
+    string PrimaryKeyName="";
+    string RemoveTablePrefix="T_";
+    //uft-8 encode
+	public System.Text.Encoding enc = System.Text.Encoding.UTF8;
+    //uft-8 encode no bom
+    //public System.Text.UTF8Encoding enc = new System.Text.UTF8Encoding(false);
+    //GBK encode
+	public System.Text.Encoding enc_gbk = System.Text.Encoding.GetEncoding("UTF-8");
+ 	public System.IO.StreamWriter txt;
+	//private DatabaseSchema _sourceDatabase;
+	private string _outputDirectory="C:\\temp_code";
+    private bool _implementNotification = true;
+
+	private CodeTemplate _csharpTemplate;
+	private CodeTemplate _mappingTemplate;
+	//add for domain
+	private CodeTemplate ctDomain;  
+	private CodeTemplate ctTran;
+	private CodeTemplate ctMapper;
+	private CodeTemplate ctDao;
+	private CodeTemplate ctService;
+	private CodeTemplate ctController;
+	private CodeTemplate ctTest;
+    private CodeTemplate ctWebController;
+    private CodeTemplate ctWebList;
+    private CodeTemplate ctWebDetail;
+    private CodeTemplate ctWebListJS;
+    private CodeTemplate ctWebDetailJS;
+     
+    //[Category("Database")]
+    //[Description("Database that the mapping file should be based on.")]
+    //public DatabaseSchema SourceDatabase {
+    //    get { return _sourceDatabase; }
+    //    set { _sourceDatabase = value; }
+    //}
+
+	[Editor(typeof(System.Windows.Forms.Design.FolderNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
+	[Category("Base")]
+    [Description("生成目录C:\temp_code.")]
+	public string OutputDirectory
+	{
+		get {return _outputDirectory;}
+		set {_outputDirectory= value;}
+	}
+
+	#region ODRM Methods
+	[Browsable(false)]
+	public CodeTemplate CTDomain
+	{
+		get
+		{
+			if (ctDomain == null)
+			{
+                Response.WriteLine(CodeTemplateInfo.DirectoryName + "\\dotnet\\Tnf.Domain.cst");
+				ctDomain = CompileTemplate(CodeTemplateInfo.DirectoryName + "\\dotnet\\Tnf.Domain.cst");
+			}
+			return ctDomain;
+		}
+	}
+
+	[Browsable(false)]
+	public CodeTemplate CTMapper
+	{
+		get
+		{
+			if (ctMapper == null)
+			{
+				ctMapper = CompileTemplate(CodeTemplateInfo.DirectoryName + "\\dotnet\\Tnf.Mapper.cst");
+			}
+			return ctMapper;
+		}
+	} 
+    
+    [Browsable(false)]
+	public CodeTemplate CTDao
+	{
+		get
+		{
+			if (ctDao == null)
+			{
+				ctDao = CompileTemplate(CodeTemplateInfo.DirectoryName + "\\dotnet\\Tnf.Dao.cst");
+			}
+			return ctDao;
+		}
+	}
+   
+	#endregion
+
+	public CodeTemplate CompileTemplate(string templateName)
+	{
+		CodeTemplateCompiler compiler = new CodeTemplateCompiler(templateName);
+		compiler.Compile();
+
+		if (compiler.Errors.Count == 0)
+		{
+			return compiler.CreateInstance();
+		}
+		else
+		{
+			for (int i = 0; i < compiler.Errors.Count; i++)
+			{
+				Response.WriteLine(compiler.Errors[i].ToString());
+			}
+			return null;
+		}
+
+	}
+
+	public void Generate()
+	{
+            string JavaProjectName="com.tk."+ProjectName.ToLower();
+            string JavaModuleName=ModuleName.ToLower();
+		//foreach(TableSchema sourceTable in SourceDatabase.Tables)
+		//{
+			Response.WriteLine(string.Format("Processing Table {0}......", sourceTable.Name));
+			if (IsManyToManyTable(sourceTable))
+			{
+				Response.WriteLine("skipped, many-to-many link table");
+			}
+			else if (IsSubClassTable(sourceTable))
+			{
+				Response.WriteLine("skipped, sub-class table");
+			}
+			//modify
+			else if (sourceTable.HasPrimaryKey==true && sourceTable.PrimaryKey == null)
+			{
+				Response.WriteLine("skipped, no primary key");
+			}
+			else
+			{
+				try
+				{
+                    //?????
+                    foreach(ColumnSchema column in sourceTable.PrimaryKey.MemberColumns) 
+                    {
+    					if (column.IsPrimaryKeyMember==true)
+                        {
+                            PrimaryKeyName=column.Name;
+                            break;
+                        }
+                    }
+				//Domain Objects
+				string className = sourceTable.Name;
+				if (className.StartsWith(RemoveTablePrefix))
+				{
+					className = className.Substring(RemoveTablePrefix.Length);
+				}
+                /*
+				//UI.Maps
+				//string mappingFileName = className + ".hbm.xml";
+				string mappingFileName = className + "Mapper.xml";
+				mappingFileName = Path.Combine(OutputDirectory+"\\java\\provider\\mapper\\"+ModuleName+"\\", mappingFileName);
+                */
+                string domainFileName = className;
+				domainFileName += ".cs";
+				//classFileName = Path.Combine(OutputDirectory, classFileName);
+				domainFileName = Path.Combine(OutputDirectory+"\\dotnet\\model\\"+JavaModuleName+"\\", domainFileName);
+              
+				//string classFileName_Proto = "P"+className + ".cs";
+				//classFileName_Proto = Path.Combine(OutputDirectory+"\\Java_Proto\\", classFileName_Proto);
+				string daoFileName = className + "Dao.cs";
+				daoFileName = Path.Combine(OutputDirectory+"\\dotnet\\dao\\"+JavaModuleName+"\\", daoFileName);
+                string  xmlFileName= className + "Mapper.xml";
+				xmlFileName = Path.Combine(OutputDirectory+"\\dotnet\\mappers\\"+JavaModuleName+"\\", xmlFileName);
+				
+                
+				#region Create Files
+				//Domain File
+				this.CTDomain.SetProperty("SourceTable", sourceTable);
+				//this.ClassTemplate.SetProperty("Namespace", Namespace);
+				//this.ClassTemplate.SetProperty("Assembly", Assembly);
+				this.CTDomain.SetProperty("ModuleName", JavaModuleName);
+				//this.ClassTemplate.SetProperty("ForceId", ForceId);
+				this.CTDomain.SetProperty("ProjectName", JavaProjectName); 
+                
+                //domain
+				this.CTDomain.RenderToFile(domainFileName, true);
+				txt = new System.IO.StreamWriter(domainFileName,false,enc_gbk);
+				txt.Write(CTDomain.RenderToString());
+                txt.Dispose();
+				txt.Close();
+				Response.WriteLine(string.Format("{0} ", domainFileName));
+                
+                
+                //Dao File
+                this.CTDao.SetProperty("SourceTable", sourceTable); 
+				this.CTDao.SetProperty("ModuleName", JavaModuleName); 
+				this.CTDao.SetProperty("ProjectName", JavaProjectName); 
+				this.CTDao.RenderToFile(daoFileName, true);
+				txt = new System.IO.StreamWriter(daoFileName,false,enc_gbk);
+				txt.Write(CTDao.RenderToString());
+                txt.Dispose();
+				txt.Close();
+				Response.WriteLine(string.Format("{0} ", daoFileName));
+                
+                //xml File
+                this.CTMapper.SetProperty("SourceTable", sourceTable); 
+				this.CTMapper.SetProperty("ModuleName", JavaModuleName); 
+				this.CTMapper.SetProperty("ProjectName", JavaProjectName); 
+				this.CTMapper.RenderToFile(xmlFileName, true);
+				txt = new System.IO.StreamWriter(xmlFileName,false,enc_gbk);
+				txt.Write(CTMapper.RenderToString());
+                txt.Dispose();
+				txt.Close();
+				Response.WriteLine(string.Format("{0} ", xmlFileName));
+                
+				 
+				 
+				#endregion
+				}
+				catch (Exception ex)
+				{
+					Response.WriteLine("Error: " + ex);
+				}
+			}
+		//}
+	}
+</script>
+<script runat="template">
+private Regex cleanRegEx = new Regex(@"\s+|_|-|\.", RegexOptions.Compiled);
+private Regex cleanID = new Regex(@"(_ID|_id|_Id|\.ID|\.id|\.Id|ID|Id)", RegexOptions.Compiled);
+
+public string CleanName(string name)
+{
+	return cleanRegEx.Replace(name, "");
+}
+
+public string CamelCase(string name)
+{
+	string output = CleanName(name);
+	return char.ToLower(output[0]) + output.Substring(1);
+}
+
+public string PascalCase(string name)
+{
+	string output = CleanName(name);
+	return char.ToUpper(output[0]) + output.Substring(1);
+}
+
+public string MakePlural(string name)
+{
+	Regex plural1 = new Regex("(?<keep>[^aeiou])y$");
+	Regex plural2 = new Regex("(?<keep>[aeiou]y)$");
+	Regex plural3 = new Regex("(?<keep>[sxzh])$");
+	Regex plural4 = new Regex("(?<keep>[^sxzhy])$");
+
+	if(plural1.IsMatch(name))
+		return plural1.Replace(name, "${keep}ies");
+	else if(plural2.IsMatch(name))
+		return plural2.Replace(name, "${keep}s");
+	else if(plural3.IsMatch(name))
+		return plural3.Replace(name, "${keep}es");
+	else if(plural4.IsMatch(name))
+		return plural4.Replace(name, "${keep}s");
+
+	return name;
+}
+
+public string MakeSingle(string name)
+{
+	Regex plural1 = new Regex("(?<keep>[^aeiou])ies$");
+	Regex plural2 = new Regex("(?<keep>[aeiou]y)s$");
+	Regex plural3 = new Regex("(?<keep>[sxzh])es$");
+	Regex plural4 = new Regex("(?<keep>[^sxzhyu])s$");
+
+	if(plural1.IsMatch(name))
+		return plural1.Replace(name, "${keep}y");
+	else if(plural2.IsMatch(name))
+		return plural2.Replace(name, "${keep}");
+	else if(plural3.IsMatch(name))
+		return plural3.Replace(name, "${keep}");
+	else if(plural4.IsMatch(name))
+		return plural4.Replace(name, "${keep}");
+
+	return name;
+}
+
+public bool IsManyToManyTable(TableSchema table)
+{
+	if(table.HasPrimaryKey==true)
+	{
+		if (table.Columns.Count == 2 && table.PrimaryKey != null && table.PrimaryKey.MemberColumns.Count == 2 && table.ForeignKeys.Count == 2)
+		//	if (table.Columns.Count >= 2 && table.PrimaryKey != null && table.PrimaryKey.MemberColumns.Count == 2 && table.ForeignKeys.Count >= 2)
+		return true;
+		else
+		return false;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+public bool IsSubClassTable(TableSchema sourceTable)
+{
+	int count = 0;
+	foreach(TableKeySchema foreignKey in sourceTable.ForeignKeys)
+	{
+		if (foreignKey.ForeignKeyMemberColumns[0].IsPrimaryKeyMember)
+		{
+			//Response.Write(String.Format(" {0}:", foreignKey.PrimaryKeyTable.Name));
+			foreach(TableKeySchema primaryKey in foreignKey.PrimaryKeyTable.PrimaryKeys)
+			{
+				//Response.Write(String.Format(" {0} ", primaryKey.ForeignKeyTable.Name ));
+				if (primaryKey.ForeignKeyMemberColumns[0].IsPrimaryKeyMember && primaryKey.ForeignKeyTable.PrimaryKey.MemberColumns.Count == 1)
+					count++;
+			}
+		}
+	}
+	if (count > 1)
+		return true;
+
+	return false;
+}
+</script>
+<% this.Generate();  %>
+<script runat="template">
+	/*
+	Title    : ODRM.cst
+	Author   : Nick Lee  (Modified from version provided by Nick Lee (boyorgril@msn.com) http://www.cnblogs.com/mail-ricklee)
+
+	Summary  : Codesmith template to iterate the tables in a database and generate C# class files and NHibername xml mapping files
+	Notes    : ODRM for objects,xml,rule,Control,ui all files
+*/
+</script>

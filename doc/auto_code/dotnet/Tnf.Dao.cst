@@ -1,0 +1,53 @@
+﻿<%@ CodeTemplate Language="C#" TargetLanguage="C#"   ResponseEncoding="UTF-8" %>
+
+<%@ Property Name="SourceTable" Type="SchemaExplorer.TableSchema" Category="Context" Description="Table that the mapping file is based on" %>
+<%@ Property Name="Namespace" Type="System.String" Default="FortuneDomain" Category="Object" Description="The class namespace that the mapping file should use" %>
+<%@ Property Name="Assembly" Type="System.String" Default="FortuneDomain.dll" Category="Object" Description="The assembly that the class will be used in" %> 
+
+<%@ Property Name="ProjectName" Type="System.String" Default="ishitong.project" Category="Java" Description="ibatis map namespace" %>  
+<%@ Property Name="ModuleName" Type="System.String" Default="demo" Category="Java" Description="ibatis map namespace" %>  
+
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="System.Design" %>
+<%@ Assembly Name="System.Data" %>
+<%@ Import Namespace="System.Text"%>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="System.Text.RegularExpressions" %>  
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using <%= ProjectName %>.<%=ModuleName%>model;
+<%string shortTableName=SourceTable.Name.Substring(2,SourceTable.Name.Length-2); %>
+namespace com.tk.orm.dao
+{
+     public class <%= shortTableName %>Dao
+    {
+        public static int Insert(<%= shortTableName %> t)
+        {
+            return BaseDA.Insert<<%= shortTableName %>>("Insert<%= shortTableName %>",t);
+        }
+
+        public static int Update(<%= shortTableName %> t)
+        {
+            return BaseDA.Update<<%= shortTableName %>>("Update<%= shortTableName %>", t);
+        }
+
+        public static int Delete(int primaryKeyId)
+        {
+            return BaseDA.Delete("Delete<%= shortTableName %>ById", primaryKeyId);
+        }
+
+        public static <%= shortTableName %> Get(int primaryKeyId)
+        {
+            return BaseDA.Get<<%= shortTableName %>>("Select<%= shortTableName %>ById", primaryKeyId);
+        }
+
+        public static IList<<%= shortTableName %>> QueryForList(object parameterObject = null)
+        {
+            return BaseDA.QueryForList<<%= shortTableName %>>("SelectAll<%= shortTableName %>", parameterObject);
+        }
+    }
+}
+
