@@ -67,6 +67,8 @@
     <Compile Include="dao\RIGHTDao.cs" />
     <Compile Include="dao\ROLEDao.cs" />
     <Compile Include="dao\ROLERIGHTDao.cs" />
+    <Compile Include="dao\satDao.cs" />
+    <Compile Include="dao\SB_STATUSDao.cs" />
     <Compile Include="dao\STATIONDao.cs" />
     <Compile Include="dao\STATION_ACCESSDao.cs" />
     <Compile Include="dao\USERDao.cs" />
@@ -79,6 +81,8 @@
     <Compile Include="model\RIGHT.cs" />
     <Compile Include="model\ROLE.cs" />
     <Compile Include="model\ROLERIGHT.cs" />
+    <Compile Include="model\sat.cs" />
+    <Compile Include="model\SB_STATUS.cs" />
     <Compile Include="model\STATION.cs" />
     <Compile Include="model\STATION_ACCESS.cs" />
     <Compile Include="model\USER.cs" />
@@ -98,6 +102,10 @@
     <EmbeddedResource Include="mappers\STATION_ACCESSMapper.xml" />
     <EmbeddedResource Include="mappers\USERMapper.xml" />
     <EmbeddedResource Include="mappers\USERROLEMapper.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="mappers\satMapper.xml" />
+    <EmbeddedResource Include="mappers\SB_STATUSMapper.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

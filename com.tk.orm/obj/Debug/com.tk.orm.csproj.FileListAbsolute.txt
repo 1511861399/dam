@@ -8,3 +8,4 @@ F:\2015work\1_daba\git\dam\com.tk.orm\bin\Debug\IBatisNet.Common.Logging.Log4Net
 F:\2015work\1_daba\git\dam\com.tk.orm\bin\Debug\IBatisNet.DataAccess.dll
 F:\2015work\1_daba\git\dam\com.tk.orm\bin\Debug\IBatisNet.DataMapper.dll
 F:\2015work\1_daba\git\dam\com.tk.orm\bin\Debug\log4net.dll
+F:\2015work\1_daba\git\dam\com.tk.orm\obj\Debug\com.tk.orm.csprojResolveAssemblyReference.cache

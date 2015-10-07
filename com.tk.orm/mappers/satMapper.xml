@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?> 
+<sqlMap namespace="EntityModel" xmlns="http://ibatis.apache.org/mapping"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+    <alias>
+		<!--类的别名-->
+		<typeAlias alias="sat" type="com.tk.orm.model.sat,com.tk.orm"/>
+	</alias>
+    <parameterMaps>
+	<parameterMap id="sat_params">
+    			<parameter property="sId" column="sId" type="int" dbType="int" ></parameter>
+    			<parameter property="sPrn" column="sPrn" type="int" dbType="int" ></parameter>
+    			<parameter property="sElev" column="sElev" type="double" dbType="float" ></parameter>
+    			<parameter property="sAzm" column="sAzm" type="double" dbType="float" ></parameter>
+    			<parameter property="sL1" column="sL1" type="double" dbType="float" ></parameter>
+    			<parameter property="sL2" column="sL2" type="double" dbType="float" ></parameter>
+    	</parameterMap>
+    </parameterMaps>
+    <resultMaps>
+        <resultMap id="satResult" class="sat"> 
+            <result property="sId" column="sId"/>
+            <result property="sPrn" column="sPrn"/>
+            <result property="sElev" column="sElev"/>
+            <result property="sAzm" column="sAzm"/>
+            <result property="sL1" column="sL1"/>
+            <result property="sL2" column="sL2"/>
+        </resultMap>
+    </resultMaps>
+    <statements>
+    <!--查询所有记录-->
+		<select id="SelectAllsat" resultMap="satResult">
+			<![CDATA[SELECT  
+             sId,
+    	     
+             sPrn,
+    	     
+             sElev,
+    	     
+             sAzm,
+    	     
+             sL1,
+    	     
+             sL2
+    	     FROM sat]]>
+		</select>
+        <!--查询单条记录-->
+		<select id="SelectsatById" parameterClass="int" resultMap="satResult" extends="SelectAllsat">
+			<![CDATA[ where sId = #value#  ]]>
+		</select> 
+        
+        
+        
+        <!--插入新记录-->
+		<insert id="Insertsat" parameterClass="sat">	
+          select 1;
+    			<!--id自动生成的示例用法-->
+          <selectKey property="sId" type="post" resultClass="int">
+          <![CDATA[
+            INSERT into sat(sPrn, sElev, sAzm, sL1, sL2 )
+    			  VALUES(#sPrn#, #sElev#, #sAzm#, #sL1#, #sL2# )
+            SELECT SCOPE_IDENTITY() as sId
+          ]]>
+          </selectKey>
+      
+		</insert>
+        
+        <!--更新单条记录-->
+		<update id="Updatesat" parameterClass="sat">
+			<![CDATA[Update sat 
+            SET  
+                    sPrn=#sPrn#
+                , 
+                    sElev=#sElev#
+                , 
+                    sAzm=#sAzm#
+                , 
+                    sL1=#sL1#
+                , 
+                    sL2=#sL2#
+                 
+			Where sId=#sId#]]>
+		</update>
+
+		<!--根据主键删除单条记录-->
+		<delete id="DeletesatById" parameterClass="int">
+			<![CDATA[Delete From sat Where sId=#value#]]>
+		</delete>
+        <select id="SelectsatQuery" parameterMap="sat_params" resultMap="satResult">
+    
+                select
+            		a.sId,
+            		a.sPrn,
+            		a.sElev,
+            		a.sAzm,
+            		a.sL1,
+            		a.sL2,	
+        	from sat a 
+        	<dynamic prepend="where">
+        		<isPropertyAvailable prepend="" property="sId">
+        			<isGreaterThan prepend="and" property="sId" compareValue="0">
+        				a.sId = #sId#
+        			</isGreaterThan>
+        		</isPropertyAvailable>
+        	</dynamic>
+        	<!--order by-->
+        	<dynamic>
+        	order by
+        	a.sId
+        	</dynamic>
+        </select> 
+        
+       
+    </statements>
+</sqlMap>  

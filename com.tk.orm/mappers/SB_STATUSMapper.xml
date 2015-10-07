@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?> 
+<sqlMap namespace="EntityModel" xmlns="http://ibatis.apache.org/mapping"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+    <alias>
+		<!--类的别名-->
+		<typeAlias alias="SB_STATUS" type="com.tk.orm.model.SB_STATUS,com.tk.orm"/>
+	</alias>
+    <parameterMaps>
+	<parameterMap id="SB_STATUS_params">
+    			<parameter property="SN" column="SN" type="int" dbType="int" ></parameter>
+    			<parameter property="SNAME" column="SNAME" dbType="Varchar" ></parameter>
+    			<parameter property="LINKSTATUS" column="LINKSTATUS" type="byte" dbType="tinyint" ></parameter>
+    			<parameter property="ALARMSTATUS" column="ALARMSTATUS" type="byte" dbType="tinyint" ></parameter>
+    			<parameter property="QUITSTATUS" column="QUITSTATUS" type="byte" dbType="tinyint" ></parameter>
+    	</parameterMap>
+    </parameterMaps>
+    <resultMaps>
+        <resultMap id="SB_STATUSResult" class="SB_STATUS"> 
+            <result property="SN" column="SN"/>
+            <result property="SNAME" column="SNAME"/>
+            <result property="LINKSTATUS" column="LINKSTATUS"/>
+            <result property="ALARMSTATUS" column="ALARMSTATUS"/>
+            <result property="QUITSTATUS" column="QUITSTATUS"/>
+        </resultMap>
+    </resultMaps>
+    <statements>
+    <!--查询所有记录-->
+		<select id="SelectAllSB_STATUS" resultMap="SB_STATUSResult">
+			<![CDATA[SELECT  
+             SN,
+    	     
+             SNAME,
+    	     
+             LINKSTATUS,
+    	     
+             ALARMSTATUS,
+    	     
+             QUITSTATUS
+    	     FROM SBSB_STATUS]]>
+		</select>
+        <!--查询单条记录-->
+		<select id="SelectSB_STATUSById" parameterClass="int" resultMap="SB_STATUSResult" extends="SelectAllSB_STATUS">
+			<![CDATA[ where SN = #value#  ]]>
+		</select> 
+        
+        
+        
+        <!--插入新记录-->
+		<insert id="InsertSB_STATUS" parameterClass="SB_STATUS">	
+          select 1;
+    			<!--id自动生成的示例用法-->
+          <selectKey property="SN" type="post" resultClass="int">
+          <![CDATA[
+            INSERT into SBSB_STATUS(SNAME, LINKSTATUS, ALARMSTATUS, QUITSTATUS )
+    			  VALUES(#SNAME#, #LINKSTATUS#, #ALARMSTATUS#, #QUITSTATUS# )
+            SELECT SCOPE_IDENTITY() as SN
+          ]]>
+          </selectKey>
+      
+		</insert>
+        
+        <!--更新单条记录-->
+		<update id="UpdateSB_STATUS" parameterClass="SB_STATUS">
+			<![CDATA[Update SBSB_STATUS 
+            SET  
+                    SNAME=#SNAME#
+                , 
+                    LINKSTATUS=#LINKSTATUS#
+                , 
+                    ALARMSTATUS=#ALARMSTATUS#
+                , 
+                    QUITSTATUS=#QUITSTATUS#
+                 
+			Where SN=#SN#]]>
+		</update>
+
+		<!--根据主键删除单条记录-->
+		<delete id="DeleteSB_STATUSById" parameterClass="int">
+			<![CDATA[Delete From SBSB_STATUS Where SN=#value#]]>
+		</delete>
+        <select id="SelectSB_STATUSQuery" parameterMap="SB_STATUS_params" resultMap="SB_STATUSResult">
+    
+                select
+            		a.SN,
+            		a.SNAME,
+            		a.LINKSTATUS,
+            		a.ALARMSTATUS,
+            		a.QUITSTATUS,	
+        	from SBSB_STATUS a 
+        	<dynamic prepend="where">
+        		<isPropertyAvailable prepend="" property="SN">
+        			<isGreaterThan prepend="and" property="SN" compareValue="0">
+        				a.SN = #SN#
+        			</isGreaterThan>
+        		</isPropertyAvailable>
+        	</dynamic>
+        	<!--order by-->
+        	<dynamic>
+        	order by
+        	a.SN
+        	</dynamic>
+        </select> 
+        
+       
+    </statements>
+</sqlMap>  
