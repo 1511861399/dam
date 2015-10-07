@@ -8,6 +8,9 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using com.tk.dam.Entity;
+using com.tk.orm.dao;
+using com.tk.orm.model;
+using System.Diagnostics;
 
 namespace com.tk.dam.Views
 {
@@ -18,6 +21,21 @@ namespace com.tk.dam.Views
         {
             InitializeComponent();
             this.Width = Screen.PrimaryScreen.Bounds.Width;
+            InitializeBinding();
+        }
+
+        private void InitializeBinding()
+        {
+            IList<string> bmList = new List<string>();
+            bmList.Add("办公室");
+            bmList.Add("综合部");
+            bmList.Add("研发部");
+            bmList.Add("市场部");
+            cmbBm.DataSource = bmList;
+
+            cmbQx.DataSource = ROLEDao.QueryForList();
+            cmbQx.ValueMember = "ID";
+            cmbQx.DisplayMember = "DESCRIPTION";
         }
 
         /// <summary>
@@ -29,7 +47,7 @@ namespace com.tk.dam.Views
             if (yh == null)
             {
                 lblTitle.Text = "新增用户";
-                lblXh.Text = "0";
+                lblXh.Text = USERDao.GetNewId().ToString();
                 txtXm.Text = "";
                 txtDlm.Text = "";
 
@@ -37,10 +55,9 @@ namespace com.tk.dam.Views
                 rdbFemale.Checked = false;
 
                 cmbBm.SelectedIndex = 0;
-                cmbZw.SelectedIndex = 0;
-                cmbYhdj.SelectedIndex = 0;
+                txtLxdh.Text = "";
+                txtEmail.Text = "";
                 cmbQx.SelectedIndex = 0;
-                rtxBz.Text = "";
             }
             else
             {
@@ -59,34 +76,58 @@ namespace com.tk.dam.Views
                     rdbFemale.Checked = true;
                 }
                 cmbBm.Text = yh.Bm;
-                cmbZw.Text = yh.Zw;
-                cmbYhdj.Text = yh.Yhdj;
+                txtLxdh.Text = yh.Lxdh;
+                txtEmail.Text = yh.Email;
                 cmbQx.Text = yh.Qx;
-                cmbQx.Text = yh.Qx;
-                rtxBz.Text = yh.Bz;
             }
         }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            Yh yh = new Yh();
-            yh.Xh = int.Parse(lblXh.Text);
-            yh.Xm = txtXm.Text;
-            yh.Dlm = txtDlm.Text;
+            USER user = new USER();
+            user.ID = int.Parse(lblXh.Text);
+            user.NAME = txtDlm.Text;
+            user.REAL_NAME = txtXm.Text;
             if (rdbMale.Checked == true)
             {
-                yh.Xb = "男";
+                user.GENDER = "男";
             }
             else
             {
-                yh.Xb = "女";
+                user.GENDER = "女";
+            }
+            user.DEPT = cmbBm.Text;
+            user.TEL = txtLxdh.Text;
+            user.EMAIL = txtEmail.Text;
+            user.STATE = 0;
+            user.PASSWORD = "123456";
+            if (USERDao.Get(user.ID) != null)
+            {
+                USERDao.Update(user);
+            }
+            else
+            {
+                USERDao.Insert(user);
             }
 
-            yh.Bm = cmbBm.Text;
-            yh.Zw = cmbZw.Text;
-            yh.Yhdj = cmbYhdj.Text;
+            var userRoles = USERROLEDao.QueryForListByUserId(user.ID);
+            if (userRoles != null && userRoles.Count > 0)
+            {
+                USERROLE userRole = new USERROLE { ID = userRoles[0].ID, USER_ID = user.ID, ROLE_ID = (int)cmbQx.SelectedValue, PROJ_ID = 1 };
+                USERROLEDao.Update(userRole);
+            }
+            else
+            {
+                USERROLE userRole = new USERROLE { ID = USERROLEDao.GetNewId(), USER_ID = user.ID, ROLE_ID = (int)cmbQx.SelectedValue, PROJ_ID = 1 };
+                USERROLEDao.Insert(userRole);
+            }
+
+            Yh yh = new Yh();
+            yh.Xh = int.Parse(lblXh.Text);
+            //yh.Zw = cmbZw.Text;
+            //yh.Yhdj = cmbYhdj.Text;
             yh.Qx = cmbQx.Text;//txtQx.Text;
-            yh.Bz = rtxBz.Text;
+            //yh.Bz = rtxBz.Text;
 
             if (lblTitle.Text == "新增用户")
             {

@@ -8,6 +8,8 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using com.tk.dam.Entity;
+using com.tk.orm.dao;
+using com.tk.orm.model;
 
 namespace com.tk.dam.Views
 {
@@ -36,18 +38,7 @@ namespace com.tk.dam.Views
         /// <param name="isNew">是否新增</param>
         public void UpdateYHList(Yh yh, bool isNew)
         {
-            if (isNew)
-            {
-                yh.Xh = mYhList.Max(temp => temp.Xh) + 1;
-                mYhList.Add(yh);
-            }
-            else
-            {
-                mYhList.Remove(mYhList.Single(temp => temp.Xh == yh.Xh));
-                mYhList.Add(yh);
-            }
-            mYhList.Sort(yhComparer);
-            gcMain.RefreshDataSource();            
+            BindingGrid();
         }
 
         /// <summary>
@@ -56,6 +47,15 @@ namespace com.tk.dam.Views
         /// <param name="yh">用户</param>
         public void DeleteYH(Yh yh)
         {
+            var userRoles = USERROLEDao.QueryForListByUserId(yh.Xh);
+            if (userRoles != null)
+            {
+                foreach (var userRole in userRoles)
+                {
+                    USERROLEDao.Delete(userRole.ID);
+                }
+            }
+            USERDao.Delete(yh.Xh);
             mYhList.Remove(yh);
             mYhList.Sort(yhComparer);
             gcMain.RefreshDataSource();
@@ -63,11 +63,37 @@ namespace com.tk.dam.Views
 
         private void BindingGrid()
         {
-            mYhList.Add(new Yh { Xh = 1, Xm = "Admin", Dlm = "Admin", Xb = "男", Qx = "超级管理员" });
-            mYhList.Add(new Yh { Xh = 2, Xm = "陈文水", Dlm = "cws", Xb = "男", Qx = "普通用户" });
-            mYhList.Add(new Yh { Xh = 3, Xm = "李芸", Dlm = "liyun", Xb = "女", Qx = "普通用户" });
+            mYhList.Clear();
+            var users = USERDao.QueryForList();
+            if (users != null)
+            {
+                foreach (var user in users)
+                {
+                    Yh yh = new Yh
+                    {
+                        Xh = user.ID,
+                        Xm = user.REAL_NAME,
+                        Dlm = user.NAME,
+                        Xb = user.GENDER,
+                        Bm = user.DEPT,
+                        Lxdh = user.TEL,
+                        Email = user.EMAIL
+                    };
+                    var userRoles = USERROLEDao.QueryForListByUserId(user.ID);
+                    if (userRoles != null && userRoles.Count > 0)
+                    {
+                        ROLE role = ROLEDao.Get(userRoles[0].ROLE_ID);
+                        if (role != null)
+                        {
+                            yh.Qx = role.DESCRIPTION;
+                        }
+                    }
+                    mYhList.Add(yh);
+                }
+            }
             mYhList.Sort(yhComparer);
             gcMain.DataSource = mYhList;
+            gcMain.RefreshDataSource();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -83,6 +109,6 @@ namespace com.tk.dam.Views
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             MainForm.ShowYHEditFlyout(mYhList[gridView1.FocusedRowHandle]);
-        }       
+        }
     }
 }

@@ -5,14 +5,14 @@ namespace com.tk.orm.dao
 {
     public static class BaseDA
     {
-        public static int Insert<T>(string statementName, T t)
+        public static object Insert<T>(string statementName, T t)
         {
             ISqlMapper iSqlMapper = Mapper.Instance();
             if (iSqlMapper != null)
             {
-                return (int)iSqlMapper.Insert(statementName, t);
+                return (object)iSqlMapper.Insert(statementName, t);
             }
-            return 0;
+            return null;
         }
 
         public static int Update<T>(string statementName, T t)
@@ -53,6 +53,16 @@ namespace com.tk.orm.dao
                 return iSqlMapper.QueryForList<T>(statementName, parameterObject);
             }
             return null;
+        }
+
+        public static T QueryForObject<T>(string statementName, object parameterObject)
+        {
+            ISqlMapper iSqlMapper = Mapper.Instance();
+            if (iSqlMapper != null)
+            {
+                return iSqlMapper.QueryForObject<T>(statementName, parameterObject);
+            }
+            return default(T);
         }
     }
 }

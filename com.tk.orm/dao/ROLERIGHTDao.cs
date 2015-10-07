@@ -7,7 +7,7 @@ namespace com.tk.orm.dao
 {
      public class ROLERIGHTDao
     {
-        public static int Insert(ROLERIGHT t)
+        public static object Insert(ROLERIGHT t)
         {
             return BaseDA.Insert<ROLERIGHT>("InsertROLERIGHT",t);
         }

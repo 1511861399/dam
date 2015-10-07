@@ -7,7 +7,7 @@ namespace com.tk.orm.dao
 {
      public class RIGHTDao
     {
-        public static int Insert(RIGHT t)
+        public static object Insert(RIGHT t)
         {
             return BaseDA.Insert<RIGHT>("InsertRIGHT",t);
         }

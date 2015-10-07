@@ -5,11 +5,11 @@ using System.Text;
 using com.tk.orm.model;
 namespace com.tk.orm.dao
 {
-     public class USERROLEDao
+    public class USERROLEDao
     {
-        public static int Insert(USERROLE t)
+        public static object Insert(USERROLE t)
         {
-            return BaseDA.Insert<USERROLE>("InsertUSERROLE",t);
+            return BaseDA.Insert<USERROLE>("InsertUSERROLE", t);
         }
 
         public static int Update(USERROLE t)
@@ -27,9 +27,19 @@ namespace com.tk.orm.dao
             return BaseDA.Get<USERROLE>("SelectUSERROLEById", primaryKeyId);
         }
 
-        public static IList<USERROLE> QueryForList(object parameterObject = null)
+        public static IList<USERROLE> QueryForList()
         {
-            return BaseDA.QueryForList<USERROLE>("SelectAllUSERROLE", parameterObject);
+            return BaseDA.QueryForList<USERROLE>("SelectAllUSERROLE");
+        }
+
+        public static IList<USERROLE> QueryForListByUserId(int userId)
+        {
+            return BaseDA.QueryForList<USERROLE>("SelectUSERROLEQueryByUserId", userId);
+        }
+
+        public static int GetNewId()
+        {
+            return BaseDA.QueryForObject<int>("SelectUSERROLEMaxID", null);
         }
     }
 }

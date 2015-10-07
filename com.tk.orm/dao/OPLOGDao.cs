@@ -7,7 +7,7 @@ namespace com.tk.orm.dao
 {
      public class OPLOGDao
     {
-        public static int Insert(OPLOG t)
+        public static object Insert(OPLOG t)
         {
             return BaseDA.Insert<OPLOG>("InsertOPLOG",t);
         }

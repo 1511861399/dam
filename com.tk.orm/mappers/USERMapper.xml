@@ -1,40 +1,44 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?> 
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 <sqlMap namespace="EntityModel" xmlns="http://ibatis.apache.org/mapping"
-		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
-    <alias>
-		<!--类的别名-->
-		<typeAlias alias="USER" type="com.tk.orm.model.USER,com.tk.orm"/>
-	</alias>
-    <parameterMaps>
-	<parameterMap id="USER_params">
-    			<parameter property="ID" column="ID" type="int" dbType="int" ></parameter>
-    			<parameter property="NAME" column="NAME" dbType="Varchar" ></parameter>
-    			<parameter property="PASSWORD" column="PASSWORD" dbType="Varchar" ></parameter>
-    			<parameter property="REAL_NAME" column="REAL_NAME" dbType="Varchar" ></parameter>
-    			<parameter property="GENDER" column="GENDER" dbType="Varchar" ></parameter>
-    			<parameter property="DEPT" column="DEPT" dbType="Varchar" ></parameter>
-    			<parameter property="TEL" column="TEL" dbType="Varchar" ></parameter>
-    			<parameter property="EMAIL" column="EMAIL" dbType="Varchar" ></parameter>
-    			<parameter property="STATE" column="STATE" type="byte" dbType="tinyint" ></parameter>
-    	</parameterMap>
-    </parameterMaps>
-    <resultMaps>
-        <resultMap id="USERResult" class="USER"> 
-            <result property="ID" column="ID"/>
-            <result property="NAME" column="NAME"/>
-            <result property="PASSWORD" column="PASSWORD"/>
-            <result property="REAL_NAME" column="REAL_NAME"/>
-            <result property="GENDER" column="GENDER"/>
-            <result property="DEPT" column="DEPT"/>
-            <result property="TEL" column="TEL"/>
-            <result property="EMAIL" column="EMAIL"/>
-            <result property="STATE" column="STATE"/>
-        </resultMap>
-    </resultMaps>
-    <statements>
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <!--类的别名-->
+    <typeAlias alias="USER" type="com.tk.orm.model.USER,com.tk.orm"/>
+  </alias>
+  <parameterMaps>
+    <parameterMap id="USER_params">
+      <parameter property="ID" column="ID" type="int" dbType="int" ></parameter>
+      <parameter property="NAME" column="NAME" dbType="Varchar" ></parameter>
+      <parameter property="PASSWORD" column="PASSWORD" dbType="Varchar" ></parameter>
+      <parameter property="REAL_NAME" column="REAL_NAME" dbType="Varchar" ></parameter>
+      <parameter property="GENDER" column="GENDER" dbType="Varchar" ></parameter>
+      <parameter property="DEPT" column="DEPT" dbType="Varchar" ></parameter>
+      <parameter property="TEL" column="TEL" dbType="Varchar" ></parameter>
+      <parameter property="EMAIL" column="EMAIL" dbType="Varchar" ></parameter>
+      <parameter property="STATE" column="STATE" type="byte" dbType="tinyint" ></parameter>
+    </parameterMap>
+  </parameterMaps>
+  <resultMaps>
+    <resultMap id="USERResult" class="USER">
+      <result property="ID" column="ID"/>
+      <result property="NAME" column="NAME"/>
+      <result property="PASSWORD" column="PASSWORD"/>
+      <result property="REAL_NAME" column="REAL_NAME"/>
+      <result property="GENDER" column="GENDER"/>
+      <result property="DEPT" column="DEPT"/>
+      <result property="TEL" column="TEL"/>
+      <result property="EMAIL" column="EMAIL"/>
+      <result property="STATE" column="STATE"/>
+    </resultMap>
+  </resultMaps>
+  <statements>
+    <!--获取新记录ID值-->
+    <select id="SelectUSERMaxID" resultClass="int">
+      SELECT MAXID=ISNULL(MAX("ID"),0)+1 from [T_USER]
+    </select>
     <!--查询所有记录-->
-		<select id="SelectAllUSER" resultMap="USERResult">
-			<![CDATA[SELECT  
+    <select id="SelectAllUSER" resultMap="USERResult">
+      <![CDATA[SELECT  
              ID,
     	     
              NAME,
@@ -53,31 +57,23 @@
     	     
              STATE
     	     FROM T_USER]]>
-		</select>
-        <!--查询单条记录-->
-		<select id="SelectUSERById" parameterClass="int" resultMap="USERResult" extends="SelectAllUSER">
-			<![CDATA[ where ID = #value#  ]]>
-		</select> 
-        
-        
-        
-        <!--插入新记录-->
-		<insert id="InsertUSER" parameterClass="USER">	
-          select 1;
-    			<!--id自动生成的示例用法-->
-          <selectKey property="ID" type="post" resultClass="int">
-          <![CDATA[
-            INSERT into T_USER(NAME, PASSWORD, REAL_NAME, GENDER, DEPT, TEL, EMAIL, STATE )
-    			  VALUES(#NAME#, #PASSWORD#, #REAL_NAME#, #GENDER#, #DEPT#, #TEL#, #EMAIL#, #STATE# )
-            SELECT SCOPE_IDENTITY() as ID
-          ]]>
-          </selectKey>
-      
-		</insert>
-        
-        <!--更新单条记录-->
-		<update id="UpdateUSER" parameterClass="USER">
-			<![CDATA[Update T_USER 
+    </select>
+    <!--查询单条记录-->
+    <select id="SelectUSERById" parameterClass="int" resultMap="USERResult" extends="SelectAllUSER">
+      <![CDATA[ where ID = #value#  ]]>
+    </select>
+
+
+
+    <!--插入新记录-->
+    <insert id="InsertUSER" parameterClass="USER">
+      INSERT into T_USER(ID,NAME, PASSWORD, REAL_NAME, GENDER, DEPT, TEL, EMAIL, STATE )
+      VALUES(#ID#, #NAME#, #PASSWORD#, #REAL_NAME#, #GENDER#, #DEPT#, #TEL#, #EMAIL#, #STATE# )
+    </insert>
+
+    <!--更新单条记录-->
+    <update id="UpdateUSER" parameterClass="USER">
+      <![CDATA[Update T_USER 
             SET  
                     NAME=#NAME#
                 , 
@@ -96,39 +92,39 @@
                     STATE=#STATE#
                  
 			Where ID=#ID#]]>
-		</update>
+    </update>
 
-		<!--根据主键删除单条记录-->
-		<delete id="DeleteUSERById" parameterClass="int">
-			<![CDATA[Delete From T_USER Where ID=#value#]]>
-		</delete>
-        <select id="SelectUSERQuery" parameterMap="USER_params" resultMap="USERResult">
-    
-                select
-            		a.ID,
-            		a.NAME,
-            		a.PASSWORD,
-            		a.REAL_NAME,
-            		a.GENDER,
-            		a.DEPT,
-            		a.TEL,
-            		a.EMAIL,
-            		a.STATE,	
-        	from T_USER a 
-        	<dynamic prepend="where">
-        		<isPropertyAvailable prepend="" property="ID">
-        			<isGreaterThan prepend="and" property="ID" compareValue="0">
-        				a.ID = #ID#
-        			</isGreaterThan>
-        		</isPropertyAvailable>
-        	</dynamic>
-        	<!--order by-->
-        	<dynamic>
-        	order by
-        	a.ID
-        	</dynamic>
-        </select> 
-        
-       
-    </statements>
-</sqlMap>  
+    <!--根据主键删除单条记录-->
+    <delete id="DeleteUSERById" parameterClass="int">
+      <![CDATA[Delete From T_USER Where ID=#value#]]>
+    </delete>
+    <select id="SelectUSERQuery" parameterMap="USER_params" resultMap="USERResult">
+
+      select
+      a.ID,
+      a.NAME,
+      a.PASSWORD,
+      a.REAL_NAME,
+      a.GENDER,
+      a.DEPT,
+      a.TEL,
+      a.EMAIL,
+      a.STATE,
+      from T_USER a
+      <dynamic prepend="where">
+        <isPropertyAvailable prepend="" property="ID">
+          <isGreaterThan prepend="and" property="ID" compareValue="0">
+            a.ID = #ID#
+          </isGreaterThan>
+        </isPropertyAvailable>
+      </dynamic>
+      <!--order by-->
+      <dynamic>
+        order by
+        a.ID
+      </dynamic>
+    </select>
+
+
+  </statements>
+</sqlMap>

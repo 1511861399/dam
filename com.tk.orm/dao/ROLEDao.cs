@@ -7,7 +7,7 @@ namespace com.tk.orm.dao
 {
      public class ROLEDao
     {
-        public static int Insert(ROLE t)
+        public static object Insert(ROLE t)
         {
             return BaseDA.Insert<ROLE>("InsertROLE",t);
         }

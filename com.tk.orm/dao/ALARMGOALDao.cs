@@ -7,7 +7,7 @@ namespace com.tk.orm.dao
 {
      public class ALARMGOALDao
     {
-        public static int Insert(ALARMGOAL t)
+        public static object Insert(ALARMGOAL t)
         {
             return BaseDA.Insert<ALARMGOAL>("InsertALARMGOAL",t);
         }

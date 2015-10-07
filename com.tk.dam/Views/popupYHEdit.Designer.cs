@@ -30,16 +30,12 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmbBm = new System.Windows.Forms.ComboBox();
-            this.cmbZw = new System.Windows.Forms.ComboBox();
-            this.cmbYhdj = new System.Windows.Forms.ComboBox();
             this.cmbQx = new System.Windows.Forms.ComboBox();
             this.lblXh = new System.Windows.Forms.Label();
-            this.rtxBz = new System.Windows.Forms.RichTextBox();
             this.rdbFemale = new System.Windows.Forms.RadioButton();
             this.rdbMale = new System.Windows.Forms.RadioButton();
             this.txtDlm = new System.Windows.Forms.TextBox();
             this.txtXm = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,6 +46,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.txtLxdh = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,17 +55,15 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.txtEmail);
+            this.panel1.Controls.Add(this.txtLxdh);
             this.panel1.Controls.Add(this.cmbBm);
-            this.panel1.Controls.Add(this.cmbZw);
-            this.panel1.Controls.Add(this.cmbYhdj);
             this.panel1.Controls.Add(this.cmbQx);
             this.panel1.Controls.Add(this.lblXh);
-            this.panel1.Controls.Add(this.rtxBz);
             this.panel1.Controls.Add(this.rdbFemale);
             this.panel1.Controls.Add(this.rdbMale);
             this.panel1.Controls.Add(this.txtDlm);
             this.panel1.Controls.Add(this.txtXm);
-            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
@@ -86,47 +82,14 @@
             // cmbBm
             // 
             this.cmbBm.FormattingEnabled = true;
-            this.cmbBm.Items.AddRange(new object[] {
-            "办公室",
-            "综合部",
-            "研发部",
-            "市场部"});
             this.cmbBm.Location = new System.Drawing.Point(112, 157);
             this.cmbBm.Name = "cmbBm";
             this.cmbBm.Size = new System.Drawing.Size(200, 22);
             this.cmbBm.TabIndex = 10;
             // 
-            // cmbZw
-            // 
-            this.cmbZw.FormattingEnabled = true;
-            this.cmbZw.Items.AddRange(new object[] {
-            "员工",
-            "经理",
-            "副总",
-            "总经理"});
-            this.cmbZw.Location = new System.Drawing.Point(111, 189);
-            this.cmbZw.Name = "cmbZw";
-            this.cmbZw.Size = new System.Drawing.Size(201, 22);
-            this.cmbZw.TabIndex = 11;
-            // 
-            // cmbYhdj
-            // 
-            this.cmbYhdj.FormattingEnabled = true;
-            this.cmbYhdj.Items.AddRange(new object[] {
-            "一级",
-            "二级",
-            "三级"});
-            this.cmbYhdj.Location = new System.Drawing.Point(112, 223);
-            this.cmbYhdj.Name = "cmbYhdj";
-            this.cmbYhdj.Size = new System.Drawing.Size(200, 22);
-            this.cmbYhdj.TabIndex = 12;
-            // 
             // cmbQx
             // 
             this.cmbQx.FormattingEnabled = true;
-            this.cmbQx.Items.AddRange(new object[] {
-            "普通用户",
-            "超级管理员"});
             this.cmbQx.Location = new System.Drawing.Point(112, 259);
             this.cmbQx.Name = "cmbQx";
             this.cmbQx.Size = new System.Drawing.Size(200, 22);
@@ -141,14 +104,6 @@
             this.lblXh.TabIndex = 10;
             this.lblXh.Text = "0";
             this.lblXh.Visible = false;
-            // 
-            // rtxBz
-            // 
-            this.rtxBz.Location = new System.Drawing.Point(111, 292);
-            this.rtxBz.Name = "rtxBz";
-            this.rtxBz.Size = new System.Drawing.Size(201, 41);
-            this.rtxBz.TabIndex = 14;
-            this.rtxBz.Text = "";
             // 
             // rdbFemale
             // 
@@ -186,17 +141,6 @@
             this.txtXm.Size = new System.Drawing.Size(201, 22);
             this.txtXm.TabIndex = 6;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(22, 288);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(103, 23);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "备      注：";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -217,7 +161,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(105, 23);
             this.label6.TabIndex = 5;
-            this.label6.Text = "用户等级：";
+            this.label6.Text = "邮箱地址：";
             // 
             // label5
             // 
@@ -226,9 +170,9 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(22, 185);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 23);
+            this.label5.Size = new System.Drawing.Size(105, 23);
             this.label5.TabIndex = 5;
-            this.label5.Text = "职      位：";
+            this.label5.Text = "联系电话：";
             // 
             // label4
             // 
@@ -317,6 +261,20 @@
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "新增用户";
             // 
+            // txtLxdh
+            // 
+            this.txtLxdh.Location = new System.Drawing.Point(112, 189);
+            this.txtLxdh.Name = "txtLxdh";
+            this.txtLxdh.Size = new System.Drawing.Size(200, 22);
+            this.txtLxdh.TabIndex = 15;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(111, 223);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(200, 22);
+            this.txtEmail.TabIndex = 15;
+            // 
             // popupYHEdit
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(161)))), ((int)(((byte)(235)))));
@@ -342,10 +300,8 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -353,11 +309,11 @@
         private System.Windows.Forms.RadioButton rdbFemale;
         private System.Windows.Forms.RadioButton rdbMale;
         private System.Windows.Forms.TextBox txtDlm;
-        private System.Windows.Forms.RichTextBox rtxBz;
         private System.Windows.Forms.Label lblXh;
         private System.Windows.Forms.ComboBox cmbQx;
         private System.Windows.Forms.ComboBox cmbBm;
-        private System.Windows.Forms.ComboBox cmbZw;
-        private System.Windows.Forms.ComboBox cmbYhdj;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtLxdh;
+        private System.Windows.Forms.TextBox txtEmail;
     }
 }

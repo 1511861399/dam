@@ -7,7 +7,7 @@ namespace com.tk.orm.dao
 {
      public class ALARMAPPENDDao
     {
-        public static int Insert(ALARMAPPEND t)
+        public static object Insert(ALARMAPPEND t)
         {
             return BaseDA.Insert<ALARMAPPEND>("InsertALARMAPPEND",t);
         }

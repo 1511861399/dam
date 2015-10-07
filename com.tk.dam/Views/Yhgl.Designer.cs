@@ -37,10 +37,9 @@
             this.gridColumn_dlm = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_xb = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_bm = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_zw = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_yhdj = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn_Lxdh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn_email = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_qx = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_bz = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -193,10 +192,9 @@
             this.gridColumn_dlm,
             this.gridColumn_xb,
             this.gridColumn_bm,
-            this.gridColumn_zw,
-            this.gridColumn_yhdj,
-            this.gridColumn_qx,
-            this.gridColumn_bz});
+            this.gridColumn_Lxdh,
+            this.gridColumn_email,
+            this.gridColumn_qx});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.GridControl = this.gcMain;
             this.gridView1.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
@@ -337,55 +335,55 @@
             this.gridColumn_bm.VisibleIndex = 4;
             this.gridColumn_bm.Width = 99;
             // 
-            // gridColumn_zw
+            // gridColumn_Lxdh
             // 
-            this.gridColumn_zw.AppearanceCell.ForeColor = System.Drawing.Color.Snow;
-            this.gridColumn_zw.AppearanceCell.Options.UseForeColor = true;
-            this.gridColumn_zw.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_zw.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_zw.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(110)))), ((int)(((byte)(167)))));
-            this.gridColumn_zw.AppearanceHeader.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(110)))), ((int)(((byte)(167)))));
-            this.gridColumn_zw.AppearanceHeader.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(110)))), ((int)(((byte)(167)))));
-            this.gridColumn_zw.AppearanceHeader.ForeColor = System.Drawing.Color.Snow;
-            this.gridColumn_zw.AppearanceHeader.Options.UseBackColor = true;
-            this.gridColumn_zw.AppearanceHeader.Options.UseBorderColor = true;
-            this.gridColumn_zw.AppearanceHeader.Options.UseForeColor = true;
-            this.gridColumn_zw.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn_zw.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_zw.Caption = "职位";
-            this.gridColumn_zw.FieldName = "Zw";
-            this.gridColumn_zw.Name = "gridColumn_zw";
-            this.gridColumn_zw.OptionsColumn.AllowEdit = false;
-            this.gridColumn_zw.OptionsColumn.AllowFocus = false;
-            this.gridColumn_zw.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn_zw.Visible = true;
-            this.gridColumn_zw.VisibleIndex = 5;
-            this.gridColumn_zw.Width = 99;
+            this.gridColumn_Lxdh.AppearanceCell.ForeColor = System.Drawing.Color.Snow;
+            this.gridColumn_Lxdh.AppearanceCell.Options.UseForeColor = true;
+            this.gridColumn_Lxdh.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn_Lxdh.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_Lxdh.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(110)))), ((int)(((byte)(167)))));
+            this.gridColumn_Lxdh.AppearanceHeader.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(110)))), ((int)(((byte)(167)))));
+            this.gridColumn_Lxdh.AppearanceHeader.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(110)))), ((int)(((byte)(167)))));
+            this.gridColumn_Lxdh.AppearanceHeader.ForeColor = System.Drawing.Color.Snow;
+            this.gridColumn_Lxdh.AppearanceHeader.Options.UseBackColor = true;
+            this.gridColumn_Lxdh.AppearanceHeader.Options.UseBorderColor = true;
+            this.gridColumn_Lxdh.AppearanceHeader.Options.UseForeColor = true;
+            this.gridColumn_Lxdh.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn_Lxdh.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_Lxdh.Caption = "联系电话";
+            this.gridColumn_Lxdh.FieldName = "Lxdh";
+            this.gridColumn_Lxdh.Name = "gridColumn_Lxdh";
+            this.gridColumn_Lxdh.OptionsColumn.AllowEdit = false;
+            this.gridColumn_Lxdh.OptionsColumn.AllowFocus = false;
+            this.gridColumn_Lxdh.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn_Lxdh.Visible = true;
+            this.gridColumn_Lxdh.VisibleIndex = 5;
+            this.gridColumn_Lxdh.Width = 99;
             // 
-            // gridColumn_yhdj
+            // gridColumn_email
             // 
-            this.gridColumn_yhdj.AppearanceCell.ForeColor = System.Drawing.Color.Snow;
-            this.gridColumn_yhdj.AppearanceCell.Options.UseForeColor = true;
-            this.gridColumn_yhdj.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_yhdj.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_yhdj.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(110)))), ((int)(((byte)(167)))));
-            this.gridColumn_yhdj.AppearanceHeader.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(110)))), ((int)(((byte)(167)))));
-            this.gridColumn_yhdj.AppearanceHeader.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(110)))), ((int)(((byte)(167)))));
-            this.gridColumn_yhdj.AppearanceHeader.ForeColor = System.Drawing.Color.Snow;
-            this.gridColumn_yhdj.AppearanceHeader.Options.UseBackColor = true;
-            this.gridColumn_yhdj.AppearanceHeader.Options.UseBorderColor = true;
-            this.gridColumn_yhdj.AppearanceHeader.Options.UseForeColor = true;
-            this.gridColumn_yhdj.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn_yhdj.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_yhdj.Caption = "用户等级";
-            this.gridColumn_yhdj.FieldName = "Yhdj";
-            this.gridColumn_yhdj.Name = "gridColumn_yhdj";
-            this.gridColumn_yhdj.OptionsColumn.AllowEdit = false;
-            this.gridColumn_yhdj.OptionsColumn.AllowFocus = false;
-            this.gridColumn_yhdj.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn_yhdj.Visible = true;
-            this.gridColumn_yhdj.VisibleIndex = 6;
-            this.gridColumn_yhdj.Width = 99;
+            this.gridColumn_email.AppearanceCell.ForeColor = System.Drawing.Color.Snow;
+            this.gridColumn_email.AppearanceCell.Options.UseForeColor = true;
+            this.gridColumn_email.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn_email.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_email.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(110)))), ((int)(((byte)(167)))));
+            this.gridColumn_email.AppearanceHeader.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(110)))), ((int)(((byte)(167)))));
+            this.gridColumn_email.AppearanceHeader.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(110)))), ((int)(((byte)(167)))));
+            this.gridColumn_email.AppearanceHeader.ForeColor = System.Drawing.Color.Snow;
+            this.gridColumn_email.AppearanceHeader.Options.UseBackColor = true;
+            this.gridColumn_email.AppearanceHeader.Options.UseBorderColor = true;
+            this.gridColumn_email.AppearanceHeader.Options.UseForeColor = true;
+            this.gridColumn_email.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn_email.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn_email.Caption = "电子邮箱";
+            this.gridColumn_email.FieldName = "Email";
+            this.gridColumn_email.Name = "gridColumn_email";
+            this.gridColumn_email.OptionsColumn.AllowEdit = false;
+            this.gridColumn_email.OptionsColumn.AllowFocus = false;
+            this.gridColumn_email.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn_email.Visible = true;
+            this.gridColumn_email.VisibleIndex = 6;
+            this.gridColumn_email.Width = 99;
             // 
             // gridColumn_qx
             // 
@@ -411,31 +409,6 @@
             this.gridColumn_qx.Visible = true;
             this.gridColumn_qx.VisibleIndex = 7;
             this.gridColumn_qx.Width = 99;
-            // 
-            // gridColumn_bz
-            // 
-            this.gridColumn_bz.AppearanceCell.ForeColor = System.Drawing.Color.Snow;
-            this.gridColumn_bz.AppearanceCell.Options.UseForeColor = true;
-            this.gridColumn_bz.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_bz.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_bz.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(110)))), ((int)(((byte)(167)))));
-            this.gridColumn_bz.AppearanceHeader.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(110)))), ((int)(((byte)(167)))));
-            this.gridColumn_bz.AppearanceHeader.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(110)))), ((int)(((byte)(167)))));
-            this.gridColumn_bz.AppearanceHeader.ForeColor = System.Drawing.Color.Snow;
-            this.gridColumn_bz.AppearanceHeader.Options.UseBackColor = true;
-            this.gridColumn_bz.AppearanceHeader.Options.UseBorderColor = true;
-            this.gridColumn_bz.AppearanceHeader.Options.UseForeColor = true;
-            this.gridColumn_bz.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn_bz.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_bz.Caption = "备注";
-            this.gridColumn_bz.FieldName = "Bz";
-            this.gridColumn_bz.Name = "gridColumn_bz";
-            this.gridColumn_bz.OptionsColumn.AllowEdit = false;
-            this.gridColumn_bz.OptionsColumn.AllowFocus = false;
-            this.gridColumn_bz.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn_bz.Visible = true;
-            this.gridColumn_bz.VisibleIndex = 8;
-            this.gridColumn_bz.Width = 120;
             // 
             // panel2
             // 
@@ -517,10 +490,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_dlm;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_xb;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_bm;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_zw;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_yhdj;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_Lxdh;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_email;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_qx;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_bz;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
     }

@@ -7,7 +7,7 @@ namespace com.tk.orm.dao
 {
      public class USERDao
     {
-        public static int Insert(USER t)
+        public static object Insert(USER t)
         {
             return BaseDA.Insert<USER>("InsertUSER",t);
         }
@@ -30,6 +30,11 @@ namespace com.tk.orm.dao
         public static IList<USER> QueryForList(object parameterObject = null)
         {
             return BaseDA.QueryForList<USER>("SelectAllUSER", parameterObject);
+        }
+
+        public static int GetNewId()
+        {
+            return BaseDA.QueryForObject<int>("SelectUSERMaxID", null);
         }
     }
 }

@@ -7,7 +7,7 @@ namespace com.tk.orm.dao
 {
      public class STATION_ACCESSDao
     {
-        public static int Insert(STATION_ACCESS t)
+        public static object Insert(STATION_ACCESS t)
         {
             return BaseDA.Insert<STATION_ACCESS>("InsertSTATION_ACCESS",t);
         }
