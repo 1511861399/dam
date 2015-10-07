@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtLxdh = new System.Windows.Forms.TextBox();
             this.cmbBm = new System.Windows.Forms.ComboBox();
             this.cmbQx = new System.Windows.Forms.ComboBox();
             this.lblXh = new System.Windows.Forms.Label();
@@ -46,8 +48,6 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.txtLxdh = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +78,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(639, 422);
             this.panel1.TabIndex = 0;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(111, 223);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(200, 22);
+            this.txtEmail.TabIndex = 12;
+            // 
+            // txtLxdh
+            // 
+            this.txtLxdh.Location = new System.Drawing.Point(112, 189);
+            this.txtLxdh.Name = "txtLxdh";
+            this.txtLxdh.Size = new System.Drawing.Size(200, 22);
+            this.txtLxdh.TabIndex = 11;
             // 
             // cmbBm
             // 
@@ -229,7 +243,7 @@
             this.btnCancel.Location = new System.Drawing.Point(138, 368);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 32);
-            this.btnCancel.TabIndex = 4;
+            this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -245,7 +259,7 @@
             this.btnOk.Location = new System.Drawing.Point(22, 368);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(100, 32);
-            this.btnOk.TabIndex = 3;
+            this.btnOk.TabIndex = 14;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
@@ -260,20 +274,6 @@
             this.lblTitle.Size = new System.Drawing.Size(145, 39);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "新增用户";
-            // 
-            // txtLxdh
-            // 
-            this.txtLxdh.Location = new System.Drawing.Point(112, 189);
-            this.txtLxdh.Name = "txtLxdh";
-            this.txtLxdh.Size = new System.Drawing.Size(200, 22);
-            this.txtLxdh.TabIndex = 15;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(111, 223);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(200, 22);
-            this.txtEmail.TabIndex = 15;
             // 
             // popupYHEdit
             // 
