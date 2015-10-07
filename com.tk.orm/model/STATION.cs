@@ -77,18 +77,6 @@ namespace com.tk.orm.model
 
         /// <summary>
         /// </summary>
-        public double S1X{ get; set; }
-
-        /// <summary>
-        /// </summary>
-        public double S1Y{ get; set; }
-
-        /// <summary>
-        /// </summary>
-        public double S1H{ get; set; }
-
-        /// <summary>
-        /// </summary>
         public double X{ get; set; }
 
         /// <summary>
@@ -117,15 +105,15 @@ namespace com.tk.orm.model
 
         /// <summary>
         /// </summary>
-        public double BYS1X{ get; set; }
+        public double S1X{ get; set; }
 
         /// <summary>
         /// </summary>
-        public double BYS1Y{ get; set; }
+        public double S1Y{ get; set; }
 
         /// <summary>
         /// </summary>
-        public double BYS1H{ get; set; }
+        public double S1H{ get; set; }
 
         /// <summary>
         /// </summary>

@@ -29,6 +29,14 @@ namespace com.tk.orm.model
 
         /// <summary>
         /// </summary>
+        public string GENDER{ get; set; }
+
+        /// <summary>
+        /// </summary>
+        public string DEPT{ get; set; }
+
+        /// <summary>
+        /// </summary>
         public string TEL{ get; set; }
 
         /// <summary>

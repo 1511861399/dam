@@ -20,15 +20,15 @@ namespace com.tk.dam
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            ALARMAPPEND model = new ALARMAPPEND();
-            model.ALEVEl = 0;
-            model.GOAL_ID = 0;
-            model.METHOD = 0;
-            ALARMAPPENDDao.Insert(model);
-            model = ALARMAPPENDDao.Get(2);
-            int i = ALARMAPPENDDao.Delete(1);
-            model.METHOD = 1;
-            i = ALARMAPPENDDao.Update(model);
+            //ALARMAPPEND model = new ALARMAPPEND();
+            //model.ALEVEl = 0;
+            //model.GOAL_ID = 0;
+            //model.METHOD = 0;
+            //ALARMAPPENDDao.Insert(model);
+            //model = ALARMAPPENDDao.Get(2);
+            //int i = ALARMAPPENDDao.Delete(1);
+            //model.METHOD = 1;
+            //i = ALARMAPPENDDao.Update(model);
             IList<ALARMAPPEND> list = ALARMAPPENDDao.QueryForList(null);
             Application.Run(new MainForm());
         }

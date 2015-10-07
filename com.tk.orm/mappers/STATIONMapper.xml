@@ -23,9 +23,6 @@
     			<parameter property="SCOORNAME" column="SCOORNAME" dbType="Varchar" ></parameter>
     			<parameter property="SFILTERNAME1" column="SFILTERNAME1" dbType="Varchar" ></parameter>
     			<parameter property="SFILTERNAME2" column="SFILTERNAME2" dbType="Varchar" ></parameter>
-    			<parameter property="S1X" column="S1X" type="double" dbType="float" ></parameter>
-    			<parameter property="S1Y" column="S1Y" type="double" dbType="float" ></parameter>
-    			<parameter property="S1H" column="S1H" type="double" dbType="float" ></parameter>
     			<parameter property="X" column="X" type="double" dbType="float" ></parameter>
     			<parameter property="Y" column="Y" type="double" dbType="float" ></parameter>
     			<parameter property="COMMENT" column="COMMENT" dbType="Varchar" ></parameter>
@@ -33,9 +30,9 @@
     			<parameter property="EPROVIDER" column="EPROVIDER" dbType="Varchar" ></parameter>
     			 <parameter property="ESTARTDATE" column="ESTARTDATE" type="DateTime" dbType="datetime" ></parameter>
     			<parameter property="EINSTALLER" column="EINSTALLER" dbType="Varchar" ></parameter>
-    			<parameter property="BYS1X" column="BYS1X" type="double" dbType="float" ></parameter>
-    			<parameter property="BYS1Y" column="BYS1Y" type="double" dbType="float" ></parameter>
-    			<parameter property="BYS1H" column="BYS1H" type="double" dbType="float" ></parameter>
+    			<parameter property="S1X" column="S1X" type="double" dbType="float" ></parameter>
+    			<parameter property="S1Y" column="S1Y" type="double" dbType="float" ></parameter>
+    			<parameter property="S1H" column="S1H" type="double" dbType="float" ></parameter>
     			<parameter property="SCONFIG" column="SCONFIG" dbType="Varchar" ></parameter>
     	</parameterMap>
     </parameterMaps>
@@ -57,9 +54,6 @@
             <result property="SCOORNAME" column="SCOORNAME"/>
             <result property="SFILTERNAME1" column="SFILTERNAME1"/>
             <result property="SFILTERNAME2" column="SFILTERNAME2"/>
-            <result property="S1X" column="S1X"/>
-            <result property="S1Y" column="S1Y"/>
-            <result property="S1H" column="S1H"/>
             <result property="X" column="X"/>
             <result property="Y" column="Y"/>
             <result property="COMMENT" column="COMMENT"/>
@@ -67,9 +61,9 @@
             <result property="EPROVIDER" column="EPROVIDER"/>
             <result property="ESTARTDATE" column="ESTARTDATE"/>
             <result property="EINSTALLER" column="EINSTALLER"/>
-            <result property="BYS1X" column="BYS1X"/>
-            <result property="BYS1Y" column="BYS1Y"/>
-            <result property="BYS1H" column="BYS1H"/>
+            <result property="S1X" column="S1X"/>
+            <result property="S1Y" column="S1Y"/>
+            <result property="S1H" column="S1H"/>
             <result property="SCONFIG" column="SCONFIG"/>
         </resultMap>
     </resultMaps>
@@ -109,12 +103,6 @@
     	     
              SFILTERNAME2,
     	     
-             S1X,
-    	     
-             S1Y,
-    	     
-             S1H,
-    	     
              X,
     	     
              Y,
@@ -129,11 +117,11 @@
     	     
              EINSTALLER,
     	     
-             BYS1X,
+             S1X,
     	     
-             BYS1Y,
+             S1Y,
     	     
-             BYS1H,
+             S1H,
     	     
              SCONFIG
     	     FROM T_STATION]]>
@@ -151,8 +139,8 @@
     			<!--id自动生成的示例用法-->
           <selectKey property="ID" type="post" resultClass="int">
           <![CDATA[
-            INSERT into T_STATION(PROJ_ID, STATE, NAME, SSN, SSTYLE, ESTYLE, SX, SY, SH, SB, SL, SHEIGHT, SCOORNAME, SFILTERNAME1, SFILTERNAME2, S1X, S1Y, S1H, X, Y, COMMENT, EMODEL, EPROVIDER, ESTARTDATE, EINSTALLER, BYS1X, BYS1Y, BYS1H, SCONFIG )
-    			  VALUES(#PROJ_ID#, #STATE#, #NAME#, #SSN#, #SSTYLE#, #ESTYLE#, #SX#, #SY#, #SH#, #SB#, #SL#, #SHEIGHT#, #SCOORNAME#, #SFILTERNAME1#, #SFILTERNAME2#, #S1X#, #S1Y#, #S1H#, #X#, #Y#, #COMMENT#, #EMODEL#, #EPROVIDER#, #ESTARTDATE#, #EINSTALLER#, #BYS1X#, #BYS1Y#, #BYS1H#, #SCONFIG# )
+            INSERT into T_STATION(PROJ_ID, STATE, NAME, SSN, SSTYLE, ESTYLE, SX, SY, SH, SB, SL, SHEIGHT, SCOORNAME, SFILTERNAME1, SFILTERNAME2, X, Y, COMMENT, EMODEL, EPROVIDER, ESTARTDATE, EINSTALLER, S1X, S1Y, S1H, SCONFIG )
+    			  VALUES(#PROJ_ID#, #STATE#, #NAME#, #SSN#, #SSTYLE#, #ESTYLE#, #SX#, #SY#, #SH#, #SB#, #SL#, #SHEIGHT#, #SCOORNAME#, #SFILTERNAME1#, #SFILTERNAME2#, #X#, #Y#, #COMMENT#, #EMODEL#, #EPROVIDER#, #ESTARTDATE#, #EINSTALLER#, #S1X#, #S1Y#, #S1H#, #SCONFIG# )
             SELECT SCOPE_IDENTITY() as ID
           ]]>
           </selectKey>
@@ -193,12 +181,6 @@
                 , 
                     SFILTERNAME2=#SFILTERNAME2#
                 , 
-                    S1X=#S1X#
-                , 
-                    S1Y=#S1Y#
-                , 
-                    S1H=#S1H#
-                , 
                     X=#X#
                 , 
                     Y=#Y#
@@ -213,11 +195,11 @@
                 , 
                     EINSTALLER=#EINSTALLER#
                 , 
-                    BYS1X=#BYS1X#
+                    S1X=#S1X#
                 , 
-                    BYS1Y=#BYS1Y#
+                    S1Y=#S1Y#
                 , 
-                    BYS1H=#BYS1H#
+                    S1H=#S1H#
                 , 
                     SCONFIG=#SCONFIG#
                  
@@ -247,9 +229,6 @@
             		a.SCOORNAME,
             		a.SFILTERNAME1,
             		a.SFILTERNAME2,
-            		a.S1X,
-            		a.S1Y,
-            		a.S1H,
             		a.X,
             		a.Y,
             		a.COMMENT,
@@ -257,9 +236,9 @@
             		a.EPROVIDER,
             		a.ESTARTDATE,
             		a.EINSTALLER,
-            		a.BYS1X,
-            		a.BYS1Y,
-            		a.BYS1H,
+            		a.S1X,
+            		a.S1Y,
+            		a.S1H,
             		a.SCONFIG,	
         	from T_STATION a 
         	<dynamic prepend="where">
