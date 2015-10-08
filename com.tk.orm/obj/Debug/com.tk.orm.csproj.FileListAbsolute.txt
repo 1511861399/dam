@@ -10,3 +10,4 @@ F:\2015work\1_daba\git\dam\com.tk.orm\bin\Debug\IBatisNet.DataMapper.dll
 F:\2015work\1_daba\git\dam\com.tk.orm\bin\Debug\log4net.dll
 F:\2015work\1_daba\git\dam\com.tk.orm\obj\Debug\com.tk.orm.csprojResolveAssemblyReference.cache
 F:\2015work\1_daba\git\dam\com.tk.orm\bin\Debug\mappers\DEVICE_STATUS_CLEANMapper.xml
+F:\2015work\1_daba\git\dam\com.tk.orm\bin\Debug\mappers\AlarmLogMapper.xml

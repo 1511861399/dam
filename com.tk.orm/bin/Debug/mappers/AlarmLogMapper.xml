@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?> 
+<sqlMap namespace="EntityModel" xmlns="http://ibatis.apache.org/mapping"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+    <alias>
+		<!--类的别名-->
+		<typeAlias alias="AlarmLog" type="com.tk.orm.model.AlarmLog,com.tk.orm"/>
+	</alias>
+    <parameterMaps>
+	<parameterMap id="AlarmLog_params">
+    			<parameter property="aId" column="aId" type="int" dbType="int" ></parameter>
+    			<parameter property="sId" column="sId" type="int" dbType="int" ></parameter>
+    			 <parameter property="aDatetime" column="aDatetime" type="DateTime" dbType="datetime" ></parameter>
+    			<parameter property="Event" column="Event" dbType="Varchar" ></parameter>
+    			<parameter property="aLevel" column="aLevel" type="int" dbType="int" ></parameter>
+    	</parameterMap>
+    </parameterMaps>
+    <resultMaps>
+        <resultMap id="AlarmLogResult" class="AlarmLog"> 
+            <result property="aId" column="aId"/>
+            <result property="sId" column="sId"/>
+            <result property="aDatetime" column="aDatetime"/>
+            <result property="Event" column="Event"/>
+            <result property="aLevel" column="aLevel"/>
+        </resultMap>
+    </resultMaps>
+    <statements>
+    <!--查询所有记录-->
+		<select id="SelectAllAlarmLog" resultMap="AlarmLogResult">
+			<![CDATA[SELECT  
+             aId,
+    	     
+             sId,
+    	     
+             aDatetime,
+    	     
+             Event,
+    	     
+             aLevel
+    	     FROM alarmlog]]>
+		</select>
+        <!--查询单条记录-->
+		<select id="SelectAlarmLogById" parameterClass="int" resultMap="AlarmLogResult" extends="SelectAllAlarmLog">
+			<![CDATA[ where aId = #value#  ]]>
+		</select> 
+        
+        
+        
+        <!--插入新记录-->
+		<insert id="InsertAlarmLog" parameterClass="AlarmLog">	
+          select 1;
+    			<!--id自动生成的示例用法-->
+          <selectKey property="aId" type="post" resultClass="int">
+          <![CDATA[
+            INSERT into alarmlog(sId, aDatetime, Event, aLevel )
+    			  VALUES(#sId#, #aDatetime#, #Event#, #aLevel# )
+            SELECT SCOPE_IDENTITY() as aId
+          ]]>
+          </selectKey>
+      
+		</insert>
+        
+        <!--更新单条记录-->
+		<update id="UpdateAlarmLog" parameterClass="AlarmLog">
+			<![CDATA[Update alarmlog 
+            SET  
+                    sId=#sId#
+                , 
+                    aDatetime=#aDatetime#
+                , 
+                    Event=#Event#
+                , 
+                    aLevel=#aLevel#
+                 
+			Where aId=#aId#]]>
+		</update>
+
+		<!--根据主键删除单条记录-->
+		<delete id="DeleteAlarmLogById" parameterClass="int">
+			<![CDATA[Delete From alarmlog Where aId=#value#]]>
+		</delete>
+        <select id="SelectAlarmLogQuery" parameterMap="AlarmLog_params" resultMap="AlarmLogResult">
+    
+                select
+            		a.aId,
+            		a.sId,
+            		a.aDatetime,
+            		a.Event,
+            		a.aLevel,	
+        	from alarmlog a 
+        	<dynamic prepend="where">
+        		<isPropertyAvailable prepend="" property="aId">
+        			<isGreaterThan prepend="and" property="aId" compareValue="0">
+        				a.aId = #aId#
+        			</isGreaterThan>
+        		</isPropertyAvailable>
+        	</dynamic>
+        	<!--order by-->
+        	<dynamic>
+        	order by
+        	a.aId
+        	</dynamic>
+        </select> 
+        
+       
+    </statements>
+</sqlMap>  
