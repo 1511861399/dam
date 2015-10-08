@@ -2,3 +2,5 @@
 /com.tk.dam/bin
 /com.tk.dam/obj
 /com.tk.dam/Properties/licenses.licx
+/com.tk.orm/bin
+/com.tk.orm/obj
