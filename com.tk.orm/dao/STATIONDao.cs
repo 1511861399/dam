@@ -5,31 +5,31 @@ using System.Text;
 using com.tk.orm.model;
 namespace com.tk.orm.dao
 {
-     public class STATIONDao
+     public class stationDao
     {
-        public static object Insert(STATION t)
+        public static object Insert(station t)
         {
-            return BaseDA.Insert<STATION>("InsertSTATION",t);
+            return BaseDA.Insert<station>("Insertstation",t);
         }
 
-        public static int Update(STATION t)
+        public static int Update(station t)
         {
-            return BaseDA.Update<STATION>("UpdateSTATION", t);
+            return BaseDA.Update<station>("Updatestation", t);
         }
 
         public static int Delete(int primaryKeyId)
         {
-            return BaseDA.Delete("DeleteSTATIONById", primaryKeyId);
+            return BaseDA.Delete("DeletestationById", primaryKeyId);
         }
 
-        public static STATION Get(int primaryKeyId)
+        public static station Get(int primaryKeyId)
         {
-            return BaseDA.Get<STATION>("SelectSTATIONById", primaryKeyId);
+            return BaseDA.Get<station>("SelectstationById", primaryKeyId);
         }
 
-        public static IList<STATION> QueryForList(object parameterObject = null)
+        public static IList<station> QueryForList(object parameterObject = null)
         {
-            return BaseDA.QueryForList<STATION>("SelectAllSTATION", parameterObject);
+            return BaseDA.QueryForList<station>("SelectAllstation", parameterObject);
         }
     }
 }

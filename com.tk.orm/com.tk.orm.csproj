@@ -69,7 +69,8 @@
     <Compile Include="dao\ROLERIGHTDao.cs" />
     <Compile Include="dao\satDao.cs" />
     <Compile Include="dao\SB_STATUSDao.cs" />
-    <Compile Include="dao\STATIONDao.cs" />
+    <Compile Include="dao\stationDao.cs" />
+    <Compile Include="dao\T_STATIONDao.cs" />
     <Compile Include="dao\STATION_ACCESSDao.cs" />
     <Compile Include="dao\USERDao.cs" />
     <Compile Include="dao\USERROLEDao.cs" />
@@ -83,7 +84,8 @@
     <Compile Include="model\ROLERIGHT.cs" />
     <Compile Include="model\sat.cs" />
     <Compile Include="model\SB_STATUS.cs" />
-    <Compile Include="model\STATION.cs" />
+    <Compile Include="model\station.cs" />
+    <Compile Include="model\T_STATION.cs" />
     <Compile Include="model\STATION_ACCESS.cs" />
     <Compile Include="model\USER.cs" />
     <Compile Include="model\USERROLE.cs" />
@@ -98,14 +100,19 @@
     <EmbeddedResource Include="mappers\RIGHTMapper.xml" />
     <EmbeddedResource Include="mappers\ROLEMapper.xml" />
     <EmbeddedResource Include="mappers\ROLERIGHTMapper.xml" />
-    <EmbeddedResource Include="mappers\STATIONMapper.xml" />
+    <EmbeddedResource Include="mappers\T_STATIONMapper.xml" />
     <EmbeddedResource Include="mappers\STATION_ACCESSMapper.xml" />
     <EmbeddedResource Include="mappers\USERMapper.xml" />
     <EmbeddedResource Include="mappers\USERROLEMapper.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="mappers\satMapper.xml" />
+    <EmbeddedResource Include="mappers\satMapper.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="mappers\SB_STATUSMapper.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="mappers\stationMapper.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

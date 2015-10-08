@@ -29,7 +29,9 @@ namespace com.tk.dam
             //int i = ALARMAPPENDDao.Delete(1);
             //model.METHOD = 1;
             //i = ALARMAPPENDDao.Update(model);
-            IList<ALARMAPPEND> list = ALARMAPPENDDao.QueryForList(null);
+            //IList<ALARMAPPEND> list = ALARMAPPENDDao.QueryForList(null);
+            //IList<station> list = stationDao.QueryForList(null);
+             IList<sat> list =satDao.QueryForList(null);
             Application.Run(new MainForm());
         }
     }

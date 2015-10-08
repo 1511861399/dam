@@ -7,7 +7,7 @@ namespace com.tk.orm.dao
 {
      public class satDao
     {
-         public static int Insert(sat t)
+         public static object Insert(sat t)
         {
             return BaseDA.Insert<sat>("Insertsat", t);
         }
