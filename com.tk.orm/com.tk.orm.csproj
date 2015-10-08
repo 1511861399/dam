@@ -62,6 +62,8 @@
     <Compile Include="dao\ALARMGOALDao.cs" />
     <Compile Include="dao\ALARMSETTINGDao.cs" />
     <Compile Include="dao\BaseDA.cs" />
+    <Compile Include="dao\DEVICE_STATUSDao.cs" />
+    <Compile Include="dao\DEVICE_STATUS_CLEANDao.cs" />
     <Compile Include="dao\OPLOGDao.cs" />
     <Compile Include="dao\PROJECTDao.cs" />
     <Compile Include="dao\RIGHTDao.cs" />
@@ -77,6 +79,8 @@
     <Compile Include="model\ALARMAPPEND.cs" />
     <Compile Include="model\ALARMGOAL.cs" />
     <Compile Include="model\ALARMSETTING.cs" />
+    <Compile Include="model\DEVICE_STATUS.cs" />
+    <Compile Include="model\DEVICE_STATUS_CLEAN.cs" />
     <Compile Include="model\OPLOG.cs" />
     <Compile Include="model\PROJECT.cs" />
     <Compile Include="model\RIGHT.cs" />
@@ -113,6 +117,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="mappers\stationMapper.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="mappers\DEVICE_STATUSMapper.xml" />
+    <EmbeddedResource Include="mappers\DEVICE_STATUS_CLEANMapper.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
