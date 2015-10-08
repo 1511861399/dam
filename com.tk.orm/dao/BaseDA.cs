@@ -14,7 +14,15 @@ namespace com.tk.orm.dao
             }
             return null;
         }
-
+        public static object Insert2(string statementName, object t)
+        {
+            ISqlMapper iSqlMapper = Mapper.Instance();
+            if (iSqlMapper != null)
+            {
+                return (object)iSqlMapper.Insert(statementName, t);
+            }
+            return null;
+        }
         public static int Update<T>(string statementName, T t)
         {
             ISqlMapper iSqlMapper = Mapper.Instance();
@@ -25,6 +33,15 @@ namespace com.tk.orm.dao
             return 0;
         }
 
+        public static int Update2(string statementName, object t)
+        {
+            ISqlMapper iSqlMapper = Mapper.Instance();
+            if (iSqlMapper != null)
+            {
+                return iSqlMapper.Update(statementName, t);
+            }
+            return 0;
+        }
         public static int Delete(string statementName, int primaryKeyId)
         {
             ISqlMapper iSqlMapper = Mapper.Instance();
@@ -34,7 +51,15 @@ namespace com.tk.orm.dao
             }
             return 0;
         }
-
+        public static int Delete2(string statementName, object primaryKeyId)
+        {
+            ISqlMapper iSqlMapper = Mapper.Instance();
+            if (iSqlMapper != null)
+            {
+                return iSqlMapper.Delete(statementName, primaryKeyId);
+            }
+            return 0;
+        }
         public static T Get<T>(string statementName, int primaryKeyId) where T : class
         {
             ISqlMapper iSqlMapper = Mapper.Instance();
