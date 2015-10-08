@@ -105,13 +105,13 @@
             </isGreaterThan>
           </isPropertyAvailable>
           <isPropertyAvailable prepend="and" property="aDatetime">
-            aDatetime =#aDatetime#
+            aDatetime &gt;#aDatetime#
           </isPropertyAvailable>
         </dynamic>
         <!--order by-->
         <dynamic>
           order by
-          GPSIndex
+          aDatetime desc
         </dynamic>
       </select>
 
