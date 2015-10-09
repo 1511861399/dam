@@ -17,7 +17,7 @@ namespace com.tk.orm.model
 
         /// <summary>
         /// </summary>
-        public DateTime aDatetime{ get; set; }
+        public DateTime? aDatetime{ get; set; }
 
         /// <summary>
         /// </summary>
@@ -44,7 +44,20 @@ namespace com.tk.orm.model
         public double Hspeed{ get; set; }
 
         /// <summary>
+        /// 数据处理类型：0原始 1分钟 2小时 3天 4月 5年
         /// </summary>
-        public int Style{ get; set; }
+        public int? Style{ get; set; }
+
+        /// <summary>
+        /// </summary>
+        public double Dx { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public double Dy { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public double Dh { get; set; }
     }
 }

@@ -48,8 +48,6 @@ namespace com.tk.dam.Views
                 this.chartControl1.Series[2].Points.Add(point);
                 addAnnotation(point, i);
             }
-            this.timer1.Enabled = true;
-            this.timer1.Start();
         }
 
         private void addAnnotation(SeriesPoint point, int zIndex)
@@ -76,27 +74,5 @@ namespace com.tk.dam.Views
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            SeriesPoint mPoint;
-            for (int i = 0; i < this.chartControl1.Series[0].Points.Count; i++)
-            {
-                mPoint = this.chartControl1.Series[0].Points[i];
-                mPoint.NumericalArgument = mPoint.NumericalArgument + mRandom.Next(7) - 3;
-                mPoint.Values[0] = mPoint.Values[0] + mRandom.Next(5) - 2;
-                if (i < this.chartControl1.Series[1].Points.Count)
-                {
-                    mPoint = this.chartControl1.Series[1].Points[i];
-                    mPoint.NumericalArgument = mPoint.NumericalArgument + mRandom.Next(7) - 3;
-                    mPoint.Values[0] = mPoint.Values[0] + mRandom.Next(5) - 2;
-                }
-                if (i < this.chartControl1.Series[2].Points.Count)
-                {
-                    mPoint = this.chartControl1.Series[2].Points[i];
-                    mPoint.NumericalArgument = mPoint.NumericalArgument + mRandom.Next(7) - 3;
-                    mPoint.Values[0] = mPoint.Values[0] + mRandom.Next(5) - 2;
-                }
-            }
-        }
     }
 }

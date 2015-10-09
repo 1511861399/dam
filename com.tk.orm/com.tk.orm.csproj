@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{52A49CA4-20BD-45E1-B537-08370B9EDFBB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>com.tk.orm</RootNamespace>
+    <AssemblyName>com.tk.orm</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.DynamicProxy">
+      <HintPath>..\Lib\MyBatisLib\Castle.DynamicProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="IBatisNet.Common">
+      <HintPath>..\Lib\MyBatisLib\IBatisNet.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="IBatisNet.Common.Logging.Log4Net">
+      <HintPath>..\Lib\MyBatisLib\IBatisNet.Common.Logging.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="IBatisNet.DataAccess">
+      <HintPath>..\Lib\MyBatisLib\IBatisNet.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="IBatisNet.DataMapper">
+      <HintPath>..\Lib\MyBatisLib\IBatisNet.DataMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dao\ALARMAPPENDDao.cs" />
+    <Compile Include="dao\ALARMGOALDao.cs" />
+    <Compile Include="dao\AlarmLogDao.cs" />
+    <Compile Include="dao\ALARMSETTINGDao.cs" />
+    <Compile Include="dao\BaseDA.cs" />
+    <Compile Include="dao\DEVICE_STATUSDao.cs" />
+    <Compile Include="dao\DEVICE_STATUS_CLEANDao.cs" />
+    <Compile Include="dao\OPLOGDao.cs" />
+    <Compile Include="dao\PROJECTDao.cs" />
+    <Compile Include="dao\RIGHTDao.cs" />
+    <Compile Include="dao\ROLEDao.cs" />
+    <Compile Include="dao\ROLERIGHTDao.cs" />
+    <Compile Include="dao\satDao.cs" />
+    <Compile Include="dao\SB_STATUSDao.cs" />
+    <Compile Include="dao\stationDao.cs" />
+    <Compile Include="dao\T_STATIONDao.cs" />
+    <Compile Include="dao\STATION_ACCESSDao.cs" />
+    <Compile Include="dao\USERDao.cs" />
+    <Compile Include="dao\USERROLEDao.cs" />
+    <Compile Include="model\ALARMAPPEND.cs" />
+    <Compile Include="model\ALARMGOAL.cs" />
+    <Compile Include="model\AlarmLog.cs" />
+    <Compile Include="model\ALARMSETTING.cs" />
+    <Compile Include="model\DEVICE_STATUS.cs" />
+    <Compile Include="model\DEVICE_STATUS_CLEAN.cs" />
+    <Compile Include="model\OPLOG.cs" />
+    <Compile Include="model\PROJECT.cs" />
+    <Compile Include="model\RIGHT.cs" />
+    <Compile Include="model\ROLE.cs" />
+    <Compile Include="model\ROLERIGHT.cs" />
+    <Compile Include="model\sat.cs" />
+    <Compile Include="model\SB_STATUS.cs" />
+    <Compile Include="model\station.cs" />
+    <Compile Include="model\T_STATION.cs" />
+    <Compile Include="model\STATION_ACCESS.cs" />
+    <Compile Include="model\USER.cs" />
+    <Compile Include="model\USERROLE.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="mappers\ALARMAPPENDMapper.xml" />
+    <EmbeddedResource Include="mappers\ALARMGOALMapper.xml" />
+    <EmbeddedResource Include="mappers\ALARMSETTINGMapper.xml" />
+    <EmbeddedResource Include="mappers\OPLOGMapper.xml" />
+    <EmbeddedResource Include="mappers\PROJECTMapper.xml" />
+    <EmbeddedResource Include="mappers\RIGHTMapper.xml" />
+    <EmbeddedResource Include="mappers\ROLEMapper.xml" />
+    <EmbeddedResource Include="mappers\ROLERIGHTMapper.xml" />
+    <EmbeddedResource Include="mappers\T_STATIONMapper.xml" />
+    <EmbeddedResource Include="mappers\STATION_ACCESSMapper.xml" />
+    <EmbeddedResource Include="mappers\USERMapper.xml" />
+    <EmbeddedResource Include="mappers\USERROLEMapper.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="mappers\satMapper.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mappers\SB_STATUSMapper.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="mappers\stationMapper.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="mappers\DEVICE_STATUSMapper.xml" />
+    <EmbeddedResource Include="mappers\DEVICE_STATUS_CLEANMapper.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="mappers\AlarmLogMapper.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

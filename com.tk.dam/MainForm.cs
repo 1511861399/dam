@@ -14,6 +14,8 @@ using com.tk.dam.Entity;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
 using DevExpress.XtraSplashScreen;
+using com.tk.orm.model;
+using com.tk.orm.dao;
 
 namespace com.tk.dam
 {
@@ -27,12 +29,15 @@ namespace com.tk.dam
         popupTj mPopupTjControl = new popupTj();
         popupYHEdit mPopupYHEditControl = new popupYHEdit();
         private Random mRandom = new Random(360);
-        Dictionary<string, List<double>> mXbjcDic = new Dictionary<string, List<double>>();
-        Dictionary<string, List<int>> mWxztDic = new Dictionary<string, List<int>>();
+        Dictionary<string, IList<DEVICE_STATUS_CLEAN>> mXbjcDic = new Dictionary<string, IList<DEVICE_STATUS_CLEAN>>();
+        //Dictionary<string, List<int>> mWxztDic = new Dictionary<string, List<int>>();
         Dictionary<string, double> mQxDic = new Dictionary<string, double>();
 
+        IList<station> mStations = new List<station>();
+        IList<sat> mSatList = new List<sat>();
+
         //Xbjc mXbjc;
-        //Wxzt mWxzt;
+        Wxzt mWxzt;
 
         public MainForm()
         {
@@ -92,12 +97,65 @@ namespace com.tk.dam
 
             mainWindowsUIView.AddDocument(mPopupTjControl);
             mainWindowsUIView.AddDocument(mPopupYHEditControl);
+           
+            mQxDic.Add("SW", 95);
+            mQxDic.Add("WD", 30);
+            tileQX.Elements[1].Text = string.Format("水位:{0}m  温度:{1}°C", mQxDic["SW"], mQxDic["WD"]);
 
-            
-            for (int i = 1; i <= 12; i++)
-            {              
+            loadData();
+        }
+
+        private void loadData() {
+
+            tileXBJC.Frames.Clear();
+            tileWXZT.Frames.Clear();
+
+            mStations = stationDao.QueryForList(null).Where(p => p.sStyle == 1).ToList();
+            mSatList = satDao.QueryForList(null);
+
+            if (mWxzt != null)
+            {
+                mWxzt.bindData();
+            }
+
+            for (int i = 0; i < mStations.Count; i++)
+            {
+                var mStation = mStations[i];
+                IList<DEVICE_STATUS_CLEAN> list = DEVICE_STATUS_CLEANDao.QueryTopForList(mStations[i].sSpeedName, 1, new DEVICE_STATUS_CLEAN() { Style = 2 });
+                foreach (var status in list)
+                {
+                    status.Dx = status.X * 1000;
+                    status.Dy = status.Y * 1000;
+                    status.Dh = status.Height * 1000;
+                    if (Math.Abs(status.Dx) > 4 || Math.Abs(status.Dx) < 0.1)
+                    {
+                        status.Dx = 0;
+                    }
+                    if (Math.Abs(status.Dy) > 4 || Math.Abs(status.Dy) < 0.1)
+                    {
+                        status.Dy = 0;
+                    }
+                    if (Math.Abs(status.Dh) > 4 || Math.Abs(status.Dh) < 0.1)
+                    {
+                        status.Dh = 0;
+                    }
+                }
+                mXbjcDic[mStation.sComment] = list;
+            }
+
+            for (int i = 0; i < mStations.Count; i++)
+            {
                 //形变监测
-                List<double> xbjcList = new List<double>() { mRandom.Next(13) / 10.0f, mRandom.Next(24) / 10.0f };
+                var mStation = mStations[i];
+                double dX = 0, dY = 0, dH = 0;
+                var mStatusList = mXbjcDic[mStation.sComment];
+                if (mStatusList.Count > 0)
+                {
+                    var mStatus = mStatusList[0];
+                    dX = mStatus.Dx;
+                    dY = mStatus.Dy;
+                    dH = mStatus.Dh;
+                }
                 var frame = new TileItemFrame();
                 frame.Tag = i;
                 foreach (TileItemElement element in tileXBJC.Elements)
@@ -105,21 +163,19 @@ namespace com.tk.dam
                     frame.Elements.Add(element.Clone() as TileItemElement);
                 }
                 frame.Interval = 5000;
-                if (xbjcList[0] < 1.0 && xbjcList[1] < 1.5)
+                if (dX == 0 && dH == 0)
                 {
-                    frame.Elements[1].Text = string.Format("站点{0}：未变化", i);
+                    frame.Elements[1].Text = string.Format("{0}：未变化", mStation.sComment);
                 }
                 else
                 {
-                    frame.Elements[1].Text = string.Format("站点{0}：水平偏移:{1}mm  沉降:{2}mm", i, xbjcList[0], xbjcList[1]);
+                    frame.Elements[1].Text = string.Format("{0}：水平偏移:{1:0.0}mm  沉降:{2:0.0}mm", mStation.sComment, dX, dH);
                     var font = frame.Elements[1].Appearance.Normal.Font;
                     frame.Elements[1].Appearance.Normal.Font = new Font(font.FontFamily, font.Size - 4);
                 }
                 tileXBJC.Frames.Add(frame);
-                mXbjcDic.Add(i.ToString(), xbjcList);
 
                 //卫星状态 
-                List<int> wxztList = new List<int>() { mRandom.Next(2) + 8, mRandom.Next(2) + 5, mRandom.Next(2) + 5 };
                 frame = new TileItemFrame();
                 frame.Tag = i;
                 foreach (TileItemElement element in tileWXZT.Elements)
@@ -127,14 +183,17 @@ namespace com.tk.dam
                     frame.Elements.Add(element.Clone() as TileItemElement);
                 }
                 frame.Interval = 5000;
-                frame.Elements[1].Text = string.Format("站点{0}：BDS:{1}  GPS:{2}  GLO:{3}", i,wxztList[0],wxztList[1],wxztList[2]);
+                frame.Elements[1].Text = string.Format("{0}：BDS:{1}  GPS:{2}  GLO:{3}", mStation.sComment,
+                    mSatList.Where(p => p.sId == 1 && p.sPrn < 30).Count(),
+                    mSatList.Where(p => p.sId == 1 && p.sPrn < 60 && p.sPrn > 30).Count(),
+                    mSatList.Where(p => p.sId == 1 && p.sPrn > 60).Count());
                 tileWXZT.Frames.Add(frame);
-                mWxztDic.Add(i.ToString(),wxztList);
             }
-            mQxDic.Add("SW", 95);
-            mQxDic.Add("WD", 30);
-            tileQX.Elements[1].Text = string.Format("水位:{0}m  温度:{1}°C",mQxDic["SW"],mQxDic["WD"]);
+        }
 
+        private void timerLoad_Tick(object sender, EventArgs e)
+        {
+            loadData();
         }
 
         private void mainWindowsUIView_QueryControl(object sender, DevExpress.XtraBars.Docking2010.Views.QueryControlEventArgs e)
@@ -161,7 +220,10 @@ namespace com.tk.dam
             }
             else if (e.Document.Equals(documentWXZT))
             {
-                e.Control = new Wxzt();
+                if (mWxzt == null) {
+                    mWxzt = new Wxzt();
+                }
+                e.Control = mWxzt;
             }
             else if (e.Document.Equals(documentSP))
             {
@@ -428,20 +490,40 @@ namespace com.tk.dam
             mainWindowsUIView.ShowFlyoutDialog(closeAppFlyout);
         }
 
-        public Dictionary<string, List<double>> XbjcDic
+        public void ShowLoading()
+        {
+            if (this.splashScreenManager.IsSplashFormVisible)
+            {
+                this.splashScreenManager.CloseWaitForm();
+            }
+            this.splashScreenManager.ShowWaitForm();
+        }
+
+        public void HideLoading()
+        {
+            if (this.splashScreenManager.IsSplashFormVisible)
+            {
+                this.splashScreenManager.CloseWaitForm();
+            }
+        }
+
+        public IList<station> StationList { get { return mStations; } }
+        public IList<sat> SatList { get { return mSatList; } }
+
+        public Dictionary<string, IList<DEVICE_STATUS_CLEAN>> XbjcDic
         {
             get { return mXbjcDic; }
         }
 
         public Dictionary<string, List<int>> WxztDic
         {
-            get { return mWxztDic; }
+            get { return null; }
         }
 
-        public Dictionary<string,double> QxDic
+        public Dictionary<string, double> QxDic
         {
             get { return mQxDic; }
-            set 
+            set
             {
                 mQxDic = value;
                 tileQX.Elements[1].Text = string.Format("水位:{0}m  温度:{1}°C", mQxDic["SW"], mQxDic["WD"]);
@@ -449,7 +531,6 @@ namespace com.tk.dam
         }
 
         #endregion
-
 
     }
 

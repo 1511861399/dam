@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<sqlMap namespace="EntityModel" xmlns="http://ibatis.apache.org/mapping"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alias>
+    <!--类的别名-->
+    <typeAlias alias="DEVICE_STATUS_CLEAN" type="com.tk.orm.model.DEVICE_STATUS_CLEAN,com.tk.orm"/>
+  </alias>
+  <parameterMaps>
+    <parameterMap id="DEVICE_STATUS_CLEAN_params">
+      <parameter property="GPSIndex" column="GPSIndex" type="long" dbType="bigint" ></parameter>
+      <parameter property="aDatetime" column="aDatetime" type="DateTime" dbType="datetime" ></parameter>
+      <parameter property="X" column="X" type="double" dbType="float" ></parameter>
+      <parameter property="Y" column="Y" type="double" dbType="float" ></parameter>
+      <parameter property="Height" column="Height" type="double" dbType="float" ></parameter>
+      <parameter property="XSpeed" column="XSpeed" type="double" dbType="float" ></parameter>
+      <parameter property="YSpeed" column="YSpeed" type="double" dbType="float" ></parameter>
+      <parameter property="Hspeed" column="Hspeed" type="double" dbType="float" ></parameter>
+      <parameter property="Style" column="Style" type="int" dbType="int" ></parameter>
+      <parameter property="tableName" column="tableName" ></parameter>
+    </parameterMap>
+  </parameterMaps>
+  <resultMaps>
+    <resultMap id="DEVICE_STATUS_CLEANResult" class="DEVICE_STATUS_CLEAN">
+      <result property="GPSIndex" column="GPSIndex"/>
+      <result property="aDatetime" column="aDatetime"/>
+      <result property="X" column="X"/>
+      <result property="Y" column="Y"/>
+      <result property="Height" column="Height"/>
+      <result property="XSpeed" column="XSpeed"/>
+      <result property="YSpeed" column="YSpeed"/>
+      <result property="Hspeed" column="Hspeed"/>
+      <result property="Style" column="Style"/>
+    </resultMap>
+  </resultMaps>
+  <statements>
+    <!--查询所有记录-->
+    <select id="SelectAllDEVICE_STATUS_CLEAN" resultMap="DEVICE_STATUS_CLEANResult">
+      <![CDATA[SELECT  
+             GPSIndex,
+    	     
+             aDatetime,
+    	     
+             X,
+    	     
+             Y,
+    	     
+             Height,
+    	     
+             XSpeed,
+    	     
+             YSpeed,
+    	     
+             Hspeed,
+    	     
+             Style
+    	     FROM [$tableName$]]]>
+    </select>
+
+    <!--查询top n 记录-->
+    <select id="SelectTopDEVICE_STATUS_CLEAN" resultMap="DEVICE_STATUS_CLEANResult">
+      <![CDATA[SELECT  
+      
+             TOP $topN$
+              
+             GPSIndex,
+    	     
+             aDatetime,
+    	     
+             X,
+    	     
+             Y,
+    	     
+             Height,
+    	     
+             XSpeed,
+    	     
+             YSpeed,
+    	     
+             Hspeed,
+    	     
+             Style
+    	     FROM [$tableName$]]]>
+    </select>
+    
+    <!--查询单条记录-->
+    <select id="SelectDEVICE_STATUS_CLEANById" parameterMap="DEVICE_STATUS_CLEAN_params" resultMap="DEVICE_STATUS_CLEANResult" extends="SelectAllDEVICE_STATUS_CLEAN">
+      <![CDATA[ where GPSIndex = #GPSIndex#  ]]>
+    </select>
+
+
+
+    <!--插入新记录-->
+    <insert id="InsertDEVICE_STATUS_CLEAN" parameterMap="DEVICE_STATUS_CLEAN_params">
+      select 1;
+      <!--id自动生成的示例用法-->
+      <selectKey property="GPSIndex" type="post" resultClass="int">
+        <![CDATA[
+            INSERT into [$tableName$](aDatetime, X, Y, Height, XSpeed, YSpeed, Hspeed, Style )
+    			  VALUES(#aDatetime#, #X#, #Y#, #Height#, #XSpeed#, #YSpeed#, #Hspeed#, #Style# )
+            SELECT SCOPE_IDENTITY() as GPSIndex
+          ]]>
+      </selectKey>
+
+    </insert>
+
+    <!--更新单条记录-->
+    <update id="UpdateDEVICE_STATUS_CLEAN" parameterMap="DEVICE_STATUS_CLEAN_params">
+      <![CDATA[Update [$tableName$] 
+            SET  
+                    aDatetime=#aDatetime#
+                , 
+                    X=#X#
+                , 
+                    Y=#Y#
+                , 
+                    Height=#Height#
+                , 
+                    XSpeed=#XSpeed#
+                , 
+                    YSpeed=#YSpeed#
+                , 
+                    Hspeed=#Hspeed#
+                , 
+                    Style=#Style#
+                 
+			Where GPSIndex=#GPSIndex#]]>
+    </update>
+
+    <!--根据主键删除单条记录-->
+    <delete id="DeleteDEVICE_STATUS_CLEANById" parameterMap="DEVICE_STATUS_CLEAN_params">
+      <![CDATA[Delete From [$tableName$] Where GPSIndex=#value#]]>
+    </delete>
+    
+    <select id="SelectDEVICE_STATUS_CLEANQuery" parameterMap="DEVICE_STATUS_CLEAN_params" resultMap="DEVICE_STATUS_CLEANResult" extends="SelectAllDEVICE_STATUS_CLEAN">
+      <dynamic prepend="where">
+        <isPropertyAvailable prepend="" property="GPSIndex">
+          <isGreaterThan prepend="and" property="GPSIndex" compareValue="0">
+            GPSIndex = #GPSIndex#
+          </isGreaterThan>
+        </isPropertyAvailable>
+        <isPropertyAvailable prepend="and" property="aDatetime">
+          aDatetime  &gt;#aDatetime#
+        </isPropertyAvailable>
+        <isPropertyAvailable prepend="and" property="Style">
+          Style = #Style#
+        </isPropertyAvailable>
+      </dynamic>
+      <!--order by-->
+      <dynamic>
+        order by
+        aDatetime desc
+      </dynamic>
+    </select>
+
+    <select id="SelectTopDEVICE_STATUS_CLEANQuery" parameterMap="DEVICE_STATUS_CLEAN_params" resultMap="DEVICE_STATUS_CLEANResult" extends="SelectTopDEVICE_STATUS_CLEAN">
+      <dynamic prepend="where">
+        <isPropertyAvailable prepend="" property="GPSIndex">
+          <isGreaterThan prepend="and" property="GPSIndex" compareValue="0">
+            GPSIndex = #GPSIndex#
+          </isGreaterThan>
+        </isPropertyAvailable>
+        <isPropertyAvailable prepend="and" property="aDatetime">
+          aDatetime  &gt;#aDatetime#
+        </isPropertyAvailable>
+        <isPropertyAvailable prepend="and" property="Style">
+          Style = #Style#
+        </isPropertyAvailable>
+      </dynamic>
+      <!--order by-->
+      <dynamic>
+        order by
+        aDatetime desc
+      </dynamic>
+    </select>
+    
+  </statements>
+</sqlMap>
+
+<!--and GPSIndex in (
+SELECT  MAX(GPSIndex)
+FROM [$tableName$]
+Group by year(aDatetime),month(aDatetime),day(aDatetime),DATENAME (HOUR,aDatetime))-->

@@ -32,7 +32,7 @@ namespace com.tk.dam
             //IList<ALARMAPPEND> list = ALARMAPPENDDao.QueryForList(null);
             //IList<station> list = stationDao.QueryForList(null);
             //IList<sat> list =satDao.QueryForList(null);
-            IList<DEVICE_STATUS_CLEAN> list = DEVICE_STATUS_CLEANDao.QueryForList("0+175_clean");
+            //IList<DEVICE_STATUS_CLEAN> list = DEVICE_STATUS_CLEANDao.QueryForList("0+175_clean");
             Application.Run(new MainForm());
         }
     }

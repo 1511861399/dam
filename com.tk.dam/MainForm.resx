@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="mainDocumentManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>186, 17</value>
   </metadata>
   <metadata name="icoImageList32.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>213, 17</value>
+    <value>355, 17</value>
   </metadata>
   <data name="icoImageList32.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
@@ -173,4 +173,7 @@
         AYcC/wH+AT8B/wgAAv8BxwX/CAAI/wgACP8IAAj/CAAI/wgACP8IAAj/CAAL
 </value>
   </data>
+  <metadata name="timerLoad.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>493, 17</value>
+  </metadata>
 </root>

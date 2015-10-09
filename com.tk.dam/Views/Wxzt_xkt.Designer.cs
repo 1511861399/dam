@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraCharts.PolarDiagram polarDiagram1 = new DevExpress.XtraCharts.PolarDiagram();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Wxzt_xkt));
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
@@ -40,7 +39,6 @@
             DevExpress.XtraCharts.PolarPointSeriesView polarPointSeriesView3 = new DevExpress.XtraCharts.PolarPointSeriesView();
             DevExpress.XtraCharts.PolarPointSeriesView polarPointSeriesView4 = new DevExpress.XtraCharts.PolarPointSeriesView();
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(polarDiagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
@@ -121,11 +119,6 @@
             this.chartControl1.Size = new System.Drawing.Size(900, 600);
             this.chartControl1.TabIndex = 2;
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 5000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // Wxzt_xkt
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(161)))), ((int)(((byte)(246)))));
@@ -156,7 +149,6 @@
         #endregion
 
         private DevExpress.XtraCharts.ChartControl chartControl1;
-        private System.Windows.Forms.Timer timer1;
 
     }
 }

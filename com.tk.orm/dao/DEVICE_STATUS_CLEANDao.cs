@@ -125,14 +125,36 @@ namespace com.tk.orm.dao
             Hashtable inparam = new Hashtable();
             if (parameterObject != null)
             {
-                if (parameterObject.aDatetime != null)
+                if (parameterObject.aDatetime.HasValue)
                 {
-                    inparam.Add("aDatetime", parameterObject.aDatetime);
+                    inparam.Add("aDatetime", parameterObject.aDatetime.Value);
                 }
-
+                if (parameterObject.Style.HasValue)
+                {
+                    inparam.Add("Style", parameterObject.Style.Value);
+                }
             }
             inparam.Add("tableName", tableName);
             return BaseDA.QueryForList<DEVICE_STATUS_CLEAN>("SelectDEVICE_STATUS_CLEANQuery", inparam);
+        }
+
+        public static IList<DEVICE_STATUS_CLEAN> QueryTopForList(string tableName,int topN, DEVICE_STATUS_CLEAN parameterObject = null)
+        {
+            Hashtable inparam = new Hashtable();
+            if (parameterObject != null)
+            {
+                if (parameterObject.aDatetime.HasValue)
+                {
+                    inparam.Add("aDatetime", parameterObject.aDatetime.Value);
+                }
+                if (parameterObject.Style.HasValue)
+                {
+                    inparam.Add("Style", parameterObject.Style.Value);
+                }
+            }
+            inparam.Add("tableName", tableName);
+            inparam.Add("topN", topN);
+            return BaseDA.QueryForList<DEVICE_STATUS_CLEAN>("SelectTopDEVICE_STATUS_CLEANQuery", inparam);
         }
     }
 }

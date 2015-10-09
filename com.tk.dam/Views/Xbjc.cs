@@ -11,6 +11,9 @@ using com.tk.dam.Entity;
 using DevExpress.XtraCharts;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
+using com.tk.orm.model;
+using com.tk.orm.dao;
+using System.Threading;
 
 namespace com.tk.dam.Views
 {
@@ -21,14 +24,6 @@ namespace com.tk.dam.Views
         private Label mCurrentMonitorLb;
         private Color mDefaultColor = Color.FromArgb(20, 107, 161);
         private Color mActiveColor = Color.FromArgb(235, 163, 17);
-        private Dictionary<string, List<SeriesPoint>> mSeriesPointWyDic = new Dictionary<string, List<SeriesPoint>>();
-        private Dictionary<string, List<SeriesPoint>> mSeriesPointCjDic = new Dictionary<string, List<SeriesPoint>>();
-        private Dictionary<string, string> mTjcjDic = new Dictionary<string, string>();
-        private Dictionary<string, string> mTjwyDic = new Dictionary<string, string>();
-        private Dictionary<string, string> mSscjDic = new Dictionary<string, string>();
-        private Dictionary<string, string> mSswyDic = new Dictionary<string, string>();
-        private Random mRandom = new Random(300);
-        private DateTime mNow = DateTime.Now;
 
         public Xbjc()
         {
@@ -93,6 +88,25 @@ namespace com.tk.dam.Views
                 this.panel2.Width = (int)(this.panel2.Height * 1.2);
                 this.panel1.Width = this.panel6.Width - this.panel2.Width - 10;
                 this.panel2.Location = new Point(this.panel1.Width + 10, this.panel2.Location.Y);
+            }
+
+            if (MainForm.StationList.Count > 0)
+            {
+                this.lblMonitor1.Text = MainForm.StationList[0].sComment;
+                this.lblMonitor1.Tag = MainForm.StationList[0];
+                this.lblMonitor1.Visible = true;
+            }
+            if (MainForm.StationList.Count > 1)
+            {
+                this.lblMonitor2.Text = MainForm.StationList[1].sComment;
+                this.lblMonitor2.Tag = MainForm.StationList[1];
+                this.lblMonitor2.Visible = true;
+            }
+            if (MainForm.StationList.Count > 2)
+            {
+                this.lblMonitor3.Text = MainForm.StationList[2].sComment;
+                this.lblMonitor3.Tag = MainForm.StationList[2];
+                this.lblMonitor3.Visible = true;
             }
 
             this.mCurrentMonitorLb = this.lblMonitor1;
@@ -215,176 +229,164 @@ namespace com.tk.dam.Views
                 mCurrentMonitorLb.BackColor = mActiveColor;
             }
             bindChart();
-            HotTrackRow = int.Parse(mCurrentMonitorLb.Text) - 1;
+            //HotTrackRow = int.Parse(mCurrentMonitorLb.Text) - 1;
         }
 
         private void bindChart()
         {
-            resetDiagramScroll();
-            string mKey = string.Format("{0}_{1}_{2}", mCurrentMonitorLb.Text, mCurrentTypeLb.Text, mCurrentTimeLb.Text);
-            string mMonitor = mCurrentMonitorLb.Text;
-            List<double> mCurrentXbList = MainForm.XbjcDic[mMonitor];
-            if (!mSeriesPointWyDic.ContainsKey(mKey))
+            Thread mLoadThread = new Thread(new ThreadStart(delegate
             {
-                List<SeriesPoint> mPointsWy = new List<SeriesPoint>();
-                List<SeriesPoint> mPointsCj = new List<SeriesPoint>();
-                double mTotalWy = 0, mLjWy = 0, mTotalCj = 0, mLjCj = 0;
-                for (int i = -10; i <= 0; i++)
+                this.Invoke((EventHandler)delegate
                 {
-                    double mWy = Math.Round(mRandom.Next(20) / 10.0 - 1, 2);
-                    double mCj = Math.Round(mRandom.Next(40) / 10.0 - 2, 2);
-                    if (i == 0)
-                    {
-                        mWy = mCurrentXbList[0];
-                        mCj = mCurrentXbList[1];
-                    }
-                    mTotalWy = mTotalWy + Math.Abs(mWy);
-                    mTotalCj = mTotalCj + Math.Abs(mCj);
-                    mLjWy = mLjWy + mWy;
-                    mLjCj = mLjCj + mCj;
-                    switch (mCurrentTimeLb.Text)
-                    {
-                        case "月":
-                            mPointsWy.Add(new SeriesPoint(mNow.AddYears(i), mWy));
-                            mPointsCj.Add(new SeriesPoint(mNow.AddYears(i), mCj));
-                            if (mCurrentTypeLb.Text == "历史曲线")
-                            {
-                                for (int j = -12; j < 0; j++)
-                                {
-                                    mPointsWy.Add(new SeriesPoint(mNow.AddMonths(i * 12 + j), Math.Round(mWy + mRandom.NextDouble() - 1, 2)));
-                                    mPointsCj.Add(new SeriesPoint(mNow.AddMonths(i * 12 + j), Math.Round(mCj + mRandom.NextDouble() * 4 - 2, 2)));
-                                }
-                            }
-                            break;
-                        case "小时":
-                            mPointsWy.Add(new SeriesPoint(mNow.AddDays(i*3), mWy));
-                            mPointsCj.Add(new SeriesPoint(mNow.AddDays(i*3), mCj));
-                            if (mCurrentTypeLb.Text == "历史曲线")
-                            {
-                                for (int j = -72; j < 0; j++)
-                                {
-                                    mPointsWy.Add(new SeriesPoint(mNow.AddHours(i * 72 + j), mWy + Math.Round(mRandom.NextDouble() - 1, 2)));
-                                    mPointsCj.Add(new SeriesPoint(mNow.AddHours(i * 72 + j), mCj + Math.Round(mRandom.NextDouble() * 4 - 2)));
-                                }
-                            }
-                            break;
-                        default:
-                            mPointsWy.Add(new SeriesPoint(mNow.AddMonths(i), mWy));
-                            mPointsCj.Add(new SeriesPoint(mNow.AddMonths(i), mCj));
-                            if (mCurrentTypeLb.Text == "历史曲线")
-                            {
-                                for (int j = -30; j < 0; j++)
-                                {
-                                    mPointsWy.Add(new SeriesPoint(mNow.AddDays(i * 30 + j), mWy + Math.Round(mRandom.NextDouble() - 1, 2)));
-                                    mPointsCj.Add(new SeriesPoint(mNow.AddDays(i * 30 + j), mCj + Math.Round(mRandom.NextDouble() * 4 - 2)));
-                                }
-                            }
-                            break;
-                    }
+                    MainForm.ShowLoading();
+                    resetDiagramScroll(DateTime.Now, DateTime.Now.AddDays(-1));
+                });
+   
+                string mMonitor = mCurrentMonitorLb.Text;
+                station mStation = mCurrentMonitorLb.Tag as station;
+
+                int mTopN = 24;
+                int mStyle = 2;
+
+                switch (mCurrentTimeLb.Text)
+                {
+                    case "月":
+                        mTopN = mCurrentTypeLb.Text == "历史曲线" ? 36 : 12;
+                        mStyle = 4;
+                        break;
+                    case "小时":
+                        mTopN = mCurrentTypeLb.Text == "历史曲线" ? 720 : 24;
+                        mStyle = 2;
+                        break;
+                    default:
+                        mTopN = mCurrentTypeLb.Text == "历史曲线" ? 365 : 31;
+                        mStyle = 3;
+                        break;
                 }
-                mSeriesPointWyDic.Add(mKey, mPointsWy);
-                mSeriesPointCjDic.Add(mKey, mPointsCj);
-                mTjwyDic.Add(mKey, string.Format("平均位移：{0}mm    累计位移：{1}mm", (mTotalWy / 8).ToString("F2").PadLeft(3, ' '), mLjWy.ToString().PadLeft(3, ' ')));
-                mTjcjDic.Add(mKey, string.Format("平均沉降：{0}mm    累计沉降：{1}mm", (mTotalCj / 8).ToString("F2").PadLeft(3, ' '), mLjCj.ToString().PadLeft(3, ' ')));
-            }
 
-            if (!mSswyDic.ContainsKey(mMonitor))
-            {
-                mSswyDic.Add(mMonitor, "位移：" + mCurrentXbList[0].ToString("F2").PadLeft(2, ' ') + "mm");
-                mSscjDic.Add(mMonitor, "沉降：" + mCurrentXbList[1].ToString("F2").PadLeft(2, ' ') + "mm");
-            }
-            this.lblSswy.Text = mSswyDic[mMonitor];
-            this.lblSscj.Text = mSscjDic[mMonitor];
-            this.lblTjwy.Text = mTjwyDic[mKey];
-            this.lblTjcj.Text = mTjcjDic[mKey];
-            this.mainChart.Series[0].Points.Clear();
-            this.mainChart.Series[1].Points.Clear();
-            this.mainChart.Series[0].Points.AddRange(mSeriesPointWyDic[mKey].ToArray());
-            this.mainChart.Series[1].Points.AddRange(mSeriesPointCjDic[mKey].ToArray());
+                IList<DEVICE_STATUS_CLEAN> mStatusList = DEVICE_STATUS_CLEANDao.QueryTopForList(mStation.sSpeedName, mTopN, new DEVICE_STATUS_CLEAN() { Style = mStyle });
+                List<SeriesPoint> mSeriesPointList0 = new List<SeriesPoint>();
+                List<SeriesPoint> mSeriesPointList1 = new List<SeriesPoint>();
+                double mTotalWy = 0, mLjWy = 0, mTotalCj = 0, mLjCj = 0;
+                foreach (var status in mStatusList)
+                {
+                    status.Dx = mCurrentTypeLb.Text == "速度趋势" ? status.XSpeed * 1000 : status.X * 1000;
+                    status.Dh = mCurrentTypeLb.Text == "速度趋势" ? status.Hspeed * 1000 : status.Height * 1000;
+                    if (Math.Abs(status.Dx) > 4 || Math.Abs(status.Dx) < 0.1)
+                    {
+                        status.Dx = 0;
+                    }
+                    if (Math.Abs(status.Dh) > 4 || Math.Abs(status.Dh) < 0.1)
+                    {
+                        status.Dh = 0;
+                    }
+                    mTotalWy = mTotalWy + Math.Abs(status.Dx);
+                    mTotalCj = mTotalCj + Math.Abs(status.Dh);
+                    mLjWy = mLjWy + status.Dx;
+                    mLjCj = mLjCj + status.Dh;
+                    mSeriesPointList0.Add(new SeriesPoint(status.aDatetime.Value, status.Dx));
+                    mSeriesPointList1.Add(new SeriesPoint(status.aDatetime.Value, status.Dh));
 
-            resetDiagramScroll();
+                }
+                this.Invoke((EventHandler)delegate
+                {
+                    MainForm.HideLoading();
+                    this.mainChart.Series[0].Points.Clear();
+                    this.mainChart.Series[1].Points.Clear();
+                    if (mStatusList.Count > 0)
+                    {
+                        this.mainChart.Series[0].Points.AddRange(mSeriesPointList0.ToArray());
+                        this.mainChart.Series[1].Points.AddRange(mSeriesPointList1.ToArray());
+                        this.lblSswy.Text = "位移：" + mStatusList[0].Dx.ToString("F2").PadLeft(2, ' ') + "mm";
+                        this.lblSscj.Text = "沉降：" + mStatusList[0].Dh.ToString("F2").PadLeft(2, ' ') + "mm";
+                        this.lblTjwy.Text = string.Format("平均位移：{0}mm    累计位移：{1}mm", (mTotalWy / mStatusList.Count).ToString("F2").PadLeft(3, ' '), mLjWy.ToString("F2").PadLeft(3, ' '));
+                        this.lblTjcj.Text = string.Format("平均沉降：{0}mm    累计沉降：{1}mm", (mTotalCj / mStatusList.Count).ToString("F2").PadLeft(3, ' '), mLjCj.ToString("F2").PadLeft(3, ' '));
+                        resetDiagramScroll(mStatusList[0].aDatetime.Value, mStatusList[mStatusList.Count - 1].aDatetime.Value);
+                    }
+                });
+            }));
+
+            mLoadThread.Start();
         }
 
         private void bindGrid()
         {
-            gbBD.Caption = "\n标点\n ";
-            //gbandKs.Caption = String.Format("{0}\n监测数据(/mm)", mNow.AddYears(-1).ToString("yyyy.MM.dd"));
-            //gbandJs.Caption = String.Format("{0}\n监测数据(/mm)", mNow.ToString("yyyy.MM.dd"));
-            gcmBW.Caption = "部位";
-            gcmBH.Caption = "编号";
+            //gbBD.Caption = "\n标点\n ";
+            ////gbandKs.Caption = String.Format("{0}\n监测数据(/mm)", mNow.AddYears(-1).ToString("yyyy.MM.dd"));
+            ////gbandJs.Caption = String.Format("{0}\n监测数据(/mm)", mNow.ToString("yyyy.MM.dd"));
+            //gcmBW.Caption = "部位";
+            //gcmBH.Caption = "编号";
 
-            gcmScgc.Caption = "始测高程\n(m)";
-            gcmBcgc1.Caption = "本次观测\n(m)";
-            gcmLjcx.Caption = "累计沉陷\n(mm)";
-            gcmScds.Caption = "始测读数\n(mm)";
-            gcmBcgc2.Caption = "本次观测\n(mm)";
-            gcmLjwy.Caption = "累计位移\n(mm)";
+            //gcmScgc.Caption = "始测高程\n(m)";
+            //gcmBcgc1.Caption = "本次观测\n(m)";
+            //gcmLjcx.Caption = "累计沉陷\n(mm)";
+            //gcmScds.Caption = "始测读数\n(mm)";
+            //gcmBcgc2.Caption = "本次观测\n(mm)";
+            //gcmLjwy.Caption = "累计位移\n(mm)";
 
-            mCurrentMonitorLb = this.lblMonitor1;
-            mCurrentTimeLb = this.lblDay;
-            mCurrentTypeLb = this.lblXbqs;
+            //mCurrentMonitorLb = this.lblMonitor1;
+            //mCurrentTimeLb = this.lblDay;
+            //mCurrentTypeLb = this.lblXbqs;
 
 
-            IList<Jcd> mJcdList = new List<Jcd>();
-            for (int i = 1; i <= 12; i++)
-            {
-                List<double> mCurrentXbList = MainForm.XbjcDic[i.ToString()];
-                Jcd item = new Jcd();
-                item.BH = i.ToString();
-                item.Scds = mRandom.Next(30) / 10.0;
-                item.Bcgc2 = mCurrentXbList[0];
-                item.Ljwy = item.Bcgc2 - item.Scds;
-                if (i <= 6)
-                {
-                    item.BW = "坝顶\n108\n高程";
-                    double m1 = mRandom.Next(4);
-                    double m2 = mRandom.Next(4);
-                    item.Scgc = 105.4 + m1 / 100;
-                    item.Bcgc1 = 105.4 + m2 / 100;
-                    item.Ljcx = Math.Abs(m2 - m1);
-                }
-                else if (i <= 9)
-                {
-                    item.BW = "背水\n坡90\n平台";
-                    double m1 = mRandom.Next(4);
-                    double m2 = mRandom.Next(4);
-                    item.Scgc = 88.4 + m1 / 100;
-                    item.Bcgc1 = 88.4 + m2 / 100;
-                    item.Ljcx = Math.Abs(m2 - m1);
-                }
-                else
-                {
-                    item.BW = "背水\n坡75\n平台";
-                    double m1 = mRandom.Next(4);
-                    double m2 = mRandom.Next(4);
-                    item.Scgc = 73.2 + m1 / 100;
-                    item.Bcgc1 = 73.2 + m2 / 100;
-                    item.Ljcx = Math.Abs(m2 - m1);
-                }
-                mJcdList.Add(item);
-            }
-            gcMain.DataSource = mJcdList;
+            //IList<Jcd> mJcdList = new List<Jcd>();
+            //for (int i = 1; i <= 12; i++)
+            //{
+            //    List<double> mCurrentXbList = MainForm.XbjcDic[i.ToString()];
+            //    Jcd item = new Jcd();
+            //    item.BH = i.ToString();
+            //    item.Scds = mRandom.Next(30) / 10.0;
+            //    item.Bcgc2 = mCurrentXbList[0];
+            //    item.Ljwy = item.Bcgc2 - item.Scds;
+            //    if (i <= 6)
+            //    {
+            //        item.BW = "坝顶\n108\n高程";
+            //        double m1 = mRandom.Next(4);
+            //        double m2 = mRandom.Next(4);
+            //        item.Scgc = 105.4 + m1 / 100;
+            //        item.Bcgc1 = 105.4 + m2 / 100;
+            //        item.Ljcx = Math.Abs(m2 - m1);
+            //    }
+            //    else if (i <= 9)
+            //    {
+            //        item.BW = "背水\n坡90\n平台";
+            //        double m1 = mRandom.Next(4);
+            //        double m2 = mRandom.Next(4);
+            //        item.Scgc = 88.4 + m1 / 100;
+            //        item.Bcgc1 = 88.4 + m2 / 100;
+            //        item.Ljcx = Math.Abs(m2 - m1);
+            //    }
+            //    else
+            //    {
+            //        item.BW = "背水\n坡75\n平台";
+            //        double m1 = mRandom.Next(4);
+            //        double m2 = mRandom.Next(4);
+            //        item.Scgc = 73.2 + m1 / 100;
+            //        item.Bcgc1 = 73.2 + m2 / 100;
+            //        item.Ljcx = Math.Abs(m2 - m1);
+            //    }
+            //    mJcdList.Add(item);
+            //}
+            //gcMain.DataSource = mJcdList;
         }
 
-        private void resetDiagramScroll()
+        private void resetDiagramScroll(DateTime mMaxTime, DateTime mMinTime)
         {
             if (mCurrentTypeLb.Text == "历史曲线")
             {
                 Diagram.EnableAxisXScrolling = true;
                 Diagram.EnableAxisXZooming = true;
+                Diagram.AxisX.WholeRange.SetMinMaxValues(mMinTime, mMaxTime);
                 switch (mCurrentTimeLb.Text)
                 {
                     case "月":
-                        Diagram.AxisX.WholeRange.SetMinMaxValues(mNow.AddYears(-6), mNow);
-                        Diagram.AxisX.VisualRange.SetMinMaxValues(mNow.AddYears(-1), mNow);
+                        Diagram.AxisX.VisualRange.SetMinMaxValues(mMaxTime.AddYears(-1), mMaxTime);
                         break;
                     case "小时":
-                        Diagram.AxisX.WholeRange.SetMinMaxValues(mNow.AddMonths(-1), mNow);
-                        Diagram.AxisX.VisualRange.SetMinMaxValues(mNow.AddDays(-1), mNow);
+                        Diagram.AxisX.VisualRange.SetMinMaxValues(mMaxTime.AddDays(-1), mMaxTime);
                         break;
                     default:
-                        Diagram.AxisX.WholeRange.SetMinMaxValues(mNow.AddYears(-1), mNow);
-                        Diagram.AxisX.VisualRange.SetMinMaxValues(mNow.AddMonths(-1), mNow);
+                        Diagram.AxisX.VisualRange.SetMinMaxValues(mMaxTime.AddMonths(-1), mMaxTime);
                         break;
                 }
                 Diagram.AxisX.WholeRange.Auto = false;
@@ -392,6 +394,8 @@ namespace com.tk.dam.Views
             }
             else
             {
+                Diagram.AxisX.WholeRange.SetMinMaxValues(mMinTime, mMaxTime);
+                Diagram.AxisX.VisualRange.SetMinMaxValues(mMinTime, mMaxTime);
                 Diagram.AxisX.WholeRange.Auto = true;
                 Diagram.AxisX.VisualRange.Auto = true;
                 Diagram.EnableAxisXScrolling = false;

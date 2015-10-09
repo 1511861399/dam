@@ -10,6 +10,7 @@ using DevExpress.XtraEditors;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
 using DevExpress.XtraCharts;
+using com.tk.orm.model;
 
 namespace com.tk.dam.Views
 {
@@ -21,13 +22,7 @@ namespace com.tk.dam.Views
         private Color mDefaultColor = Color.FromArgb(20, 107, 161);
         private Color mActiveColor = Color.FromArgb(235, 163, 17);
         private Label mCurrentMonitorLb;
-        private Dictionary<string, List<SeriesPoint>> mSeriesPointGPS = new Dictionary<string, List<SeriesPoint>>();
-        private Dictionary<string, List<SeriesPoint>> mSeriesPointBD = new Dictionary<string, List<SeriesPoint>>();
-        private Dictionary<string, List<SeriesPoint>> mSeriesPointGLO = new Dictionary<string, List<SeriesPoint>>();
 
-        private Dictionary<string, List<SeriesPoint>> mSeriesPointGPS_xzb = new Dictionary<string, List<SeriesPoint>>();
-        private Dictionary<string, List<SeriesPoint>> mSeriesPointBD_xzb = new Dictionary<string, List<SeriesPoint>>();
-        private Dictionary<string, List<SeriesPoint>> mSeriesPointGLO_xzb = new Dictionary<string, List<SeriesPoint>>();
 
         public Wxzt()
         {
@@ -42,7 +37,7 @@ namespace com.tk.dam.Views
             mXzb = new Wxzt_xzb();          
             mainWindowsUIView.AddDocument(mXkt);
             mainWindowsUIView.AddDocument(mXzb);
-            mCurrentMonitorLb = this.lblMonitor1;
+            mCurrentMonitorLb = this.lblMonitor1;          
         }
 
         public void SetCurrentMonitor(string monitor)
@@ -63,6 +58,23 @@ namespace com.tk.dam.Views
         {
             this.panelContainer.Width = (int)((this.Width - 900) * 0.4) + 860;
             this.panelContainer.Height = (int)((this.Height - 640) * 0.1) + 500;
+
+            if (MainForm.StationList.Count > 0)
+            {
+                this.lblMonitor1.Text = MainForm.StationList[0].sComment;
+                this.lblMonitor1.Visible = true;
+            }
+            if (MainForm.StationList.Count > 1)
+            {
+                this.lblMonitor2.Text = MainForm.StationList[1].sComment;
+                this.lblMonitor2.Visible = true;
+            }
+            if (MainForm.StationList.Count > 2)
+            {
+                this.lblMonitor3.Text = MainForm.StationList[2].sComment;
+                this.lblMonitor3.Visible = true;
+            }
+
             bindData();
         }
 
@@ -92,60 +104,46 @@ namespace com.tk.dam.Views
             bindData();
         }
 
-        private void bindData()
+        public void bindData()
         {
-            string mKey = mCurrentMonitorLb.Text;
-            List<int> mPointsNumList = MainForm.WxztDic[mKey];
-            if (!mSeriesPointGPS.ContainsKey(mKey))
-            {
-                List<SeriesPoint> mPoints = new List<SeriesPoint>();
-                List<SeriesPoint> mPointsXZB = new List<SeriesPoint>();
-                for (int i = 1; i <= mPointsNumList[0]; i++)
-                {
-                    SeriesPoint point = new DevExpress.XtraCharts.SeriesPoint(mRandom.Next(360), mRandom.Next(90));
-                    point.Tag = "G"+i;
-                    mPoints.Add(point);
-                    SeriesPoint pointXZB = new DevExpress.XtraCharts.SeriesPoint(i, mRandom.Next(30)+20);
-                    pointXZB.Tag = "G" + i;
-                    mPointsXZB.Add(pointXZB); 
-                }
-                mSeriesPointGPS.Add(mKey, mPoints);
-                mSeriesPointGPS_xzb.Add(mKey, mPointsXZB);
+            List<sat> mSatGPS = MainForm.SatList.Where(p => p.sId == 1 && p.sPrn < 30).ToList();
+            List<sat> mSatGLO = MainForm.SatList.Where(p => p.sId == 1 && p.sPrn > 30 && p.sPrn<60).ToList();
+            List<sat> mSatBD = MainForm.SatList.Where(p => p.sId == 1 && p.sPrn > 60).ToList();
+            List<SeriesPoint> mPointsGPS = new List<SeriesPoint>();
+            List<SeriesPoint> mPointsGLO = new List<SeriesPoint>();
+            List<SeriesPoint> mPointsBD = new List<SeriesPoint>();
+            foreach (var sat in mSatGPS) {
+                SeriesPoint point = new DevExpress.XtraCharts.SeriesPoint(sat.sAzm, sat.sElev);
+                point.Tag = sat.sPrn;
+                mPointsGPS.Add(point);
             }
-            if (!mSeriesPointGLO.ContainsKey(mKey))
+            foreach (var sat in mSatGLO)
             {
-                List<SeriesPoint> mPoints = new List<SeriesPoint>();
-                List<SeriesPoint> mPointsXZB = new List<SeriesPoint>();
-                for (int i = 1; i <= mPointsNumList[1]; i++)
-                {
-                    SeriesPoint point = new DevExpress.XtraCharts.SeriesPoint(mRandom.Next(360), mRandom.Next(90));
-                    point.Tag = "C" + i;
-                    mPoints.Add(point);
-                    SeriesPoint pointXZB = new DevExpress.XtraCharts.SeriesPoint(i, mRandom.Next(30)+20);
-                    pointXZB.Tag = "C" + i;
-                    mPointsXZB.Add(pointXZB); 
-                }
-                mSeriesPointGLO.Add(mKey, mPoints);
-                mSeriesPointGLO_xzb.Add(mKey, mPointsXZB);
+                SeriesPoint point = new DevExpress.XtraCharts.SeriesPoint(sat.sAzm, sat.sElev);
+                point.Tag = sat.sPrn;
+                mPointsGLO.Add(point);
             }
-            if (!mSeriesPointBD.ContainsKey(mKey))
+            foreach (var sat in mSatBD)
             {
-                List<SeriesPoint> mPoints = new List<SeriesPoint>();
-                List<SeriesPoint> mPointsXZB = new List<SeriesPoint>();
-                for (int i = 1; i <= mPointsNumList[2]; i++)
-                {
-                    SeriesPoint point = new DevExpress.XtraCharts.SeriesPoint(mRandom.Next(360), mRandom.Next(90));
-                    point.Tag = "B" + i;
-                    mPoints.Add(point);
-                    SeriesPoint pointXZB = new DevExpress.XtraCharts.SeriesPoint(i, mRandom.Next(30)+20);
-                    pointXZB.Tag = "B" + i;
-                    mPointsXZB.Add(pointXZB); 
-                }
-                mSeriesPointBD.Add(mKey, mPoints);
-                mSeriesPointBD_xzb.Add(mKey, mPointsXZB);
+                SeriesPoint point = new DevExpress.XtraCharts.SeriesPoint(sat.sAzm, sat.sElev);
+                point.Tag = sat.sPrn;
+                mPointsBD.Add(point);
             }
-            mXkt.SetPoints(mSeriesPointGPS[mKey], mSeriesPointGLO[mKey], mSeriesPointBD[mKey]);
-            mXzb.SetPoints(mSeriesPointGPS_xzb[mKey], mSeriesPointGLO_xzb[mKey], mSeriesPointBD_xzb[mKey]);
+            mXkt.SetPoints(mPointsGPS, mPointsGLO, mPointsBD);
+
+            List<sat> mSatXZB = MainForm.SatList.Where(p => p.sId == 1).ToList();
+            List<SeriesPoint> mPointsXZB1 = new List<SeriesPoint>();
+            List<SeriesPoint> mPointsXZB2 = new List<SeriesPoint>();
+            foreach (var sat in mSatXZB)
+            {
+                SeriesPoint point1 = new DevExpress.XtraCharts.SeriesPoint(sat.sPrn, sat.sL1);
+                SeriesPoint point2 = new DevExpress.XtraCharts.SeriesPoint(sat.sPrn, sat.sL2);
+                point1.Tag = sat.sPrn;
+                point2.Tag = sat.sPrn;
+                mPointsXZB1.Add(point1);
+                mPointsXZB2.Add(point2);
+            }
+            mXzb.SetPoints(mPointsXZB1, mPointsXZB2);            
         }
     }
 }
