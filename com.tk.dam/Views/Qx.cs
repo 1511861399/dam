@@ -91,6 +91,8 @@ namespace com.tk.dam.Views
 
         private void CreateSWQXChart()
         {
+            //((XYDiagram)chartControl1.Diagram).AxisY.ConstantLines[0].AxisValue;
+
             this.chartControl1.Series[0].Points.Clear();
             Random mRandom = new Random();
             DateTime mNow = DateTime.Now;

@@ -120,22 +120,15 @@ namespace com.tk.dam.Views
             {
                 USERROLE userRole = new USERROLE { ID = USERROLEDao.GetNewId(), USER_ID = user.ID, ROLE_ID = (int)cmbQx.SelectedValue, PROJ_ID = 1 };
                 USERROLEDao.Insert(userRole);
-            }
-
-            Yh yh = new Yh();
-            yh.Xh = int.Parse(lblXh.Text);
-            //yh.Zw = cmbZw.Text;
-            //yh.Yhdj = cmbYhdj.Text;
-            yh.Qx = cmbQx.Text;//txtQx.Text;
-            //yh.Bz = rtxBz.Text;
+            }            
 
             if (lblTitle.Text == "新增用户")
             {
-                MainForm.UpdateYHList(yh, true);
+                MainForm.UpdateYHList(null, true);
             }
             else
             {
-                MainForm.UpdateYHList(yh, false);
+                MainForm.UpdateYHList(null, false);
             }
 
             MainForm.HidenFlyout();

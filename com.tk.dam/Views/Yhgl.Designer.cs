@@ -233,7 +233,7 @@
             this.gridColumn_xh.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn_xh.Visible = true;
             this.gridColumn_xh.VisibleIndex = 0;
-            this.gridColumn_xh.Width = 49;
+            this.gridColumn_xh.Width = 47;
             // 
             // gridColumn_xm
             // 
@@ -258,7 +258,7 @@
             this.gridColumn_xm.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn_xm.Visible = true;
             this.gridColumn_xm.VisibleIndex = 1;
-            this.gridColumn_xm.Width = 99;
+            this.gridColumn_xm.Width = 95;
             // 
             // gridColumn_dlm
             // 
@@ -283,7 +283,7 @@
             this.gridColumn_dlm.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn_dlm.Visible = true;
             this.gridColumn_dlm.VisibleIndex = 2;
-            this.gridColumn_dlm.Width = 99;
+            this.gridColumn_dlm.Width = 95;
             // 
             // gridColumn_xb
             // 
@@ -308,7 +308,7 @@
             this.gridColumn_xb.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn_xb.Visible = true;
             this.gridColumn_xb.VisibleIndex = 3;
-            this.gridColumn_xb.Width = 99;
+            this.gridColumn_xb.Width = 77;
             // 
             // gridColumn_bm
             // 
@@ -333,7 +333,7 @@
             this.gridColumn_bm.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn_bm.Visible = true;
             this.gridColumn_bm.VisibleIndex = 4;
-            this.gridColumn_bm.Width = 99;
+            this.gridColumn_bm.Width = 78;
             // 
             // gridColumn_Lxdh
             // 
@@ -358,7 +358,7 @@
             this.gridColumn_Lxdh.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn_Lxdh.Visible = true;
             this.gridColumn_Lxdh.VisibleIndex = 5;
-            this.gridColumn_Lxdh.Width = 99;
+            this.gridColumn_Lxdh.Width = 118;
             // 
             // gridColumn_email
             // 
@@ -383,7 +383,7 @@
             this.gridColumn_email.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn_email.Visible = true;
             this.gridColumn_email.VisibleIndex = 6;
-            this.gridColumn_email.Width = 99;
+            this.gridColumn_email.Width = 112;
             // 
             // gridColumn_qx
             // 
@@ -408,7 +408,7 @@
             this.gridColumn_qx.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn_qx.Visible = true;
             this.gridColumn_qx.VisibleIndex = 7;
-            this.gridColumn_qx.Width = 99;
+            this.gridColumn_qx.Width = 92;
             // 
             // panel2
             // 

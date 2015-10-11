@@ -270,7 +270,7 @@
             this.chartControl1.Legend.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(250)))));
             this.chartControl1.Legend.Font = new System.Drawing.Font("Tahoma", 10F);
             this.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            this.chartControl1.Location = new System.Drawing.Point(12, 95);
+            this.chartControl1.Location = new System.Drawing.Point(13, 95);
             this.chartControl1.Name = "chartControl1";
             this.chartControl1.PaletteName = "Yellow";
             series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
