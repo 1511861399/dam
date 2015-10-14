@@ -293,6 +293,16 @@ namespace com.tk.dam.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap MainHeaderIcon_Backgroud {
+            get {
+                object obj = ResourceManager.GetObject("MainHeaderIcon_Backgroud", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap scrollbutton_glyph {
             get {
                 object obj = ResourceManager.GetObject("scrollbutton_glyph", resourceCulture);

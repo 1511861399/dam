@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using DevExpress.LookAndFeel;
 using com.tk.orm.model;
 using com.tk.orm.dao;
+using com.tk.dam.Util;
+using com.tk.dam.Entity;
 
 namespace com.tk.dam
 {
@@ -20,20 +22,15 @@ namespace com.tk.dam
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //ALARMAPPEND model = new ALARMAPPEND();
-            //model.ALEVEl = 0;
-            //model.GOAL_ID = 0;
-            //model.METHOD = 0;
-            //ALARMAPPENDDao.Insert(model);
-            //model = ALARMAPPENDDao.Get(2);
-            //int i = ALARMAPPENDDao.Delete(1);
-            //model.METHOD = 1;
-            //i = ALARMAPPENDDao.Update(model);
-            //IList<ALARMAPPEND> list = ALARMAPPENDDao.QueryForList(null);
-            //IList<station> list = stationDao.QueryForList(null);
-            //IList<sat> list =satDao.QueryForList(null);
-            //IList<DEVICE_STATUS_CLEAN> list = DEVICE_STATUS_CLEANDao.QueryForList("0+175_clean");
-            Application.Run(new MainForm());
+            AutoLoginUtil autoLogin = new AutoLoginUtil();
+            AutoLoginUser userInfo = autoLogin.GetAutoLoginInfo();
+            Login login = new Login(userInfo);
+            login.ShowDialog();
+            if (login.DialogResult == DialogResult.OK)
+            {
+                login.LoginUser.ToString();//登录的用户以及用户权限信息
+                Application.Run(new MainForm());
+            }
         }
     }
 }

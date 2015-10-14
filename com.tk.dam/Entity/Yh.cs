@@ -39,6 +39,10 @@ namespace com.tk.dam.Entity
         /// 用户权限
         /// </summary>
         public string Qx { get; set; }
+        /// <summary>
+        /// 用户登录密码
+        /// </summary>
+        public string Password { get; set; }
     }
 
     class YhComparer : IComparer<Yh>

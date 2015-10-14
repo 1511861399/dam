@@ -7,7 +7,8 @@ namespace com.tk.orm.model
      * annotation=@MessagePackMessage 
      * Without annotation You register your class before use.
      * MessagePack.register(MyClass.class);
-     */ 
+     */
+    [Serializable]
     public class RIGHT 
     {
 

@@ -27,16 +27,20 @@ namespace com.tk.orm.dao
             return BaseDA.Get<USERROLE>("SelectUSERROLEById", primaryKeyId);
         }
 
-        public static IList<USERROLE> QueryForList()
+        //public static IList<USERROLE> QueryForList()
+        //{
+        //    return BaseDA.QueryForList<USERROLE>("SelectAllUSERROLE");
+        //}
+
+        public static IList<USERROLE> QueryForList(object parameterObject = null)
         {
-            return BaseDA.QueryForList<USERROLE>("SelectAllUSERROLE");
+            return BaseDA.QueryForList<USERROLE>("SelectAllUSERROLE", parameterObject);
         }
 
         public static IList<USERROLE> QueryForListByUserId(int userId)
         {
             return BaseDA.QueryForList<USERROLE>("SelectUSERROLEQueryByUserId", userId);
         }
-
         public static int GetNewId()
         {
             return BaseDA.QueryForObject<int>("SelectUSERROLEMaxID", null);

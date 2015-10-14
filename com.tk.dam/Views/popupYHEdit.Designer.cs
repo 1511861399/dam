@@ -48,6 +48,10 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.txtPwd = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtPwd2 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +59,10 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.txtPwd2);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.txtPwd);
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.txtLxdh);
             this.panel1.Controls.Add(this.cmbBm);
@@ -81,14 +89,14 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(111, 223);
+            this.txtEmail.Location = new System.Drawing.Point(111, 218);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(200, 22);
             this.txtEmail.TabIndex = 12;
             // 
             // txtLxdh
             // 
-            this.txtLxdh.Location = new System.Drawing.Point(112, 189);
+            this.txtLxdh.Location = new System.Drawing.Point(111, 186);
             this.txtLxdh.Name = "txtLxdh";
             this.txtLxdh.Size = new System.Drawing.Size(200, 22);
             this.txtLxdh.TabIndex = 11;
@@ -96,7 +104,7 @@
             // cmbBm
             // 
             this.cmbBm.FormattingEnabled = true;
-            this.cmbBm.Location = new System.Drawing.Point(112, 157);
+            this.cmbBm.Location = new System.Drawing.Point(111, 154);
             this.cmbBm.Name = "cmbBm";
             this.cmbBm.Size = new System.Drawing.Size(200, 22);
             this.cmbBm.TabIndex = 10;
@@ -104,7 +112,7 @@
             // cmbQx
             // 
             this.cmbQx.FormattingEnabled = true;
-            this.cmbQx.Location = new System.Drawing.Point(112, 259);
+            this.cmbQx.Location = new System.Drawing.Point(111, 250);
             this.cmbQx.Name = "cmbQx";
             this.cmbQx.Size = new System.Drawing.Size(200, 22);
             this.cmbQx.TabIndex = 13;
@@ -122,7 +130,7 @@
             // rdbFemale
             // 
             this.rdbFemale.AutoSize = true;
-            this.rdbFemale.Location = new System.Drawing.Point(219, 124);
+            this.rdbFemale.Location = new System.Drawing.Point(219, 122);
             this.rdbFemale.Name = "rdbFemale";
             this.rdbFemale.Size = new System.Drawing.Size(37, 18);
             this.rdbFemale.TabIndex = 9;
@@ -133,7 +141,7 @@
             // 
             this.rdbMale.AutoSize = true;
             this.rdbMale.Checked = true;
-            this.rdbMale.Location = new System.Drawing.Point(138, 125);
+            this.rdbMale.Location = new System.Drawing.Point(138, 122);
             this.rdbMale.Name = "rdbMale";
             this.rdbMale.Size = new System.Drawing.Size(37, 18);
             this.rdbMale.TabIndex = 8;
@@ -160,7 +168,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 14F);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(22, 255);
+            this.label7.Location = new System.Drawing.Point(22, 250);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(103, 23);
             this.label7.TabIndex = 5;
@@ -226,7 +234,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 14F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(22, 54);
+            this.label1.Location = new System.Drawing.Point(23, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 23);
             this.label1.TabIndex = 5;
@@ -240,7 +248,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Tahoma", 12F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(138, 368);
+            this.btnCancel.Location = new System.Drawing.Point(138, 376);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 32);
             this.btnCancel.TabIndex = 15;
@@ -256,7 +264,7 @@
             this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOk.Font = new System.Drawing.Font("Tahoma", 12F);
             this.btnOk.ForeColor = System.Drawing.Color.White;
-            this.btnOk.Location = new System.Drawing.Point(22, 368);
+            this.btnOk.Location = new System.Drawing.Point(22, 376);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(100, 32);
             this.btnOk.TabIndex = 14;
@@ -274,6 +282,48 @@
             this.lblTitle.Size = new System.Drawing.Size(145, 39);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "新增用户";
+            // 
+            // txtPwd
+            // 
+            this.txtPwd.Location = new System.Drawing.Point(111, 282);
+            this.txtPwd.MaxLength = 16;
+            this.txtPwd.Name = "txtPwd";
+            this.txtPwd.PasswordChar = '*';
+            this.txtPwd.Size = new System.Drawing.Size(201, 22);
+            this.txtPwd.TabIndex = 17;
+            this.txtPwd.UseSystemPasswordChar = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(23, 284);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(103, 23);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "密      码：";
+            // 
+            // txtPwd2
+            // 
+            this.txtPwd2.Location = new System.Drawing.Point(111, 314);
+            this.txtPwd2.MaxLength = 16;
+            this.txtPwd2.Name = "txtPwd2";
+            this.txtPwd2.PasswordChar = '*';
+            this.txtPwd2.Size = new System.Drawing.Size(201, 22);
+            this.txtPwd2.TabIndex = 19;
+            this.txtPwd2.UseSystemPasswordChar = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(23, 313);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(105, 23);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "确认密码：";
             // 
             // popupYHEdit
             // 
@@ -315,5 +365,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtLxdh;
         private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtPwd;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtPwd2;
+        private System.Windows.Forms.Label label9;
     }
 }

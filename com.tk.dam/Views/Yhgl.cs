@@ -77,7 +77,8 @@ namespace com.tk.dam.Views
                         Xb = user.GENDER,
                         Bm = user.DEPT,
                         Lxdh = user.TEL,
-                        Email = user.EMAIL
+                        Email = user.EMAIL,
+                        Password = user.PASSWORD
                     };
                     var userRoles = USERROLEDao.QueryForListByUserId(user.ID);
                     if (userRoles != null && userRoles.Count > 0)

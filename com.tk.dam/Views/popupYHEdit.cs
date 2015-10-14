@@ -27,10 +27,19 @@ namespace com.tk.dam.Views
         private void InitializeBinding()
         {
             IList<string> bmList = new List<string>();
-            bmList.Add("办公室");
-            bmList.Add("综合部");
-            bmList.Add("研发部");
-            bmList.Add("市场部");
+
+            string bmfileName = @"bm.xml";
+            using (System.IO.Stream fStream = new System.IO.FileStream(bmfileName, System.IO.FileMode.OpenOrCreate, System.IO.FileAccess.ReadWrite))
+            {
+                try
+                {
+                    System.Xml.Serialization.XmlSerializer xmlFormat = new System.Xml.Serialization.XmlSerializer(typeof(List<string>));
+                    bmList = (List<string>)xmlFormat.Deserialize(fStream);
+                }
+                catch (System.Exception ex)
+                {
+                }
+            }
             cmbBm.DataSource = bmList;
 
             cmbQx.DataSource = ROLEDao.QueryForList();
@@ -79,11 +88,28 @@ namespace com.tk.dam.Views
                 txtLxdh.Text = yh.Lxdh;
                 txtEmail.Text = yh.Email;
                 cmbQx.Text = yh.Qx;
+                txtPwd.Text = yh.Password;
+                txtPwd2.Text = yh.Password;
             }
         }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+            if (txtPwd.Text != txtPwd2.Text)
+            {
+                MessageBox.Show("两次输入的密码不一致，请重新输入！");
+                txtPwd.Focus();
+                return;
+            }
+
+            IList<USER> users = USERDao.QueryForList(null).Where(p => p.NAME == txtDlm.Text.Trim()).ToList();
+            if (users != null && users.Count > 0)
+            {
+                MessageBox.Show("该登录名已使用，请重新输入登录名！");
+                txtDlm.Focus();
+                return;
+            }
+
             USER user = new USER();
             user.ID = int.Parse(lblXh.Text);
             user.NAME = txtDlm.Text;
@@ -100,7 +126,7 @@ namespace com.tk.dam.Views
             user.TEL = txtLxdh.Text;
             user.EMAIL = txtEmail.Text;
             user.STATE = 0;
-            user.PASSWORD = "123456";
+            user.PASSWORD = txtPwd.Text;
             if (USERDao.Get(user.ID) != null)
             {
                 USERDao.Update(user);
@@ -120,7 +146,7 @@ namespace com.tk.dam.Views
             {
                 USERROLE userRole = new USERROLE { ID = USERROLEDao.GetNewId(), USER_ID = user.ID, ROLE_ID = (int)cmbQx.SelectedValue, PROJ_ID = 1 };
                 USERROLEDao.Insert(userRole);
-            }            
+            }
 
             if (lblTitle.Text == "新增用户")
             {
@@ -138,6 +164,5 @@ namespace com.tk.dam.Views
         {
             MainForm.HidenFlyout();
         }
-
     }
 }
