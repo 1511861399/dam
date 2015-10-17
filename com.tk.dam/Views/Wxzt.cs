@@ -62,16 +62,19 @@ namespace com.tk.dam.Views
             if (MainForm.StationList.Count > 0)
             {
                 this.lblMonitor1.Text = MainForm.StationList[0].sComment;
+                this.lblMonitor1.Tag = MainForm.StationList[0];
                 this.lblMonitor1.Visible = true;
             }
             if (MainForm.StationList.Count > 1)
             {
                 this.lblMonitor2.Text = MainForm.StationList[1].sComment;
+                this.lblMonitor2.Tag = MainForm.StationList[1];
                 this.lblMonitor2.Visible = true;
             }
             if (MainForm.StationList.Count > 2)
             {
                 this.lblMonitor3.Text = MainForm.StationList[2].sComment;
+                this.lblMonitor3.Tag = MainForm.StationList[2];
                 this.lblMonitor3.Visible = true;
             }
 
@@ -106,9 +109,10 @@ namespace com.tk.dam.Views
 
         public void bindData()
         {
-            List<sat> mSatGPS = MainForm.SatList.Where(p => p.sId == 1 && p.sPrn < 30).ToList();
-            List<sat> mSatGLO = MainForm.SatList.Where(p => p.sId == 1 && p.sPrn > 30 && p.sPrn<60).ToList();
-            List<sat> mSatBD = MainForm.SatList.Where(p => p.sId == 1 && p.sPrn > 60).ToList();
+            station mStation = mCurrentMonitorLb.Tag as station;
+            List<sat> mSatGPS = MainForm.SatList.Where(p => p.sId == mStation.sId && p.sPrn < 30).ToList();
+            List<sat> mSatGLO = MainForm.SatList.Where(p => p.sId == mStation.sId && p.sPrn > 30 && p.sPrn < 60).ToList();
+            List<sat> mSatBD = MainForm.SatList.Where(p => p.sId == mStation.sId && p.sPrn > 60).ToList();
             List<SeriesPoint> mPointsGPS = new List<SeriesPoint>();
             List<SeriesPoint> mPointsGLO = new List<SeriesPoint>();
             List<SeriesPoint> mPointsBD = new List<SeriesPoint>();
@@ -131,7 +135,7 @@ namespace com.tk.dam.Views
             }
             mXkt.SetPoints(mPointsGPS, mPointsGLO, mPointsBD);
 
-            List<sat> mSatXZB = MainForm.SatList.Where(p => p.sId == 1).ToList();
+            List<sat> mSatXZB = MainForm.SatList.Where(p => p.sId == mStation.sId).ToList();
             List<SeriesPoint> mPointsXZB1 = new List<SeriesPoint>();
             List<SeriesPoint> mPointsXZB2 = new List<SeriesPoint>();
             foreach (var sat in mSatXZB)

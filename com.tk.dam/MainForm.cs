@@ -39,7 +39,7 @@ namespace com.tk.dam
         //Xbjc mXbjc;
         Wxzt mWxzt;
 
-        public MainForm()
+        public MainForm(AutoLoginUser loginUser)
         {
 
             InitializeComponent();
@@ -79,6 +79,14 @@ namespace com.tk.dam
             mExitAction.Image = Properties.Resources.icon_close32;
             mainWindowsUIView.ContentContainerActions.Add(mExitAction);
 
+            DelegateAction mDesktopAction = new DelegateAction(canExecuteDesktopFunction, desktopActionFunction);
+            mDesktopAction.Caption = "Desktop";
+            mDesktopAction.Type = ActionType.Navigation;
+            mDesktopAction.Edge = ActionEdge.Right;
+            mDesktopAction.Behavior = ActionBehavior.HideBarOnClick;
+            mDesktopAction.Image = Properties.Resources.icon_desktop32;
+            mainWindowsUIView.ContentContainerActions.Add(mDesktopAction);
+
             DelegateAction mAboutAction = new DelegateAction(canExecuteAboutFunction, aboutActionFunction);
             mAboutAction.Caption = "About";
             mAboutAction.Type = ActionType.Navigation;
@@ -102,6 +110,11 @@ namespace com.tk.dam
             mQxDic.Add("WD", 30);
             tileQX.Elements[1].Text = string.Format("水位:{0}m  温度:{1}°C", mQxDic["SW"], mQxDic["WD"]);
 
+            if (loginUser!=null) 
+            {
+                this.tileYHGL.Elements[2].Text = String.Format("登录名：{0}", loginUser.UserName);
+            }
+
             loadData();
         }
 
@@ -118,10 +131,12 @@ namespace com.tk.dam
                 mWxzt.bindData();
             }
 
+            this.tileSBZT.Elements[1].Text = String.Format("设备连接数{0}台", mStations.Count);
+
             for (int i = 0; i < mStations.Count; i++)
             {
                 var mStation = mStations[i];
-                IList<DEVICE_STATUS_CLEAN> list = DEVICE_STATUS_CLEANDao.QueryTopForList(mStations[i].sSpeedName, 1, new DEVICE_STATUS_CLEAN() { Style = 2 });
+                IList<DEVICE_STATUS_CLEAN> list = DEVICE_STATUS_CLEANDao.QueryTopForList(mStations[i].sCoorName, 1, new DEVICE_STATUS_CLEAN() { Style = 2 });
                 foreach (var status in list)
                 {
                     status.Dx = status.X * 1000;
@@ -183,10 +198,10 @@ namespace com.tk.dam
                     frame.Elements.Add(element.Clone() as TileItemElement);
                 }
                 frame.Interval = 5000;
-                frame.Elements[1].Text = string.Format("{0}：BDS:{1}  GPS:{2}  GLO:{3}", mStation.sComment,
-                    mSatList.Where(p => p.sId == 1 && p.sPrn < 30).Count(),
-                    mSatList.Where(p => p.sId == 1 && p.sPrn < 60 && p.sPrn > 30).Count(),
-                    mSatList.Where(p => p.sId == 1 && p.sPrn > 60).Count());
+                frame.Elements[1].Text = string.Format("{0}：GPS:{1}  GLO:{2}  BD:{3}", mStation.sComment,
+                    mSatList.Where(p => p.sId == mStation.sId && p.sPrn < 30).Count(),
+                    mSatList.Where(p => p.sId == mStation.sId && p.sPrn < 60 && p.sPrn > 30).Count(),
+                    mSatList.Where(p => p.sId == mStation.sId && p.sPrn > 60).Count());
                 tileWXZT.Frames.Add(frame);
             }
         }
@@ -291,6 +306,10 @@ namespace com.tk.dam
             {
                 exitActionFunction();
             }
+            else if (e.Button.Properties.Caption == "Desktop")
+            {
+                desktopActionFunction();
+            }
             else if (e.Button.Properties.Caption == "About")
             {
                 aboutActionFunction();
@@ -335,6 +354,16 @@ namespace com.tk.dam
                 Application.Exit();
             }
         }
+
+        private bool canExecuteDesktopFunction()
+        {
+            return true;
+        }
+        private void desktopActionFunction()
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
         private bool canExecuteAboutFunction()
         {
             return true;

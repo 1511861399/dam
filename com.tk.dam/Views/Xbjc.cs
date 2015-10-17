@@ -14,6 +14,7 @@ using DevExpress.LookAndFeel;
 using com.tk.orm.model;
 using com.tk.orm.dao;
 using System.Threading;
+using DevExpress.Utils;
 
 namespace com.tk.dam.Views
 {
@@ -24,6 +25,8 @@ namespace com.tk.dam.Views
         private Label mCurrentMonitorLb;
         private Color mDefaultColor = Color.FromArgb(20, 107, 161);
         private Color mActiveColor = Color.FromArgb(235, 163, 17);
+        private int mCurrentQueryStyle;
+        IList<Jcd> mJcdList;
 
         public Xbjc()
         {
@@ -90,6 +93,29 @@ namespace com.tk.dam.Views
                 this.panel2.Location = new Point(this.panel1.Width + 10, this.panel2.Location.Y);
             }
 
+            gbBD.Caption = "\n标点\n ";
+            gcmBW.Caption = "部位";
+            gcmBH.Caption = "编号";
+            gcmScgc.Caption = "始测高程\n(m)";
+            gcmScgc.DisplayFormat.FormatType = FormatType.Numeric;
+            gcmScgc.DisplayFormat.FormatString = "{0:N2}";
+            gcmBcgc1.Caption = "本次观测\n(m)";
+            gcmBcgc1.DisplayFormat.FormatType = FormatType.Numeric;
+            gcmBcgc1.DisplayFormat.FormatString = "{0:N2}";
+            gcmLjcx.Caption = "累计沉陷\n(mm)";
+            gcmLjcx.DisplayFormat.FormatType = FormatType.Numeric;
+            gcmLjcx.DisplayFormat.FormatString = "{0:N2}";
+            gcmScds.Caption = "始测读数\n(mm)";
+            gcmScds.DisplayFormat.FormatType = FormatType.Numeric;
+            gcmScds.DisplayFormat.FormatString = "{0:N2}";
+            gcmBcgc2.Caption = "本次观测\n(mm)";
+            gcmBcgc2.DisplayFormat.FormatType = FormatType.Numeric;
+            gcmBcgc2.DisplayFormat.FormatString = "{0:N2}";
+            gcmLjwy.Caption = "累计位移\n(mm)";
+            gcmLjwy.DisplayFormat.FormatType = FormatType.Numeric;
+            gcmLjwy.DisplayFormat.FormatString = "{0:N2}";
+            mJcdList = new List<Jcd>();
+
             if (MainForm.StationList.Count > 0)
             {
                 this.lblMonitor1.Text = MainForm.StationList[0].sComment;
@@ -113,8 +139,7 @@ namespace com.tk.dam.Views
             this.mCurrentTimeLb = this.lblDay;
             this.mCurrentTypeLb = this.lblXbqs;
 
-            bindGrid();
-            bindChart();
+            bindData();
 
         }
 
@@ -206,7 +231,7 @@ namespace com.tk.dam.Views
                     this.lblTjTip.Text = "统计数据(本月)：";
                     break;
             }
-            bindChart();
+            bindData();
         }
 
         private void lblType_Click(object sender, EventArgs e)
@@ -217,7 +242,7 @@ namespace com.tk.dam.Views
                 mCurrentTypeLb = sender as Label;
                 mCurrentTypeLb.BackColor = mActiveColor;
             }
-            bindChart();
+            bindData();
         }
 
         private void lblMonitor_Click(object sender, EventArgs e)
@@ -228,11 +253,11 @@ namespace com.tk.dam.Views
                 mCurrentMonitorLb = sender as Label;
                 mCurrentMonitorLb.BackColor = mActiveColor;
             }
-            bindChart();
+            bindData();
             //HotTrackRow = int.Parse(mCurrentMonitorLb.Text) - 1;
         }
 
-        private void bindChart()
+        private void bindData()
         {
             Thread mLoadThread = new Thread(new ThreadStart(delegate
             {
@@ -264,7 +289,8 @@ namespace com.tk.dam.Views
                         break;
                 }
 
-                IList<DEVICE_STATUS_CLEAN> mStatusList = DEVICE_STATUS_CLEANDao.QueryTopForList(mStation.sSpeedName, mTopN, new DEVICE_STATUS_CLEAN() { Style = mStyle });
+                
+                IList<DEVICE_STATUS_CLEAN> mStatusList = DEVICE_STATUS_CLEANDao.QueryTopForList(mStation.sCoorName, mTopN, new DEVICE_STATUS_CLEAN() { Style = mStyle });
                 List<SeriesPoint> mSeriesPointList0 = new List<SeriesPoint>();
                 List<SeriesPoint> mSeriesPointList1 = new List<SeriesPoint>();
                 double mTotalWy = 0, mLjWy = 0, mTotalCj = 0, mLjCj = 0;
@@ -286,8 +312,72 @@ namespace com.tk.dam.Views
                     mLjCj = mLjCj + status.Dh;
                     mSeriesPointList0.Add(new SeriesPoint(status.aDatetime.Value, status.Dx));
                     mSeriesPointList1.Add(new SeriesPoint(status.aDatetime.Value, status.Dh));
-
                 }
+
+                //当选择的时间改变时，更新Grid列表
+                if (mCurrentQueryStyle != mStyle)
+                {
+                    mCurrentQueryStyle = mStyle;
+                    mJcdList.Clear();
+                    if (mCurrentTypeLb.Text == "历史曲线")
+                    {
+                        switch (mStyle)
+                        {
+                            case 2:
+                                mTopN = 24;
+                                break;
+                            case 3:
+                                mTopN = 12;
+                                break;
+                            case 4:
+                                mTopN = 31;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    foreach (var station in MainForm.StationList)
+                    {
+                        mStatusList = DEVICE_STATUS_CLEANDao.QueryTopForList(station.sCoorName, mTopN, new DEVICE_STATUS_CLEAN() { Style = mStyle });                       
+                        mTotalWy = 0;
+                        mLjWy = 0;
+                        mTotalCj = 0;
+                        mLjCj = 0;
+                        foreach (var status in mStatusList)
+                        {
+                            status.Dx = status.X * 1000;
+                            status.Dh = status.Height * 1000;
+                            if (Math.Abs(status.Dx) > 4 || Math.Abs(status.Dx) < 0.1)
+                            {
+                                status.Dx = 0;
+                            }
+                            if (Math.Abs(status.Dh) > 4 || Math.Abs(status.Dh) < 0.1)
+                            {
+                                status.Dh = 0;
+                            }
+                            mTotalWy = mTotalWy + Math.Abs(status.Dx);
+                            mTotalCj = mTotalCj + Math.Abs(status.Dh);
+                            mLjWy = mLjWy + status.Dx;
+                            mLjCj = mLjCj + status.Dh;
+                        }
+                        if (mStatusList.Count > 0) 
+                        {
+                            var first = mStatusList.First();
+                            var last = mStatusList.Last();
+                            Jcd jcd = new Jcd();
+                            jcd.BH = station.sName;
+                            jcd.BW = "坝顶\n108\n高程";
+                            jcd.Scgc = station.Sh + first.Dh;
+                            jcd.Bcgc1 = station.Sh + last.Dh;
+                            jcd.Ljcx = mLjCj;
+                            jcd.Scds = first.Dx;
+                            jcd.Bcgc2 = last.Dx;
+                            jcd.Ljwy = mLjWy;
+                            mJcdList.Add(jcd);
+                        }
+                    } 
+                }
+
                 this.Invoke((EventHandler)delegate
                 {
                     MainForm.HideLoading();
@@ -303,71 +393,12 @@ namespace com.tk.dam.Views
                         this.lblTjcj.Text = string.Format("平均沉降：{0}mm    累计沉降：{1}mm", (mTotalCj / mStatusList.Count).ToString("F2").PadLeft(3, ' '), mLjCj.ToString("F2").PadLeft(3, ' '));
                         resetDiagramScroll(mStatusList[0].aDatetime.Value, mStatusList[mStatusList.Count - 1].aDatetime.Value);
                     }
+                    gcMain.DataSource = mJcdList;
+                    gvMain.RefreshData();
                 });
             }));
 
             mLoadThread.Start();
-        }
-
-        private void bindGrid()
-        {
-            //gbBD.Caption = "\n标点\n ";
-            ////gbandKs.Caption = String.Format("{0}\n监测数据(/mm)", mNow.AddYears(-1).ToString("yyyy.MM.dd"));
-            ////gbandJs.Caption = String.Format("{0}\n监测数据(/mm)", mNow.ToString("yyyy.MM.dd"));
-            //gcmBW.Caption = "部位";
-            //gcmBH.Caption = "编号";
-
-            //gcmScgc.Caption = "始测高程\n(m)";
-            //gcmBcgc1.Caption = "本次观测\n(m)";
-            //gcmLjcx.Caption = "累计沉陷\n(mm)";
-            //gcmScds.Caption = "始测读数\n(mm)";
-            //gcmBcgc2.Caption = "本次观测\n(mm)";
-            //gcmLjwy.Caption = "累计位移\n(mm)";
-
-            //mCurrentMonitorLb = this.lblMonitor1;
-            //mCurrentTimeLb = this.lblDay;
-            //mCurrentTypeLb = this.lblXbqs;
-
-
-            //IList<Jcd> mJcdList = new List<Jcd>();
-            //for (int i = 1; i <= 12; i++)
-            //{
-            //    List<double> mCurrentXbList = MainForm.XbjcDic[i.ToString()];
-            //    Jcd item = new Jcd();
-            //    item.BH = i.ToString();
-            //    item.Scds = mRandom.Next(30) / 10.0;
-            //    item.Bcgc2 = mCurrentXbList[0];
-            //    item.Ljwy = item.Bcgc2 - item.Scds;
-            //    if (i <= 6)
-            //    {
-            //        item.BW = "坝顶\n108\n高程";
-            //        double m1 = mRandom.Next(4);
-            //        double m2 = mRandom.Next(4);
-            //        item.Scgc = 105.4 + m1 / 100;
-            //        item.Bcgc1 = 105.4 + m2 / 100;
-            //        item.Ljcx = Math.Abs(m2 - m1);
-            //    }
-            //    else if (i <= 9)
-            //    {
-            //        item.BW = "背水\n坡90\n平台";
-            //        double m1 = mRandom.Next(4);
-            //        double m2 = mRandom.Next(4);
-            //        item.Scgc = 88.4 + m1 / 100;
-            //        item.Bcgc1 = 88.4 + m2 / 100;
-            //        item.Ljcx = Math.Abs(m2 - m1);
-            //    }
-            //    else
-            //    {
-            //        item.BW = "背水\n坡75\n平台";
-            //        double m1 = mRandom.Next(4);
-            //        double m2 = mRandom.Next(4);
-            //        item.Scgc = 73.2 + m1 / 100;
-            //        item.Bcgc1 = 73.2 + m2 / 100;
-            //        item.Ljcx = Math.Abs(m2 - m1);
-            //    }
-            //    mJcdList.Add(item);
-            //}
-            //gcMain.DataSource = mJcdList;
         }
 
         private void resetDiagramScroll(DateTime mMaxTime, DateTime mMinTime)

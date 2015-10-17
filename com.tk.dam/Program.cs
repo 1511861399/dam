@@ -28,8 +28,8 @@ namespace com.tk.dam
             login.ShowDialog();
             if (login.DialogResult == DialogResult.OK)
             {
-                login.LoginUser.ToString();//登录的用户以及用户权限信息
-                Application.Run(new MainForm());
+                //login.LoginUser.ToString();//登录的用户以及用户权限信息
+                Application.Run(new MainForm(login.LoginUser));
             }
         }
     }

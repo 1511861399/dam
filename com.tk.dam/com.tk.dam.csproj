@@ -544,6 +544,7 @@
     <None Include="Resources\scrollbutton_glyph.png" />
     <None Include="Resources\tile_tip_bg.png" />
     <None Include="Resources\MainHeaderIcon_Backgroud.png" />
+    <None Include="Resources\icon_desktop32.png" />
     <Content Include="Resources\wl0.png" />
     <Content Include="Resources\wl1.png" />
     <Content Include="Resources\wl2.png" />
