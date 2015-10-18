@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.lblError = new DevExpress.XtraEditors.LabelControl();
             this.pnlTitle = new DevExpress.XtraEditors.PanelControl();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -185,6 +186,7 @@
             this.ClientSize = new System.Drawing.Size(521, 347);
             this.Controls.Add(this.pnlTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "北斗大坝安全监测系统--登录界面";
