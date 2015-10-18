@@ -102,12 +102,15 @@ namespace com.tk.dam.Views
                 return;
             }
 
-            IList<USER> users = USERDao.QueryForList(null).Where(p => p.NAME == txtDlm.Text.Trim()).ToList();
-            if (users != null && users.Count > 0)
+            if (lblTitle.Text == "新增用户")
             {
-                MessageBox.Show("该登录名已使用，请重新输入登录名！");
-                txtDlm.Focus();
-                return;
+                IList<USER> users = USERDao.QueryForList(null).Where(p => p.NAME == txtDlm.Text.Trim()).ToList();
+                if (users != null && users.Count > 0)
+                {
+                    MessageBox.Show("该登录名已使用，请重新输入登录名！");
+                    txtDlm.Focus();
+                    return;
+                }
             }
 
             USER user = new USER();
